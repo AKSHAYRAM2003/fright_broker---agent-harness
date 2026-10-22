@@ -5,7 +5,202 @@ import React from "react";
 export const CaseStudies: React.FC = () => {
   return (
     <>
-      <section id="case-studies" className="scroll-mt-24 border-t border-hr-line bg-hr-surface"><div className="mx-auto max-w-[1440px] px-5 py-16 md:px-12 md:py-[150px]"><div className="mb-12 flex flex-wrap items-start justify-between gap-8 md:mb-14 md:gap-10"><div><h2 className="font-body text-[29px] leading-[1.04] tracking-[-0.02em] text-hr-ink-strong md:text-[46px]">Deployed in the <span className="text-hr-accent">real world.</span></h2></div><p className="max-w-[420px] text-[15.5px] leading-[1.65] text-hr-ink-3">Battle-tested in high-stakes environments full of exceptions and real consequences when things go wrong.</p></div><div className="grid grid-cols-1 gap-px border-y border-hr-line bg-hr-line sm:grid-cols-3"><div><a className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline" href="/customer-story/dhl"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><picture><source srcSet="/images/redesign/home-photos/case-dhl-fcf21c81.avif" type="image/avif" /><img alt="DHL \u2014 case study" loading="lazy" decoding="async" data-nimg="fill" className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]" style={({ "position": "absolute", "height": "100%", "width": "100%", "left": "0", "top": "0", "right": "0", "bottom": "0", "color": "transparent" } as React.CSSProperties)} sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px" srcSet="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=3840&q=75 3840w" src="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-dhl.webp%3F2026-09-22T15%253A24%253A20.618Z&w=3840&q=75" /></picture></div><div className="pointer-events-none absolute inset-0" style={({ "background": "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)" } as React.CSSProperties)}></div><div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">DHL</div><div className="pointer-events-none absolute bottom-6 left-6 right-6"><div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">Scaling globally across regions and business units</div><span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">Learn more<span aria-hidden="true" className="text-hr-rust">→</span></span></div></a></div><div><a className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline" href="/customer-story/naturgy"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><picture><source srcSet="/images/redesign/home-photos/case-naturgy-c7e9671c.avif" type="image/avif" /><img alt="Naturgy \u2014 case study" loading="lazy" decoding="async" data-nimg="fill" className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]" style={({ "position": "absolute", "height": "100%", "width": "100%", "left": "0", "top": "0", "right": "0", "bottom": "0", "color": "transparent" } as React.CSSProperties)} sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px" srcSet="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=3840&q=75 3840w" src="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-naturgy.webp%3F2026-09-22T15%253A24%253A18.534Z&w=3840&q=75" /></picture></div><div className="pointer-events-none absolute inset-0" style={({ "background": "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)" } as React.CSSProperties)}></div><div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">Naturgy</div><div className="pointer-events-none absolute bottom-6 left-6 right-6"><div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">Partnering to transform customer service</div><span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">Learn more<span aria-hidden="true" className="text-hr-rust">→</span></span></div></a></div><div><a className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline" href="/customer-story/kuehne-nagel"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><picture><source srcSet="/images/redesign/home-photos/case-kuehne-nagel-fbe2c745.avif" type="image/avif" /><img alt="Kuehne+Nagel \u2014 case study" loading="lazy" decoding="async" data-nimg="fill" className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]" style={({ "position": "absolute", "height": "100%", "width": "100%", "left": "0", "top": "0", "right": "0", "bottom": "0", "color": "transparent" } as React.CSSProperties)} sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px" srcSet="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=32&q=75 32w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=48&q=75 48w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=64&q=75 64w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=96&q=75 96w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=128&q=75 128w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=256&q=75 256w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=384&q=75 384w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=3840&q=75 3840w" src="/_next/image?url=https%3A%2F%2Fhappyrobot.b-cdn.net%2Flanding-case-kuehne-nagel.webp%3F2026-09-22T15%253A24%253A16.457Z&w=3840&q=75" /></picture></div><div className="pointer-events-none absolute inset-0" style={({ "background": "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)" } as React.CSSProperties)}></div><div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">Kuehne+Nagel</div><div className="pointer-events-none absolute bottom-6 left-6 right-6"><div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">78% autonomous execution on critical work</div><span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">Learn more<span aria-hidden="true" className="text-hr-rust">→</span></span></div></a></div></div></div></section>
+      <section
+        id="case-studies"
+        className="scroll-mt-24 border-t border-hr-line bg-hr-surface"
+      >
+        <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-12 md:py-[150px]">
+          <div className="mb-12 flex flex-wrap items-start justify-between gap-8 md:mb-14 md:gap-10">
+            <div>
+              <h2 className="font-body text-[29px] leading-[1.04] tracking-[-0.02em] text-hr-ink-strong md:text-[46px]">
+                Deployed on <span className="text-hr-accent">India&apos;s highways.</span>
+              </h2>
+            </div>
+            <p className="max-w-[420px] text-[15.5px] leading-[1.65] text-hr-ink-3">
+              Battle-tested across high-density freight corridors full of vernacular voice notes, toll exceptions, and real broker margin stakes.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-px border-y border-hr-line bg-hr-line sm:grid-cols-3">
+            <div>
+              <a
+                className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline"
+                href="#corridors"
+              >
+                <div className="relative h-full w-full overflow-hidden bg-hr-cell">
+                  <picture>
+                    <source
+                      srcSet="/images/redesign/home-photos/case-dhl-fcf21c81.avif"
+                      type="image/avif"
+                    />
+                    <img
+                      alt="Delhi to Mumbai NH-48 Freight Corridor"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]"
+                      style={
+                        {
+                          position: "absolute",
+                          height: "100%",
+                          width: "100%",
+                          left: "0",
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          color: "transparent",
+                        } as React.CSSProperties
+                      }
+                      sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px"
+                      src="/images/redesign/case-studies/dhl-1.webp"
+                    />
+                  </picture>
+                </div>
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={
+                    {
+                      background:
+                        "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)",
+                    } as React.CSSProperties
+                  }
+                ></div>
+                <div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">
+                  NH-48 • Delhi – Mumbai
+                </div>
+                <div className="pointer-events-none absolute bottom-6 left-6 right-6">
+                  <div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">
+                    Automating 1,200+ monthly loads with zero rate hallucination
+                  </div>
+                  <span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">
+                    Explore corridor
+                    <span aria-hidden="true" className="text-hr-rust">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a
+                className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline"
+                href="#corridors"
+              >
+                <div className="relative h-full w-full overflow-hidden bg-hr-cell">
+                  <picture>
+                    <source
+                      srcSet="/images/redesign/home-photos/case-naturgy-c7e9671c.avif"
+                      type="image/avif"
+                    />
+                    <img
+                      alt="Bengaluru to Hyderabad NH-44 Freight Corridor"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]"
+                      style={
+                        {
+                          position: "absolute",
+                          height: "100%",
+                          width: "100%",
+                          left: "0",
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          color: "transparent",
+                        } as React.CSSProperties
+                      }
+                      sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px"
+                      src="/images/redesign/case-studies/naturgy-1.webp"
+                    />
+                  </picture>
+                </div>
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={
+                    {
+                      background:
+                        "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)",
+                    } as React.CSSProperties
+                  }
+                ></div>
+                <div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">
+                  NH-44 • Bengaluru – Hyderabad
+                </div>
+                <div className="pointer-events-none absolute bottom-6 left-6 right-6">
+                  <div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">
+                    Vernacular Hindi & Kannada voice ingestion with margin guardrails
+                  </div>
+                  <span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">
+                    Explore corridor
+                    <span aria-hidden="true" className="text-hr-rust">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a
+                className="group relative block aspect-square overflow-hidden bg-hr-cell no-underline"
+                href="#corridors"
+              >
+                <div className="relative h-full w-full overflow-hidden bg-hr-cell">
+                  <picture>
+                    <source
+                      srcSet="/images/redesign/home-photos/case-kuehne-nagel-fbe2c745.avif"
+                      type="image/avif"
+                    />
+                    <img
+                      alt="JNPT and Mundra Port Container Drayage"
+                      loading="lazy"
+                      decoding="async"
+                      data-nimg="fill"
+                      className="object-cover transition-transform duration-[600ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-[1.04]"
+                      style={
+                        {
+                          position: "absolute",
+                          height: "100%",
+                          width: "100%",
+                          left: "0",
+                          top: "0",
+                          right: "0",
+                          bottom: "0",
+                          color: "transparent",
+                        } as React.CSSProperties
+                      }
+                      sizes="(max-width: 639px) calc(100vw - 40px), (max-width: 767px) calc((100vw - 40px) / 3), (max-width: 1439px) calc((100vw - 96px) / 3), 448px"
+                      src="/images/redesign/case-studies/kuehne-nagel-1.webp"
+                    />
+                  </picture>
+                </div>
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={
+                    {
+                      background:
+                        "linear-gradient(180deg, rgba(18,16,14,0.05) 40%, rgba(18,16,14,0.88) 100%)",
+                    } as React.CSSProperties
+                  }
+                ></div>
+                <div className="pointer-events-none absolute left-6 top-6 font-body text-[14px] tracking-[0.02em] text-hr-lumen">
+                  JNPT & Mundra • Port Drayage
+                </div>
+                <div className="pointer-events-none absolute bottom-6 left-6 right-6">
+                  <div className="max-w-[22ch] font-body text-[19px] leading-[1.2] text-hr-lumen">
+                    94% autonomous WhatsApp RFQ matching and instant POD clearance
+                  </div>
+                  <span className="mt-4 inline-flex items-center gap-2 border border-hr-border-cta px-4 py-[9px] font-mono text-[11px] uppercase tracking-[0.08em] text-hr-signal transition-colors group-hover:border-hr-stone">
+                    Explore corridor
+                    <span aria-hidden="true" className="text-hr-rust">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
