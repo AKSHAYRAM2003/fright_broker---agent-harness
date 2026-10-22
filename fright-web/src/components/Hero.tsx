@@ -93,12 +93,12 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 bg-transparent px-4.5 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
+                        className="min-w-0 flex-1 bg-transparent px-5 sm:px-6 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
                         defaultValue=""
                       />
                       <button
                         type="submit"
-                        className="group relative isolate inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden border-t sm:border-t-0 sm:border-l border-white/20 bg-hr-stone px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-[#070707] font-semibold no-underline transition-colors duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-white group-hover:text-white active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
+                        className="group relative isolate inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden bg-hr-stone px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-[#070707] font-semibold no-underline transition-colors duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-white group-hover:text-white active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
                       >
                         <span
                           aria-hidden="true"
