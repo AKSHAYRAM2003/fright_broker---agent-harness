@@ -98,14 +98,14 @@ export const Hero: React.FC = () => {
                       />
                       <button
                         type="submit"
-                        className="group relative isolate inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden border-t sm:border-t-0 sm:border-l border-white/20 bg-hr-cta-solid-bg px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-hr-cta-solid-fg no-underline transition-[opacity,transform,background-color,border-color,color] duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
+                        className="group relative isolate inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden border-t sm:border-t-0 sm:border-l border-white/20 bg-hr-stone px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-hr-canvas font-semibold no-underline transition-[opacity,transform,background-color,border-color,color] duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-cta-solid-fg hover:opacity-100 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
                       >
                         <span
                           aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
+                          className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-cta-solid-bg transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
                         ></span>
                         <span>Book a demo</span>
-                        <span aria-hidden="true" className="text-hr-rust">
+                        <span aria-hidden="true" className="text-hr-rust group-hover:text-white transition-colors">
                           →
                         </span>
                       </button>
