@@ -8,15 +8,15 @@ export const Header: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   return (
-    <div className="fixed inset-x-0 top-0 z-[60]">
-      {/* Top Operational Announcement Bar */}
+    <header className="fixed inset-x-0 top-0 z-[60]">
+      {/* 1. Operational Corridor Ticker Banner */}
       <div className="border-b border-hr-line-soft bg-emerald-950 text-white">
         <a
           href="#platform"
           className="mx-auto flex max-w-[1440px] items-center justify-center gap-3.5 px-5 py-[9px] font-mono text-[11px] uppercase tracking-[0.04em] text-emerald-300 md:px-12 no-underline hover:text-white transition-colors"
         >
           <span className="inline-flex shrink-0 items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             LIVE
           </span>
           <span className="hidden sm:inline">
@@ -31,13 +31,11 @@ export const Header: React.FC = () => {
         </a>
       </div>
 
-      {/* Main Navigation Bar */}
-      <nav
-        className="relative border-b border-hr-line backdrop-blur-md bg-white/95"
-      >
+      {/* 2. Main Navigation Bar */}
+      <nav className="relative border-b border-hr-line backdrop-blur-md bg-white/95">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-12">
           
-          {/* Brand Wordmark */}
+          {/* Brand Logo & Name */}
           <a href="/" className="flex items-center gap-2.5 no-underline">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-700 font-mono text-[16px] font-bold text-white shadow-sm">
               V
@@ -62,7 +60,7 @@ export const Header: React.FC = () => {
                 >
                   <span>{item.label}</span>
                   {item.badge && (
-                    <span className="rounded bg-emerald-100 px-1.5 py-0.2 font-mono text-[9px] font-bold text-emerald-800">
+                    <span className="rounded bg-emerald-100 px-1.5 py-0.5 font-mono text-[9px] font-bold text-emerald-800">
                       {item.badge}
                     </span>
                   )}
@@ -96,7 +94,7 @@ export const Header: React.FC = () => {
             ))}
           </div>
 
-          {/* Right Action Button */}
+          {/* Desktop Call to Action Button */}
           <div className="hidden items-center gap-3 lg:flex">
             <a
               href="#cta"
@@ -107,7 +105,7 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Actions: Pilot Button + Hamburger */}
           <div className="flex items-center gap-2.5 lg:hidden">
             <a
               href="#cta"
@@ -121,15 +119,15 @@ export const Header: React.FC = () => {
               className="flex flex-col gap-1 p-2 text-hr-ink-strong"
               aria-label="Toggle menu"
             >
-              <span className="block h-0.5 w-5 bg-current"></span>
-              <span className="block h-0.5 w-5 bg-current"></span>
-              <span className="block h-0.5 w-5 bg-current"></span>
+              <span className="block h-0.5 w-5 bg-current" />
+              <span className="block h-0.5 w-5 bg-current" />
+              <span className="block h-0.5 w-5 bg-current" />
             </button>
           </div>
 
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* 3. Mobile Drawer Menu */}
         {mobileMenuOpen && (
           <div className="border-b border-hr-line bg-white px-5 py-6 shadow-xl lg:hidden">
             <div className="flex flex-col space-y-4">
@@ -169,6 +167,6 @@ export const Header: React.FC = () => {
           </div>
         )}
       </nav>
-    </div>
+    </header>
   );
 };
