@@ -1,0 +1,264 @@
+[
+  {
+    "id": "ENG_01",
+    "language": "English",
+    "type": "load_inquiry",
+    "input_text": "Need 32ft MXL Container from Peenya, Bengaluru to Bhiwandi, Maharashtra tomorrow 2 PM. Cargo: 14 MT Pharmaceutical goods. Target rate is 52k.",
+    "expected": {
+      "origin": "Peenya, Bengaluru",
+      "destination": "Bhanswadi, Maharashtra",
+      "weight_tonnes": 14.0,
+      "vehicle_category": "CONTAINER_32_MXL",
+      "material_type": "Pharmaceutical goods",
+      "target_rate_inr": 52000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "ENG_02",
+    "language": "English",
+    "type": "load_inquiry",
+    "input_text": "Looking for 10-Wheeler Taurus for steel coils from Bellary to Chennai. Weight 18 tons. Loading on Friday morning.",
+    "expected": {
+      "origin": "Bellary",
+      "destination": "Chennai",
+      "weight_tonnes": 18.0,
+      "vehicle_category": "HCV_10W_TAURUS",
+      "material_type": "steel coils",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "ENG_INCOMPLETE",
+    "language": "English",
+    "type": "load_inquiry",
+    "input_text": "Need truck from Whitefield to Hyderabad tomorrow evening for machinery parts.",
+    "expected": {
+      "origin": "Whitefield",
+      "destination": "Hyderabad",
+      "weight_tonnes": null,
+      "vehicle_category": null,
+      "material_type": "machinery parts",
+      "target_rate_inr": null,
+      "is_complete": false,
+      "missing_fields": ["weight_tonnes", "vehicle_category"]
+    }
+  },
+  {
+    "id": "KAN_01",
+    "language": "Kannada",
+    "type": "load_inquiry",
+    "input_text": "ನಾಳೆ ಬೆಳಗ್ಗೆ ಪೀಣ್ಯದಿಂದ ಹುಬ್ಬಳ್ಳಿಗೆ ೧೬ ಟನ್ ಕಬ್ಬಿಣದ ರಾಡ್ ಲೋಡ್ ಇದೆ. ೧೦ ಚಕ್ರ ಟಾರಸ್ ಗಾಡಿ ಬೇಕು. ರೇಟ್ ೩೮ ಸಾವಿರ ಫಿಕ್ಸ್.",
+    "expected": {
+      "origin": "ಪೀಣ್ಯ",
+      "destination": "ಹುಬ್ಬಳ್ಳಿ",
+      "weight_tonnes": 16.0,
+      "vehicle_category": "HCV_10W_TAURUS",
+      "material_type": "ಕಬ್ಬಿಣದ ರಾಡ್",
+      "target_rate_inr": 38000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "KAN_02",
+    "language": "Kannada",
+    "type": "load_inquiry",
+    "input_text": "ಬೆಂಗಳೂರಿನಿಂದ ಬೆಳಗಾವಿಗೆ ೩೨ ಅಡಿ ಎಂಎಕ್ಸ್ಎಲ್ ಕಂಟೈನರ್ ಬೇಕು. ೧೨ ಟನ್ ದಿನಸಿ ಸಾಮಾನು ನಾಳೆ ಸಂಜೆ ಲೋಡಿಂಗ್.",
+    "expected": {
+      "origin": "ಬೆಂಗಳೂರು",
+      "destination": "ಬೆಳಗಾವಿ",
+      "weight_tonnes": 12.0,
+      "vehicle_category": "CONTAINER_32_MXL",
+      "material_type": "ದಿನಸಿ ಸಾಮಾನು",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "KAN_INCOMPLETE",
+    "language": "Kannada",
+    "type": "load_inquiry",
+    "input_text": "ಮೈಸೂರಿನಿಂದ ಮಂಗಳೂರಿಗೆ ಗಾರ್ಮೆಂಟ್ಸ್ ಲೋಡ್ ಇದೆ ನಾಳೆ ಬೆಳಗ್ಗೆ. ಗಾಡಿ ಕಳುಹಿಸಿ.",
+    "expected": {
+      "origin": "ಮೈಸೂರು",
+      "destination": "ಮಂಗಳೂರು",
+      "weight_tonnes": null,
+      "vehicle_category": null,
+      "material_type": "ಗಾರ್ಮೆಂಟ್ಸ್",
+      "target_rate_inr": null,
+      "is_complete": false,
+      "missing_fields": ["weight_tonnes", "vehicle_category"]
+    }
+  },
+  {
+    "id": "KGL_01",
+    "language": "Kanglish",
+    "type": "load_inquiry",
+    "input_text": "Nale belagge Peenya inda Hubli ge 16 ton load ide, 10 wheeler taurus beku. Material iron rods. Rate 38k final.",
+    "expected": {
+      "origin": "Peenya",
+      "destination": "Hubli",
+      "weight_tonnes": 16.0,
+      "vehicle_category": "HCV_10W_TAURUS",
+      "material_type": "iron rods",
+      "target_rate_inr": 38000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "KGL_02",
+    "language": "Kanglish",
+    "type": "load_inquiry",
+    "input_text": "Sir, Hosur inda Pune ge 32ft MXL container beku urgent. 14 tonnes auto parts, nale 5 PM loading. Customer budget 55,000.",
+    "expected": {
+      "origin": "Hosur",
+      "destination": "Pune",
+      "weight_tonnes": 14.0,
+      "vehicle_category": "CONTAINER_32_MXL",
+      "material_type": "auto parts",
+      "target_rate_inr": 55000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "KGL_03",
+    "language": "Kanglish",
+    "type": "load_inquiry",
+    "input_text": "Davanagere inda Bangalore ge chota hathi pickup beku 1.5 ton maize seeds urgent.",
+    "expected": {
+      "origin": "Davanagere",
+      "destination": "Bangalore",
+      "weight_tonnes": 1.5,
+      "vehicle_category": "LCV_SMALL",
+      "material_type": "maize seeds",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "HIN_01",
+    "language": "Hindi",
+    "type": "load_inquiry",
+    "input_text": "कल सुबह बेंगलुरु से मुंबई 12 टन फार्मा लोड है, 32 फ़ीट एमएक्सएल कंटेनर गाड़ी चाहिए। बजट 48000 रुपये।",
+    "expected": {
+      "origin": "बेंगलुरु",
+      "destination": "मुंबई",
+      "weight_tonnes": 12.0,
+      "vehicle_category": "CONTAINER_32_MXL",
+      "material_type": "फार्मा",
+      "target_rate_inr": 48000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "HIN_02",
+    "language": "Hindi",
+    "type": "load_inquiry",
+    "input_text": "सूरत से दिल्ली 18 टन कपड़ा लोड के लिए 10 चक्का टॉरस चाहिए। परसों लोडिंग।",
+    "expected": {
+      "origin": "सूरत",
+      "destination": "दिल्ली",
+      "weight_tonnes": 18.0,
+      "vehicle_category": "HCV_10W_TAURUS",
+      "material_type": "कपड़ा",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "HIN_INCOMPLETE",
+    "language": "Hindi",
+    "type": "load_inquiry",
+    "input_text": "कानपुर से कोलकाता के लिए गाड़ी चाहिए लेदर गुड्स कल शाम को।",
+    "expected": {
+      "origin": "कानपुर",
+      "destination": "कोलकाता",
+      "weight_tonnes": null,
+      "vehicle_category": null,
+      "material_type": "लेदर गुड्स",
+      "target_rate_inr": null,
+      "is_complete": false,
+      "missing_fields": ["weight_tonnes", "vehicle_category"]
+    }
+  },
+  {
+    "id": "HGL_01",
+    "language": "Hinglish",
+    "type": "load_inquiry",
+    "input_text": "Kal subah Whitefield se Pune 16T Taurus urgent FMCG dispatch hai bhai. Party ka budget 50k hai.",
+    "expected": {
+      "origin": "Whitefield",
+      "destination": "Pune",
+      "weight_tonnes": 16.0,
+      "vehicle_category": "HCV_10W_TAURUS",
+      "material_type": "FMCG",
+      "target_rate_inr": 50000.0,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "HGL_02",
+    "language": "Hinglish",
+    "type": "load_inquiry",
+    "input_text": "Bhaiya Bhiwandi se Bangalore ke liye 32ft HQ high cube container chahiye, 8 ton plastic goods, day after tomorrow loading.",
+    "expected": {
+      "origin": "Bhiwandi",
+      "destination": "Bangalore",
+      "weight_tonnes": 8.0,
+      "vehicle_category": "CONTAINER_32_HQ",
+      "material_type": "plastic goods",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "HGL_03",
+    "language": "Hinglish",
+    "type": "load_inquiry",
+    "input_text": "Delhi se Jaipur urgent 6 wheeler open truck chahiye 9 tonne tiles loading today 6 PM.",
+    "expected": {
+      "origin": "Delhi",
+      "destination": "Jaipur",
+      "weight_tonnes": 9.0,
+      "vehicle_category": "MCV_6W",
+      "material_type": "tiles",
+      "target_rate_inr": null,
+      "is_complete": true,
+      "missing_fields": []
+    }
+  },
+  {
+    "id": "QUOTE_HGL_01",
+    "language": "Hinglish",
+    "type": "transporter_quote",
+    "input_text": "Sharma ji BLR-BHW 32ft MXL ke liye 46k final ho payega. Loading extra nahi hai, tolls included.",
+    "expected": {
+      "quoted_amount": 46000.0,
+      "includes_tolls": true,
+      "loading_unloading_charges": 0.0
+    }
+  },
+  {
+    "id": "QUOTE_KGL_01",
+    "language": "Kanglish",
+    "type": "transporter_quote",
+    "input_text": "Bhaiya 10 wheeler Hubballi ge 35,000 agatte. Loading mamool 500 extra bidi.",
+    "expected": {
+      "quoted_amount": 35000.0,
+      "includes_tolls": true,
+      "loading_unloading_charges": 500.0
+    }
+  }
+]
