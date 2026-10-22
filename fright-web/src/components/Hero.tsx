@@ -18,11 +18,11 @@ export const Hero: React.FC = () => {
               loop
               playsInline
               preload="metadata"
-              className="absolute left-1/2 top-1/2 h-auto w-full max-w-none -translate-x-1/2 -translate-y-1/2"
+              className="absolute left-1/2 top-1/2 min-h-full min-w-full h-auto w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
               autoPlay
             >
               <source
-                src="/videos/HR_Landing_Hero_Loop_HD169_Lumen_v1.mp4"
+                src="/videos/hero.mp4"
                 type="video/mp4"
               />
             </video>
@@ -58,18 +58,23 @@ export const Hero: React.FC = () => {
             className="object-cover object-center"
           />
         </picture>
+        {/* Readability Overlays for Hero Video & Text Contrast */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3] hidden bg-[rgb(3_4_13)] mix-blend-color-dodge hrlight:block"
+          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-r from-[#fcfcfc]/95 via-[#fcfcfc]/85 to-[#fcfcfc]/35 md:from-[#fcfcfc]/95 md:via-[#fcfcfc]/80 md:to-[#fcfcfc]/25 backdrop-blur-[1px]"
+        ></div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-[#fcfcfc] via-transparent to-transparent"
         ></div>
         <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
-            <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-hr-ink-strong sm:text-[52px] sm:leading-[0.96] md:hr-headline-gradient md:text-transparent md:text-[68px] md:leading-[0.94] lg:text-[82px]">
+            <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-hr-ink-strong sm:text-[52px] sm:leading-[0.96] md:hr-headline-gradient md:text-transparent md:text-[68px] md:leading-[0.94] lg:text-[82px] drop-shadow-sm">
               Autonomous Operations for Indian Freight Brokers.
             </h1>
             <div className="mt-6 sm:mt-8 flex flex-col gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
               <div className="min-w-0 flex-1 max-w-[560px]">
-                <p className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] text-hr-ink-1">
+                <p className="max-w-[480px] text-[15px] sm:text-[16px] font-medium leading-[1.6] text-hr-ink-1">
                   Putting AI agents to work across India&apos;s freight corridors
                   — ingesting chaotic WhatsApp voice notes, enforcing strict ₹2,500 margin floors,
                   and automating load coordination that improves with every dispatch.
