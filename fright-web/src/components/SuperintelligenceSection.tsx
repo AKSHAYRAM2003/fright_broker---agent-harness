@@ -4,80 +4,8 @@ import React from "react";
 
 export const SuperintelligenceSection: React.FC = () => {
   return (
-    <section className="border-t border-hr-line bg-white py-16 md:py-24">
-      <div className="mx-auto max-w-[1440px] px-5 md:px-12">
-        <div className="mb-12 max-w-[800px]">
-          <div className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.08em] text-emerald-700">
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-600"></span>
-            Deterministic Safety vs Generic LLMs
-          </div>
-          <h2 className="font-body text-[32px] font-bold leading-[1.08] tracking-[-0.02em] text-hr-ink-strong md:text-[46px]">
-            Why standard chatbots fail on <span className="text-emerald-700">freight corridors.</span>
-          </h2>
-          <p className="mt-4 text-[15px] leading-relaxed text-hr-ink-3">
-            In freight brokerage, an AI error is not a typo—it is a ₹25,000 lost margin or a stolen container. Here is how VahanaAI protects your business.
-          </p>
-        </div>
-
-        {/* Side-by-Side Comparison */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* Failure Modes: Unconstrained Chatbots */}
-          <div className="rounded-2xl border border-red-200 bg-red-50/40 p-7">
-            <div className="flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-wider text-red-800">
-              <span>✕</span>
-              <span>Generic Prompt-Engineered Chatbots</span>
-            </div>
-
-            <ul className="mt-6 space-y-4 text-[13.5px] text-red-950">
-              <li className="flex items-start gap-2.5">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span><strong>Hallucinates Pricing:</strong> Agrees to unviable quotes without cross-referencing diesel rates, axle load permits, or toll plaza expenses.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span><strong>No Profit Floors:</strong> Concludes loads below the broker&apos;s cost floor, destroying profitability on high-volume lanes.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span><strong>Unchecked Commitments:</strong> Books unverified carriers without checking VAHAN RC status, fitness validity, or blacklists.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-red-500 font-bold shrink-0">•</span>
-                <span><strong>Zero Accountability:</strong> No audit trail or state machine to reconstruct what went wrong when a shipment is delayed.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Solution: VahanaAI Type-Safe Harness */}
-          <div className="rounded-2xl border border-emerald-300 bg-emerald-50/50 p-7 ring-1 ring-emerald-500/20">
-            <div className="flex items-center gap-2 font-mono text-[12px] font-bold uppercase tracking-wider text-emerald-800">
-              <span>✓</span>
-              <span>The VahanaAI Type-Safe Harness</span>
-            </div>
-
-            <ul className="mt-6 space-y-4 text-[13.5px] text-emerald-950">
-              <li className="flex items-start gap-2.5">
-                <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>Deterministic Margin Guardrail:</strong> Mathematical floor enforcement (₹2,500 / 5%). Unprofitable quotes cannot proceed without human approval.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>Government Gateway Interlock:</strong> Live MoRTH VAHAN & Sarathi checks automatically block blacklisted or unfitness-certified trucks.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>Priority Action Queue:</strong> Unresolvable edge cases automatically surface as 1-click decision cards on the broker&apos;s desk.</span>
-              </li>
-              <li className="flex items-start gap-2.5">
-                <span className="text-emerald-600 font-bold shrink-0">✓</span>
-                <span><strong>Multi-Modal Vision POD OCR:</strong> Photos of physical rubber-stamped Bilties are inspected before triggering final 30% carrier balance payouts.</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <>
+      <section className="border-t border-hr-line bg-hr-surface-2"><div className="mx-auto max-w-[1440px] px-5 py-16 md:px-12 md:py-[120px]"><div className="mb-10 flex flex-wrap items-start justify-between gap-8 md:mb-12 md:gap-10"><div><h2 className="font-body text-[29px] leading-none tracking-[-0.02em] text-hr-ink-strong md:whitespace-nowrap md:text-[46px]">This is Enterprise Superintelligence.</h2></div><p className="max-w-[420px] text-[15.5px] leading-[1.65] text-hr-ink-3"></p></div><div className="w-full"><div className="relative aspect-video w-full overflow-hidden bg-hr-cell"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><video muted loop playsInline preload="metadata" className="h-full w-full object-contain" autoPlay><source src="/videos/ESI_Launch.mp4" type="video/mp4" /></video><button type="button" aria-label="Play video" className="absolute bottom-4 left-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 4 12 8-12 8V4Z" fill="currentColor"></path></svg></button><button type="button" aria-label="Unmute video" aria-pressed="false" className="absolute bottom-4 right-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z" fill="currentColor" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"></path><path d="m17 9 4 6M21 9l-4 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></button></div><button type="button" aria-label="View explainer film fullscreen" aria-pressed="false" className="absolute bottom-4 right-[60px] z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9V3h6M21 15v6h-6M15 3h6v6M9 21H3v-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button></div></div></div></section>
+    </>
   );
 };

@@ -2,32 +2,45 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.vahanai.in"),
-  title: "VahanaAI | Autonomous AI Operations Harness for Indian Freight Brokers",
+  metadataBase: new URL("https://www.happyrobot.ai"),
+  title: "HappyRobot | Powering the systems that run the world",
   description:
-    "Type-Safe AI Agent Harness built for Indian road transport. Ingests multilingual WhatsApp voice notes (Kannada/Hindi), protects ₹2,500 profit floors, and verifies PODs.",
+    "Autonomous AI workers that communicate, coordinate, and operate at scale across the real economy.",
   keywords: [
-    "Indian Freight Brokerage",
-    "Logistics AI Agent",
-    "WhatsApp Voice Intake",
-    "Kanglish Kannada Logistics AI",
-    "FASTag Toll Tracking",
-    "Bilty POD OCR",
-    "Type-Safe Harness",
+    "Enterprise AI",
+    "Agentic Workflows",
+    "Autonomous Operations",
+    "Supply Chain AI",
+    "Logistics Automation",
+    "Voice AI Agents",
   ],
-  authors: [{ name: "VahanaAI Technologies" }],
+  authors: [{ name: "HappyRobot Inc." }],
   openGraph: {
-    title: "VahanaAI | The Operations Harness for Indian Road Freight",
+    title: "HappyRobot | Powering the systems that run the world",
     description:
-      "Autonomous dispatching, rate negotiation, and margin protection for India's ₹10 Lakh Crore logistics economy.",
-    url: "https://www.vahanai.in",
-    siteName: "VahanaAI",
-    locale: "en_IN",
+      "Autonomous AI workers that communicate, coordinate, and operate at scale across the real economy.",
+    url: "https://www.happyrobot.ai",
+    siteName: "HappyRobot",
+    images: [
+      {
+        url: "/images/cdn/hero_still.png",
+        width: 1200,
+        height: 630,
+        alt: "HappyRobot Autonomous Enterprise Operations",
+      },
+    ],
+    locale: "en_US",
     type: "website",
   },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
 };
@@ -46,8 +59,11 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
-      <body className="bg-hr-surface text-hr-ink-strong">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
