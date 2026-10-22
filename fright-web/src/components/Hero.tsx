@@ -65,26 +65,26 @@ export const Hero: React.FC = () => {
         <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
             <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-hr-ink-strong sm:text-[52px] sm:leading-[0.96] md:hr-headline-gradient md:text-transparent md:text-[68px] md:leading-[0.94] lg:text-[82px]">
-              Achieving Enterprise Superintelligence.
+              Autonomous Operations for Indian Freight Brokers.
             </h1>
             <div className="mt-6 sm:mt-8 flex flex-col gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
               <div className="min-w-0 flex-1 max-w-[560px]">
                 <p className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] text-hr-ink-1">
-                  Putting AI agents to work in even your most complex workflows
-                  - where the context they capture compounds into a living model
-                  of your business that improves with every task.
+                  Putting AI agents to work across India&apos;s freight corridors
+                  — ingesting chaotic WhatsApp voice notes, enforcing strict ₹2,500 margin floors,
+                  and automating load coordination that improves with every dispatch.
                 </p>
                 <div id="hero-agent" className="mt-6 sm:mt-[30px] scroll-mt-32">
                   <form noValidate className="w-full max-w-[480px]">
                     <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0">
                       <label htmlFor="hero-email" className="sr-only">
-                        Work email
+                        Work email or WhatsApp
                       </label>
                       <input
                         id="hero-email"
-                        type="email"
+                        type="text"
                         required
-                        placeholder="Enter your work email"
+                        placeholder="Enter your WhatsApp number or email"
                         className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-hr-surface px-4 py-[13px] font-body text-[14px] text-hr-ink-strong outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0 md:bg-transparent"
                         defaultValue=""
                       />
