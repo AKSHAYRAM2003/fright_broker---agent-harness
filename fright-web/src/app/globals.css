@@ -58,7 +58,11 @@ body {
    Original UI Styles & Interactive Enhancements
    ======================================================== */
 
-/* Hero Video Readability Overlay */
+/* Hero Video Treatment & Readability Overlay */
+.hero-video-element {
+  filter: contrast(1.06) saturate(1.12) brightness(0.95);
+}
+
 .hero-video-overlay {
   position: absolute;
   inset: 0;
@@ -66,28 +70,26 @@ body {
   pointer-events: none;
   background: 
     linear-gradient(90deg, 
-      rgba(252, 252, 252, 0.98) 0%, 
-      rgba(252, 252, 252, 0.95) 35%, 
-      rgba(252, 252, 252, 0.88) 55%, 
-      rgba(252, 252, 252, 0.55) 78%, 
-      rgba(252, 252, 252, 0.20) 100%
+      rgba(252, 252, 252, 0.96) 0%, 
+      rgba(252, 252, 252, 0.90) 32%, 
+      rgba(252, 252, 252, 0.65) 55%, 
+      rgba(252, 252, 252, 0.22) 78%, 
+      rgba(252, 252, 252, 0.05) 100%
     ),
     linear-gradient(180deg, 
-      rgba(252, 252, 252, 0.8) 0%, 
-      transparent 22%, 
-      transparent 65%, 
+      rgba(252, 252, 252, 0.65) 0%, 
+      transparent 20%, 
+      transparent 75%, 
       rgba(252, 252, 252, 1) 100%
     );
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
 }
 
 @media (max-width: 768px) {
   .hero-video-overlay {
     background: 
       linear-gradient(180deg, 
-        rgba(252, 252, 252, 0.96) 0%, 
-        rgba(252, 252, 252, 0.90) 50%, 
+        rgba(252, 252, 252, 0.95) 0%, 
+        rgba(252, 252, 252, 0.88) 50%, 
         rgba(252, 252, 252, 0.98) 100%
       );
   }
