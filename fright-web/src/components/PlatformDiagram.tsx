@@ -14,7 +14,7 @@ export const PlatformDiagram: React.FC = () => {
           id="platform-diagram"
           className="scroll-mt-24 border-t border-[#dad5cc] bg-hr-signal hrlight:border-hr-stone"
         >
-          <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 px-5 py-20 md:px-12 md:py-[150px] lg:grid-cols-[0.85fr_1fr] lg:gap-20">
+          <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-12 px-5 py-16 md:px-12 md:py-[130px] lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 xl:gap-20">
             <div>
               <h2 className="font-body text-[29px] leading-[1.04] tracking-[-0.02em] text-hr-canvas md:text-[46px]">
                 Brokers need <span className="text-hr-ink-4">an operating harness.</span>
@@ -56,7 +56,7 @@ export const PlatformDiagram: React.FC = () => {
               <img
                 src="/images/harness_systems.png"
                 alt="VahanaAI Freight Broker Harness Architecture"
-                className="h-auto w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[540px] xl:max-w-[600px] lg:ml-auto object-contain rounded-xl"
+                className="h-auto w-full max-w-[600px] sm:max-w-[660px] lg:max-w-[740px] xl:max-w-[820px] lg:ml-auto object-contain rounded-xl shadow-lg"
               />
             </div>
           </div>
