@@ -121,7 +121,7 @@ export const DesktopNav: React.FC = () => {
 
       {/* Login CTA Button */}
       <a
-        className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust gap-[9px] bg-hr-cta-solid-bg text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none px-5 py-[10px]"
+        className="group inline-flex items-center justify-center min-w-[92px] px-6 py-2.5 font-body text-[12px] font-semibold uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust gap-[9px] bg-hr-cta-solid-bg text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none"
         href="#hero-agent"
       >
         <span
