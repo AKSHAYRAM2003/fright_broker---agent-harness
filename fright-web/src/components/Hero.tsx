@@ -58,18 +58,23 @@ export const Hero: React.FC = () => {
             className="object-cover object-center"
           />
         </picture>
+        {/* Dark Overlay on Hero Video */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3] hidden bg-[rgb(3_4_13)] mix-blend-color-dodge hrlight:block"
+          className="pointer-events-none absolute inset-0 z-[3]"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.50) 100%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 40%)",
+          }}
         ></div>
         <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
-            <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-hr-ink-strong sm:text-[52px] sm:leading-[0.96] md:hr-headline-gradient md:text-transparent md:text-[68px] md:leading-[0.94] lg:text-[82px]">
+            <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-white sm:text-[52px] sm:leading-[0.96] md:text-[68px] md:leading-[0.94] lg:text-[82px] drop-shadow-md">
               Autonomous Operations for Indian Freight Brokers.
             </h1>
             <div className="mt-6 sm:mt-8 flex flex-col gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
               <div className="min-w-0 flex-1 max-w-[560px]">
-                <p className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] text-hr-ink-1">
+                <p className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] text-white/90 drop-shadow-sm">
                   Putting AI agents to work across India&apos;s freight corridors
                   — ingesting chaotic WhatsApp voice notes, enforcing strict ₹2,500 margin floors,
                   and automating load coordination that improves with every dispatch.
@@ -85,19 +90,15 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-hr-surface px-4 py-[13px] font-body text-[14px] text-hr-ink-strong outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0 md:bg-transparent"
+                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-white/30 bg-black/50 backdrop-blur-sm px-4 py-[13px] font-body text-[14px] text-white placeholder:text-white/60 outline-none transition-colors focus:border-white sm:border-r-0"
                         defaultValue=""
                       />
                       <button
                         type="submit"
-                        className="group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none shrink-0 gap-2 rounded-lg sm:rounded-l-none cursor-pointer"
+                        className="group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust bg-white text-black font-semibold px-6 py-[14px] duration-[250ms] hover:bg-hr-rust hover:text-white shrink-0 gap-2 rounded-lg sm:rounded-l-none cursor-pointer"
                       >
-                        <span
-                          aria-hidden="true"
-                          className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
-                        ></span>
                         <span>Book a demo</span>
-                        <span aria-hidden="true" className="text-hr-rust">
+                        <span aria-hidden="true" className="text-hr-rust group-hover:text-white transition-colors">
                           →
                         </span>
                       </button>
