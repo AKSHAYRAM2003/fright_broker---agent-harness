@@ -14,7 +14,7 @@ export const PlatformDiagram: React.FC = () => {
           id="platform-diagram"
           className="scroll-mt-24 border-t border-[#dad5cc] bg-hr-signal hrlight:border-hr-stone"
         >
-          <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-14 px-5 py-20 md:px-12 md:py-[150px] lg:grid-cols-[0.85fr_1fr] lg:gap-20">
+          <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-5 py-16 md:gap-14 md:px-12 md:py-[130px] lg:grid-cols-[0.8fr_1.2fr] lg:gap-14 xl:gap-20">
             <div>
               <h2 className="font-body text-[29px] leading-[1.04] tracking-[-0.02em] text-hr-canvas md:text-[46px]">
                 Brokers need <span className="text-hr-ink-4">an operating harness.</span>
@@ -52,12 +52,16 @@ export const PlatformDiagram: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center">
-              <img
-                src="/images/cdn/landing-platform-diagram.svg"
-                alt="VahanaAI Freight Broker Harness Architecture"
-                className="h-auto w-full max-w-[420px]"
-              />
+            <div className="flex w-full items-center justify-center lg:justify-end">
+              <div className="w-full overflow-hidden rounded-2xl border border-white/15 bg-white/5 p-2 shadow-2xl backdrop-blur-sm sm:p-3 lg:p-3.5">
+                <img
+                  src="/images/harness_systems.png"
+                  alt="VahanaAI Freight Broker Harness Architecture"
+                  className="h-auto w-full rounded-xl object-contain shadow-lg"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
             </div>
           </div>
         </section>
