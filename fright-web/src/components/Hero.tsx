@@ -74,7 +74,10 @@ export const Hero: React.FC = () => {
             </h1>
             <div className="mt-6 sm:mt-8 flex flex-col gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
               <div className="min-w-0 flex-1 max-w-[560px]">
-                <p className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] text-white/90 drop-shadow-sm">
+                <p
+                  className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] drop-shadow-sm text-hr-surface-2"
+                  style={{ color: "var(--hr-surface-2, #f7f6f4)" }}
+                >
                   Putting AI agents to work across India&apos;s freight corridors
                   — ingesting chaotic WhatsApp voice notes, enforcing strict ₹2,500 margin floors,
                   and automating load coordination that improves with every dispatch.
@@ -95,10 +98,14 @@ export const Hero: React.FC = () => {
                       />
                       <button
                         type="submit"
-                        className="group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust bg-white text-black font-semibold px-6 py-[14px] duration-[250ms] hover:bg-hr-rust hover:text-white shrink-0 gap-2 rounded-lg sm:rounded-l-none cursor-pointer"
+                        className="group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none shrink-0 gap-2 rounded-lg sm:rounded-l-none cursor-pointer"
                       >
+                        <span
+                          aria-hidden="true"
+                          className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
+                        ></span>
                         <span>Book a demo</span>
-                        <span aria-hidden="true" className="text-hr-rust group-hover:text-white transition-colors">
+                        <span aria-hidden="true" className="text-hr-rust">
                           →
                         </span>
                       </button>
