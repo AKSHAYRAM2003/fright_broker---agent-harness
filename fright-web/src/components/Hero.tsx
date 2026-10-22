@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
               loop
               playsInline
               preload="metadata"
-              className="absolute left-1/2 top-1/2 min-h-full min-w-full h-auto w-auto max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+              className="absolute left-1/2 top-1/2 h-auto w-full max-w-none -translate-x-1/2 -translate-y-1/2"
               autoPlay
             >
               <source
@@ -58,16 +58,9 @@ export const Hero: React.FC = () => {
             className="object-cover object-center"
           />
         </picture>
-        {/* Soft Radial Ambient Scrim & Vignette for Text Legibility */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3]"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 75% at 22% 48%, rgba(252, 252, 252, 0.94) 0%, rgba(252, 252, 252, 0.85) 35%, rgba(252, 252, 252, 0.40) 65%, transparent 100%), linear-gradient(180deg, rgba(252, 252, 252, 0.6) 0%, transparent 20%, transparent 78%, rgba(252, 252, 252, 1) 100%)",
-            backdropFilter: "blur(2px)",
-            WebkitBackdropFilter: "blur(2px)",
-          }}
+          className="pointer-events-none absolute inset-0 z-[3] hidden bg-[rgb(3_4_13)] mix-blend-color-dodge hrlight:block"
         ></div>
         <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
@@ -92,7 +85,7 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-white/95 px-4 py-[13px] font-body text-[14px] text-hr-ink-strong shadow-xs outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0"
+                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-hr-surface px-4 py-[13px] font-body text-[14px] text-hr-ink-strong outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0 md:bg-transparent"
                         defaultValue=""
                       />
                       <button
