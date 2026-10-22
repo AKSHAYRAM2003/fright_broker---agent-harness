@@ -61,11 +61,11 @@ export const Hero: React.FC = () => {
         {/* Readability Overlays for Hero Video & Text Contrast */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-r from-[#fcfcfc]/95 via-[#fcfcfc]/85 to-[#fcfcfc]/35 md:from-[#fcfcfc]/95 md:via-[#fcfcfc]/80 md:to-[#fcfcfc]/25 backdrop-blur-[1px]"
-        ></div>
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[3] bg-gradient-to-t from-[#fcfcfc] via-transparent to-transparent"
+          className="hero-video-overlay"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(252, 252, 252, 0.98) 0%, rgba(252, 252, 252, 0.94) 40%, rgba(252, 252, 252, 0.82) 60%, rgba(252, 252, 252, 0.45) 85%, rgba(252, 252, 252, 0.15) 100%), linear-gradient(180deg, rgba(252, 252, 252, 0.75) 0%, transparent 25%, transparent 65%, rgba(252, 252, 252, 1) 100%)",
+          }}
         ></div>
         <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
@@ -90,7 +90,7 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-hr-surface px-4 py-[13px] font-body text-[14px] text-hr-ink-strong outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0 md:bg-transparent"
+                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-hr-border-cta bg-white/95 px-4 py-[13px] font-body text-[14px] text-hr-ink-strong shadow-xs outline-none transition-colors placeholder:text-hr-ink-4 focus:border-hr-stone sm:border-r-0"
                         defaultValue=""
                       />
                       <button

@@ -2,24 +2,29 @@
 
 /* HappyRobot Font Faces */
 @font-face {
-  font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Book.woff2') format('woff2');
+  font-family: "SuisseIntl";
+  src: url("/fonts/SuisseIntl-Book.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Regular.woff2') format('woff2'),
-       url('/fonts/SuisseIntl-Regular.ttf') format('truetype');
+  font-family: "SuisseIntl";
+  src:
+    url("/fonts/SuisseIntl-Regular.woff2") format("woff2"),
+    url("/fonts/SuisseIntl-Regular.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 /* Force Light Theme CSS Variables */
-:root, [data-mode="light"], [data-theme="light"], .hr-landing, .hr-landing[data-mode="light"] {
+:root,
+[data-mode="light"],
+[data-theme="light"],
+.hr-landing,
+.hr-landing[data-mode="light"] {
   --hr-obsidian: #070707 !important;
   --hr-wordmark: #070707 !important;
   --hr-surface: #fcfcfc !important;
@@ -53,6 +58,41 @@ body {
    Original UI Styles & Interactive Enhancements
    ======================================================== */
 
+/* Hero Video Readability Overlay */
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: 
+    linear-gradient(90deg, 
+      rgba(252, 252, 252, 0.98) 0%, 
+      rgba(252, 252, 252, 0.95) 35%, 
+      rgba(252, 252, 252, 0.88) 55%, 
+      rgba(252, 252, 252, 0.55) 78%, 
+      rgba(252, 252, 252, 0.20) 100%
+    ),
+    linear-gradient(180deg, 
+      rgba(252, 252, 252, 0.8) 0%, 
+      transparent 22%, 
+      transparent 65%, 
+      rgba(252, 252, 252, 1) 100%
+    );
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+}
+
+@media (max-width: 768px) {
+  .hero-video-overlay {
+    background: 
+      linear-gradient(180deg, 
+        rgba(252, 252, 252, 0.96) 0%, 
+        rgba(252, 252, 252, 0.90) 50%, 
+        rgba(252, 252, 252, 0.98) 100%
+      );
+  }
+}
+
 /* Statement Scrollytelling Highlight */
 #statement-section {
   background-color: #f7f6f4 !important;
@@ -62,7 +102,10 @@ body {
   margin-right: 0.26em;
   color: #a8a29e;
   opacity: 0.25;
-  transition: opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1), color 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.15s ease,
+    transform 0.15s ease;
   will-change: opacity, color;
 }
 #statement-heading span.is-lit {
@@ -78,7 +121,9 @@ body {
 .hr-reveal {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 .hr-reveal.hr-visible {
@@ -92,7 +137,9 @@ body {
   color: #070707 !important;
   border-bottom: 1px solid #dad5cc !important;
   box-shadow: 0 28px 50px -10px rgba(0, 0, 0, 0.15) !important;
-  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  transition:
+    max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease;
   z-index: 70 !important;
 }
 #desktop-mega-menu.menu-open {
@@ -115,13 +162,16 @@ body {
   box-shadow: 0 28px 50px -10px rgba(0, 0, 0, 0.15) !important;
   z-index: 70 !important;
 }
-#mobile-drawer button, #mobile-drawer a {
+#mobile-drawer button,
+#mobile-drawer a {
   color: #070707 !important;
 }
 
 /* Mobile Hamburger Transformation */
 #mobile-menu-btn span {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s ease;
 }
 #mobile-menu-btn.is-active span:first-child {
   transform: translateY(2.75px) rotate(45deg);
@@ -145,7 +195,9 @@ body {
 }
 
 .hr-logo-cell {
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 .hr-logo-cell:hover {
   background-color: rgba(0, 0, 0, 0.04);
@@ -175,12 +227,14 @@ img[data-nimg="fill"] {
   border: 1px solid #333333;
   padding: 14px 20px;
   border-radius: 6px;
-  box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
   font-size: 13.5px;
   transform: translateY(60px);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.35s ease;
 }
 #hr-toast.show {
   transform: translateY(0);
@@ -215,7 +269,7 @@ img[data-nimg="fill"] {
   width: 100%;
   padding: 36px;
   position: relative;
-  box-shadow: 0 28px 60px rgba(0,0,0,0.25);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.25);
   transform: scale(0.96);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
