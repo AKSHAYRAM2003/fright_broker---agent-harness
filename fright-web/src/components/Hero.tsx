@@ -84,7 +84,7 @@ export const Hero: React.FC = () => {
                 </p>
                 <div id="hero-agent" className="mt-6 sm:mt-[30px] scroll-mt-32">
                   <form noValidate className="w-full max-w-[480px]">
-                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0">
+                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0 rounded-lg overflow-hidden border border-white/25 bg-black/60 backdrop-blur-md shadow-2xl transition-colors focus-within:border-white/50">
                       <label htmlFor="hero-email" className="sr-only">
                         Work email or WhatsApp
                       </label>
@@ -93,12 +93,12 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 rounded-lg sm:rounded-r-none border border-white/30 bg-black/50 backdrop-blur-sm px-4 py-[13px] font-body text-[14px] text-white placeholder:text-white/60 outline-none transition-colors focus:border-white sm:border-r-0"
+                        className="min-w-0 flex-1 bg-transparent px-4.5 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
                         defaultValue=""
                       />
                       <button
                         type="submit"
-                        className="group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none shrink-0 gap-2 rounded-lg sm:rounded-l-none cursor-pointer"
+                        className="group relative isolate inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden border-t sm:border-t-0 sm:border-l border-white/20 bg-hr-cta-solid-bg px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-hr-cta-solid-fg no-underline transition-[opacity,transform,background-color,border-color,color] duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
                       >
                         <span
                           aria-hidden="true"
