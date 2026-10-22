@@ -16,7 +16,10 @@ import { InteractiveScripts } from "@/components/InteractiveScripts";
 
 export default function Home() {
   return (
-    <div data-mode="light" className="hr-landing min-h-[100svh] overflow-x-clip bg-hr-surface font-body text-hr-ink-strong antialiased">
+    <div
+      data-mode="light"
+      className="hr-landing min-h-[100svh] overflow-x-clip bg-hr-surface font-body text-hr-ink-strong antialiased"
+    >
       {/* Header with Announcement, Navbar, Desktop Mega Menu, and Mobile Drawer */}
       <Header />
 
@@ -26,7 +29,7 @@ export default function Home() {
         <Hero />
 
         {/* Section 1: Logo Wall */}
-        <LogoWall />
+        {/* <LogoWall /> */}
 
         {/* Section 2: Statement */}
         <StatementSection />
@@ -41,13 +44,13 @@ export default function Home() {
         <VerticalsSection />
 
         {/* Section 6: Enterprise Superintelligence */}
-        <SuperintelligenceSection />
+        {/* <SuperintelligenceSection /> */}
 
         {/* Section 7: Platform Deep Dive */}
         <PlatformDeepDive />
 
         {/* Section 8: Careers */}
-        <CareersSection />
+        {/* <CareersSection /> */}
 
         {/* Section 9: Call to Action */}
         <CtaSection />

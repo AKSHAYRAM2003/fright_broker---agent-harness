@@ -5,7 +5,58 @@ import React from "react";
 export const CtaSection: React.FC = () => {
   return (
     <>
-      <div data-mode="light" className="hr-landing font-body text-hr-ink-strong"><section id="cta" className="relative scroll-mt-24 overflow-hidden bg-hr-surface"><div className="mx-auto max-w-[1440px] px-5 py-20 text-center md:px-12 md:py-[160px]"><h2 className="mx-auto max-w-[16ch] font-display text-[38px] leading-[0.98] text-hr-ink-strong md:text-[76px] md:leading-[0.94]">Put agents to work in <span className="text-hr-accent">complex environments.</span></h2><div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:mt-12"><button type="button" aria-busy="true" className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative isolate gap-[9px] overflow-hidden bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas motion-reduce:transition-none"><span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"></span><span>Talk to a HappyRobot</span><svg viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="h-3.5 w-3.5 shrink-0 text-hr-rust"><rect width="6" height="6"></rect><rect x="12" y="12" width="6" height="6"></rect><rect y="6" width="3" height="3"></rect><rect x="3" y="9" width="3" height="3"></rect><rect x="6" y="12" width="3" height="3"></rect><rect x="9" y="15" width="3" height="3"></rect></svg></button><a className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative gap-[9px] px-1 py-[14px] text-hr-signal hover:text-hr-lumen hrlight:text-hr-ink-strong hrlight:hover:text-hr-ink-strong" href="/contact/demo"><span>Book a demo</span><span aria-hidden="true" className="pointer-events-none absolute left-0 h-px w-full bg-current group-hover:animate-[hr-underline-sweep_0.6s_cubic-bezier(0.65,0,0.35,1)] bottom-0 text-hr-line-warm"></span></a></div></div></section></div>
+      <div
+        data-mode="light"
+        className="hr-landing font-body text-hr-ink-strong"
+      >
+        <section
+          id="cta"
+          className="relative scroll-mt-24 overflow-hidden bg-hr-surface"
+        >
+          <div className="mx-auto max-w-[1440px] px-5 py-20 text-center md:px-12 md:py-[160px]">
+            <h2 className="mx-auto max-w-[18ch] font-display text-[38px] leading-[0.98] text-hr-ink-strong md:text-[76px] md:leading-[0.94]">
+              Put agents to work on{" "}
+              <span className="text-hr-accent">India&apos;s freight corridors.</span>
+            </h2>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4 md:mt-12">
+              <a
+                href="#hero-agent"
+                className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative isolate gap-[9px] overflow-hidden bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas motion-reduce:transition-none cursor-pointer"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
+                ></span>
+                <span>Schedule Corridor Pilot</span>
+                <svg
+                  viewBox="0 0 18 18"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 shrink-0 text-hr-rust"
+                >
+                  <rect width="6" height="6"></rect>
+                  <rect x="12" y="12" width="6" height="6"></rect>
+                  <rect y="6" width="3" height="3"></rect>
+                  <rect x="3" y="9" width="3" height="3"></rect>
+                  <rect x="6" y="12" width="3" height="3"></rect>
+                  <rect x="9" y="15" width="3" height="3"></rect>
+                </svg>
+              </a>
+              <a
+                className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative gap-[9px] px-1 py-[14px] text-hr-signal hover:text-hr-lumen hrlight:text-hr-ink-strong hrlight:hover:text-hr-ink-strong cursor-pointer"
+                href="#platform"
+              >
+                <span>Explore platform harness</span>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-0 h-px w-full bg-current group-hover:animate-[hr-underline-sweep_0.6s_cubic-bezier(0.65,0,0.35,1)] bottom-0 text-hr-line-warm"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 };
