@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
               />
-              <span>Book a demo</span>
+              <span>Login</span>
             </a>
 
             {/* Hamburger Toggle Button */}

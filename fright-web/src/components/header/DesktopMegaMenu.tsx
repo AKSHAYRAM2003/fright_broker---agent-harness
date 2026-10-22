@@ -2,14 +2,14 @@ import React from "react";
 
 /**
  * Desktop Mega Menu Component
- * Contains the two large dropdown panels:
- * 1. #panel-platform: Platform overview, Agents, Governance, Context, Interfaces, Security, Developer tools
- * 2. #panel-solutions: Solutions by industry & by function
+ * Contains the two large dropdown panels customized for Indian Freight Brokerage Harness:
+ * 1. #panel-platform: Harness architecture (Voice Ingestion, Deterministic Guardrails, Freight Context, HITL Queue)
+ * 2. #panel-solutions: Corridors & Fleet types, plus Operations Workflows
  */
 export const DesktopMegaMenu: React.FC = () => {
   return (
     <div
-      className="absolute inset-x-0 top-full overflow-hidden bg-[#070707]/95 border-b border-[#2e2e2e] shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out z-[55]"
+      className="absolute inset-x-0 top-full overflow-hidden bg-white/98 border-b border-hr-line shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out z-[55]"
       id="desktop-mega-menu"
       style={{
         maxHeight: "0",
@@ -17,19 +17,19 @@ export const DesktopMegaMenu: React.FC = () => {
         pointerEvents: "none",
       }}
     >
-      {/* ---------------- PANEL 1: PLATFORM ---------------- */}
+      {/* ---------------- PANEL 1: HARNESS ARCHITECTURE ---------------- */}
       <div
         className="inset-x-0 top-0 transition-opacity duration-300 pointer-events-none opacity-0"
         id="panel-platform"
       >
         <div className="mx-auto max-w-[1440px] px-5 py-10 md:px-12">
-          {/* Main platform overview link */}
+          {/* Main harness overview link */}
           <a
             className="group mb-8 flex items-center gap-3 border-b border-hr-line-strong pb-5 no-underline"
-            href="/product/platform-overview"
+            href="#platform"
           >
             <span className="relative font-body text-[20px] leading-none tracking-[-0.01em] text-hr-ink-strong">
-              Platform overview
+              Harness Architecture Overview
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -46,14 +46,15 @@ export const DesktopMegaMenu: React.FC = () => {
           <div className="flex gap-12">
             {/* Left grid of 4 core pillars */}
             <div className="grid flex-1 grid-cols-4 gap-x-10 gap-y-8">
-              {/* Pillar 1: Agents */}
+              
+              {/* Pillar 1: Voice & Ingestion */}
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/agents/agents-overview"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Agents
+                    Voice &amp; Ingestion
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -61,38 +62,38 @@ export const DesktopMegaMenu: React.FC = () => {
                   </span>
                 </a>
                 <p className="mt-1.5 font-body text-[12.5px] normal-case leading-snug tracking-normal text-hr-ink-4">
-                  The core of the platform
+                  Multilingual WhatsApp voice parser
                 </p>
                 <div className="mt-2.5 flex flex-wrap gap-1.5">
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/agents/agentic-tools"
+                    href="#platform"
                   >
-                    Agentic tools
+                    Kannada &amp; Hindi ASR
                   </a>
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/agents/voice-ai"
+                    href="#platform"
                   >
-                    Voice AI
+                    Audio Ingestion
                   </a>
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/agents/workflow-logic"
+                    href="#platform"
                   >
-                    Workflow logic
+                    NER Rate Parser
                   </a>
                 </div>
               </div>
 
-              {/* Pillar 2: Governance */}
+              {/* Pillar 2: Deterministic Guardrails */}
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/governance"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Governance
+                    Deterministic Guardrails
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -100,38 +101,38 @@ export const DesktopMegaMenu: React.FC = () => {
                   </span>
                 </a>
                 <p className="mt-1.5 font-body text-[12.5px] normal-case leading-snug tracking-normal text-hr-ink-4">
-                  Evaluating agent behavior
+                  Margin protection &amp; policies
                 </p>
                 <div className="mt-2.5 flex flex-wrap gap-1.5">
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/governance/northstars"
+                    href="#platform"
                   >
-                    Northstars
+                    ₹2,500 Profit Floor
                   </a>
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/governance/adversarial-agents"
+                    href="#platform"
                   >
-                    Adversarial agents
+                    Rate Benchmark FSM
                   </a>
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/governance/audits-and-tests"
+                    href="#platform"
                   >
-                    Audits &amp; tests
+                    Anti-Hallucination
                   </a>
                 </div>
               </div>
 
-              {/* Pillar 3: Context */}
+              {/* Pillar 3: Freight Context */}
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/context/context-overview"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Context
+                    Freight Context
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -139,32 +140,38 @@ export const DesktopMegaMenu: React.FC = () => {
                   </span>
                 </a>
                 <p className="mt-1.5 font-body text-[12.5px] normal-case leading-snug tracking-normal text-hr-ink-4">
-                  What agents generate &amp; learn from
+                  Live transport telemetry
                 </p>
                 <div className="mt-2.5 flex flex-wrap gap-1.5">
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/agents/integrations"
+                    href="#platform"
                   >
-                    Integrations
+                    VAHAN RC Registry
                   </a>
                   <a
                     className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
-                    href="/product/governance/agentic-data"
+                    href="#platform"
                   >
-                    Agentic data
+                    FASTag Geofence
+                  </a>
+                  <a
+                    className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
+                    href="#platform"
+                  >
+                    Photo Bilty OCR
                   </a>
                 </div>
               </div>
 
-              {/* Pillar 4: Interfaces */}
+              {/* Pillar 4: HITL Action Queue */}
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/interfaces"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Interfaces
+                    HITL Action Queue
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -172,8 +179,28 @@ export const DesktopMegaMenu: React.FC = () => {
                   </span>
                 </a>
                 <p className="mt-1.5 font-body text-[12.5px] normal-case leading-snug tracking-normal text-hr-ink-4">
-                  How humans interact with agents
+                  Broker exception approvals
                 </p>
+                <div className="mt-2.5 flex flex-wrap gap-1.5">
+                  <a
+                    className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
+                    href="#platform"
+                  >
+                    Margin Alerts
+                  </a>
+                  <a
+                    className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
+                    href="#platform"
+                  >
+                    WhatsApp Bot UI
+                  </a>
+                  <a
+                    className="hr-chip-draw relative border border-hr-line px-2.5 py-1 font-body text-[11.5px] normal-case tracking-normal text-hr-ink-2 no-underline transition-colors hover:text-hr-ink-strong"
+                    href="#platform"
+                  >
+                    Broker Dispatch
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -182,10 +209,10 @@ export const DesktopMegaMenu: React.FC = () => {
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/security-and-reliability"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Security &amp; reliability
+                    Corridor SLA &amp; Safety
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -202,10 +229,10 @@ export const DesktopMegaMenu: React.FC = () => {
               <div>
                 <a
                   className="group flex w-full items-center gap-2 no-underline"
-                  href="/product/developer-tools"
+                  href="#platform"
                 >
                   <span className="relative font-body text-[15px] normal-case tracking-[0.01em] text-hr-ink-strong">
-                    Developer tools
+                    Broker API &amp; Webhooks
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
@@ -224,28 +251,28 @@ export const DesktopMegaMenu: React.FC = () => {
         </div>
       </div>
 
-      {/* ---------------- PANEL 2: SOLUTIONS ---------------- */}
+      {/* ---------------- PANEL 2: CORRIDORS & WORKFLOWS ---------------- */}
       <div
         className="inset-x-0 top-0 transition-opacity duration-300 pointer-events-none opacity-0 hidden"
         id="panel-solutions"
       >
         <div className="mx-auto flex max-w-[1440px] justify-between gap-12 px-5 py-10 md:px-12">
           <div className="hr-hover-dim flex gap-x-12">
-            {/* By Industry */}
+            {/* By Corridor & Fleet */}
             <div className="flex flex-col">
               <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-hr-ink-4">
-                By industry
+                By Corridor &amp; Fleet
               </div>
-              <div className="grid grid-cols-[184px_184px] gap-x-10">
+              <div className="grid grid-cols-[200px_200px] gap-x-10">
                 {[
-                  { name: "Logistics", href: "/solutions/industries/logistics-providers" },
-                  { name: "Utilities", href: "/solutions/industries/utilities" },
-                  { name: "Airlines", href: "/solutions/industries/airlines" },
-                  { name: "Finance", href: "/solutions/industries/financial-services" },
-                  { name: "Insurance", href: "/solutions/industries/insurance" },
-                  { name: "Manufacturing", href: "/solutions/industries/manufacturers-suppliers" },
-                  { name: "Retail", href: "/solutions/industries/retail" },
-                  { name: "Telecom", href: "/solutions/industries/telecom" },
+                  { name: "NH-48 (Bengaluru - Mumbai)", href: "#case-studies" },
+                  { name: "NH-44 (Delhi - Chennai)", href: "#case-studies" },
+                  { name: "NH-16 (Kolkata - Chennai)", href: "#case-studies" },
+                  { name: "NH-19 (Delhi - Kolkata)", href: "#case-studies" },
+                  { name: "32ft MXL Containers", href: "#case-studies" },
+                  { name: "20ft Open Body Trucks", href: "#case-studies" },
+                  { name: "Trailer & Multi-Axle", href: "#case-studies" },
+                  { name: "Part-Truckload (PTL/LTL)", href: "#case-studies" },
                 ].map((item) => (
                   <a
                     key={item.name}
@@ -264,18 +291,18 @@ export const DesktopMegaMenu: React.FC = () => {
               </div>
             </div>
 
-            {/* By Function */}
+            {/* By Operations Workflow */}
             <div className="flex flex-col">
               <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.16em] text-hr-ink-4">
-                By function
+                By Operations Workflow
               </div>
-              <div className="flex w-[184px] flex-col">
+              <div className="flex w-[200px] flex-col">
                 {[
-                  { name: "Customer support", href: "/solutions/functions/customer-support" },
-                  { name: "Sales", href: "/solutions/functions/sales" },
-                  { name: "Finance", href: "/solutions/functions/finance" },
-                  { name: "Operations", href: "/solutions/functions/operations" },
-                  { name: "HR & recruiting", href: "/solutions/functions/hr-recruiting" },
+                  { name: "RFQ Voice Quoting", href: "#case-studies" },
+                  { name: "Truck Sourcing & Bids", href: "#case-studies" },
+                  { name: "Driver Mamool & Advances", href: "#case-studies" },
+                  { name: "FASTag Transit Tracking", href: "#case-studies" },
+                  { name: "POD & Bilty Settlement", href: "#case-studies" },
                 ].map((item) => (
                   <a
                     key={item.name}
@@ -297,22 +324,22 @@ export const DesktopMegaMenu: React.FC = () => {
 
           {/* Right spotlight card */}
           <a
-            className="group flex w-[300px] flex-col justify-between gap-8 border border-hr-line-strong p-6 no-underline transition-colors duration-300 hover:border-hr-line-warm"
+            className="group flex w-[320px] flex-col justify-between gap-8 border border-hr-line-strong p-6 no-underline transition-colors duration-300 hover:border-hr-line-warm bg-hr-surface-2"
             href="#case-studies"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-hr-ink-6">
-              Solutions
+            <div className="font-mono text-[10px] uppercase tracking-[0.14em] text-emerald-800 font-semibold">
+              CORRIDOR ENGINE
             </div>
             <div>
-              <div className="relative inline-flex font-body text-[21px] normal-case leading-[1.15] text-hr-ink-strong">
-                Built for the real economy
+              <div className="relative inline-flex font-body text-[20px] font-semibold normal-case leading-[1.18] text-hr-ink-strong">
+                Engineered for Indian Logistics
                 <span
                   aria-hidden="true"
                   className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-current transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
                 />
               </div>
               <p className="mt-2.5 text-[12.5px] normal-case leading-relaxed tracking-normal text-hr-ink-3">
-                AI workers deployed into the operations that move goods, keep the lights on, and settle transactions — across eight industries.
+                Autonomous back-office agents deployed directly into WhatsApp to source trucks, enforce ₹2,500 profit floors, and eliminate freight broker margin leaks across high-volume corridors.
               </p>
             </div>
           </a>
