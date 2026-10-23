@@ -3,30 +3,30 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.happyrobot.ai"),
-  title: "HappyRobot | Powering the systems that run the world",
+  title: "HappyFright | Autonomous Freight Operations Harness",
   description:
-    "Autonomous AI workers that communicate, coordinate, and operate at scale across the real economy.",
+    "Autonomous AI agents for Indian freight corridors — ingesting WhatsApp voice notes, enforcing margin floors, and coordinating dispatches.",
   keywords: [
     "Enterprise AI",
     "Agentic Workflows",
     "Autonomous Operations",
-    "Supply Chain AI",
+    "Freight Broker AI",
     "Logistics Automation",
-    "Voice AI Agents",
+    "HappyFright",
   ],
-  authors: [{ name: "HappyRobot Inc." }],
+  authors: [{ name: "HappyFright Inc." }],
   openGraph: {
-    title: "HappyRobot | Powering the systems that run the world",
+    title: "HappyFright | Autonomous Freight Operations Harness",
     description:
-      "Autonomous AI workers that communicate, coordinate, and operate at scale across the real economy.",
+      "Autonomous AI agents for Indian freight corridors — ingesting WhatsApp voice notes, enforcing margin floors, and coordinating dispatches.",
     url: "https://www.happyrobot.ai",
-    siteName: "HappyRobot",
+    siteName: "HappyFright",
     images: [
       {
         url: "/images/cdn/hero_still.png",
         width: 1200,
         height: 630,
-        alt: "HappyRobot Autonomous Enterprise Operations",
+        alt: "HappyFright Autonomous Operations Harness",
       },
     ],
     locale: "en_US",
@@ -59,9 +59,18 @@ export default function RootLayout({
     >
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link
+          rel="icon"
+          href="/favicon-32x32.png"
+          sizes="32x32"
+          type="image/png"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
       </head>
       <body>{children}</body>
     </html>

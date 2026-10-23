@@ -98,16 +98,16 @@ export const Hero: React.FC = () => {
                       />
                       <button
                         type="submit"
-                        className="hero-cta-btn group inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden bg-hr-stone px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] text-[#070707] font-semibold no-underline transition-colors duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-white group-hover:text-white active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
+                        className="hero-cta-btn inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] font-semibold no-underline active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
                       >
                         <span
                           aria-hidden="true"
-                          className="btn-curtain bg-[#070707]"
-                        ></span>
-                        <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                          className="btn-curtain"
+                        />
+                        <span className="btn-text">
                           Book a demo
                         </span>
-                        <span aria-hidden="true" className="relative z-10 text-hr-rust transition-colors duration-300 group-hover:text-white">
+                        <span aria-hidden="true" className="btn-arrow">
                           →
                         </span>
                       </button>

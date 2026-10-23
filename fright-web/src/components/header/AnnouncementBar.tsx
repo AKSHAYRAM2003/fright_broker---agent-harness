@@ -20,10 +20,10 @@ export const AnnouncementBar: React.FC = () => {
           Live
         </span>
         <span className="hidden sm:inline">
-          VahanaAI deploys Autonomous Operations Harness for Indian freight brokers across NH-48 &amp; NH-44
+          HappyFright deploys Autonomous Operations Harness for Indian freight brokers across NH-48 &amp; NH-44
         </span>
         <span className="sm:hidden">
-          VahanaAI Freight Harness Live on NH-48 &amp; NH-44
+          HappyFright Freight Harness Live on NH-48 &amp; NH-44
         </span>
         <span className="hidden shrink-0 items-center gap-1.5 md:inline-flex">
           Read architecture<span aria-hidden="true">→</span>

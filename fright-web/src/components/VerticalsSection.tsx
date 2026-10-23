@@ -83,7 +83,7 @@ export const VerticalsSection: React.FC = () => {
             </div>
             <div className="max-w-[420px]">
               <p className="text-[15.5px] leading-[1.65] text-hr-ink-3">
-                From heavy industrial machinery on NH-48 to temperature-sensitive pharma and APMC mandis — VahanaAI enforces corridor pricing, vehicle constraints, and toll transit standards.
+                From heavy industrial machinery on NH-48 to temperature-sensitive pharma and APMC mandis — HappyFright enforces corridor pricing, vehicle constraints, and toll transit standards.
               </p>
             </div>
           </div>
