@@ -208,7 +208,7 @@ export const MobileDrawer: React.FC = () => {
         <div className="p-5">
           <a
             className="group flex w-full items-center justify-center font-body text-[13px] uppercase leading-none tracking-[0.1em] no-underline transition-all bg-hr-cta-solid-bg text-hr-cta-solid-fg py-3.5 rounded-lg font-semibold"
-            href="#hero-agent"
+            href="/login"
           >
             <span>Login</span>
           </a>
