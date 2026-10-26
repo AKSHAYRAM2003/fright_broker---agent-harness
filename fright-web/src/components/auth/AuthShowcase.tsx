@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { HappyRobotLogo } from "../HappyRobotLogo";
 import { ShieldCheck, Truck, Radio, CheckCircle2 } from "lucide-react";
 
 interface AuthShowcaseProps {
@@ -11,31 +10,19 @@ interface AuthShowcaseProps {
 
 export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
   return (
-    <div className="relative hidden flex-col justify-between overflow-hidden bg-[#070707] p-8 text-white lg:flex lg:col-span-5 xl:p-12 border-r border-[#222]">
-      {/* Background Grid Pattern & Ambient Gradients */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-15"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-        }}
-      />
-      <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-[#ff462d]/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+    <div className="auth-showcase-panel">
+      {/* Background Tactile Grid */}
+      <div className="auth-showcase-grid-bg" />
 
       {/* Top Header / Brand Logo */}
-      <div className="relative z-10 flex items-center justify-between">
-        <Link href="/" className="inline-block transition-opacity hover:opacity-80">
-          {/* Logo with inverted white text for dark container */}
-          <div className="flex items-center gap-2.5">
+      <div style={{ position: "relative", zIndex: 10, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <Link href="/" style={{ textDecoration: "none", color: "#ffffff", display: "inline-block" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <svg
               data-logo="logo"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 41 41.4"
-              className="h-7 w-auto"
+              style={{ height: "28px", width: "auto" }}
             >
               <g id="logogram" transform="translate(0, 0.7)">
                 <path
@@ -48,85 +35,201 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
                 />
               </g>
             </svg>
-            <span className="font-headline text-[19px] font-bold tracking-[-0.035em] text-white">
-              Happy<span className="text-[#ff462d]">Freight</span>
+            <span style={{ fontSize: "19px", fontWeight: "700", letterSpacing: "-0.035em", color: "#ffffff" }}>
+              Happy<span style={{ color: "#ff462d" }}>Freight</span>
             </span>
           </div>
         </Link>
 
         {/* Live Corridor Status Indicator */}
-        <div className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.1em] text-emerald-400">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-          </span>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+            borderRadius: "9999px",
+            border: "1px solid rgba(16, 185, 129, 0.3)",
+            backgroundColor: "rgba(6, 78, 59, 0.4)",
+            padding: "4px 12px",
+            fontSize: "11px",
+            fontFamily: "monospace",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            color: "#34d399",
+          }}
+        >
+          <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
           Harness Online
         </div>
       </div>
 
       {/* Center Showcase Content */}
-      <div className="relative z-10 my-auto py-10">
-        <div className="mb-4 inline-flex items-center gap-2 rounded border border-white/10 bg-white/5 px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-[0.16em] text-stone-300">
-          <Radio className="h-3 w-3 text-[#ff462d]" />
+      <div style={{ position: "relative", zIndex: 10, margin: "auto 0", padding: "2.5rem 0" }}>
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "8px",
+            borderRadius: "4px",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            backgroundColor: "rgba(255, 255, 255, 0.05)",
+            padding: "4px 10px",
+            fontFamily: "monospace",
+            fontSize: "10.5px",
+            textTransform: "uppercase",
+            letterSpacing: "0.16em",
+            color: "#dfdbd5",
+            marginBottom: "1.25rem",
+          }}
+        >
+          <Radio style={{ width: "12px", height: "12px", color: "#ff462d" }} />
           Autonomous Dispatch Core v2.4
         </div>
 
-        <h2 className="font-headline text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl leading-[1.15]">
+        <h2
+          style={{
+            fontSize: "2rem",
+            fontWeight: "700",
+            letterSpacing: "-0.025em",
+            lineHeight: 1.15,
+            color: "#ffffff",
+            margin: "0 0 1rem 0",
+          }}
+        >
           {mode === "login" ? (
             <>
               Operating India&apos;s freight corridors with{" "}
-              <span className="text-[#dfdbd5]">deterministic AI precision.</span>
+              <span style={{ color: "#dfdbd5" }}>deterministic AI precision.</span>
             </>
           ) : (
             <>
               Put autonomous agents to work across{" "}
-              <span className="text-[#dfdbd5]">every mandi &amp; highway.</span>
+              <span style={{ color: "#dfdbd5" }}>every mandi &amp; highway.</span>
             </>
           )}
         </h2>
 
-        <p className="mt-4 max-w-[42ch] font-body text-[14.5px] leading-relaxed text-stone-400">
+        <p
+          style={{
+            fontSize: "14.5px",
+            lineHeight: 1.6,
+            color: "#a8a29e",
+            maxWidth: "42ch",
+            marginBottom: "2rem",
+          }}
+        >
           Ingesting chaotic WhatsApp voice messages, running real-time VAHAN &amp; FASTag checks, and executing verified loads with strict ₹2,500 margin floors.
         </p>
 
         {/* Telemetry Cards Grid */}
-        <div className="mt-8 space-y-3">
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "2rem" }}>
           {/* Card 1: Live Voice Parsing */}
-          <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm transition-colors hover:border-white/20">
-            <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.1em] text-stone-400">
-              <span className="flex items-center gap-1.5 text-white">
-                <Truck className="h-3.5 w-3.5 text-[#ff462d]" />
+          <div
+            style={{
+              borderRadius: "8px",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              backgroundColor: "rgba(255, 255, 255, 0.04)",
+              padding: "14px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: "11px",
+                fontFamily: "monospace",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "#a8a29e",
+                marginBottom: "8px",
+              }}
+            >
+              <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#ffffff" }}>
+                <Truck style={{ width: "14px", height: "14px", color: "#ff462d" }} />
                 NH-48 Corridor • JNPT to Gurgaon
               </span>
-              <span className="text-emerald-400 font-semibold">₹2,850 Margin</span>
+              <span style={{ color: "#34d399", fontWeight: "600" }}>₹2,850 Margin</span>
             </div>
-            <div className="mt-2 text-[12.5px] text-stone-300 font-body">
+            <div style={{ fontSize: "13px", color: "#dfdbd5", marginBottom: "8px" }}>
               &quot;Bhai, 32ft MXL available from Bhiwandi, rate 68k cash on delivery.&quot;
             </div>
-            <div className="mt-2 flex items-center gap-3 text-[11px] font-mono text-stone-400">
-              <span className="flex items-center gap-1 text-emerald-400">
-                <CheckCircle2 className="h-3 w-3" /> Voice parsed (0.8s)
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                fontSize: "11px",
+                fontFamily: "monospace",
+                color: "#a8a29e",
+              }}
+            >
+              <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#34d399" }}>
+                <CheckCircle2 style={{ width: "12px", height: "12px" }} /> Voice parsed (0.8s)
               </span>
               <span>•</span>
-              <span>VAHAN RC: Valid</span>
+              <span>VAHAN: Valid</span>
               <span>•</span>
-              <span>Fastag: Toll Active</span>
+              <span>FASTag: Toll Active</span>
             </div>
           </div>
 
-          {/* Card 2: Enforced Rules */}
-          <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-sm">
-            <div className="flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.1em] text-stone-400">
+          {/* Card 2: Enforced Rulebook */}
+          <div
+            style={{
+              borderRadius: "8px",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              backgroundColor: "rgba(255, 255, 255, 0.04)",
+              padding: "14px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                fontSize: "11px",
+                fontFamily: "monospace",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "#a8a29e",
+                marginBottom: "8px",
+              }}
+            >
               <span>Deterministic Rulebook</span>
-              <span className="text-white">Active</span>
+              <span style={{ color: "#ffffff" }}>Active</span>
             </div>
-            <div className="mt-2 grid grid-cols-2 gap-2 text-[11.5px] font-mono text-stone-300">
-              <div className="flex items-center gap-1.5 bg-black/40 px-2 py-1.5 rounded border border-white/5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  backgroundColor: "rgba(0, 0, 0, 0.4)",
+                  padding: "6px 10px",
+                  borderRadius: "4px",
+                  fontSize: "11.5px",
+                  fontFamily: "monospace",
+                  color: "#dfdbd5",
+                }}
+              >
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981" }} />
                 Floor: ₹2,500 Min
               </div>
-              <div className="flex items-center gap-1.5 bg-black/40 px-2 py-1.5 rounded border border-white/5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  backgroundColor: "rgba(0, 0, 0, 0.4)",
+                  padding: "6px 10px",
+                  borderRadius: "4px",
+                  fontSize: "11.5px",
+                  fontFamily: "monospace",
+                  color: "#dfdbd5",
+                }}
+              >
+                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981" }} />
                 Trip FSM: Enforced
               </div>
             </div>
@@ -134,23 +237,38 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
         </div>
 
         {/* Testimonial Quote */}
-        <div className="mt-8 border-l-2 border-[#ff462d] pl-4">
-          <p className="text-[13.5px] italic leading-relaxed text-stone-300">
+        <div style={{ borderLeft: "2px solid #ff462d", paddingLeft: "16px" }}>
+          <p style={{ fontSize: "13.5px", fontStyle: "italic", lineHeight: 1.6, color: "#dfdbd5", margin: 0 }}>
             &quot;HappyFreight turned 4 hours of morning WhatsApp fire-fighting into a single review queue. Our team booked 28% more loads in month one.&quot;
           </p>
-          <div className="mt-2 text-[12px] font-medium text-stone-400">
+          <div style={{ fontSize: "12px", fontWeight: "500", color: "#a8a29e", marginTop: "8px" }}>
             — Dispatch Director, Western India Logistics Alliance
           </div>
         </div>
       </div>
 
-      {/* Bottom Compliance & Security Badges */}
-      <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-[11px] font-mono uppercase tracking-[0.12em] text-stone-400">
-        <div className="flex items-center gap-2">
-          <ShieldCheck className="h-4 w-4 text-emerald-400" />
+      {/* Bottom Security Footer */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 10,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+          paddingTop: "1.25rem",
+          fontSize: "11px",
+          fontFamily: "monospace",
+          textTransform: "uppercase",
+          letterSpacing: "0.12em",
+          color: "#a8a29e",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <ShieldCheck style={{ width: "16px", height: "16px", color: "#34d399" }} />
           <span>SOC 2 Type II Certified</span>
         </div>
-        <div className="flex items-center gap-3">
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <span>256-Bit SSL</span>
           <span>•</span>
           <span>ISO 27001</span>

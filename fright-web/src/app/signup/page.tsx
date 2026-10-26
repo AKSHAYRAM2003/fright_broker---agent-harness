@@ -11,7 +11,6 @@ import {
   Lock,
   Eye,
   EyeOff,
-  Phone,
   ShieldCheck,
   CheckCircle2,
   AlertCircle,
@@ -47,199 +46,225 @@ export default function SignUpPage() {
     setIsLoading(true);
     setStatusMessage({ type: null, text: "" });
 
-    // Simulate account setup and broker harness initialization
     setTimeout(() => {
       setIsLoading(false);
       setStatusMessage({
         type: "success",
-        text: `Harness initialized for ${companyName || "your brokerage"}! Setting up corridor agents...`,
+        text: `Harness initialized for ${companyName || "your brokerage"}! Directing to corridor setup...`,
       });
     }, 1200);
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfc] text-[#070707] selection:bg-[#ff462d] selection:text-white">
-      <div className="grid min-h-screen lg:grid-cols-12">
-        {/* Left Column: Brand & Dispatch Harness Showcase */}
-        <AuthShowcase mode="signup" />
+    <div className="auth-wrapper">
+      {/* Left Column: Brand & Dispatch Harness Showcase */}
+      <AuthShowcase mode="signup" />
 
-        {/* Right Column: Registration Form Container */}
-        <div className="flex flex-col justify-between p-6 sm:p-10 lg:col-span-7 xl:p-16">
-          {/* Top Bar Navigation */}
-          <div className="flex items-center justify-between border-b border-[#dad5cc]/60 pb-6">
-            {/* Mobile Brand Logo */}
-            <div className="lg:hidden">
-              <Link href="/" className="inline-block">
-                <HappyRobotLogo className="h-6 w-auto" />
-              </Link>
-            </div>
-
-            <div className="hidden lg:block text-[11px] font-mono uppercase tracking-[0.12em] text-[#6f675c]">
-              Workspace Provisioning // Instant Setup
-            </div>
-
-            {/* Quick Switch to Sign In */}
-            <div className="text-right text-[13px] font-body text-[#6f675c]">
-              Already managing corridors?{" "}
-              <Link
-                href="/login"
-                className="font-semibold text-[#070707] underline underline-offset-4 transition-colors hover:text-[#ff462d]"
-              >
-                Sign in →
-              </Link>
-            </div>
+      {/* Right Column: Registration Form Panel */}
+      <div className="auth-form-panel">
+        {/* Top Bar Navigation */}
+        <div className="auth-top-bar">
+          {/* Mobile Brand Logo */}
+          <div className="block lg:hidden">
+            <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
+              <HappyRobotLogo className="h-6 w-auto" />
+            </Link>
           </div>
 
-          {/* Main Form Center Area */}
-          <div className="mx-auto my-auto w-full max-w-[500px] py-10">
-            {/* Monospace Category Pill */}
-            <div className="mb-3 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-[#6f675c]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#ff462d]" />
-              New Broker Workspace Setup
+          <div
+            className="hidden lg:block"
+            style={{
+              fontFamily: "monospace",
+              fontSize: "11px",
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              color: "#6f675c",
+            }}
+          >
+            Workspace Provisioning // Instant Setup
+          </div>
+
+          {/* Switch to Sign In */}
+          <div style={{ fontSize: "13px", color: "#6f675c", textAlign: "right" }}>
+            Already managing corridors?{" "}
+            <Link
+              href="/login"
+              style={{
+                fontWeight: "600",
+                color: "#070707",
+                textDecoration: "underline",
+                textUnderlineOffset: "4px",
+              }}
+            >
+              Sign in →
+            </Link>
+          </div>
+        </div>
+
+        {/* Main Form Center Area */}
+        <div className="auth-form-container auth-form-container-wide">
+          {/* Category Tag */}
+          <div className="auth-category-tag">
+            <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d", display: "inline-block" }} />
+            New Broker Workspace Setup
+          </div>
+
+          {/* Heading & Subtitle */}
+          <h1 className="auth-title">Deploy your autonomous harness</h1>
+          <p className="auth-subtitle">
+            Get your brokerage operational in under 2 minutes. Ingest voice notes and enforce margin floors from load #1.
+          </p>
+
+          {/* Status Alert Banner */}
+          {statusMessage.type && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "10px",
+                borderRadius: "6px",
+                border: statusMessage.type === "success" ? "1px solid rgba(16, 185, 129, 0.3)" : "1px solid rgba(239, 68, 68, 0.3)",
+                backgroundColor: statusMessage.type === "success" ? "#ecfdf5" : "#fef2f2",
+                color: statusMessage.type === "success" ? "#065f46" : "#991b1b",
+                padding: "12px 14px",
+                fontSize: "13px",
+                lineHeight: "1.4",
+                marginBottom: "1.25rem",
+              }}
+            >
+              {statusMessage.type === "success" ? (
+                <CheckCircle2 style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#10b981" }} />
+              ) : (
+                <AlertCircle style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#ef4444" }} />
+              )}
+              <span>{statusMessage.text}</span>
+            </div>
+          )}
+
+          {/* Registration Form */}
+          <form onSubmit={handleSignUp} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {/* Row 1: Brokerage Name & Lead Dispatcher Name */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem" }}>
+              <div>
+                <label htmlFor="company-name" className="auth-field-label">
+                  Brokerage / Fleet Name
+                </label>
+                <div className="auth-input-group" style={{ padding: "0 12px" }}>
+                  <Building2 style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <input
+                    id="company-name"
+                    type="text"
+                    required
+                    placeholder="e.g. Apex Freight Logistics"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    className="auth-input"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="full-name" className="auth-field-label">
+                  Dispatcher / Lead Name
+                </label>
+                <div className="auth-input-group" style={{ padding: "0 12px" }}>
+                  <User style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <input
+                    id="full-name"
+                    type="text"
+                    required
+                    placeholder="e.g. Rajesh Sharma"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    className="auth-input"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Heading & Subtitle */}
-            <h1 className="font-headline text-3xl font-bold tracking-tight text-[#070707] sm:text-4xl">
-              Deploy your autonomous harness
-            </h1>
-            <p className="mt-2 text-[14.5px] leading-relaxed text-[#6f675c]">
-              Get your brokerage operational in under 2 minutes. Ingest voice notes and enforce margin floors from load #1.
-            </p>
-
-            {/* Status Alert Banner */}
-            {statusMessage.type && (
-              <div
-                className={`mt-6 flex items-start gap-2.5 rounded-md border p-3.5 text-[13px] leading-snug transition-all ${
-                  statusMessage.type === "success"
-                    ? "border-emerald-500/30 bg-emerald-50 text-emerald-800"
-                    : "border-red-500/30 bg-red-50 text-red-800"
-                }`}
-              >
-                {statusMessage.type === "success" ? (
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                ) : (
-                  <AlertCircle className="h-4 w-4 shrink-0 text-red-600 mt-0.5" />
-                )}
-                <span>{statusMessage.text}</span>
-              </div>
-            )}
-
-            {/* Registration Form */}
-            <form onSubmit={handleSignUp} className="mt-7 space-y-4">
-              {/* Row 1: Brokerage Name & Full Name */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="company-name" className="block text-[12px] font-mono uppercase tracking-[0.1em] text-[#6f675c] mb-1.5">
-                    Brokerage / Fleet Name
-                  </label>
-                  <div className="flex items-center rounded-md border border-[#dad5cc] bg-white px-3.5 py-2.5 transition-colors focus-within:border-[#070707] focus-within:ring-1 focus-within:ring-[#070707]">
-                    <Building2 className="h-4 w-4 text-[#a8a29e] mr-2" />
-                    <input
-                      id="company-name"
-                      type="text"
-                      required
-                      placeholder="e.g. Apex Freight Logistics"
-                      value={companyName}
-                      onChange={(e) => setCompanyName(e.target.value)}
-                      className="w-full bg-transparent text-[13.5px] font-body text-[#070707] placeholder-[#a8a29e] outline-none"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="full-name" className="block text-[12px] font-mono uppercase tracking-[0.1em] text-[#6f675c] mb-1.5">
-                    Dispatcher / Lead Name
-                  </label>
-                  <div className="flex items-center rounded-md border border-[#dad5cc] bg-white px-3.5 py-2.5 transition-colors focus-within:border-[#070707] focus-within:ring-1 focus-within:ring-[#070707]">
-                    <User className="h-4 w-4 text-[#a8a29e] mr-2" />
-                    <input
-                      id="full-name"
-                      type="text"
-                      required
-                      placeholder="e.g. Rajesh Sharma"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      className="w-full bg-transparent text-[13.5px] font-body text-[#070707] placeholder-[#a8a29e] outline-none"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Row 2: Contact Method (WhatsApp vs Email) */}
-              <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <label htmlFor="contact-input" className="block text-[12px] font-mono uppercase tracking-[0.1em] text-[#6f675c]">
-                    Primary Dispatch Contact
-                  </label>
-                  <div className="flex items-center gap-2 text-[11px] font-mono">
-                    <button
-                      type="button"
-                      onClick={() => setContactMethod("whatsapp")}
-                      className={`px-1.5 py-0.5 rounded ${
-                        contactMethod === "whatsapp"
-                          ? "bg-emerald-100 text-emerald-800 font-semibold"
-                          : "text-[#6f675c] hover:text-[#070707]"
-                      }`}
-                    >
-                      WhatsApp
-                    </button>
-                    <span>|</span>
-                    <button
-                      type="button"
-                      onClick={() => setContactMethod("email")}
-                      className={`px-1.5 py-0.5 rounded ${
-                        contactMethod === "email"
-                          ? "bg-stone-200 text-[#070707] font-semibold"
-                          : "text-[#6f675c] hover:text-[#070707]"
-                      }`}
-                    >
-                      Email
-                    </button>
-                  </div>
-                </div>
-                <div className="flex rounded-md border border-[#dad5cc] bg-white transition-colors focus-within:border-[#070707] focus-within:ring-1 focus-within:ring-[#070707]">
-                  {contactMethod === "whatsapp" ? (
-                    <>
-                      <span className="flex items-center border-r border-[#dad5cc] bg-[#f7f6f4] px-3.5 text-[13px] font-mono text-[#6f675c]">
-                        +91
-                      </span>
-                      <input
-                        id="contact-input"
-                        type="tel"
-                        required
-                        placeholder="98765 43210 (receives voice agents)"
-                        value={contactValue}
-                        onChange={(e) => setContactValue(e.target.value)}
-                        className="w-full bg-transparent px-3.5 py-2.5 text-[13.5px] font-body text-[#070707] placeholder-[#a8a29e] outline-none"
-                      />
-                    </>
-                  ) : (
-                    <div className="flex items-center w-full px-3.5 py-2.5">
-                      <Mail className="h-4 w-4 text-[#a8a29e] mr-2" />
-                      <input
-                        id="contact-input"
-                        type="email"
-                        required
-                        placeholder="dispatch@brokerage.in"
-                        value={contactValue}
-                        onChange={(e) => setContactValue(e.target.value)}
-                        className="w-full bg-transparent text-[13.5px] font-body text-[#070707] placeholder-[#a8a29e] outline-none"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Row 3: Primary Corridor */}
-              <div>
-                <label htmlFor="corridor-select" className="block text-[12px] font-mono uppercase tracking-[0.1em] text-[#6f675c] mb-1.5">
-                  Primary Freight Corridor
+            {/* Row 2: Contact Method */}
+            <div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.4rem" }}>
+                <label htmlFor="contact-input" className="auth-field-label" style={{ marginBottom: 0 }}>
+                  Primary Dispatch Contact
                 </label>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "11px", fontFamily: "monospace" }}>
+                  <button
+                    type="button"
+                    onClick={() => setContactMethod("whatsapp")}
+                    style={{
+                      padding: "2px 6px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                      backgroundColor: contactMethod === "whatsapp" ? "#d1fae5" : "transparent",
+                      color: contactMethod === "whatsapp" ? "#065f46" : "#6f675c",
+                      fontWeight: contactMethod === "whatsapp" ? "600" : "400",
+                    }}
+                  >
+                    WhatsApp
+                  </button>
+                  <span>|</span>
+                  <button
+                    type="button"
+                    onClick={() => setContactMethod("email")}
+                    style={{
+                      padding: "2px 6px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                      backgroundColor: contactMethod === "email" ? "#e7e5e4" : "transparent",
+                      color: contactMethod === "email" ? "#070707" : "#6f675c",
+                      fontWeight: contactMethod === "email" ? "600" : "400",
+                    }}
+                  >
+                    Email
+                  </button>
+                </div>
+              </div>
+              <div className="auth-input-group">
+                {contactMethod === "whatsapp" ? (
+                  <>
+                    <span className="auth-input-prefix">+91</span>
+                    <input
+                      id="contact-input"
+                      type="tel"
+                      required
+                      placeholder="98765 43210 (receives voice agent loads)"
+                      value={contactValue}
+                      onChange={(e) => setContactValue(e.target.value)}
+                      className="auth-input"
+                    />
+                  </>
+                ) : (
+                  <div style={{ display: "flex", alignItems: "center", width: "100%", padding: "0 12px" }}>
+                    <Mail style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                    <input
+                      id="contact-input"
+                      type="email"
+                      required
+                      placeholder="dispatch@brokerage.in"
+                      value={contactValue}
+                      onChange={(e) => setContactValue(e.target.value)}
+                      className="auth-input"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Row 3: Primary Freight Corridor */}
+            <div>
+              <label htmlFor="corridor-select" className="auth-field-label">
+                Primary Freight Corridor
+              </label>
+              <div className="auth-input-group">
                 <select
                   id="corridor-select"
                   value={corridor}
                   onChange={(e) => setCorridor(e.target.value)}
-                  className="w-full rounded-md border border-[#dad5cc] bg-white px-3.5 py-2.5 text-[13.5px] font-body text-[#070707] outline-none transition-colors focus:border-[#070707] focus:ring-1 focus:ring-[#070707]"
+                  className="auth-input"
+                  style={{ cursor: "pointer", backgroundColor: "#ffffff" }}
                 >
                   <option value="NH-48 (Delhi - Mumbai)">NH-48 • Delhi – Mumbai Express Corridor</option>
                   <option value="NH-44 (Srinagar - Kanyakumari)">NH-44 • North-South Spine (Srinagar – Kanyakumari)</option>
@@ -248,125 +273,161 @@ export default function SignUpPage() {
                   <option value="Pan-India Mandi Network">Pan-India APMC Mandi &amp; FMCG Grid</option>
                 </select>
               </div>
+            </div>
 
-              {/* Row 4: Password with Toggle */}
-              <div>
-                <label htmlFor="signup-password" className="block text-[12px] font-mono uppercase tracking-[0.1em] text-[#6f675c] mb-1.5">
-                  Workspace Master Password
-                </label>
-                <div className="flex items-center rounded-md border border-[#dad5cc] bg-white px-3.5 py-2.5 transition-colors focus-within:border-[#070707] focus-within:ring-1 focus-within:ring-[#070707]">
-                  <Lock className="h-4 w-4 text-[#a8a29e] mr-2" />
-                  <input
-                    id="signup-password"
-                    type={showPassword ? "text" : "password"}
-                    required
-                    minLength={8}
-                    placeholder="Minimum 8 characters"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-transparent text-[13.5px] font-body text-[#070707] placeholder-[#a8a29e] outline-none"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="text-[#a8a29e] hover:text-[#070707] focus:outline-none"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
-                </div>
+            {/* Row 4: Password */}
+            <div>
+              <label htmlFor="signup-password" className="auth-field-label">
+                Workspace Master Password
+              </label>
+              <div className="auth-input-group" style={{ padding: "0 12px" }}>
+                <Lock style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                <input
+                  id="signup-password"
+                  type={showPassword ? "text" : "password"}
+                  required
+                  minLength={8}
+                  placeholder="Minimum 8 characters"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="auth-input"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  style={{ background: "none", border: "none", color: "#a8a29e", cursor: "pointer", padding: "4px" }}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <EyeOff style={{ width: "16px", height: "16px" }} /> : <Eye style={{ width: "16px", height: "16px" }} />}
+                </button>
               </div>
+            </div>
 
-              {/* Row 5: Margin Floor Selector */}
-              <div className="rounded-lg border border-[#dad5cc] bg-[#f7f6f4] p-3.5">
-                <div className="flex items-center justify-between text-[12px] font-mono uppercase tracking-[0.1em] text-[#070707]">
-                  <span className="flex items-center gap-1.5 font-semibold">
-                    <Sparkles className="h-3.5 w-3.5 text-[#ff462d]" />
-                    Deterministic Margin Floor Rule
-                  </span>
-                  <span className="text-emerald-700 font-bold">₹{marginFloor} / load</span>
-                </div>
-                <p className="mt-1 text-[12px] leading-relaxed text-[#6f675c]">
-                  Your autonomous agents will reject or renegotiate any broker quote yielding less than this floor.
-                </p>
-                <div className="mt-3 flex gap-2">
-                  {["2000", "2500", "3000", "5000"].map((val) => (
-                    <button
-                      key={val}
-                      type="button"
-                      onClick={() => setMarginFloor(val)}
-                      className={`flex-1 rounded py-1 text-[12px] font-mono transition-colors ${
-                        marginFloor === val
-                          ? "bg-[#070707] text-white font-semibold"
-                          : "border border-[#dad5cc] bg-white text-[#6f675c] hover:border-[#070707]"
-                      }`}
-                    >
-                      ₹{val}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Terms and Agreement */}
-              <div className="pt-1">
-                <label className="flex items-start gap-2.5 cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={agreeTerms}
-                    onChange={(e) => setAgreeTerms(e.target.checked)}
-                    className="mt-0.5 h-4 w-4 rounded border-[#dad5cc] text-[#070707] focus:ring-[#070707]"
-                  />
-                  <span className="text-[12px] leading-snug text-[#6f675c]">
-                    I agree to the{" "}
-                    <Link href="/terms" className="underline hover:text-[#070707]">
-                      Operations Harness Agreement
-                    </Link>{" "}
-                    and confirm authorized dispatcher status under Indian Motor Vehicles &amp; VAHAN regulations.
-                  </span>
-                </label>
-              </div>
-
-              {/* Primary CTA Button */}
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="hero-cta-btn group mt-3 flex w-full items-center justify-center gap-2 rounded-md bg-[#dfdbd5] px-6 py-3.5 font-body text-[12px] font-semibold uppercase tracking-[0.12em] text-[#070707] transition-all disabled:opacity-50"
+            {/* Row 5: Margin Floor Selector */}
+            <div
+              style={{
+                borderRadius: "8px",
+                border: "1px solid #dad5cc",
+                backgroundColor: "#f7f6f4",
+                padding: "14px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  fontSize: "12px",
+                  fontFamily: "monospace",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  color: "#070707",
+                  marginBottom: "4px",
+                }}
               >
-                <span aria-hidden="true" className="btn-curtain" />
-                <span className="btn-text flex items-center gap-2">
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Deploying Workspace...
-                    </>
-                  ) : (
-                    "Deploy Autonomous Broker"
-                  )}
+                <span style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "700" }}>
+                  <Sparkles style={{ width: "14px", height: "14px", color: "#ff462d" }} />
+                  Deterministic Margin Floor Rule
                 </span>
-                {!isLoading && <span className="btn-arrow">→</span>}
-              </button>
-            </form>
-          </div>
+                <span style={{ color: "#047857", fontWeight: "800" }}>₹{marginFloor} / load</span>
+              </div>
+              <p style={{ fontSize: "12px", lineHeight: "1.5", color: "#6f675c", margin: "0 0 10px 0" }}>
+                Your autonomous agents will reject or renegotiate any broker quote yielding less than this floor.
+              </p>
+              <div style={{ display: "flex", gap: "8px" }}>
+                {["2000", "2500", "3000", "5000"].map((val) => (
+                  <button
+                    key={val}
+                    type="button"
+                    onClick={() => setMarginFloor(val)}
+                    style={{
+                      flex: 1,
+                      borderRadius: "4px",
+                      padding: "6px 0",
+                      fontSize: "12px",
+                      fontFamily: "monospace",
+                      cursor: "pointer",
+                      backgroundColor: marginFloor === val ? "#070707" : "#ffffff",
+                      color: marginFloor === val ? "#ffffff" : "#6f675c",
+                      border: marginFloor === val ? "1px solid #070707" : "1px solid #dad5cc",
+                      fontWeight: marginFloor === val ? "700" : "400",
+                      transition: "all 0.15s ease",
+                    }}
+                  >
+                    ₹{val}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-          {/* Bottom Security Footer */}
-          <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#dad5cc]/60 pt-6 text-[11px] font-mono uppercase tracking-[0.1em] text-[#6f675c]">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-emerald-600" />
-              <span>Enterprise DPDP &amp; SOC 2 Compliant</span>
+            {/* Terms and Agreement */}
+            <div style={{ paddingTop: "4px" }}>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
+                <input
+                  type="checkbox"
+                  checked={agreeTerms}
+                  onChange={(e) => setAgreeTerms(e.target.checked)}
+                  style={{ marginTop: "2px", cursor: "pointer" }}
+                />
+                <span style={{ fontSize: "12px", lineHeight: "1.45", color: "#6f675c" }}>
+                  I agree to the{" "}
+                  <Link href="/terms" style={{ textDecoration: "underline", color: "#070707" }}>
+                    Operations Harness Agreement
+                  </Link>{" "}
+                  and confirm authorized dispatcher status under Indian Motor Vehicles &amp; VAHAN regulations.
+                </span>
+              </label>
             </div>
-            <div className="flex items-center gap-3">
-              <Link href="/privacy" className="hover:text-[#070707] transition-colors">
-                Privacy
-              </Link>
-              <span>•</span>
-              <Link href="/terms" className="hover:text-[#070707] transition-colors">
-                Terms
-              </Link>
-              <span>•</span>
-              <Link href="/sla" className="hover:text-[#070707] transition-colors">
-                Corridor SLA
-              </Link>
-            </div>
+
+            {/* Primary CTA Button */}
+            <button type="submit" disabled={isLoading} className="auth-submit-btn">
+              <span aria-hidden="true" className="btn-curtain" />
+              <span className="btn-text" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                {isLoading ? (
+                  <>
+                    <Loader2 style={{ width: "16px", height: "16px", animation: "spin 1s linear infinite" }} />
+                    Deploying Workspace...
+                  </>
+                ) : (
+                  "Deploy Autonomous Broker"
+                )}
+              </span>
+              {!isLoading && <span className="btn-arrow">→</span>}
+            </button>
+          </form>
+        </div>
+
+        {/* Bottom Security Footer */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            borderTop: "1px solid rgba(218, 213, 204, 0.7)",
+            paddingTop: "1.25rem",
+            fontSize: "11px",
+            fontFamily: "monospace",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            color: "#6f675c",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <ShieldCheck style={{ width: "16px", height: "16px", color: "#059669" }} />
+            <span>Enterprise DPDP &amp; SOC 2 Compliant</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <Link href="/privacy" style={{ color: "#6f675c", textDecoration: "none" }}>
+              Privacy
+            </Link>
+            <span>•</span>
+            <Link href="/terms" style={{ color: "#6f675c", textDecoration: "none" }}>
+              Terms
+            </Link>
+            <span>•</span>
+            <Link href="/sla" style={{ color: "#6f675c", textDecoration: "none" }}>
+              Corridor SLA
+            </Link>
           </div>
         </div>
       </div>
