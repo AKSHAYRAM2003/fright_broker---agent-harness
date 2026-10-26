@@ -38,6 +38,15 @@
   --hr-border-cta: #dad5cc !important;
   --hr-cta-solid-bg: #070707 !important;
   --hr-cta-solid-fg: #ffffff !important;
+
+  /* Transitions-Dev Micro-Motion Tokens */
+  --tabs-dur: 250ms;
+  --tabs-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --learn-shift: 3px;
+  --learn-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shake-distance: 6px;
+  --shake-overshoot: 4px;
+  --shake-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
@@ -505,19 +514,43 @@ img[data-nimg="fill"] {
   text-wrap: pretty !important;
 }
 
-/* Tab Switcher */
+/* Segmented Sliding Tab Control (transitions-dev tabs-sliding) */
 .auth-tab-bar {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #f7f6f4;
   border: 1px solid #dad5cc;
   border-radius: 8px;
   padding: 4px;
-  gap: 4px;
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.auth-tab-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  background-color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateX(0);
+  transition: transform var(--tabs-dur, 250ms) var(--tabs-ease, cubic-bezier(0.22, 1, 0.36, 1));
+  will-change: transform;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.auth-tab-bar[data-active="email"] .auth-tab-pill {
+  transform: translateX(100%);
 }
 
 .auth-tab-btn {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -530,13 +563,59 @@ img[data-nimg="fill"] {
   cursor: pointer;
   background: transparent;
   color: #6f675c;
-  transition: all 0.2s ease;
+  transition: color var(--tabs-dur, 250ms) var(--tabs-ease, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
 .auth-tab-btn.is-active {
-  background-color: #ffffff !important;
   color: #070707 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Error State Shake (transitions-dev error-state-shake) */
+.auth-input-group.is-shaking {
+  animation: auth-input-shake 280ms linear;
+  border-color: #ef4444 !important;
+}
+
+@keyframes auth-input-shake {
+  0%     { transform: translateX(0);                                   animation-timing-function: var(--shake-ease); }
+  28.57% { transform: translateX(var(--shake-distance));               animation-timing-function: var(--shake-ease); }
+  57.14% { transform: translateX(calc(var(--shake-distance) * -1));   animation-timing-function: var(--shake-ease); }
+  78.57% { transform: translateX(var(--shake-overshoot));              animation-timing-function: var(--shake-ease); }
+  100%   { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-tab-pill, .auth-tab-btn, .auth-input-group.is-shaking {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Margin Floor Button Transitions */
+.auth-margin-btn {
+  flex: 1;
+  border-radius: 4px;
+  padding: 6px 0;
+  font-size: 12px;
+  font-family: var(--font-suisse, monospace);
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #57534e;
+  border: 1px solid #dad5cc;
+  font-weight: 500;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-margin-btn:hover {
+  border-color: #070707;
+  color: #070707;
+}
+
+.auth-margin-btn.is-active {
+  background-color: #070707 !important;
+  color: #ffffff !important;
+  border-color: #070707 !important;
+  font-weight: 700 !important;
 }
 
 /* Input Fields */

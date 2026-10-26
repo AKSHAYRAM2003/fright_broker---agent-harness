@@ -29,14 +29,21 @@ export default function SignUpPage() {
   const [marginFloor, setMarginFloor] = useState("2500");
   const [agreeTerms, setAgreeTerms] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{
     type: "success" | "error" | null;
     text: string;
   }>({ type: null, text: "" });
 
+  const triggerShake = () => {
+    setIsShaking(true);
+    setTimeout(() => setIsShaking(false), 300);
+  };
+
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
     if (!agreeTerms) {
+      triggerShake();
       setStatusMessage({
         type: "error",
         text: "Please accept the Operations Service Agreement to continue.",
@@ -312,19 +319,7 @@ export default function SignUpPage() {
                     key={val}
                     type="button"
                     onClick={() => setMarginFloor(val)}
-                    style={{
-                      flex: 1,
-                      borderRadius: "4px",
-                      padding: "6px 0",
-                      fontSize: "12px",
-                      fontFamily: "monospace",
-                      cursor: "pointer",
-                      backgroundColor: marginFloor === val ? "#070707" : "#ffffff",
-                      color: marginFloor === val ? "#ffffff" : "#6f675c",
-                      border: marginFloor === val ? "1px solid #070707" : "1px solid #dad5cc",
-                      fontWeight: marginFloor === val ? "700" : "400",
-                      transition: "all 0.15s ease",
-                    }}
+                    className={`auth-margin-btn ${marginFloor === val ? "is-active" : ""}`}
                   >
                     ₹{val}
                   </button>
@@ -333,15 +328,15 @@ export default function SignUpPage() {
             </div>
 
             {/* Terms and Agreement */}
-            <div style={{ paddingTop: "4px" }}>
-              <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer" }}>
+            <div className={`auth-input-group ${isShaking ? "is-shaking" : ""}`} style={{ border: isShaking ? "1px solid #ef4444" : "1px solid transparent", padding: "6px 8px", borderRadius: "6px" }}>
+              <label style={{ display: "flex", alignItems: "flex-start", gap: "10px", cursor: "pointer", width: "100%" }}>
                 <input
                   type="checkbox"
                   checked={agreeTerms}
                   onChange={(e) => setAgreeTerms(e.target.checked)}
                   style={{ marginTop: "2px", cursor: "pointer" }}
                 />
-                <span style={{ fontSize: "12px", lineHeight: "1.45", color: "#6f675c" }}>
+                <span style={{ fontSize: "12px", lineHeight: "1.45", color: "#57534e" }}>
                   I agree to the{" "}
                   <Link href="/terms" style={{ textDecoration: "underline", color: "#070707" }}>
                     Operations Harness Agreement

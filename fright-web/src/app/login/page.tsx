@@ -26,14 +26,21 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{
     type: "success" | "error" | null;
     text: string;
   }>({ type: null, text: "" });
 
+  const triggerShake = () => {
+    setIsShaking(true);
+    setTimeout(() => setIsShaking(false), 300);
+  };
+
   const handleSendOtp = (e: React.FormEvent) => {
     e.preventDefault();
     if (!phone || phone.length < 10) {
+      triggerShake();
       setStatusMessage({
         type: "error",
         text: "Please enter a valid 10-digit mobile or WhatsApp number.",
@@ -125,8 +132,9 @@ export default function LoginPage() {
             </div>
           )}
 
-          {/* Auth Method Selector Tabs */}
-          <div className="auth-tab-bar">
+          {/* Auth Method Selector Tabs with Sliding Pill (transitions-dev tabs-sliding) */}
+          <div className="auth-tab-bar" data-active={authMethod}>
+            <span className="auth-tab-pill" aria-hidden="true" />
             <button
               type="button"
               onClick={() => {
@@ -158,7 +166,7 @@ export default function LoginPage() {
                 <label htmlFor="phone-input" className="auth-field-label">
                   WhatsApp or Dispatch Mobile
                 </label>
-                <div className="auth-input-group">
+                <div className={`auth-input-group ${isShaking ? "is-shaking" : ""}`}>
                   <span className="auth-input-prefix">+91</span>
                   <input
                     id="phone-input"
