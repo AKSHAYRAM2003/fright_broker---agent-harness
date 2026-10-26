@@ -319,15 +319,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 Book a Demo
               </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenDemo();
-                }}
-                className="w-full py-3 rounded-lg border border-zinc-300 text-zinc-800 text-center font-medium hover:bg-zinc-50 transition-colors"
+              <Link
+                href="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block w-full py-3 rounded-lg border border-zinc-300 text-zinc-950 text-center font-semibold hover:bg-zinc-50 transition-colors"
               >
-                Sign In
-              </button>
+                Login
+              </Link>
             </div>
           </div>
         </div>

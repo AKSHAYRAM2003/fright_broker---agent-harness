@@ -205,12 +205,22 @@ export const MobileDrawer: React.FC = () => {
         </div>
 
         {/* Mobile Login Button */}
-        <div className="p-5">
+        <div className="p-5 border-t border-[rgba(218,213,204,0.5)]">
           <a
-            className="group flex w-full items-center justify-center font-body text-[13px] uppercase leading-none tracking-[0.1em] no-underline transition-all bg-hr-cta-solid-bg text-hr-cta-solid-fg py-3.5 rounded-lg font-semibold"
+            className="group flex w-full items-center justify-center gap-2 rounded-lg py-3.5 font-body text-[13px] font-semibold uppercase tracking-[0.12em] no-underline transition-all active:scale-[0.98] cursor-pointer hover:opacity-95"
             href="/login"
+            style={{
+              backgroundColor: "#070707",
+              color: "#ffffff",
+              boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12)",
+            }}
           >
-            <span>Login</span>
+            <span style={{ color: "#ffffff", fontWeight: "600", letterSpacing: "0.12em" }}>
+              Login
+            </span>
+            <span style={{ color: "#ff462d", fontSize: "14px", transform: "translateY(-0.5px)" }} aria-hidden="true">
+              →
+            </span>
           </a>
         </div>
       </div>
