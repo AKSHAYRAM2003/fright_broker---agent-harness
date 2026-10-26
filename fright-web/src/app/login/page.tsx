@@ -74,37 +74,21 @@ export default function LoginPage() {
 
       {/* Right Column: Authentication Form Panel */}
       <div className="auth-form-panel">
-        {/* Top Bar Navigation with Prominent Back to Home Button */}
+        {/* Top Bar Navigation: Brand Logo (redirects to Home) & Switch to Sign Up */}
         <div className="auth-top-bar">
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Link href="/" className="auth-back-btn" aria-label="Return to HappyFreight homepage">
-              <span className="auth-back-arrow" aria-hidden="true">←</span>
-              <span>Back to Home</span>
-            </Link>
+          <Link
+            href="/"
+            className="auth-brand-link"
+            aria-label="HappyFreight - Return to Home"
+          >
+            <HappyRobotLogo className="h-6 sm:h-7 w-auto" />
+          </Link>
 
-            {/* Mobile Brand Logo */}
-            <div className="block lg:hidden">
-              <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
-                <HappyRobotLogo className="h-6 w-auto" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Switch to Sign Up */}
-          <div style={{ fontSize: "13px", color: "#57534e", textAlign: "right" }}>
-            New to HappyFreight?{" "}
-            <Link
-              href="/signup"
-              style={{
-                fontWeight: "600",
-                color: "#070707",
-                textDecoration: "underline",
-                textUnderlineOffset: "4px",
-              }}
-            >
-              Create an account →
-            </Link>
-          </div>
+          {/* Switch to Sign Up with smooth on-hover underline transition */}
+          <Link href="/signup" className="auth-nav-link">
+            <span className="auth-nav-text">Create an account</span>
+            <span className="auth-nav-arrow" aria-hidden="true">→</span>
+          </Link>
         </div>
 
         {/* Main Form Center Area */}
