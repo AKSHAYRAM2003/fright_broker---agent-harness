@@ -5,33 +5,48 @@ import React from "react";
 export const Hero: React.FC = () => {
   return (
     <>
-      <section className="relative min-h-[100svh] w-full overflow-hidden bg-hr-surface flex flex-col justify-center">
-        {/* Neutral Base Background Layer */}
-        <div className="absolute inset-0 h-full w-full bg-hr-surface" />
+      <section className="relative min-h-[100svh] overflow-hidden bg-hr-surface">
+        <div className="h-full w-full overflow-hidden absolute inset-0 bg-hr-surface"></div>
+        {/* Background Poster Fallback */}
+        <picture
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[1] select-none"
+        >
+          <img
+            alt=""
+            decoding="async"
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              left: "0",
+              top: "0",
+              right: "0",
+              bottom: "0",
+              color: "transparent",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            sizes="100vw"
+            src="/images/cdn/hero_still.png"
+            fetchPriority="high"
+            className="object-cover object-center"
+          />
+        </picture>
 
-        {/* Fully Responsive Video & Fallback Container */}
+        {/* Responsive Background Video covering all screen sizes */}
         <div
           className="pointer-events-none absolute inset-0 z-[2] select-none overflow-hidden"
           aria-hidden="true"
         >
-          {/* Static high-resolution poster fallback */}
-          <img
-            src="/images/cdn/hero_still.png"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-          />
-
-          {/* Autoplaying Background Video with object-cover on all viewports */}
           <video
             poster="/images/redesign/hero-loop-poster.webp"
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             autoPlay
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="h-full w-full object-cover object-center"
             style={{
               width: "100%",
               height: "100%",
@@ -39,45 +54,39 @@ export const Hero: React.FC = () => {
               objectPosition: "center",
             }}
           >
-            <source src="/videos/hero.mp4" type="video/mp4" />
-            <source src="/videos/HR_Landing_Hero_Loop_HD169_Lumen_v1.mp4" type="video/mp4" />
+            <source
+              src="/videos/hero.mp4"
+              type="video/mp4"
+            />
           </video>
         </div>
-
-        {/* Responsive Scrim Overlay for WCAG Contrast across all viewports */}
+        {/* Dark Overlay on Hero Video */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-[3]"
           style={{
             background:
-              "radial-gradient(ellipse at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.78) 100%), linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.65) 55%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 45%)",
+              "linear-gradient(to right, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.50) 100%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 40%)",
           }}
-        />
-
-        {/* Hero Foreground Content */}
-        <div className="relative z-[4] flex min-h-[100svh] w-full flex-col justify-center px-5 pt-32 pb-16 sm:px-8 sm:pt-36 md:px-12 md:pt-40 md:pb-20 lg:pt-36">
+        ></div>
+        <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
-            <h1
-              className="max-w-[20ch] font-display text-[32px] xs:text-[38px] sm:text-[50px] md:text-[66px] lg:text-[80px] xl:text-[86px] leading-[1.05] sm:leading-[0.98] md:leading-[0.93] tracking-[-0.035em] sm:tracking-[-0.04em] text-white drop-shadow-md"
-              style={{ textWrap: "balance" }}
-            >
+            <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-white sm:text-[52px] sm:leading-[0.96] md:text-[68px] md:leading-[0.94] lg:text-[82px] drop-shadow-md">
               Autonomous Operations for Indian Freight Brokers.
             </h1>
-
-            <div className="mt-5 sm:mt-8 flex flex-col gap-6 sm:gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
-              <div className="min-w-0 flex-1 max-w-[580px]">
+            <div className="mt-6 sm:mt-8 flex flex-col gap-8 md:mt-[34px] lg:flex-row lg:items-end lg:justify-between lg:gap-14">
+              <div className="min-w-0 flex-1 max-w-[560px]">
                 <p
-                  className="max-w-[500px] text-[15px] sm:text-[16px] md:text-[17px] leading-[1.6] drop-shadow-sm"
-                  style={{ color: "var(--hr-surface-2, #f7f6f4)", textWrap: "pretty" }}
+                  className="max-w-[480px] text-[15px] sm:text-[16px] leading-[1.6] drop-shadow-sm text-hr-surface-2"
+                  style={{ color: "var(--hr-surface-2, #f7f6f4)" }}
                 >
                   Putting AI agents to work across India&apos;s freight corridors
                   — ingesting chaotic WhatsApp voice notes, enforcing strict ₹2,500 margin floors,
                   and automating load coordination that improves with every dispatch.
                 </p>
-
                 <div id="hero-agent" className="mt-6 sm:mt-[30px] scroll-mt-32">
-                  <form noValidate className="w-full max-w-[500px]">
-                    <div className="flex flex-col sm:flex-row sm:items-stretch rounded-lg overflow-hidden border border-white/30 bg-black/65 backdrop-blur-md shadow-2xl transition-all focus-within:border-white/60 divide-y divide-white/15 sm:divide-y-0 sm:divide-x">
+                  <form noValidate className="w-full max-w-[480px]">
+                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0 rounded-lg overflow-hidden border border-white/25 bg-black/60 backdrop-blur-md shadow-2xl transition-colors focus-within:border-white/50">
                       <label htmlFor="hero-email" className="sr-only">
                         Work email or WhatsApp
                       </label>
@@ -86,7 +95,7 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 bg-transparent px-4 sm:px-6 py-[14px] font-body text-[14px] text-white placeholder:text-white/75 outline-none"
+                        className="min-w-0 flex-1 bg-transparent px-5 sm:px-6 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
                         defaultValue=""
                       />
                       <button
