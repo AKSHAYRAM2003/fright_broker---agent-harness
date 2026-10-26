@@ -5,7 +5,10 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export const CareersCTA: React.FC = () => {
   return (
-    <section id="careers" className="w-full py-24 sm:py-32 bg-white text-zinc-950 border-b border-zinc-200">
+    <section
+      id="careers"
+      className="w-full py-24 sm:py-32 bg-white text-zinc-950 border-b border-zinc-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-zinc-950 text-white p-8 sm:p-14 lg:p-16 relative overflow-hidden shadow-2xl">
           {/* Subtle background glow */}
@@ -21,7 +24,9 @@ export const CareersCTA: React.FC = () => {
                 Build the future of autonomous enterprise labor.
               </h2>
               <p className="text-base sm:text-lg text-zinc-300 max-w-xl leading-relaxed">
-                We are a team of distributed systems engineers, AI researchers, and vertical domain specialists in San Francisco, New York, and remote worldwide.
+                We are a team of distributed systems engineers, AI researchers,
+                and vertical domain specialists in San Francisco, New York, and
+                remote worldwide.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
                 <a

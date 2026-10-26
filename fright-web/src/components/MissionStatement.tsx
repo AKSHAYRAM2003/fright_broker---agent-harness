@@ -23,7 +23,8 @@ export const MissionStatement: React.FC = () => {
       const startTrigger = windowHeight * 0.75;
       const endTrigger = windowHeight * 0.2;
 
-      const progress = (startTrigger - rect.top) / (rect.height + (startTrigger - endTrigger));
+      const progress =
+        (startTrigger - rect.top) / (rect.height + (startTrigger - endTrigger));
       const clamped = Math.max(0, Math.min(1, progress));
       setScrollProgress(clamped);
     };
@@ -74,7 +75,10 @@ export const MissionStatement: React.FC = () => {
         {/* Sub-explanation */}
         <div className="mt-14 max-w-2xl mx-auto text-center text-zinc-600 text-base sm:text-lg leading-relaxed">
           <p>
-            Off-the-shelf foundation models possess general world knowledge, but zero understanding of your enterprise&apos;s custom carrier tables, exception protocols, or legacy database nuances. HappyRobot continuously learns by doing the work alongside your teams.
+            Off-the-shelf foundation models possess general world knowledge, but
+            zero understanding of your enterprise&apos;s custom carrier tables,
+            exception protocols, or legacy database nuances. HappyRobot
+            continuously learns by doing the work alongside your teams.
           </p>
         </div>
       </div>

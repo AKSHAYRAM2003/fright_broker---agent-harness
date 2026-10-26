@@ -5,7 +5,99 @@ import React from "react";
 export const SuperintelligenceSection: React.FC = () => {
   return (
     <>
-      <section className="border-t border-hr-line bg-hr-surface-2"><div className="mx-auto max-w-[1440px] px-5 py-16 md:px-12 md:py-[120px]"><div className="mb-10 flex flex-wrap items-start justify-between gap-8 md:mb-12 md:gap-10"><div><h2 className="font-body text-[29px] leading-none tracking-[-0.02em] text-hr-ink-strong md:whitespace-nowrap md:text-[46px]">This is Enterprise Superintelligence.</h2></div><p className="max-w-[420px] text-[15.5px] leading-[1.65] text-hr-ink-3"></p></div><div className="w-full"><div className="relative aspect-video w-full overflow-hidden bg-hr-cell"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><video muted loop playsInline preload="metadata" className="h-full w-full object-contain" autoPlay><source src="/videos/ESI_Launch.mp4" type="video/mp4" /></video><button type="button" aria-label="Play video" className="absolute bottom-4 left-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m8 4 12 8-12 8V4Z" fill="currentColor"></path></svg></button><button type="button" aria-label="Unmute video" aria-pressed="false" className="absolute bottom-4 right-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z" fill="currentColor" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round"></path><path d="m17 9 4 6M21 9l-4 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></button></div><button type="button" aria-label="View explainer film fullscreen" aria-pressed="false" className="absolute bottom-4 right-[60px] z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9V3h6M21 15v6h-6M15 3h6v6M9 21H3v-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button></div></div></div></section>
+      <section className="border-t border-hr-line bg-hr-surface-2">
+        <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-12 md:py-[120px]">
+          <div className="mb-10 flex flex-wrap items-start justify-between gap-8 md:mb-12 md:gap-10">
+            <div>
+              <h2 className="font-body text-[29px] leading-none tracking-[-0.02em] text-hr-ink-strong md:whitespace-nowrap md:text-[46px]">
+                This is Enterprise Superintelligence.
+              </h2>
+            </div>
+            <p className="max-w-[420px] text-[15.5px] leading-[1.65] text-hr-ink-3"></p>
+          </div>
+          <div className="w-full">
+            <div className="relative aspect-video w-full overflow-hidden bg-hr-cell">
+              <div className="relative h-full w-full overflow-hidden bg-hr-cell">
+                <video
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="h-full w-full object-contain"
+                  autoPlay
+                >
+                  <source src="/videos/ESI_Launch.mp4" type="video/mp4" />
+                </video>
+                <button
+                  type="button"
+                  aria-label="Play video"
+                  className="absolute bottom-4 left-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"
+                >
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path d="m8 4 12 8-12 8V4Z" fill="currentColor"></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  aria-label="Unmute video"
+                  aria-pressed="false"
+                  className="absolute bottom-4 right-4 z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"
+                >
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M11 5 6 9H3v6h3l5 4V5Z"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinejoin="round"
+                    ></path>
+                    <path
+                      d="m17 9 4 6M21 9l-4 6"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <button
+                type="button"
+                aria-label="View explainer film fullscreen"
+                aria-pressed="false"
+                className="absolute bottom-4 right-[60px] z-[2] inline-flex h-9 w-9 items-center justify-center border border-hr-lumen/30 bg-hr-canvas/45 text-hr-lumen backdrop-blur-sm transition-colors hover:border-hr-lumen/60 hover:bg-hr-canvas/65 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 9V3h6M21 15v6h-6M15 3h6v6M9 21H3v-6"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

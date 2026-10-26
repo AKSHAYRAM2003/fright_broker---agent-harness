@@ -76,7 +76,7 @@ export const CountUp: React.FC<CountUpProps> = ({
       {
         threshold: 0.3,
         rootMargin: "0px 0px -40px 0px",
-      }
+      },
     );
 
     observer.observe(el);
@@ -87,7 +87,10 @@ export const CountUp: React.FC<CountUpProps> = ({
   }, [value, decimals, duration, hasAnimated]);
 
   return (
-    <span ref={containerRef} className={`inline-flex items-baseline ${className}`}>
+    <span
+      ref={containerRef}
+      className={`inline-flex items-baseline ${className}`}
+    >
       {prefix ? <span className={prefixClassName}>{prefix}</span> : null}
       <span ref={numberRef} className={numberClassName}>
         0

@@ -1,11 +1,21 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck, Lock, EyeOff, Server, FileCheck, CheckCircle2 } from "lucide-react";
+import {
+  ShieldCheck,
+  Lock,
+  EyeOff,
+  Server,
+  FileCheck,
+  CheckCircle2,
+} from "lucide-react";
 
 export const SecurityCompliance: React.FC = () => {
   return (
-    <section id="security" className="w-full py-24 sm:py-32 bg-zinc-900 text-white border-b border-zinc-800">
+    <section
+      id="security"
+      className="w-full py-24 sm:py-32 bg-zinc-900 text-white border-b border-zinc-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full">
@@ -15,7 +25,9 @@ export const SecurityCompliance: React.FC = () => {
             Security built for regulated environments.
           </h2>
           <p className="text-lg text-zinc-400 mt-4 leading-relaxed">
-            Your data never trains public models. Every interaction is isolated in customer-dedicated encrypted envelopes with complete auditability.
+            Your data never trains public models. Every interaction is isolated
+            in customer-dedicated encrypted envelopes with complete
+            auditability.
           </p>
         </div>
 
@@ -24,9 +36,13 @@ export const SecurityCompliance: React.FC = () => {
             <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">SOC 2 Type II & ISO 27001</h3>
+            <h3 className="text-xl font-bold text-white">
+              SOC 2 Type II & ISO 27001
+            </h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Independently audited controls covering operational security, continuous vulnerability monitoring, and disaster recovery procedures.
+              Independently audited controls covering operational security,
+              continuous vulnerability monitoring, and disaster recovery
+              procedures.
             </p>
           </div>
 
@@ -34,9 +50,13 @@ export const SecurityCompliance: React.FC = () => {
             <div className="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 flex items-center justify-center">
               <EyeOff className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">Zero Model Training Guarantee</h3>
+            <h3 className="text-xl font-bold text-white">
+              Zero Model Training Guarantee
+            </h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Strict commercial zero-retention agreements with LLM providers ensure your proprietary enterprise workflows and operational payloads remain yours alone.
+              Strict commercial zero-retention agreements with LLM providers
+              ensure your proprietary enterprise workflows and operational
+              payloads remain yours alone.
             </p>
           </div>
 
@@ -44,9 +64,13 @@ export const SecurityCompliance: React.FC = () => {
             <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center justify-center">
               <Server className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">Dedicated VPC Deployment</h3>
+            <h3 className="text-xl font-bold text-white">
+              Dedicated VPC Deployment
+            </h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              Deploy in your dedicated AWS, GCP, or Azure Virtual Private Cloud with direct peering to internal ERPs, databases, and message brokers.
+              Deploy in your dedicated AWS, GCP, or Azure Virtual Private Cloud
+              with direct peering to internal ERPs, databases, and message
+              brokers.
             </p>
           </div>
         </div>

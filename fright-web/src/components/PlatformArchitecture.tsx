@@ -2,7 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Cpu, Database, Network, ShieldCheck, Check, ArrowRight } from "lucide-react";
+import {
+  Cpu,
+  Database,
+  Network,
+  ShieldCheck,
+  Check,
+  ArrowRight,
+} from "lucide-react";
 
 const PLATFORM_PILLARS = [
   {
@@ -10,7 +17,8 @@ const PLATFORM_PILLARS = [
     title: "Autonomous Execution Engine",
     icon: Cpu,
     tag: "Core Runtime",
-    summary: "Replaces brittle RPA scripts with adaptive, goal-seeking reasoning loops capable of navigating edge cases.",
+    summary:
+      "Replaces brittle RPA scripts with adaptive, goal-seeking reasoning loops capable of navigating edge cases.",
     features: [
       "Dynamic tool-calling across internal microservices and third-party partner portals",
       "Sub-second voice agents with native interruption handling and dialect adaptability",
@@ -22,7 +30,8 @@ const PLATFORM_PILLARS = [
     title: "Live Enterprise Graph",
     icon: Database,
     tag: "Memory & State",
-    summary: "Consolidates siloed ERP, TMS, CRM, and email threads into an active knowledge layer.",
+    summary:
+      "Consolidates siloed ERP, TMS, CRM, and email threads into an active knowledge layer.",
     features: [
       "Vectorized institutional guidelines and historical dispute resolution outcomes",
       "Real-time state synchronization with sub-second latency",
@@ -34,7 +43,8 @@ const PLATFORM_PILLARS = [
     title: "Universal Systems Adapter",
     icon: Network,
     tag: "Connectors",
-    summary: "Integrates with modern REST/GraphQL APIs and 30-year-old AS400 terminal emulators alike.",
+    summary:
+      "Integrates with modern REST/GraphQL APIs and 30-year-old AS400 terminal emulators alike.",
     features: [
       "Pre-built integrations for SAP, Oracle, Salesforce, McLeod, TMW, and ServiceNow",
       "Autonomous browser agents for partner web portals lacking public APIs",
@@ -46,7 +56,8 @@ const PLATFORM_PILLARS = [
     title: "Defense-in-Depth Guardrails",
     icon: ShieldCheck,
     tag: "Governance",
-    summary: "Enterprise-grade controls giving compliance teams complete visibility and override authority.",
+    summary:
+      "Enterprise-grade controls giving compliance teams complete visibility and override authority.",
     features: [
       "Granular role-based access control (RBAC) and data redaction before model inference",
       "Human-in-the-loop escalation thresholds for high-dollar financial transactions",
@@ -58,10 +69,14 @@ const PLATFORM_PILLARS = [
 export const PlatformArchitecture: React.FC = () => {
   const [activeTab, setActiveTab] = useState(PLATFORM_PILLARS[0].id);
 
-  const currentPillar = PLATFORM_PILLARS.find((p) => p.id === activeTab) || PLATFORM_PILLARS[0];
+  const currentPillar =
+    PLATFORM_PILLARS.find((p) => p.id === activeTab) || PLATFORM_PILLARS[0];
 
   return (
-    <section id="platform" className="w-full py-24 sm:py-32 bg-white text-zinc-950 border-b border-zinc-200">
+    <section
+      id="platform"
+      className="w-full py-24 sm:py-32 bg-white text-zinc-950 border-b border-zinc-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full border border-orange-200">
@@ -72,7 +87,9 @@ export const PlatformArchitecture: React.FC = () => {
             Governed by deterministic logic.
           </h2>
           <p className="text-lg text-zinc-600 mt-4 leading-relaxed">
-            HappyRobot sits between your high-level business goals and your underlying software systems, translating human intent into verified actions without altering your legacy infrastructure.
+            HappyRobot sits between your high-level business goals and your
+            underlying software systems, translating human intent into verified
+            actions without altering your legacy infrastructure.
           </p>
         </div>
 
@@ -83,9 +100,13 @@ export const PlatformArchitecture: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-red-500/80" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="text-xs text-zinc-400 font-mono ml-2">happyrobot-orchestrator-topology.svg</span>
+              <span className="text-xs text-zinc-400 font-mono ml-2">
+                happyrobot-orchestrator-topology.svg
+              </span>
             </div>
-            <div className="text-xs text-orange-400 font-medium">Real-Time Event Stream Active</div>
+            <div className="text-xs text-orange-400 font-medium">
+              Real-Time Event Stream Active
+            </div>
           </div>
           <div className="w-full flex items-center justify-center p-2 sm:p-6 bg-zinc-900/50 rounded-xl">
             <img
@@ -118,22 +139,30 @@ export const PlatformArchitecture: React.FC = () => {
                     <div className="flex items-center gap-3">
                       <div
                         className={`p-2 rounded-lg ${
-                          isSelected ? "bg-orange-600 text-white" : "bg-white text-zinc-800 border border-zinc-200"
+                          isSelected
+                            ? "bg-orange-600 text-white"
+                            : "bg-white text-zinc-800 border border-zinc-200"
                         }`}
                       >
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="font-bold text-base">{pillar.title}</span>
+                      <span className="font-bold text-base">
+                        {pillar.title}
+                      </span>
                     </div>
                     <span
                       className={`text-[11px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                        isSelected ? "bg-white/10 text-orange-300" : "bg-zinc-200 text-zinc-600"
+                        isSelected
+                          ? "bg-white/10 text-orange-300"
+                          : "bg-zinc-200 text-zinc-600"
                       }`}
                     >
                       {pillar.tag}
                     </span>
                   </div>
-                  <p className={`text-xs sm:text-sm line-clamp-2 ${isSelected ? "text-zinc-300" : "text-zinc-500"}`}>
+                  <p
+                    className={`text-xs sm:text-sm line-clamp-2 ${isSelected ? "text-zinc-300" : "text-zinc-500"}`}
+                  >
                     {pillar.summary}
                   </p>
                 </button>

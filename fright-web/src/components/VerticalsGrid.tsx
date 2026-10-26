@@ -7,10 +7,14 @@ import { Check, ArrowRight } from "lucide-react";
 export const VerticalsGrid: React.FC = () => {
   const [selectedVertical, setSelectedVertical] = useState(VERTICALS[0].id);
 
-  const activeSector = VERTICALS.find((v) => v.id === selectedVertical) || VERTICALS[0];
+  const activeSector =
+    VERTICALS.find((v) => v.id === selectedVertical) || VERTICALS[0];
 
   return (
-    <section id="solutions" className="w-full py-24 sm:py-32 bg-zinc-50 border-b border-zinc-200">
+    <section
+      id="solutions"
+      className="w-full py-24 sm:py-32 bg-zinc-50 border-b border-zinc-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-orange-600 bg-orange-100/80 px-3 py-1 rounded-full">
@@ -20,7 +24,9 @@ export const VerticalsGrid: React.FC = () => {
             Tailored agents for complex vertical domains.
           </h2>
           <p className="text-lg text-zinc-600 mt-4 leading-relaxed">
-            Every industry has proprietary vernacular, compliance requirements, and ERP idiosyncrasies. HappyRobot comes pre-loaded with deep vertical domain models.
+            Every industry has proprietary vernacular, compliance requirements,
+            and ERP idiosyncrasies. HappyRobot comes pre-loaded with deep
+            vertical domain models.
           </p>
         </div>
 
@@ -65,7 +71,10 @@ export const VerticalsGrid: React.FC = () => {
                 Key Automated Workflows:
               </h4>
               {activeSector.workflows.map((wf, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-zinc-50 border border-zinc-100">
+                <div
+                  key={idx}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-zinc-50 border border-zinc-100"
+                >
                   <div className="w-5 h-5 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
                     ✓
                   </div>
@@ -96,8 +105,12 @@ export const VerticalsGrid: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <p className="text-xs font-medium text-zinc-300">Enterprise Deployment View</p>
-              <p className="text-sm font-bold truncate">{activeSector.tagline}</p>
+              <p className="text-xs font-medium text-zinc-300">
+                Enterprise Deployment View
+              </p>
+              <p className="text-sm font-bold truncate">
+                {activeSector.tagline}
+              </p>
             </div>
           </div>
         </div>

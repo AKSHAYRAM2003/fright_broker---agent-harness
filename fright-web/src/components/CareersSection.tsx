@@ -5,7 +5,78 @@ import React from "react";
 export const CareersSection: React.FC = () => {
   return (
     <>
-      <section id="careers" className="scroll-mt-24 border-t border-hr-line bg-hr-surface-2"><div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-5 py-16 md:px-12 md:py-[104px] lg:grid-cols-[1.25fr_0.75fr] lg:gap-16"><div><div className="flex items-center gap-2.5 font-mono text-[11px] uppercase leading-none tracking-[0.04em] text-hr-rust mb-5 md:mb-6"><span>Join us</span></div><h2 className="max-w-[20ch] font-body text-[29px] leading-[1.06] tracking-[-0.02em] text-hr-ink-strong md:text-[46px] md:leading-[1.04]">Help build an entirely new way to work.</h2><p className="mt-[22px] max-w-[440px] text-[15.5px] leading-[1.6] text-hr-ink-3">We’re hiring globally across engineering, deployment, GTM and operations.</p><div className="mt-[30px] flex flex-wrap items-center gap-[18px]"><a className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative isolate gap-[9px] overflow-hidden bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas motion-reduce:transition-none" href="/careers#roles"><span aria-hidden="true" className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"></span><span>See open roles</span><span aria-hidden="true" className="text-hr-rust">→</span></a><a className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative gap-[9px] px-1 py-[14px] text-hr-signal hover:text-hr-lumen hrlight:text-hr-ink-strong hrlight:hover:text-hr-ink-strong" href="/careers"><span>Life at HappyRobot</span><span aria-hidden="true" className="pointer-events-none absolute left-0 h-px w-full bg-current group-hover:animate-[hr-underline-sweep_0.6s_cubic-bezier(0.65,0,0.35,1)] bottom-0 text-hr-line-warm"></span></a></div></div><div className="w-full max-w-[520px] justify-self-start lg:justify-self-end"><div className="aspect-square overflow-hidden border border-hr-line"><div className="relative h-full w-full overflow-hidden bg-hr-cell"><img alt="" loading="lazy" decoding="async" data-nimg="fill" className="object-cover" style={({ "position": "absolute", "height": "100%", "width": "100%", "left": "0", "top": "0", "right": "0", "bottom": "0", "color": "transparent" } as React.CSSProperties)} sizes="(max-width: 1024px) 70vw, 520px" srcSet="/images/cdn/see_open_roles_.png" src="/images/cdn/see_open_roles_.png" /></div></div></div></div></section>
+      <section
+        id="careers"
+        className="scroll-mt-24 border-t border-hr-line bg-hr-surface-2"
+      >
+        <div className="mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-10 px-5 py-16 md:px-12 md:py-[104px] lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+          <div>
+            <div className="flex items-center gap-2.5 font-mono text-[11px] uppercase leading-none tracking-[0.04em] text-hr-rust mb-5 md:mb-6">
+              <span>Join us</span>
+            </div>
+            <h2 className="max-w-[20ch] font-body text-[29px] leading-[1.06] tracking-[-0.02em] text-hr-ink-strong md:text-[46px] md:leading-[1.04]">
+              Help build an entirely new way to work.
+            </h2>
+            <p className="mt-[22px] max-w-[440px] text-[15.5px] leading-[1.6] text-hr-ink-3">
+              We’re hiring globally across engineering, deployment, GTM and
+              operations.
+            </p>
+            <div className="mt-[30px] flex flex-wrap items-center gap-[18px]">
+              <a
+                className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative isolate gap-[9px] overflow-hidden bg-hr-cta-solid-bg px-6 py-[14px] text-hr-cta-solid-fg duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas motion-reduce:transition-none"
+                href="/careers#roles"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
+                ></span>
+                <span>See open roles</span>
+                <span aria-hidden="true" className="text-hr-rust">
+                  →
+                </span>
+              </a>
+              <a
+                className="group inline-flex lg:min-w-max lg:whitespace-nowrap items-center justify-center font-body text-[12px] uppercase leading-none tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust relative gap-[9px] px-1 py-[14px] text-hr-signal hover:text-hr-lumen hrlight:text-hr-ink-strong hrlight:hover:text-hr-ink-strong"
+                href="/careers"
+              >
+                <span>Life at HappyRobot</span>
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-0 h-px w-full bg-current group-hover:animate-[hr-underline-sweep_0.6s_cubic-bezier(0.65,0,0.35,1)] bottom-0 text-hr-line-warm"
+                ></span>
+              </a>
+            </div>
+          </div>
+          <div className="w-full max-w-[520px] justify-self-start lg:justify-self-end">
+            <div className="aspect-square overflow-hidden border border-hr-line">
+              <div className="relative h-full w-full overflow-hidden bg-hr-cell">
+                <img
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  data-nimg="fill"
+                  className="object-cover"
+                  style={
+                    {
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: "0",
+                      top: "0",
+                      right: "0",
+                      bottom: "0",
+                      color: "transparent",
+                    } as React.CSSProperties
+                  }
+                  sizes="(max-width: 1024px) 70vw, 520px"
+                  srcSet="/images/cdn/see_open_roles_.png"
+                  src="/images/cdn/see_open_roles_.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
