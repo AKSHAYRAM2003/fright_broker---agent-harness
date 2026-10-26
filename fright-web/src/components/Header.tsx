@@ -38,19 +38,8 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation Links & CTA */}
           <DesktopNav />
 
-          {/* Mobile Navigation Controls */}
-          <div className="flex items-center gap-2.5 lg:hidden">
-            <a
-              className="group inline-flex items-center justify-center min-w-[76px] px-4.5 py-2 font-body text-[11px] font-semibold uppercase tracking-[0.1em] no-underline transition-[opacity,transform,background-color,border-color,color] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust gap-[9px] bg-hr-cta-solid-bg text-hr-cta-solid-fg relative isolate overflow-hidden duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] hover:text-hr-canvas hover:opacity-100 motion-reduce:transition-none"
-              href="/login"
-            >
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 -z-[1] origin-bottom scale-y-0 bg-hr-stone transition-transform duration-[350ms] ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:scale-y-100 motion-reduce:transition-none"
-              />
-              <span>Login</span>
-            </a>
-
+          {/* Mobile & Tablet Navigation Controls */}
+          <div className="flex items-center lg:hidden">
             {/* Hamburger Toggle Button */}
             <button
               aria-expanded="false"

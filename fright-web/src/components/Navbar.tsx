@@ -2,7 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, ArrowRight, Sparkles, ExternalLink } from "lucide-react";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  ArrowRight,
+  Sparkles,
+  ExternalLink,
+} from "lucide-react";
 import { NAV_ITEMS } from "@/data/site-data";
 
 interface NavbarProps {
@@ -10,10 +17,15 @@ interface NavbarProps {
   onOpenNewsroom: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenDemo,
+  onOpenNewsroom,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>(
+    {},
+  );
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -63,7 +75,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) =>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-8 h-8 rounded-lg bg-zinc-950 flex items-center justify-center text-white font-bold transition-transform group-hover:scale-105 shadow-sm">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <rect x="3" y="11" width="18" height="10" rx="2" />
                 <circle cx="12" cy="5" r="2" />
                 <path d="M12 7v4" />
@@ -127,14 +148,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) =>
                     }`}
                     onClick={() =>
                       setActiveDropdown(
-                        activeDropdown === item.label ? null : item.label
+                        activeDropdown === item.label ? null : item.label,
                       )
                     }
                   >
                     <span>{item.label}</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        activeDropdown === item.label ? "rotate-180 text-zinc-950" : "text-zinc-500"
+                        activeDropdown === item.label
+                          ? "rotate-180 text-zinc-950"
+                          : "text-zinc-500"
                       }`}
                     />
                   </button>
@@ -187,19 +210,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) =>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-2">
-            <button
-              onClick={onOpenDemo}
-              className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-zinc-950 text-white"
-            >
-              Book Demo
-            </button>
+          <div className="flex lg:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100 transition-colors cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -249,7 +270,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) =>
                 }
 
                 return (
-                  <div key={item.label} className="border-b border-zinc-100 pb-1">
+                  <div
+                    key={item.label}
+                    className="border-b border-zinc-100 pb-1"
+                  >
                     <button
                       onClick={() => toggleMobileSubmenu(item.label)}
                       className="w-full py-3 px-3 rounded-lg text-base font-semibold text-zinc-800 hover:bg-zinc-100 flex items-center justify-between cursor-pointer"
@@ -270,8 +294,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenNewsroom }) =>
                             onClick={() => setMobileMenuOpen(false)}
                             className="block py-2 text-sm text-zinc-700 hover:text-zinc-950 font-medium"
                           >
-                            <div className="font-semibold text-zinc-900">{sub.title}</div>
-                            <div className="text-xs text-zinc-500">{sub.description}</div>
+                            <div className="font-semibold text-zinc-900">
+                              {sub.title}
+                            </div>
+                            <div className="text-xs text-zinc-500">
+                              {sub.description}
+                            </div>
                           </Link>
                         ))}
                       </div>
