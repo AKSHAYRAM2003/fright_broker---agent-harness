@@ -5,54 +5,54 @@ import React from "react";
 export const Hero: React.FC = () => {
   return (
     <>
-      <section className="relative min-h-[100svh] overflow-hidden bg-hr-surface">
+      <section className="relative min-h-[100svh] overflow-hidden bg-hr-surface flex flex-col justify-center">
         <div className="h-full w-full overflow-hidden absolute inset-0 bg-hr-surface"></div>
-        {/* Background Poster Fallback */}
-        <picture
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-[1] select-none"
-        >
-          <img
-            alt=""
-            decoding="async"
-            style={{
-              position: "absolute",
-              height: "100%",
-              width: "100%",
-              left: "0",
-              top: "0",
-              right: "0",
-              bottom: "0",
-              color: "transparent",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-            sizes="100vw"
-            src="/images/cdn/hero_still.png"
-            fetchPriority="high"
-            className="object-cover object-center"
-          />
-        </picture>
-
-        {/* Responsive Background Video covering all screen sizes */}
+        
+        {/* Responsive Video Background Container */}
         <div
           className="pointer-events-none absolute inset-0 z-[2] select-none overflow-hidden"
           aria-hidden="true"
         >
+          {/* High-res Image Fallback */}
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcSet="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            />
+            <img
+              alt=""
+              decoding="async"
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: "100%",
+                left: "0",
+                top: "0",
+                right: "0",
+                bottom: "0",
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+              src="/images/cdn/hero_still.png"
+              className="object-cover object-center"
+            />
+          </picture>
+
+          {/* Autoplay Loop Video with object-cover on all viewports */}
           <video
             poster="/images/redesign/hero-loop-poster.webp"
             muted
             loop
             playsInline
             preload="metadata"
-            autoPlay
-            className="h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full object-cover object-center"
             style={{
               width: "100%",
               height: "100%",
               objectFit: "cover",
               objectPosition: "center",
             }}
+            autoPlay
           >
             <source
               src="/videos/hero.mp4"
@@ -85,24 +85,22 @@ export const Hero: React.FC = () => {
                   and automating load coordination that improves with every dispatch.
                 </p>
                 <div id="hero-agent" className="mt-6 sm:mt-[30px] scroll-mt-32">
-                  <form noValidate className="w-full max-w-[520px]">
-                    <div className="flex flex-col sm:flex-row gap-3 items-stretch">
-                      <div className="relative min-w-0 flex-1">
-                        <label htmlFor="hero-email" className="sr-only">
-                          Work email or WhatsApp
-                        </label>
-                        <input
-                          id="hero-email"
-                          type="text"
-                          required
-                          placeholder="Enter your WhatsApp number or email"
-                          className="w-full h-[48px] rounded-lg border border-white/25 bg-black/60 px-5 font-body text-[14px] text-white placeholder:text-white/50 outline-none backdrop-blur-md shadow-2xl transition-colors focus:border-white/50"
-                          defaultValue=""
-                        />
-                      </div>
+                  <form noValidate className="w-full max-w-[480px]">
+                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0 rounded-lg overflow-hidden border border-white/25 bg-black/60 backdrop-blur-md shadow-2xl transition-colors focus-within:border-white/50">
+                      <label htmlFor="hero-email" className="sr-only">
+                        Work email or WhatsApp
+                      </label>
+                      <input
+                        id="hero-email"
+                        type="text"
+                        required
+                        placeholder="Enter your WhatsApp number or email"
+                        className="min-w-0 flex-1 bg-transparent px-5 sm:px-6 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
+                        defaultValue=""
+                      />
                       <button
                         type="submit"
-                        className="hero-cta-btn inline-flex h-[48px] w-full sm:w-auto items-center justify-center gap-2 overflow-hidden rounded-lg px-6 font-body text-[12px] uppercase leading-none tracking-[0.1em] font-semibold no-underline border-0 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
+                        className="hero-cta-btn inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] font-semibold no-underline active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
                       >
                         <span
                           aria-hidden="true"
