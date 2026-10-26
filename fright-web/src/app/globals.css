@@ -388,6 +388,71 @@ img[data-nimg="fill"] {
   background-size: 40px 40px;
 }
 
+/* Auth Showcase Header & Live Status Badge Responsiveness */
+.auth-showcase-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  width: 100%;
+}
+
+.auth-showcase-logo-link {
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.auth-showcase-logo-link:hover {
+  opacity: 0.88;
+}
+
+.auth-showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 4px;
+  border: 1px solid #222222;
+  background-color: #0d0d0d;
+  padding: 5px 11px;
+  font-size: 11px;
+  font-family: var(--font-suisse, monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #34d399;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.auth-showcase-badge-ping {
+  position: relative;
+  display: inline-flex;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  flex-shrink: 0;
+}
+
+@media (max-width: 960px) {
+  .auth-showcase-header {
+    flex-wrap: wrap;
+    gap: 0.6rem 0.75rem;
+  }
+  .auth-showcase-badge {
+    padding: 3.5px 8px;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+  }
+}
+
 /* Right Form Panel (Clean Swiss Surface) */
 .auth-form-panel {
   display: flex !important;

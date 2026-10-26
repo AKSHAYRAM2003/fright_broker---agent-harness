@@ -15,50 +15,33 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
       <div className="auth-showcase-grid-bg" />
 
       {/* Top Header / Brand Logo & Corridor Ping */}
-      <div style={{ position: "relative", zIndex: 10, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <Link href="/" style={{ textDecoration: "none", color: "#ffffff", display: "inline-block" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <svg
-              data-logo="logo"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 41 41.4"
-              style={{ height: "28px", width: "auto" }}
-            >
-              <g id="logogram" transform="translate(0, 0.7)">
-                <path
-                  d="M24 0H16V12.0632C15.9663 14.2434 14.1885 16 12.0005 16H0V24H8.68629C10.808 24 12.8429 23.1571 14.3431 21.6569L21.6569 14.3431C23.1571 12.8429 24 10.808 24 8.68629V0Z"
-                  fill="#ffffff"
-                />
-                <path
-                  d="M16 40H24V27.9368C24.0337 25.7566 25.8115 24 27.9995 24H40V16H31.3137C29.192 16 27.1571 16.8429 25.6569 18.3431L18.3431 25.6569C16.8429 27.1571 16 29.192 16 31.3137V40Z"
-                  fill="#ff462d"
-                />
-              </g>
-            </svg>
-            <span style={{ fontSize: "19px", fontWeight: "700", letterSpacing: "-0.035em", color: "#ffffff" }}>
-              Happy<span style={{ color: "#ff462d" }}>Freight</span>
-            </span>
-          </div>
+      <div className="auth-showcase-header">
+        <Link href="/" className="auth-showcase-logo-link" aria-label="HappyFreight - Return to Home">
+          <svg
+            data-logo="logo"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 41 41.4"
+            style={{ height: "26px", width: "auto", flexShrink: 0 }}
+          >
+            <g id="logogram" transform="translate(0, 0.7)">
+              <path
+                d="M24 0H16V12.0632C15.9663 14.2434 14.1885 16 12.0005 16H0V24H8.68629C10.808 24 12.8429 23.1571 14.3431 21.6569L21.6569 14.3431C23.1571 12.8429 24 10.808 24 8.68629V0Z"
+                fill="#ffffff"
+              />
+              <path
+                d="M16 40H24V27.9368C24.0337 25.7566 25.8115 24 27.9995 24H40V16H31.3137C29.192 16 27.1571 16.8429 25.6569 18.3431L18.3431 25.6569C16.8429 27.1571 16 29.192 16 31.3137V40Z"
+                fill="#ff462d"
+              />
+            </g>
+          </svg>
+          <span style={{ fontSize: "18px", fontWeight: "700", letterSpacing: "-0.035em", color: "#ffffff", whiteSpace: "nowrap" }}>
+            Happy<span style={{ color: "#ff462d" }}>Freight</span>
+          </span>
         </Link>
 
         {/* Live Corridor Status Indicator */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            borderRadius: "4px",
-            border: "1px solid #222222",
-            backgroundColor: "#0d0d0d",
-            padding: "5px 12px",
-            fontSize: "11px",
-            fontFamily: "var(--font-suisse, monospace)",
-            textTransform: "uppercase",
-            letterSpacing: "0.1em",
-            color: "#34d399",
-          }}
-        >
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
+        <div className="auth-showcase-badge">
+          <span className="auth-showcase-badge-ping" aria-hidden="true" />
           <span>FSM Core Online // 142ms</span>
         </div>
       </div>
@@ -145,11 +128,11 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               gap: "6px",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "13px", color: "#ffffff" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "4px 8px", fontSize: "13px", color: "#ffffff" }}>
               <span style={{ fontWeight: "600", letterSpacing: "-0.01em" }}>
                 NH-48 • Bhiwandi Hub → Gurgaon Expressway
               </span>
-              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700" }}>
+              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700", flexShrink: 0 }}>
                 +₹3,200 Floor
               </span>
             </div>
@@ -157,7 +140,8 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "12px",
+                flexWrap: "wrap",
+                gap: "6px 10px",
                 fontSize: "12px",
                 fontFamily: "var(--font-suisse, monospace)",
                 color: "#dfdbd5",
@@ -181,11 +165,11 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               gap: "6px",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "13px", color: "#ffffff" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "4px 8px", fontSize: "13px", color: "#ffffff" }}>
               <span style={{ fontWeight: "600", letterSpacing: "-0.01em" }}>
                 NH-44 • Hyderabad MMLP → Nagpur Ring Road
               </span>
-              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700" }}>
+              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700", flexShrink: 0 }}>
                 +₹2,850 Floor
               </span>
             </div>
@@ -193,7 +177,8 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "12px",
+                flexWrap: "wrap",
+                gap: "6px 10px",
                 fontSize: "12px",
                 fontFamily: "var(--font-suisse, monospace)",
                 color: "#dfdbd5",
@@ -215,16 +200,18 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "6px 8px",
               fontSize: "12px",
               fontFamily: "var(--font-suisse, monospace)",
               color: "#dfdbd5",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d" }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
+              <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d", flexShrink: 0 }} />
               <span>Voice Note: &ldquo;32ft available Bhiwandi, rate 68k&rdquo;</span>
             </div>
-            <span style={{ color: "#ffffff" }}>Parsed in 0.8s</span>
+            <span style={{ color: "#ffffff", flexShrink: 0 }}>Parsed in 0.8s</span>
           </div>
         </div>
 
@@ -232,7 +219,7 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(95px, 1fr))",
             gap: "1px",
             backgroundColor: "#222222",
             border: "1px solid #222222",
@@ -240,27 +227,27 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
             overflow: "hidden",
           }}
         >
-          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
-            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+          <div style={{ backgroundColor: "#0d0d0d", padding: "10px 12px" }}>
+            <div style={{ fontSize: "11px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.08em", color: "#dfdbd5", marginBottom: "4px" }}>
               Corridor Margin
             </div>
-            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
-              ₹2,500<span style={{ fontSize: "12px", color: "#34d399", marginLeft: "4px" }}>min</span>
+            <div style={{ fontSize: "17px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+              ₹2,500<span style={{ fontSize: "11px", color: "#34d399", marginLeft: "4px" }}>min</span>
             </div>
           </div>
-          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
-            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+          <div style={{ backgroundColor: "#0d0d0d", padding: "10px 12px" }}>
+            <div style={{ fontSize: "11px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.08em", color: "#dfdbd5", marginBottom: "4px" }}>
               Voice Latency
             </div>
-            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+            <div style={{ fontSize: "17px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
               &lt; 900ms
             </div>
           </div>
-          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
-            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+          <div style={{ backgroundColor: "#0d0d0d", padding: "10px 12px" }}>
+            <div style={{ fontSize: "11px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.08em", color: "#dfdbd5", marginBottom: "4px" }}>
               VAHAN Checks
             </div>
-            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+            <div style={{ fontSize: "17px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
               100% Verified
             </div>
           </div>
@@ -275,6 +262,8 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          flexWrap: "wrap",
+          gap: "8px 12px",
           borderTop: "1px solid #222222",
           paddingTop: "1.25rem",
           fontSize: "12px",
