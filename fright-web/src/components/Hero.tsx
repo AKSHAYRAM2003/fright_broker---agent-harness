@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
               "linear-gradient(to right, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.50) 100%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 40%)",
           }}
         ></div>
-        <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
+        <div className="relative z-[4] flex min-h-[100svh] flex-col justify-center px-5 pt-32 pb-14 sm:pt-32 md:px-12 md:pt-20 md:pb-14">
           <div className="hero-enter mx-auto w-full max-w-[1440px]">
             <h1 className="max-w-[18ch] font-display text-[38px] leading-[1.0] tracking-[-0.04em] text-white sm:text-[52px] sm:leading-[0.96] md:text-[68px] md:leading-[0.94] lg:text-[82px] drop-shadow-md">
               Autonomous Operations for Indian Freight Brokers.
@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
                 </p>
                 <div id="hero-agent" className="mt-6 sm:mt-[30px] scroll-mt-32">
                   <form noValidate className="w-full max-w-[480px]">
-                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-stretch sm:gap-0 rounded-lg overflow-hidden border border-white/25 bg-black/60 backdrop-blur-md shadow-2xl transition-colors focus-within:border-white/50">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-0 sm:rounded-lg sm:overflow-hidden sm:border sm:border-white/25 sm:bg-black/60 sm:backdrop-blur-md sm:shadow-2xl sm:transition-colors sm:focus-within:border-white/50">
                       <label htmlFor="hero-email" className="sr-only">
                         Work email or WhatsApp
                       </label>
@@ -95,12 +95,12 @@ export const Hero: React.FC = () => {
                         type="text"
                         required
                         placeholder="Enter your WhatsApp number or email"
-                        className="min-w-0 flex-1 bg-transparent px-5 sm:px-6 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none"
+                        className="w-full min-w-0 flex-1 rounded-lg border border-white/25 bg-black/60 backdrop-blur-md px-5 py-[14px] font-body text-[14px] text-white placeholder:text-white/50 outline-none transition-colors focus:border-white/50 shadow-2xl sm:rounded-none sm:border-none sm:bg-transparent sm:px-6 sm:shadow-none"
                         defaultValue=""
                       />
                       <button
                         type="submit"
-                        className="hero-cta-btn inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 overflow-hidden px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] font-semibold no-underline active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer"
+                        className="hero-cta-btn inline-flex w-full sm:w-auto lg:min-w-max lg:whitespace-nowrap items-center justify-center gap-2 rounded-lg sm:rounded-none overflow-hidden px-6 py-[14px] font-body text-[12px] uppercase leading-none tracking-[0.1em] font-semibold no-underline active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-hr-rust shrink-0 cursor-pointer shadow-lg sm:shadow-none"
                       >
                         <span
                           aria-hidden="true"
