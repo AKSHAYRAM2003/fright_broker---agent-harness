@@ -73,7 +73,7 @@ export default function SignUpPage() {
         <div className="auth-top-bar">
           <Link
             href="/"
-            className="auth-brand-link lg:hidden"
+            className="auth-brand-link"
             aria-label="HappyFreight - Return to Home"
           >
             <HappyRobotLogo className="h-6 sm:h-7 w-auto" />
