@@ -7,22 +7,26 @@ export const NAV_ITEMS: NavItem[] = [
     children: [
       {
         title: "Agentic Orchestration Engine",
-        description: "Autonomous execution layer combining LLM reasoning with deterministic systems.",
+        description:
+          "Autonomous execution layer combining LLM reasoning with deterministic systems.",
         href: "#platform",
       },
       {
         title: "Context & Knowledge Graph",
-        description: "Continuous enterprise memory capturing operating state across ERPs and CRMs.",
+        description:
+          "Continuous enterprise memory capturing operating state across ERPs and CRMs.",
         href: "#platform",
       },
       {
         title: "Enterprise Guardrails & Security",
-        description: "SOC 2 Type II, ISO 27001 certified with human-in-the-loop audit logs.",
+        description:
+          "SOC 2 Type II, ISO 27001 certified with human-in-the-loop audit logs.",
         href: "#security",
       },
       {
         title: "Integrations & Prebuilt Adapters",
-        description: "Native connectors for SAP, Salesforce, McLeod, TMW, Oracle, and legacy mainframes.",
+        description:
+          "Native connectors for SAP, Salesforce, McLeod, TMW, Oracle, and legacy mainframes.",
         href: "#platform",
       },
     ],
@@ -33,22 +37,26 @@ export const NAV_ITEMS: NavItem[] = [
     children: [
       {
         title: "Logistics & Freight Brokerage",
-        description: "Automate load tracking, rate negotiation, carrier dispatch, and exception recovery.",
+        description:
+          "Automate load tracking, rate negotiation, carrier dispatch, and exception recovery.",
         href: "#solutions",
       },
       {
         title: "Energy & Utilities",
-        description: "Customer service intake, outage routing, dispute reconciliation, and field operations.",
+        description:
+          "Customer service intake, outage routing, dispute reconciliation, and field operations.",
         href: "#solutions",
       },
       {
         title: "Financial Services & Insurance",
-        description: "Claims adjudication, fraud detection intake, and back-office policy processing.",
+        description:
+          "Claims adjudication, fraud detection intake, and back-office policy processing.",
         href: "#solutions",
       },
       {
         title: "Airlines & Travel Operations",
-        description: "Irregular operations (IROPS), crew rescheduling, baggage reconciliation.",
+        description:
+          "Irregular operations (IROPS), crew rescheduling, baggage reconciliation.",
         href: "#solutions",
       },
     ],
@@ -70,24 +78,88 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const PARTNER_LOGOS: PartnerLogo[] = [
   { id: "dhl", name: "DHL", src: "/images/logos/landing-logo-dhl.svg" },
-  { id: "kuehne", name: "Kuehne+Nagel", src: "/images/logos/landing-logo-kuehne-nagel.svg" },
-  { id: "uber", name: "Uber Freight", src: "/images/logos/landing-logo-uber.svg" },
-  { id: "werner", name: "Werner", src: "/images/logos/landing-logo-werner.svg" },
-  { id: "naturgy", name: "Naturgy", src: "/images/logos/landing-logo-naturgy.svg" },
+  {
+    id: "kuehne",
+    name: "Kuehne+Nagel",
+    src: "/images/logos/landing-logo-kuehne-nagel.svg",
+  },
+  {
+    id: "uber",
+    name: "Uber Freight",
+    src: "/images/logos/landing-logo-uber.svg",
+  },
+  {
+    id: "werner",
+    name: "Werner",
+    src: "/images/logos/landing-logo-werner.svg",
+  },
+  {
+    id: "naturgy",
+    name: "Naturgy",
+    src: "/images/logos/landing-logo-naturgy.svg",
+  },
   { id: "ryder", name: "Ryder", src: "/images/logos/landing-logo-ryder.svg" },
-  { id: "samsara", name: "Samsara", src: "/images/logos/landing-logo-samsara.svg" },
+  {
+    id: "samsara",
+    name: "Samsara",
+    src: "/images/logos/landing-logo-samsara.svg",
+  },
   { id: "cma", name: "CMA CGM", src: "/images/logos/landing-logo-cma-cgm.svg" },
-  { id: "repsol", name: "Repsol", src: "/images/logos/landing-logo-repsol.svg" },
-  { id: "wwex", name: "WWEX Group", src: "/images/logos/landing-logo-wwex.svg" },
-  { id: "lkw", name: "LKW Walter", src: "/images/logos/landing-logo-lkw-walter.svg" },
-  { id: "avanza", name: "Avanza", src: "/images/logos/landing-logo-avanza.svg" },
-  { id: "marmic", name: "Marmic", src: "/images/logos/landing-logo-marmic.svg" },
-  { id: "mode", name: "Mode Transportation", src: "/images/logos/landing-logo-mode.svg" },
-  { id: "jobandtalent", name: "Job&Talent", src: "/images/logos/landing-logo-jobandtalent.svg" },
-  { id: "etihad", name: "Etihad Airways", src: "/images/logos/etihad-airways-mono.svg" },
-  { id: "circle", name: "Circle Logistics", src: "/images/logos/landing-logo-circle.svg" },
-  { id: "encompass", name: "Encompass", src: "/images/logos/landing-logo-encompass.svg" },
-  { id: "infinit", name: "Infinit", src: "/images/logos/landing-logo-infinit.svg" },
+  {
+    id: "repsol",
+    name: "Repsol",
+    src: "/images/logos/landing-logo-repsol.svg",
+  },
+  {
+    id: "wwex",
+    name: "WWEX Group",
+    src: "/images/logos/landing-logo-wwex.svg",
+  },
+  {
+    id: "lkw",
+    name: "LKW Walter",
+    src: "/images/logos/landing-logo-lkw-walter.svg",
+  },
+  {
+    id: "avanza",
+    name: "Avanza",
+    src: "/images/logos/landing-logo-avanza.svg",
+  },
+  {
+    id: "marmic",
+    name: "Marmic",
+    src: "/images/logos/landing-logo-marmic.svg",
+  },
+  {
+    id: "mode",
+    name: "Mode Transportation",
+    src: "/images/logos/landing-logo-mode.svg",
+  },
+  {
+    id: "jobandtalent",
+    name: "Job&Talent",
+    src: "/images/logos/landing-logo-jobandtalent.svg",
+  },
+  {
+    id: "etihad",
+    name: "Etihad Airways",
+    src: "/images/logos/etihad-airways-mono.svg",
+  },
+  {
+    id: "circle",
+    name: "Circle Logistics",
+    src: "/images/logos/landing-logo-circle.svg",
+  },
+  {
+    id: "encompass",
+    name: "Encompass",
+    src: "/images/logos/landing-logo-encompass.svg",
+  },
+  {
+    id: "infinit",
+    name: "Infinit",
+    src: "/images/logos/landing-logo-infinit.svg",
+  },
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -96,34 +168,48 @@ export const CASE_STUDIES: CaseStudy[] = [
     company: "DHL Global Forwarding",
     metric: "94%",
     highlight: "Autonomous issue resolution without human intervention",
-    summary: "DHL handles millions of multi-modal container movements annually. HappyRobot autonomous agents communicate directly with ocean carriers, terminals, and dispatchers to resolve delays and sync tracking data across global TMS instances in real time.",
-    quote: "HappyRobot transformed how our operations team coordinates freight exceptions. We went from reactive fire-fighting to proactive, autonomous resolution across 14 European gateways.",
+    summary:
+      "DHL handles millions of multi-modal container movements annually. HappyRobot autonomous agents communicate directly with ocean carriers, terminals, and dispatchers to resolve delays and sync tracking data across global TMS instances in real time.",
+    quote:
+      "HappyRobot transformed how our operations team coordinates freight exceptions. We went from reactive fire-fighting to proactive, autonomous resolution across 14 European gateways.",
     author: "Marcello Conti",
     role: "VP of Digital Supply Chain, DHL",
     image: "/images/cdn/landing-case-dhl.webp",
     logo: "/images/logos/landing-logo-dhl.svg",
-    tags: ["Freight Forwarding", "Exception Management", "Voice & Email Agents"],
+    tags: [
+      "Freight Forwarding",
+      "Exception Management",
+      "Voice & Email Agents",
+    ],
   },
   {
     id: "naturgy",
     company: "Naturgy Energy Group",
     metric: "7.2x",
     highlight: "Faster resolution on complex energy billing inquiries",
-    summary: "As one of Europe's largest energy utilities, Naturgy deployed HappyRobot to streamline complex customer service interactions and grid maintenance communications, executing live database checks and issuing automated adjustments within regulatory guidelines.",
-    quote: "Our autonomous agents handle deep, multi-step customer inquiries with the exact institutional knowledge our most senior representatives possess.",
+    summary:
+      "As one of Europe's largest energy utilities, Naturgy deployed HappyRobot to streamline complex customer service interactions and grid maintenance communications, executing live database checks and issuing automated adjustments within regulatory guidelines.",
+    quote:
+      "Our autonomous agents handle deep, multi-step customer inquiries with the exact institutional knowledge our most senior representatives possess.",
     author: "Elena Vasquez",
     role: "Head of Operations & Innovation, Naturgy",
     image: "/images/cdn/landing-case-naturgy.webp",
     logo: "/images/logos/landing-logo-naturgy.svg",
-    tags: ["Energy & Utilities", "Billing Reconciliation", "Multi-lingual Support"],
+    tags: [
+      "Energy & Utilities",
+      "Billing Reconciliation",
+      "Multi-lingual Support",
+    ],
   },
   {
     id: "kuehne",
     company: "Kuehne+Nagel",
     metric: "0 sec",
     highlight: "Zero-latency carrier dispatch response 24/7/365",
-    summary: "Kuehne+Nagel deployed HappyRobot voice and API agents to conduct automated carrier check-ins, rate negotiation verification, and BOL document audits across thousands of high-velocity overland shipping lanes.",
-    quote: "The ability of HappyRobot to understand nuanced transport jargon and act directly in our enterprise software is unprecedented.",
+    summary:
+      "Kuehne+Nagel deployed HappyRobot voice and API agents to conduct automated carrier check-ins, rate negotiation verification, and BOL document audits across thousands of high-velocity overland shipping lanes.",
+    quote:
+      "The ability of HappyRobot to understand nuanced transport jargon and act directly in our enterprise software is unprecedented.",
     author: "Hans Richter",
     role: "Global Overland Logistics Lead, Kuehne+Nagel",
     image: "/images/cdn/landing-case-kuehne-nagel.webp",
