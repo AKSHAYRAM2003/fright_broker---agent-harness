@@ -55,6 +55,7 @@ export default function RootLayout({
       lang="en"
       data-theme="light"
       data-mode="light"
+      suppressHydrationWarning
       className="geistsans_d5a4f12f-module__AHuHVa__variable geistmono_157ca88a-module__k0_9hG__variable scroll-smooth antialiased"
     >
       <head>
@@ -72,7 +73,7 @@ export default function RootLayout({
           sizes="180x180"
         />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
