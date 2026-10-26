@@ -81,11 +81,11 @@ export default function LoginPage() {
 
       {/* Right Column: Authentication Form Panel */}
       <div className="auth-form-panel">
-        {/* Top Bar Navigation: Brand Logo (redirects to Home) & Switch to Sign Up */}
+        {/* Top Bar Navigation: Brand Logo (hidden on desktop large screens) & Switch to Sign Up */}
         <div className="auth-top-bar">
           <Link
             href="/"
-            className="auth-brand-link"
+            className="auth-brand-link lg:hidden"
             aria-label="HappyFreight - Return to Home"
           >
             <HappyRobotLogo className="h-6 sm:h-7 w-auto" />
@@ -106,31 +106,21 @@ export default function LoginPage() {
             Access real-time load matching, driver voice exceptions, and corridor margin controls.
           </p>
 
-          {/* Status Alert Banner */}
-          {statusMessage.type && (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "10px",
-                borderRadius: "6px",
-                border: statusMessage.type === "success" ? "1px solid rgba(16, 185, 129, 0.3)" : "1px solid rgba(239, 68, 68, 0.3)",
-                backgroundColor: statusMessage.type === "success" ? "#ecfdf5" : "#fef2f2",
-                color: statusMessage.type === "success" ? "#065f46" : "#991b1b",
-                padding: "12px 14px",
-                fontSize: "13px",
-                lineHeight: "1.4",
-                marginBottom: "1.25rem",
-              }}
-            >
-              {statusMessage.type === "success" ? (
-                <CheckCircle2 style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#10b981" }} />
-              ) : (
-                <AlertCircle style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#ef4444" }} />
+          {/* Status Alert Banner with Smooth Accordion Expand (transitions-dev accordion) */}
+          <div className={`auth-expand-panel ${statusMessage.type ? "is-open" : ""}`} style={{ marginBottom: statusMessage.type ? "1.25rem" : "0" }}>
+            <div className="auth-expand-inner">
+              {statusMessage.type && (
+                <div className={`auth-alert-banner ${statusMessage.type === "success" ? "is-success" : "is-error"}`}>
+                  {statusMessage.type === "success" ? (
+                    <CheckCircle2 style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#10b981" }} />
+                  ) : (
+                    <AlertCircle style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#ef4444" }} />
+                  )}
+                  <span>{statusMessage.text}</span>
+                </div>
               )}
-              <span>{statusMessage.text}</span>
             </div>
-          )}
+          </div>
 
           {/* Auth Method Selector Tabs with Sliding Pill (transitions-dev tabs-sliding) */}
           <div className="auth-tab-bar" data-active={authMethod}>
@@ -161,7 +151,7 @@ export default function LoginPage() {
 
           {/* Tab 1: WhatsApp / Mobile OTP Login */}
           {authMethod === "whatsapp" && (
-            <form onSubmit={otpSent ? handleLogin : handleSendOtp} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <form key="whatsapp-form" onSubmit={otpSent ? handleLogin : handleSendOtp} className="auth-form-crossfade" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <div>
                 <label htmlFor="phone-input" className="auth-field-label">
                   WhatsApp or Dispatch Mobile
@@ -180,36 +170,39 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              {otpSent && (
-                <div>
-                  <label htmlFor="otp-input" className="auth-field-label">
-                    6-Digit Security Code
-                  </label>
-                  <div className="auth-input-group">
-                    <input
-                      id="otp-input"
-                      type="text"
-                      required
-                      maxLength={6}
-                      placeholder="••••••"
-                      value={otp}
-                      onChange={(e) => setOtp(e.target.value)}
-                      className="auth-input"
-                      style={{ textAlign: "center", fontFamily: "monospace", fontSize: "18px", letterSpacing: "0.3em" }}
-                    />
-                  </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", color: "#57534e", marginTop: "6px" }}>
-                    <span>Didn&apos;t receive code?</span>
-                    <button
-                      type="button"
-                      onClick={handleSendOtp}
-                      style={{ color: "#ff462d", textDecoration: "underline", background: "none", border: "none", cursor: "pointer", padding: 0 }}
-                    >
-                      Resend Code
-                    </button>
+              {/* Smooth Accordion OTP Reveal (transitions-dev accordion) */}
+              <div className={`auth-expand-panel ${otpSent ? "is-open" : ""}`}>
+                <div className="auth-expand-inner">
+                  <div style={{ paddingTop: "0.25rem" }}>
+                    <label htmlFor="otp-input" className="auth-field-label">
+                      6-Digit Security Code
+                    </label>
+                    <div className="auth-input-group">
+                      <input
+                        id="otp-input"
+                        type="text"
+                        required={otpSent}
+                        maxLength={6}
+                        placeholder="••••••"
+                        value={otp}
+                        onChange={(e) => setOtp(e.target.value)}
+                        className="auth-input"
+                        style={{ textAlign: "center", fontFamily: "monospace", fontSize: "18px", letterSpacing: "0.3em" }}
+                      />
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", color: "#57534e", marginTop: "6px" }}>
+                      <span>Didn&apos;t receive code?</span>
+                      <button
+                        type="button"
+                        onClick={handleSendOtp}
+                        style={{ color: "#ff462d", textDecoration: "underline", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                      >
+                        Resend Code
+                      </button>
+                    </div>
                   </div>
                 </div>
-              )}
+              </div>
 
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", paddingTop: "4px" }}>
                 <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", fontSize: "12.5px", color: "#6f675c" }}>
@@ -245,7 +238,7 @@ export default function LoginPage() {
 
           {/* Tab 2: Corporate Email & Password */}
           {authMethod === "email" && (
-            <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <form key="email-form" onSubmit={handleLogin} className="auth-form-crossfade" style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
               <div>
                 <label htmlFor="email-input" className="auth-field-label">
                   Corporate Email

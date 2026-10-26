@@ -69,11 +69,11 @@ export default function SignUpPage() {
 
       {/* Right Column: Registration Form Panel */}
       <div className="auth-form-panel">
-        {/* Top Bar Navigation: Brand Logo (redirects to Home) & Switch to Sign In */}
+        {/* Top Bar Navigation: Brand Logo (hidden on desktop large screens) & Switch to Sign In */}
         <div className="auth-top-bar">
           <Link
             href="/"
-            className="auth-brand-link"
+            className="auth-brand-link lg:hidden"
             aria-label="HappyFreight - Return to Home"
           >
             <HappyRobotLogo className="h-6 sm:h-7 w-auto" />
@@ -94,31 +94,21 @@ export default function SignUpPage() {
             Get your brokerage operational in under 2 minutes. Ingest voice notes and enforce margin floors from load #1.
           </p>
 
-          {/* Status Alert Banner */}
-          {statusMessage.type && (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "10px",
-                borderRadius: "6px",
-                border: statusMessage.type === "success" ? "1px solid rgba(16, 185, 129, 0.3)" : "1px solid rgba(239, 68, 68, 0.3)",
-                backgroundColor: statusMessage.type === "success" ? "#ecfdf5" : "#fef2f2",
-                color: statusMessage.type === "success" ? "#065f46" : "#991b1b",
-                padding: "12px 14px",
-                fontSize: "13px",
-                lineHeight: "1.4",
-                marginBottom: "1.25rem",
-              }}
-            >
-              {statusMessage.type === "success" ? (
-                <CheckCircle2 style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#10b981" }} />
-              ) : (
-                <AlertCircle style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#ef4444" }} />
+          {/* Status Alert Banner with Smooth Accordion Expand (transitions-dev accordion) */}
+          <div className={`auth-expand-panel ${statusMessage.type ? "is-open" : ""}`} style={{ marginBottom: statusMessage.type ? "1.25rem" : "0" }}>
+            <div className="auth-expand-inner">
+              {statusMessage.type && (
+                <div className={`auth-alert-banner ${statusMessage.type === "success" ? "is-success" : "is-error"}`}>
+                  {statusMessage.type === "success" ? (
+                    <CheckCircle2 style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#10b981" }} />
+                  ) : (
+                    <AlertCircle style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px", color: "#ef4444" }} />
+                  )}
+                  <span>{statusMessage.text}</span>
+                </div>
               )}
-              <span>{statusMessage.text}</span>
             </div>
-          )}
+          </div>
 
           {/* Registration Form */}
           <form onSubmit={handleSignUp} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -201,9 +191,9 @@ export default function SignUpPage() {
                   </button>
                 </div>
               </div>
-              <div className="auth-input-group">
+              <div className="auth-input-group" key={contactMethod}>
                 {contactMethod === "whatsapp" ? (
-                  <>
+                  <div className="auth-form-crossfade" style={{ display: "flex", alignItems: "center", width: "100%" }}>
                     <span className="auth-input-prefix">+91</span>
                     <input
                       id="contact-input"
@@ -214,9 +204,9 @@ export default function SignUpPage() {
                       onChange={(e) => setContactValue(e.target.value)}
                       className="auth-input"
                     />
-                  </>
+                  </div>
                 ) : (
-                  <div style={{ display: "flex", alignItems: "center", width: "100%", padding: "0 12px" }}>
+                  <div className="auth-form-crossfade" style={{ display: "flex", alignItems: "center", width: "100%", padding: "0 12px" }}>
                     <Mail style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                     <input
                       id="contact-input"

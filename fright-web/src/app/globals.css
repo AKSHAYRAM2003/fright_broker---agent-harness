@@ -423,7 +423,68 @@ img[data-nimg="fill"] {
   margin-bottom: 1rem;
 }
 
-/* Brand Logo Link in Top Bar (Redirects to Home) */
+@media (min-width: 1024px) {
+  .auth-top-bar {
+    justify-content: flex-end;
+  }
+}
+
+/* Smooth Accordion / Disclosure Expansion (transitions-dev accordion) */
+.auth-expand-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms cubic-bezier(0.22, 1, 0.36, 1), margin-bottom 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-expand-panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+.auth-expand-inner {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-expand-panel.is-open .auth-expand-inner {
+  opacity: 1;
+}
+
+/* Alert Banner Styling with Smooth Transitions */
+.auth-alert-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.auth-alert-banner.is-success {
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.auth-alert-banner.is-error {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background-color: #fef2f2;
+  color: #991b1b;
+}
+
+/* Form Cross-Fade Transition (transitions-dev page-side-by-side) */
+.auth-form-crossfade {
+  animation: auth-crossfade 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes auth-crossfade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Brand Logo Link in Top Bar (Hidden on desktop large screens, visible on mobile) */
 .auth-brand-link {
   display: inline-flex;
   align-items: center;
