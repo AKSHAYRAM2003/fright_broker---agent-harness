@@ -18,15 +18,18 @@ export const InteractiveScripts: React.FC = () => {
           }
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
     );
 
     revealElements.forEach((el, index) => {
       const rect = el.getBoundingClientRect();
       if (rect.top < window.innerHeight + 50) {
-        setTimeout(() => {
-          el.classList.add("hr-visible");
-        }, Math.min(index * 40, 500));
+        setTimeout(
+          () => {
+            el.classList.add("hr-visible");
+          },
+          Math.min(index * 40, 500),
+        );
       } else {
         revealObserver.observe(el);
       }
@@ -59,11 +62,19 @@ export const InteractiveScripts: React.FC = () => {
         if (btnSolutions) btnSolutions.setAttribute("aria-expanded", "false");
 
         if (panelPlatform) {
-          panelPlatform.classList.remove("hidden", "pointer-events-none", "opacity-0");
+          panelPlatform.classList.remove(
+            "hidden",
+            "pointer-events-none",
+            "opacity-0",
+          );
           panelPlatform.classList.add("opacity-100", "pointer-events-auto");
         }
         if (panelSolutions) {
-          panelSolutions.classList.add("hidden", "pointer-events-none", "opacity-0");
+          panelSolutions.classList.add(
+            "hidden",
+            "pointer-events-none",
+            "opacity-0",
+          );
           panelSolutions.classList.remove("opacity-100", "pointer-events-auto");
         }
       } else if (panelName === "solutions") {
@@ -71,11 +82,19 @@ export const InteractiveScripts: React.FC = () => {
         if (btnPlatform) btnPlatform.setAttribute("aria-expanded", "false");
 
         if (panelSolutions) {
-          panelSolutions.classList.remove("hidden", "pointer-events-none", "opacity-0");
+          panelSolutions.classList.remove(
+            "hidden",
+            "pointer-events-none",
+            "opacity-0",
+          );
           panelSolutions.classList.add("opacity-100", "pointer-events-auto");
         }
         if (panelPlatform) {
-          panelPlatform.classList.add("hidden", "pointer-events-none", "opacity-0");
+          panelPlatform.classList.add(
+            "hidden",
+            "pointer-events-none",
+            "opacity-0",
+          );
           panelPlatform.classList.remove("opacity-100", "pointer-events-auto");
         }
       }
@@ -111,7 +130,9 @@ export const InteractiveScripts: React.FC = () => {
     }
 
     if (btnPlatform) {
-      btnPlatform.addEventListener("mouseenter", () => openMegaPanel("platform"));
+      btnPlatform.addEventListener("mouseenter", () =>
+        openMegaPanel("platform"),
+      );
       btnPlatform.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -120,11 +141,15 @@ export const InteractiveScripts: React.FC = () => {
     }
 
     if (btnSolutions) {
-      btnSolutions.addEventListener("mouseenter", () => openMegaPanel("solutions"));
+      btnSolutions.addEventListener("mouseenter", () =>
+        openMegaPanel("solutions"),
+      );
       btnSolutions.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        activeMenu === "solutions" ? closeMegaMenu() : openMegaPanel("solutions");
+        activeMenu === "solutions"
+          ? closeMegaMenu()
+          : openMegaPanel("solutions");
       });
     }
 
@@ -163,13 +188,22 @@ export const InteractiveScripts: React.FC = () => {
         if (href && href.startsWith("/")) {
           if (href.includes("platform")) {
             e.preventDefault();
-            document.getElementById("platform-diagram")?.scrollIntoView({ behavior: "smooth" });
-          } else if (href.includes("solutions") || href.includes("industries")) {
+            document
+              .getElementById("platform-diagram")
+              ?.scrollIntoView({ behavior: "smooth" });
+          } else if (
+            href.includes("solutions") ||
+            href.includes("industries")
+          ) {
             e.preventDefault();
-            document.getElementById("verticals")?.scrollIntoView({ behavior: "smooth" });
+            document
+              .getElementById("verticals")
+              ?.scrollIntoView({ behavior: "smooth" });
           } else if (href.includes("customers")) {
             e.preventDefault();
-            document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" });
+            document
+              .getElementById("case-studies")
+              ?.scrollIntoView({ behavior: "smooth" });
           }
         }
       });
@@ -180,8 +214,12 @@ export const InteractiveScripts: React.FC = () => {
     // ==========================================
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileDrawer = document.getElementById("mobile-drawer");
-    const mobileAccBtnPlatform = document.getElementById("mobile-acc-btn-platform");
-    const mobileAccBtnSolutions = document.getElementById("mobile-acc-btn-solutions");
+    const mobileAccBtnPlatform = document.getElementById(
+      "mobile-acc-btn-platform",
+    );
+    const mobileAccBtnSolutions = document.getElementById(
+      "mobile-acc-btn-solutions",
+    );
 
     if (mobileMenuBtn && mobileDrawer) {
       let isMobileOpen = false;
@@ -190,14 +228,33 @@ export const InteractiveScripts: React.FC = () => {
         e.stopPropagation();
         isMobileOpen = !isMobileOpen;
         mobileMenuBtn.classList.toggle("is-active", isMobileOpen);
-        mobileMenuBtn.setAttribute("aria-expanded", isMobileOpen ? "true" : "false");
+        mobileMenuBtn.setAttribute(
+          "aria-expanded",
+          isMobileOpen ? "true" : "false",
+        );
 
         if (isMobileOpen) {
-          mobileDrawer.classList.remove("grid-rows-[0fr]", "opacity-0", "pointer-events-none");
-          mobileDrawer.classList.add("grid-rows-[1fr]", "opacity-100", "pointer-events-auto");
+          mobileDrawer.classList.remove(
+            "grid-rows-[0fr]",
+            "opacity-0",
+            "pointer-events-none",
+          );
+          mobileDrawer.classList.add(
+            "grid-rows-[1fr]",
+            "opacity-100",
+            "pointer-events-auto",
+          );
         } else {
-          mobileDrawer.classList.remove("grid-rows-[1fr]", "opacity-100", "pointer-events-auto");
-          mobileDrawer.classList.add("grid-rows-[0fr]", "opacity-0", "pointer-events-none");
+          mobileDrawer.classList.remove(
+            "grid-rows-[1fr]",
+            "opacity-100",
+            "pointer-events-auto",
+          );
+          mobileDrawer.classList.add(
+            "grid-rows-[0fr]",
+            "opacity-0",
+            "pointer-events-none",
+          );
         }
       });
 
@@ -211,7 +268,8 @@ export const InteractiveScripts: React.FC = () => {
           e.preventDefault();
           isOpen = !isOpen;
           button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          if (svg) svg.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+          if (svg)
+            svg.style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
 
           if (content) {
             if (isOpen) {
@@ -232,8 +290,16 @@ export const InteractiveScripts: React.FC = () => {
         a.addEventListener("click", () => {
           isMobileOpen = false;
           mobileMenuBtn.classList.remove("is-active");
-          mobileDrawer.classList.remove("grid-rows-[1fr]", "opacity-100", "pointer-events-auto");
-          mobileDrawer.classList.add("grid-rows-[0fr]", "opacity-0", "pointer-events-none");
+          mobileDrawer.classList.remove(
+            "grid-rows-[1fr]",
+            "opacity-100",
+            "pointer-events-auto",
+          );
+          mobileDrawer.classList.add(
+            "grid-rows-[0fr]",
+            "opacity-0",
+            "pointer-events-none",
+          );
         });
       });
     }
@@ -261,19 +327,24 @@ export const InteractiveScripts: React.FC = () => {
       }
     }
 
-    document.querySelectorAll('a[href="#newsroom"], a[href*="seriesc"]').forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.preventDefault();
-        openModal();
+    document
+      .querySelectorAll('a[href="#newsroom"], a[href*="seriesc"]')
+      .forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal();
+        });
       });
-    });
 
-    if (closeNewsroomBtn) closeNewsroomBtn.addEventListener("click", closeModal);
+    if (closeNewsroomBtn)
+      closeNewsroomBtn.addEventListener("click", closeModal);
     if (dismissModalBtn) dismissModalBtn.addEventListener("click", closeModal);
     if (modalViewCasesBtn) {
       modalViewCasesBtn.addEventListener("click", () => {
         closeModal();
-        document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById("case-studies")
+          ?.scrollIntoView({ behavior: "smooth" });
       });
     }
     if (newsroomModal) {
@@ -282,7 +353,9 @@ export const InteractiveScripts: React.FC = () => {
       });
     }
 
-    function showToast(msg = "Thanks for your interest! Our team will reach out shortly.") {
+    function showToast(
+      msg = "Thanks for your interest! Our team will reach out shortly.",
+    ) {
       if (!toast) return;
       const msgEl = document.getElementById("hr-toast-msg");
       if (msgEl) msgEl.textContent = msg;
@@ -299,13 +372,17 @@ export const InteractiveScripts: React.FC = () => {
     demoForms.forEach((form) => {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const input = form.querySelector('input[type="email"]') as HTMLInputElement | null;
+        const input = form.querySelector(
+          'input[type="email"]',
+        ) as HTMLInputElement | null;
         const val = input ? input.value.trim() : "";
         if (!val || !val.includes("@")) {
           showToast("Please enter a valid work email.");
           return;
         }
-        showToast("Request received! An enterprise specialist will contact you.");
+        showToast(
+          "Request received! An enterprise specialist will contact you.",
+        );
         if (input) input.value = "";
       });
     });
@@ -355,7 +432,10 @@ export const InteractiveScripts: React.FC = () => {
               (span as HTMLElement).style.opacity = "1";
             } else {
               const frac = (progress - threshold) / (wordEnd - threshold);
-              (span as HTMLElement).style.opacity = (0.25 + frac * 0.75).toFixed(2);
+              (span as HTMLElement).style.opacity = (
+                0.25 +
+                frac * 0.75
+              ).toFixed(2);
             }
           } else {
             span.classList.remove("is-lit");
@@ -374,7 +454,9 @@ export const InteractiveScripts: React.FC = () => {
       };
 
       window.addEventListener("scroll", handleScroll, { passive: true });
-      window.addEventListener("resize", updateStatementScrub, { passive: true });
+      window.addEventListener("resize", updateStatementScrub, {
+        passive: true,
+      });
 
       setTimeout(updateStatementScrub, 100);
 

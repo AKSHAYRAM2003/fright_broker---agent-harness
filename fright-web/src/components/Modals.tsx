@@ -1,7 +1,16 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, CheckCircle, Sparkles, Building, Mail, User, Phone, ArrowRight } from "lucide-react";
+import {
+  X,
+  CheckCircle,
+  Sparkles,
+  Building,
+  Mail,
+  User,
+  Phone,
+  ArrowRight,
+} from "lucide-react";
 
 interface DemoModalProps {
   isOpen: boolean;
@@ -9,7 +18,11 @@ interface DemoModalProps {
   initialEmail?: string;
 }
 
-export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEmail = "" }) => {
+export const DemoModal: React.FC<DemoModalProps> = ({
+  isOpen,
+  onClose,
+  initialEmail = "",
+}) => {
   const [email, setEmail] = useState(initialEmail);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -42,9 +55,14 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
               <CheckCircle className="w-9 h-9" />
             </div>
-            <h3 className="text-2xl font-bold text-zinc-950">Demo Request Confirmed</h3>
+            <h3 className="text-2xl font-bold text-zinc-950">
+              Demo Request Confirmed
+            </h3>
             <p className="text-sm text-zinc-600 max-w-sm mx-auto leading-relaxed">
-              Thank you, {name || "there"}! A HappyRobot enterprise solutions architect will reach out to <strong className="text-zinc-900">{email}</strong> within 2 business hours.
+              Thank you, {name || "there"}! A HappyRobot enterprise solutions
+              architect will reach out to{" "}
+              <strong className="text-zinc-900">{email}</strong> within 2
+              business hours.
             </p>
             <button
               onClick={onClose}
@@ -59,15 +77,20 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
               <span className="text-xs font-bold uppercase tracking-widest text-orange-600">
                 Enterprise Briefing
               </span>
-              <h3 className="text-2xl font-bold text-zinc-950 mt-1">Book a Live Architecture Demo</h3>
+              <h3 className="text-2xl font-bold text-zinc-950 mt-1">
+                Book a Live Architecture Demo
+              </h3>
               <p className="text-xs sm:text-sm text-zinc-500 mt-1">
-                See autonomous AI workers interacting with your exact TMS, ERP, or CRM software.
+                See autonomous AI workers interacting with your exact TMS, ERP,
+                or CRM software.
               </p>
             </div>
 
             <div className="space-y-3 pt-2">
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">Work Email</label>
+                <label className="block text-xs font-semibold text-zinc-700 mb-1">
+                  Work Email
+                </label>
                 <div className="relative">
                   <Mail className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
                   <input
@@ -83,7 +106,9 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-700 mb-1">Full Name</label>
+                  <label className="block text-xs font-semibold text-zinc-700 mb-1">
+                    Full Name
+                  </label>
                   <div className="relative">
                     <User className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
                     <input
@@ -98,7 +123,9 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-zinc-700 mb-1">Company</label>
+                  <label className="block text-xs font-semibold text-zinc-700 mb-1">
+                    Company
+                  </label>
                   <div className="relative">
                     <Building className="w-4 h-4 text-zinc-400 absolute left-3 top-3" />
                     <input
@@ -114,18 +141,32 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-zinc-700 mb-1">Primary Industry</label>
+                <label className="block text-xs font-semibold text-zinc-700 mb-1">
+                  Primary Industry
+                </label>
                 <select
                   value={industry}
                   onChange={(e) => setIndustry(e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-zinc-200 text-sm bg-white focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                 >
-                  <option value="Logistics & Freight">Logistics &amp; Freight Brokerage</option>
-                  <option value="Energy & Utilities">Energy &amp; Utilities</option>
-                  <option value="Airlines & Travel">Airlines &amp; Aviation</option>
-                  <option value="Financial Services">Financial Services &amp; Banking</option>
-                  <option value="Insurance Operations">Insurance Operations</option>
-                  <option value="Manufacturing">Manufacturing &amp; Supply Chain</option>
+                  <option value="Logistics & Freight">
+                    Logistics &amp; Freight Brokerage
+                  </option>
+                  <option value="Energy & Utilities">
+                    Energy &amp; Utilities
+                  </option>
+                  <option value="Airlines & Travel">
+                    Airlines &amp; Aviation
+                  </option>
+                  <option value="Financial Services">
+                    Financial Services &amp; Banking
+                  </option>
+                  <option value="Insurance Operations">
+                    Insurance Operations
+                  </option>
+                  <option value="Manufacturing">
+                    Manufacturing &amp; Supply Chain
+                  </option>
                   <option value="Other">Other Enterprise Industry</option>
                 </select>
               </div>
@@ -140,7 +181,8 @@ export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialEm
                 <ArrowRight className="w-4 h-4" />
               </button>
               <p className="text-[11px] text-zinc-400 text-center mt-2">
-                By submitting, you agree to our privacy policy and mutual non-disclosure agreement.
+                By submitting, you agree to our privacy policy and mutual
+                non-disclosure agreement.
               </p>
             </div>
           </form>
@@ -187,7 +229,10 @@ interface NewsroomModalProps {
   onClose: () => void;
 }
 
-export const NewsroomModal: React.FC<NewsroomModalProps> = ({ isOpen, onClose }) => {
+export const NewsroomModal: React.FC<NewsroomModalProps> = ({
+  isOpen,
+  onClose,
+}) => {
   if (!isOpen) return null;
 
   return (
@@ -205,11 +250,14 @@ export const NewsroomModal: React.FC<NewsroomModalProps> = ({ isOpen, onClose })
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">
               Press Release
             </span>
-            <span className="text-xs text-zinc-500">October 2026 &bull; San Francisco, CA</span>
+            <span className="text-xs text-zinc-500">
+              October 2026 &bull; San Francisco, CA
+            </span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 leading-tight">
-            HappyRobot Announces $45M Series C to Expand Autonomous Enterprise Operations
+            HappyRobot Announces $45M Series C to Expand Autonomous Enterprise
+            Operations
           </h2>
 
           <div className="border-y border-zinc-100 py-4 flex items-center justify-between text-xs text-zinc-500">
@@ -219,13 +267,22 @@ export const NewsroomModal: React.FC<NewsroomModalProps> = ({ isOpen, onClose })
 
           <div className="text-sm sm:text-base text-zinc-700 space-y-4 leading-relaxed font-normal">
             <p>
-              HappyRobot, the pioneer in autonomous enterprise orchestration, today announced the closing of a $45 million Series C round led by Andreessen Horowitz, with participation from Matrix Partners and prominent operational leaders in global supply chain and utilities.
+              HappyRobot, the pioneer in autonomous enterprise orchestration,
+              today announced the closing of a $45 million Series C round led by
+              Andreessen Horowitz, with participation from Matrix Partners and
+              prominent operational leaders in global supply chain and
+              utilities.
             </p>
             <p>
-              The funding will accelerate HappyRobot&apos;s proprietary deep context graph technology and sub-second voice runtime, enabling enterprises to transition from manual back-office coordination to autonomous agentic execution.
+              The funding will accelerate HappyRobot&apos;s proprietary deep
+              context graph technology and sub-second voice runtime, enabling
+              enterprises to transition from manual back-office coordination to
+              autonomous agentic execution.
             </p>
             <blockquote className="p-4 rounded-xl bg-zinc-50 border-l-4 border-orange-500 text-zinc-800 italic">
-              &ldquo;HappyRobot is doing what traditional RPA never could: solving the context bottleneck. They allow enterprise AI to comprehend operational reality and act autonomously.&rdquo;
+              &ldquo;HappyRobot is doing what traditional RPA never could:
+              solving the context bottleneck. They allow enterprise AI to
+              comprehend operational reality and act autonomously.&rdquo;
             </blockquote>
           </div>
 
