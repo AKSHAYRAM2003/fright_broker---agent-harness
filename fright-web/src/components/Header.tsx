@@ -31,8 +31,8 @@ export const Header: React.FC = () => {
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 md:px-12">
           {/* Brand Logo */}
-          <a aria-label="HappyFright" className="block" href="/">
-            <HappyRobotLogo />
+          <a aria-label="HappyFreight" className="block" href="/">
+            <HappyRobotLogo className="h-7 w-auto md:h-8" />
           </a>
 
           {/* Desktop Navigation Links & CTA */}

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.happyrobot.ai"),
-  title: "HappyFright | Autonomous Freight Operations Harness",
+  title: "HappyFreight | Autonomous Freight Operations Harness",
   description:
     "Autonomous AI agents for Indian freight corridors — ingesting WhatsApp voice notes, enforcing margin floors, and coordinating dispatches.",
   keywords: [
@@ -12,21 +12,21 @@ export const metadata: Metadata = {
     "Autonomous Operations",
     "Freight Broker AI",
     "Logistics Automation",
-    "HappyFright",
+    "HappyFreight",
   ],
-  authors: [{ name: "HappyFright Inc." }],
+  authors: [{ name: "HappyFreight Inc." }],
   openGraph: {
-    title: "HappyFright | Autonomous Freight Operations Harness",
+    title: "HappyFreight | Autonomous Freight Operations Harness",
     description:
       "Autonomous AI agents for Indian freight corridors — ingesting WhatsApp voice notes, enforcing margin floors, and coordinating dispatches.",
     url: "https://www.happyrobot.ai",
-    siteName: "HappyFright",
+    siteName: "HappyFreight",
     images: [
       {
         url: "/images/cdn/hero_still.png",
         width: 1200,
         height: 630,
-        alt: "HappyFright Autonomous Operations Harness",
+        alt: "HappyFreight Autonomous Operations Harness",
       },
     ],
     locale: "en_US",

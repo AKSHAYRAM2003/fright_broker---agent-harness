@@ -10,15 +10,21 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.1fr_1fr_1fr_1fr_1.3fr]">
             <div className="flex items-center justify-center border-b border-hr-line p-10 sm:col-span-2 md:col-span-1 md:border-b-0 md:border-r">
               <svg
-                viewBox="0 0 27.6 21.4"
-                fill="currentColor"
+                viewBox="0 0 40 40"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 role="img"
-                aria-label="HappyRobot"
-                className="h-20 w-auto text-hr-ink-strong md:h-24"
+                aria-label="HappyFreight"
+                className="h-16 w-auto text-hr-ink-strong md:h-20"
               >
-                <path d="M13.694 12.6589C13.694 11.6079 13.1235 10.6396 12.2042 10.1303L9.02673 8.37006C8.10735 7.86073 7.53687 6.89251 7.53687 5.84147V0H0.28125V3.63794C0.28125 4.70778 0.872134 5.69014 1.81722 6.19153L4.90244 7.82829C5.84752 8.32967 6.43841 9.31203 6.43841 10.3819V21.3911H13.694V12.6589Z"></path>
-                <path d="M27.2761 18.1703C27.2761 17.1091 26.6946 16.1333 25.7614 15.6281L22.489 13.8568C21.5558 13.3517 20.9744 12.3758 20.9744 11.3147V0H13.7188V9.00213C13.7188 10.0633 14.3002 11.0392 15.2334 11.5443L18.5058 13.3156C19.439 13.8207 20.0204 14.7966 20.0204 15.8577V21.3911H27.2761V18.1703Z"></path>
+                <path
+                  d="M24 0H16V12.0632C15.9663 14.2434 14.1885 16 12.0005 16H0V24H8.68629C10.808 24 12.8429 23.1571 14.3431 21.6569L21.6569 14.3431C23.1571 12.8429 24 10.808 24 8.68629V0Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16 40H24V27.9368C24.0337 25.7566 25.8115 24 27.9995 24H40V16H31.3137C29.192 16 27.1571 16.8429 25.6569 18.3431L18.3431 25.6569C16.8429 27.1571 16 29.192 16 31.3137V40Z"
+                  fill="currentColor"
+                />
               </svg>
             </div>
             <div className="border-b border-hr-line p-6 md:border-b-0 md:border-r md:p-7">
