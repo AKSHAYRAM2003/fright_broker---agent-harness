@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE & Tool configs
+.codex/
+.cursor/
+.gemini/
+.impeccable/
+
+# Large media files (>100MB exceeds GitHub limits)
+/public/videos/*.mp4
