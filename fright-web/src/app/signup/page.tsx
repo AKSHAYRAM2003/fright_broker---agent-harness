@@ -62,30 +62,24 @@ export default function SignUpPage() {
 
       {/* Right Column: Registration Form Panel */}
       <div className="auth-form-panel">
-        {/* Top Bar Navigation */}
+        {/* Top Bar Navigation with Prominent Back to Home Button */}
         <div className="auth-top-bar">
-          {/* Mobile Brand Logo */}
-          <div className="block lg:hidden">
-            <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
-              <HappyRobotLogo className="h-6 w-auto" />
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <Link href="/" className="auth-back-btn" aria-label="Return to HappyFreight homepage">
+              <span className="auth-back-arrow" aria-hidden="true">←</span>
+              <span>Back to Home</span>
             </Link>
-          </div>
 
-          <div
-            className="hidden lg:block"
-            style={{
-              fontFamily: "monospace",
-              fontSize: "11px",
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "#6f675c",
-            }}
-          >
-            Workspace Provisioning // Instant Setup
+            {/* Mobile Brand Logo */}
+            <div className="block lg:hidden">
+              <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
+                <HappyRobotLogo className="h-6 w-auto" />
+              </Link>
+            </div>
           </div>
 
           {/* Switch to Sign In */}
-          <div style={{ fontSize: "13px", color: "#6f675c", textAlign: "right" }}>
+          <div style={{ fontSize: "13px", color: "#57534e", textAlign: "right" }}>
             Already managing corridors?{" "}
             <Link
               href="/login"
@@ -103,13 +97,7 @@ export default function SignUpPage() {
 
         {/* Main Form Center Area */}
         <div className="auth-form-container auth-form-container-wide">
-          {/* Category Tag */}
-          <div className="auth-category-tag">
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d", display: "inline-block" }} />
-            New Broker Workspace Setup
-          </div>
-
-          {/* Heading & Subtitle */}
+          {/* Heading & Subtitle without banned kickers */}
           <h1 className="auth-title">Deploy your autonomous harness</h1>
           <p className="auth-subtitle">
             Get your brokerage operational in under 2 minutes. Ingest voice notes and enforce margin floors from load #1.
@@ -150,7 +138,7 @@ export default function SignUpPage() {
                   Brokerage / Fleet Name
                 </label>
                 <div className="auth-input-group" style={{ padding: "0 12px" }}>
-                  <Building2 style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <Building2 style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                   <input
                     id="company-name"
                     type="text"
@@ -168,7 +156,7 @@ export default function SignUpPage() {
                   Dispatcher / Lead Name
                 </label>
                 <div className="auth-input-group" style={{ padding: "0 12px" }}>
-                  <User style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <User style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                   <input
                     id="full-name"
                     type="text"
@@ -188,18 +176,18 @@ export default function SignUpPage() {
                 <label htmlFor="contact-input" className="auth-field-label" style={{ marginBottom: 0 }}>
                   Primary Dispatch Contact
                 </label>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "11px", fontFamily: "monospace" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "11.5px", fontFamily: "var(--font-suisse, monospace)" }}>
                   <button
                     type="button"
                     onClick={() => setContactMethod("whatsapp")}
                     style={{
-                      padding: "2px 6px",
+                      padding: "2px 8px",
                       borderRadius: "4px",
                       border: "none",
                       cursor: "pointer",
                       backgroundColor: contactMethod === "whatsapp" ? "#d1fae5" : "transparent",
-                      color: contactMethod === "whatsapp" ? "#065f46" : "#6f675c",
-                      fontWeight: contactMethod === "whatsapp" ? "600" : "400",
+                      color: contactMethod === "whatsapp" ? "#065f46" : "#57534e",
+                      fontWeight: contactMethod === "whatsapp" ? "600" : "500",
                     }}
                   >
                     WhatsApp
@@ -209,13 +197,13 @@ export default function SignUpPage() {
                     type="button"
                     onClick={() => setContactMethod("email")}
                     style={{
-                      padding: "2px 6px",
+                      padding: "2px 8px",
                       borderRadius: "4px",
                       border: "none",
                       cursor: "pointer",
                       backgroundColor: contactMethod === "email" ? "#e7e5e4" : "transparent",
-                      color: contactMethod === "email" ? "#070707" : "#6f675c",
-                      fontWeight: contactMethod === "email" ? "600" : "400",
+                      color: contactMethod === "email" ? "#070707" : "#57534e",
+                      fontWeight: contactMethod === "email" ? "600" : "500",
                     }}
                   >
                     Email
@@ -238,7 +226,7 @@ export default function SignUpPage() {
                   </>
                 ) : (
                   <div style={{ display: "flex", alignItems: "center", width: "100%", padding: "0 12px" }}>
-                    <Mail style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                    <Mail style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                     <input
                       id="contact-input"
                       type="email"
@@ -281,7 +269,7 @@ export default function SignUpPage() {
                 Workspace Master Password
               </label>
               <div className="auth-input-group" style={{ padding: "0 12px" }}>
-                <Lock style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                <Lock style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                 <input
                   id="signup-password"
                   type={showPassword ? "text" : "password"}
@@ -295,7 +283,7 @@ export default function SignUpPage() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  style={{ background: "none", border: "none", color: "#a8a29e", cursor: "pointer", padding: "4px" }}
+                  style={{ background: "none", border: "none", color: "#6f675c", cursor: "pointer", padding: "4px" }}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <EyeOff style={{ width: "16px", height: "16px" }} /> : <Eye style={{ width: "16px", height: "16px" }} />}
@@ -318,7 +306,7 @@ export default function SignUpPage() {
                   alignItems: "center",
                   justifyContent: "space-between",
                   fontSize: "12px",
-                  fontFamily: "monospace",
+                  fontFamily: "var(--font-suisse, monospace)",
                   textTransform: "uppercase",
                   letterSpacing: "0.1em",
                   color: "#070707",
@@ -331,8 +319,8 @@ export default function SignUpPage() {
                 </span>
                 <span style={{ color: "#047857", fontWeight: "800" }}>₹{marginFloor} / load</span>
               </div>
-              <p style={{ fontSize: "12px", lineHeight: "1.5", color: "#6f675c", margin: "0 0 10px 0" }}>
-                Your autonomous agents will reject or renegotiate any broker quote yielding less than this floor.
+              <p style={{ fontSize: "12.5px", lineHeight: "1.5", color: "#57534e", margin: "0 0 10px 0", textWrap: "pretty" }}>
+                Your autonomous agents will automatically renegotiate or reject any carrier quote yielding less than this floor margin.
               </p>
               <div style={{ display: "flex", gap: "8px" }}>
                 {["2000", "2500", "3000", "5000"].map((val) => (
@@ -405,11 +393,11 @@ export default function SignUpPage() {
             justifyContent: "space-between",
             borderTop: "1px solid rgba(218, 213, 204, 0.7)",
             paddingTop: "1.25rem",
-            fontSize: "11px",
-            fontFamily: "monospace",
+            fontSize: "12px",
+            fontFamily: "var(--font-suisse, monospace)",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-            color: "#6f675c",
+            color: "#57534e",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -417,15 +405,15 @@ export default function SignUpPage() {
             <span>Enterprise DPDP &amp; SOC 2 Compliant</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Link href="/privacy" style={{ color: "#6f675c", textDecoration: "none" }}>
+            <Link href="/privacy" style={{ color: "#57534e", textDecoration: "none" }}>
               Privacy
             </Link>
             <span>•</span>
-            <Link href="/terms" style={{ color: "#6f675c", textDecoration: "none" }}>
+            <Link href="/terms" style={{ color: "#57534e", textDecoration: "none" }}>
               Terms
             </Link>
             <span>•</span>
-            <Link href="/sla" style={{ color: "#6f675c", textDecoration: "none" }}>
+            <Link href="/sla" style={{ color: "#57534e", textDecoration: "none" }}>
               Corridor SLA
             </Link>
           </div>

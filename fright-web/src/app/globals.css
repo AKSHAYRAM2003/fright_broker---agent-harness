@@ -411,20 +411,43 @@ img[data-nimg="fill"] {
   justify-content: space-between;
   border-bottom: 1px solid rgba(218, 213, 204, 0.7);
   padding-bottom: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Category Pill & Typography */
-.auth-category-tag {
+/* Back to Home Button */
+.auth-back-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   font-family: var(--font-suisse, monospace);
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #6f675c;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #070707;
+  text-decoration: none;
+  background-color: #f7f6f4;
+  border: 1px solid #dad5cc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.auth-back-btn:hover {
+  background-color: #070707;
+  color: #ffffff;
+  border-color: #070707;
+}
+
+.auth-back-btn .auth-back-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.auth-back-btn:hover .auth-back-arrow {
+  transform: translateX(-3px);
+  color: #ff462d;
 }
 
 .auth-title {
@@ -434,6 +457,7 @@ img[data-nimg="fill"] {
   line-height: 1.15 !important;
   color: #070707 !important;
   margin: 0 0 0.5rem 0 !important;
+  text-wrap: balance !important;
 }
 
 @media (min-width: 640px) {
@@ -445,8 +469,9 @@ img[data-nimg="fill"] {
 .auth-subtitle {
   font-size: 14.5px !important;
   line-height: 1.55 !important;
-  color: #6f675c !important;
+  color: #57534e !important;
   margin-bottom: 1.5rem !important;
+  text-wrap: pretty !important;
 }
 
 /* Tab Switcher */
@@ -487,10 +512,10 @@ img[data-nimg="fill"] {
 .auth-field-label {
   display: block;
   font-family: var(--font-suisse, monospace);
-  font-size: 11.5px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #6f675c;
+  color: #57534e;
   margin-bottom: 0.4rem;
 }
 
@@ -534,7 +559,8 @@ img[data-nimg="fill"] {
 }
 
 .auth-input::placeholder {
-  color: #a8a29e;
+  color: #57534e !important;
+  opacity: 0.85;
 }
 
 /* Submit Curtain Button */
@@ -648,9 +674,9 @@ img[data-nimg="fill"] {
   position: absolute;
   background-color: #fcfcfc;
   padding: 0 0.75rem;
-  font-family: monospace;
-  font-size: 10.5px;
+  font-family: var(--font-suisse, monospace);
+  font-size: 12px !important;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: #a8a29e;
+  letter-spacing: 0.12em;
+  color: #57534e !important;
 }

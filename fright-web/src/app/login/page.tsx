@@ -74,30 +74,24 @@ export default function LoginPage() {
 
       {/* Right Column: Authentication Form Panel */}
       <div className="auth-form-panel">
-        {/* Top Bar Navigation */}
+        {/* Top Bar Navigation with Prominent Back to Home Button */}
         <div className="auth-top-bar">
-          {/* Mobile Brand Logo */}
-          <div className="block lg:hidden">
-            <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
-              <HappyRobotLogo className="h-6 w-auto" />
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <Link href="/" className="auth-back-btn" aria-label="Return to HappyFreight homepage">
+              <span className="auth-back-arrow" aria-hidden="true">←</span>
+              <span>Back to Home</span>
             </Link>
-          </div>
 
-          <div
-            className="hidden lg:block"
-            style={{
-              fontFamily: "monospace",
-              fontSize: "11px",
-              textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "#6f675c",
-            }}
-          >
-            System Protocol // v2.4.0
+            {/* Mobile Brand Logo */}
+            <div className="block lg:hidden">
+              <Link href="/" style={{ textDecoration: "none", display: "inline-block" }}>
+                <HappyRobotLogo className="h-6 w-auto" />
+              </Link>
+            </div>
           </div>
 
           {/* Switch to Sign Up */}
-          <div style={{ fontSize: "13px", color: "#6f675c", textAlign: "right" }}>
+          <div style={{ fontSize: "13px", color: "#57534e", textAlign: "right" }}>
             New to HappyFreight?{" "}
             <Link
               href="/signup"
@@ -115,13 +109,7 @@ export default function LoginPage() {
 
         {/* Main Form Center Area */}
         <div className="auth-form-container">
-          {/* Category Tag */}
-          <div className="auth-category-tag">
-            <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d", display: "inline-block" }} />
-            Operations Terminal Access
-          </div>
-
-          {/* Heading & Subtitle */}
+          {/* Heading & Subtitle without banned kickers */}
           <h1 className="auth-title">Log in to your harness</h1>
           <p className="auth-subtitle">
             Access real-time load matching, driver voice exceptions, and corridor margin controls.
@@ -218,7 +206,7 @@ export default function LoginPage() {
                       style={{ textAlign: "center", fontFamily: "monospace", fontSize: "18px", letterSpacing: "0.3em" }}
                     />
                   </div>
-                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11.5px", fontFamily: "monospace", color: "#6f675c", marginTop: "6px" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", color: "#57534e", marginTop: "6px" }}>
                     <span>Didn&apos;t receive code?</span>
                     <button
                       type="button"
@@ -271,7 +259,7 @@ export default function LoginPage() {
                   Corporate Email
                 </label>
                 <div className="auth-input-group" style={{ padding: "0 12px" }}>
-                  <Mail style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <Mail style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                   <input
                     id="email-input"
                     type="email"
@@ -291,13 +279,13 @@ export default function LoginPage() {
                   </label>
                   <Link
                     href="#forgot-password"
-                    style={{ fontSize: "11.5px", fontFamily: "monospace", color: "#6f675c", textDecoration: "underline" }}
+                    style={{ fontSize: "11.5px", fontFamily: "var(--font-suisse, monospace)", color: "#57534e", textDecoration: "underline" }}
                   >
                     Forgot password?
                   </Link>
                 </div>
                 <div className="auth-input-group" style={{ padding: "0 12px" }}>
-                  <Lock style={{ width: "16px", height: "16px", color: "#a8a29e", flexShrink: 0 }} />
+                  <Lock style={{ width: "16px", height: "16px", color: "#6f675c", flexShrink: 0 }} />
                   <input
                     id="password-input"
                     type={showPassword ? "text" : "password"}
@@ -310,7 +298,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    style={{ background: "none", border: "none", color: "#a8a29e", cursor: "pointer", padding: "4px" }}
+                    style={{ background: "none", border: "none", color: "#6f675c", cursor: "pointer", padding: "4px" }}
                     aria-label={showPassword ? "Hide password" : "Show password"}
                   >
                     {showPassword ? <EyeOff style={{ width: "16px", height: "16px" }} /> : <Eye style={{ width: "16px", height: "16px" }} />}
@@ -410,11 +398,11 @@ export default function LoginPage() {
             justifyContent: "space-between",
             borderTop: "1px solid rgba(218, 213, 204, 0.7)",
             paddingTop: "1.25rem",
-            fontSize: "11px",
-            fontFamily: "monospace",
+            fontSize: "12px",
+            fontFamily: "var(--font-suisse, monospace)",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
-            color: "#6f675c",
+            color: "#57534e",
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -422,11 +410,11 @@ export default function LoginPage() {
             <span>TLS 1.3 Strict Transport Security</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <Link href="/privacy" style={{ color: "#6f675c", textDecoration: "none" }}>
+            <Link href="/privacy" style={{ color: "#57534e", textDecoration: "none" }}>
               Privacy Policy
             </Link>
             <span>•</span>
-            <Link href="/terms" style={{ color: "#6f675c", textDecoration: "none" }}>
+            <Link href="/terms" style={{ color: "#57534e", textDecoration: "none" }}>
               Terms of Service
             </Link>
           </div>

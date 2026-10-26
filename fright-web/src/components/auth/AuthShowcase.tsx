@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ShieldCheck, Truck, Radio, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, ArrowUpRight, Activity } from "lucide-react";
 
 interface AuthShowcaseProps {
   mode: "login" | "signup";
@@ -14,7 +14,7 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
       {/* Background Tactile Grid */}
       <div className="auth-showcase-grid-bg" />
 
-      {/* Top Header / Brand Logo */}
+      {/* Top Header / Brand Logo & Corridor Ping */}
       <div style={{ position: "relative", zIndex: 10, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <Link href="/" style={{ textDecoration: "none", color: "#ffffff", display: "inline-block" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
@@ -47,64 +47,44 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
             display: "flex",
             alignItems: "center",
             gap: "8px",
-            borderRadius: "9999px",
-            border: "1px solid rgba(16, 185, 129, 0.3)",
-            backgroundColor: "rgba(6, 78, 59, 0.4)",
-            padding: "4px 12px",
+            borderRadius: "4px",
+            border: "1px solid #222222",
+            backgroundColor: "#0d0d0d",
+            padding: "5px 12px",
             fontSize: "11px",
-            fontFamily: "monospace",
+            fontFamily: "var(--font-suisse, monospace)",
             textTransform: "uppercase",
             letterSpacing: "0.1em",
             color: "#34d399",
           }}
         >
-          <span style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
-          Harness Online
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981", display: "inline-block" }} />
+          <span>FSM Core Online // 142ms</span>
         </div>
       </div>
 
       {/* Center Showcase Content */}
-      <div style={{ position: "relative", zIndex: 10, margin: "auto 0", padding: "2.5rem 0" }}>
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            borderRadius: "4px",
-            border: "1px solid rgba(255, 255, 255, 0.15)",
-            backgroundColor: "rgba(255, 255, 255, 0.05)",
-            padding: "4px 10px",
-            fontFamily: "monospace",
-            fontSize: "10.5px",
-            textTransform: "uppercase",
-            letterSpacing: "0.16em",
-            color: "#dfdbd5",
-            marginBottom: "1.25rem",
-          }}
-        >
-          <Radio style={{ width: "12px", height: "12px", color: "#ff462d" }} />
-          Autonomous Dispatch Core v2.4
-        </div>
-
+      <div style={{ position: "relative", zIndex: 10, margin: "auto 0", padding: "2rem 0" }}>
         <h2
           style={{
-            fontSize: "2rem",
+            fontSize: "2.15rem",
             fontWeight: "700",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.03em",
             lineHeight: 1.15,
             color: "#ffffff",
             margin: "0 0 1rem 0",
+            textWrap: "balance",
           }}
         >
           {mode === "login" ? (
             <>
               Operating India&apos;s freight corridors with{" "}
-              <span style={{ color: "#dfdbd5" }}>deterministic AI precision.</span>
+              <span style={{ color: "#dfdbd5" }}>deterministic precision.</span>
             </>
           ) : (
             <>
               Put autonomous agents to work across{" "}
-              <span style={{ color: "#dfdbd5" }}>every mandi &amp; highway.</span>
+              <span style={{ color: "#dfdbd5" }}>every mandi &amp; highway corridor.</span>
             </>
           )}
         </h2>
@@ -113,136 +93,176 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
           style={{
             fontSize: "14.5px",
             lineHeight: 1.6,
-            color: "#a8a29e",
-            maxWidth: "42ch",
+            color: "#dfdbd5",
+            maxWidth: "46ch",
             marginBottom: "2rem",
+            textWrap: "pretty",
           }}
         >
-          Ingesting chaotic WhatsApp voice messages, running real-time VAHAN &amp; FASTag checks, and executing verified loads with strict ₹2,500 margin floors.
+          Direct integration with WhatsApp voice notes, VAHAN registry, FASTag toll gates, and strict margin floor enforcement.
         </p>
 
-        {/* Telemetry Cards Grid */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "2rem" }}>
-          {/* Card 1: Live Voice Parsing */}
+        {/* High-Craft Industrial Corridor Ledger */}
+        <div
+          style={{
+            border: "1px solid #262626",
+            borderRadius: "6px",
+            backgroundColor: "#0d0d0d",
+            overflow: "hidden",
+            marginBottom: "1.75rem",
+          }}
+        >
+          {/* Ledger Header */}
           <div
             style={{
-              borderRadius: "8px",
-              border: "1px solid rgba(255, 255, 255, 0.12)",
-              backgroundColor: "rgba(255, 255, 255, 0.04)",
-              padding: "14px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              borderBottom: "1px solid #1f1f1f",
+              backgroundColor: "#141414",
+              padding: "10px 14px",
+              fontSize: "11px",
+              fontFamily: "var(--font-suisse, monospace)",
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              color: "#dfdbd5",
             }}
           >
+            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+              <Activity style={{ width: "13px", height: "13px", color: "#ff462d" }} />
+              <span>Active Dispatch Stream // 3 Corridors</span>
+            </div>
+            <span style={{ color: "#34d399" }}>Live Sync</span>
+          </div>
+
+          {/* Row 1: NH-48 */}
+          <div
+            style={{
+              padding: "12px 14px",
+              borderBottom: "1px solid #1a1a1a",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "13px", color: "#ffffff" }}>
+              <span style={{ fontWeight: "600", letterSpacing: "-0.01em" }}>
+                NH-48 • Bhiwandi Hub → Gurgaon Expressway
+              </span>
+              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700" }}>
+                +₹3,200 Floor
+              </span>
+            </div>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
-                fontSize: "11px",
-                fontFamily: "monospace",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "#a8a29e",
-                marginBottom: "8px",
+                gap: "12px",
+                fontSize: "12px",
+                fontFamily: "var(--font-suisse, monospace)",
+                color: "#dfdbd5",
               }}
             >
-              <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#ffffff" }}>
-                <Truck style={{ width: "14px", height: "14px", color: "#ff462d" }} />
-                NH-48 Corridor • JNPT to Gurgaon
-              </span>
-              <span style={{ color: "#34d399", fontWeight: "600" }}>₹2,850 Margin</span>
-            </div>
-            <div style={{ fontSize: "13px", color: "#dfdbd5", marginBottom: "8px" }}>
-              &quot;Bhai, 32ft MXL available from Bhiwandi, rate 68k cash on delivery.&quot;
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                fontSize: "11px",
-                fontFamily: "monospace",
-                color: "#a8a29e",
-              }}
-            >
-              <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "#34d399" }}>
-                <CheckCircle2 style={{ width: "12px", height: "12px" }} /> Voice parsed (0.8s)
-              </span>
+              <span>32ft MXL Container</span>
               <span>•</span>
-              <span>VAHAN: Valid</span>
+              <span>VAHAN: MH-04-GP-8839</span>
               <span>•</span>
-              <span>FASTag: Toll Active</span>
+              <span style={{ color: "#34d399" }}>Toll Sync: Charoti Plaza</span>
             </div>
           </div>
 
-          {/* Card 2: Enforced Rulebook */}
+          {/* Row 2: NH-44 */}
           <div
             style={{
-              borderRadius: "8px",
-              border: "1px solid rgba(255, 255, 255, 0.12)",
-              backgroundColor: "rgba(255, 255, 255, 0.04)",
-              padding: "14px",
+              padding: "12px 14px",
+              borderBottom: "1px solid #1a1a1a",
+              display: "flex",
+              flexDirection: "column",
+              gap: "6px",
             }}
           >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: "13px", color: "#ffffff" }}>
+              <span style={{ fontWeight: "600", letterSpacing: "-0.01em" }}>
+                NH-44 • Hyderabad MMLP → Nagpur Ring Road
+              </span>
+              <span style={{ fontFamily: "var(--font-suisse, monospace)", fontSize: "12px", color: "#34d399", fontWeight: "700" }}>
+                +₹2,850 Floor
+              </span>
+            </div>
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
-                fontSize: "11px",
-                fontFamily: "monospace",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "#a8a29e",
-                marginBottom: "8px",
+                gap: "12px",
+                fontSize: "12px",
+                fontFamily: "var(--font-suisse, monospace)",
+                color: "#dfdbd5",
               }}
             >
-              <span>Deterministic Rulebook</span>
-              <span style={{ color: "#ffffff" }}>Active</span>
+              <span>24ft Open Taurus</span>
+              <span>•</span>
+              <span>VAHAN: TS-08-UB-4102</span>
+              <span>•</span>
+              <span style={{ color: "#34d399" }}>GPS Locked</span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  backgroundColor: "rgba(0, 0, 0, 0.4)",
-                  padding: "6px 10px",
-                  borderRadius: "4px",
-                  fontSize: "11.5px",
-                  fontFamily: "monospace",
-                  color: "#dfdbd5",
-                }}
-              >
-                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981" }} />
-                Floor: ₹2,500 Min
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  backgroundColor: "rgba(0, 0, 0, 0.4)",
-                  padding: "6px 10px",
-                  borderRadius: "4px",
-                  fontSize: "11.5px",
-                  fontFamily: "monospace",
-                  color: "#dfdbd5",
-                }}
-              >
-                <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#10b981" }} />
-                Trip FSM: Enforced
-              </div>
+          </div>
+
+          {/* Row 3: Live Audio Parser Wiretap */}
+          <div
+            style={{
+              padding: "10px 14px",
+              backgroundColor: "#111111",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              fontSize: "12px",
+              fontFamily: "var(--font-suisse, monospace)",
+              color: "#dfdbd5",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d" }} />
+              <span>Voice Note: &ldquo;32ft available Bhiwandi, rate 68k&rdquo;</span>
             </div>
+            <span style={{ color: "#ffffff" }}>Parsed in 0.8s</span>
           </div>
         </div>
 
-        {/* Testimonial Quote */}
-        <div style={{ borderLeft: "2px solid #ff462d", paddingLeft: "16px" }}>
-          <p style={{ fontSize: "13.5px", fontStyle: "italic", lineHeight: 1.6, color: "#dfdbd5", margin: 0 }}>
-            &quot;HappyFreight turned 4 hours of morning WhatsApp fire-fighting into a single review queue. Our team booked 28% more loads in month one.&quot;
-          </p>
-          <div style={{ fontSize: "12px", fontWeight: "500", color: "#a8a29e", marginTop: "8px" }}>
-            — Dispatch Director, Western India Logistics Alliance
+        {/* Corridor Metric Strip */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            gap: "1px",
+            backgroundColor: "#222222",
+            border: "1px solid #222222",
+            borderRadius: "6px",
+            overflow: "hidden",
+          }}
+        >
+          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
+            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+              Corridor Margin
+            </div>
+            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+              ₹2,500<span style={{ fontSize: "12px", color: "#34d399", marginLeft: "4px" }}>min</span>
+            </div>
+          </div>
+          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
+            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+              Voice Latency
+            </div>
+            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+              &lt; 900ms
+            </div>
+          </div>
+          <div style={{ backgroundColor: "#0d0d0d", padding: "12px 14px" }}>
+            <div style={{ fontSize: "12px", fontFamily: "var(--font-suisse, monospace)", textTransform: "uppercase", letterSpacing: "0.1em", color: "#dfdbd5", marginBottom: "4px" }}>
+              VAHAN Checks
+            </div>
+            <div style={{ fontSize: "18px", fontWeight: "700", color: "#ffffff", letterSpacing: "-0.02em" }}>
+              100% Verified
+            </div>
           </div>
         </div>
       </div>
@@ -255,25 +275,35 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderTop: "1px solid rgba(255, 255, 255, 0.12)",
+          borderTop: "1px solid #222222",
           paddingTop: "1.25rem",
-          fontSize: "11px",
-          fontFamily: "monospace",
+          fontSize: "12px",
+          fontFamily: "var(--font-suisse, monospace)",
           textTransform: "uppercase",
-          letterSpacing: "0.12em",
-          color: "#a8a29e",
+          letterSpacing: "0.1em",
+          color: "#dfdbd5",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <ShieldCheck style={{ width: "16px", height: "16px", color: "#34d399" }} />
-          <span>SOC 2 Type II Certified</span>
+          <ShieldCheck style={{ width: "15px", height: "15px", color: "#34d399" }} />
+          <span>SOC 2 Type II Certified // 256-Bit SSL</span>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span>256-Bit SSL</span>
-          <span>•</span>
-          <span>ISO 27001</span>
-        </div>
+        <Link
+          href="/"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "4px",
+            color: "#dfdbd5",
+            textDecoration: "none",
+            transition: "color 0.15s ease",
+          }}
+        >
+          <span>HappyFreight Platform</span>
+          <ArrowUpRight style={{ width: "12px", height: "12px" }} />
+        </Link>
       </div>
     </div>
   );
 };
+
