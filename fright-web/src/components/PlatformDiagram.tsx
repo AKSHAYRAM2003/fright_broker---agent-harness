@@ -55,7 +55,7 @@ export const PlatformDiagram: React.FC = () => {
             <div className="flex items-center justify-center">
               <img
                 src="/images/cdn/landing-platform-diagram.svg"
-                alt="HappyFright Freight Broker Harness Architecture"
+                alt="HappyFreight Freight Broker Harness Architecture"
                 className="h-auto w-full max-w-[420px]"
               />
             </div>
