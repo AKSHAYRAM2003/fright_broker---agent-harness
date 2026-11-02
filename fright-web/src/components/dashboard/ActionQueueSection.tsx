@@ -28,7 +28,7 @@ export const ActionQueueSection: React.FC = () => {
 
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded text-on-surface-variant font-mono text-[11px]">
-            <span className="material-symbols-outlined text-sm text-tertiary">pause_circle</span>
+            <span className="material-symbols-outlined text-sm text-primary">pause_circle</span>
             <span>Auto-pilot: Paused for HITL</span>
           </div>
 
@@ -84,12 +84,12 @@ export const ActionQueueSection: React.FC = () => {
 
       {/* HITL CARD 1: URGENT Margin Floor Alert */}
       {(activeFilter === "all" || activeFilter === "margin") && (
-        <article className="relative overflow-hidden bg-surface-container border border-error/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-error/5 via-surface-container to-surface-container transition-all">
+        <article className="relative overflow-hidden bg-surface-container border border-primary/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-primary-container/20 via-surface-container to-surface-container transition-all">
           {/* Card Top Row */}
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-error/10 pb-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high pb-2.5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
-                <span className="h-1.5 w-1.5 rounded-full bg-error animate-ping"></span>
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container border border-primary/20 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary animate-ping"></span>
                 Critical Margin Floor Alert
               </span>
               <span className="font-mono text-xs text-on-surface font-bold">#BLR-BHW-1042</span>
@@ -97,7 +97,7 @@ export const ActionQueueSection: React.FC = () => {
                 GST Verified Indent
               </span>
             </div>
-            <div className="flex items-center gap-1 text-error font-mono text-[11px] font-semibold">
+            <div className="flex items-center gap-1 text-primary font-mono text-[11px] font-bold">
               <span className="material-symbols-outlined text-sm animate-pulse">timer</span>
               <span>SLA: 07:44 remaining</span>
             </div>
@@ -115,7 +115,7 @@ export const ActionQueueSection: React.FC = () => {
               </div>
 
               <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
-                <span className="font-mono text-[11px] text-primary font-medium tracking-tight">980 km</span>
+                <span className="font-mono text-[11px] text-primary font-semibold tracking-tight">980 km</span>
                 <div className="flex items-center gap-0.5 text-primary">
                   <span className="h-0.5 w-4 sm:w-6 bg-primary/40"></span>
                   <span className="material-symbols-outlined text-sm">local_shipping</span>
@@ -140,7 +140,7 @@ export const ActionQueueSection: React.FC = () => {
               <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                 Multi-Axle Trailer (40ft)
               </span>
-              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
+              <span className="px-2 py-0.5 rounded bg-secondary-container/50 border border-secondary/20 text-on-secondary-container font-medium">
                 FASTag Linked
               </span>
             </div>
@@ -155,13 +155,13 @@ export const ActionQueueSection: React.FC = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-mono text-[10px] text-outline">Best Transporter Quote</span>
-              <span className="font-headline-sm text-sm sm:text-base text-tertiary font-semibold mt-0.5">₹48,500</span>
+              <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">₹48,500</span>
               <span className="font-mono text-[11px] text-on-surface-variant truncate">Ghatge Patil Transports</span>
             </div>
             <div className="flex flex-col">
               <span className="font-mono text-[10px] text-outline">Projected Net Margin</span>
-              <span className="font-headline-sm text-sm sm:text-base text-error font-semibold mt-0.5">₹1,500 (3.0%)</span>
-              <span className="font-mono text-[10px] text-error font-medium">-₹1,000 vs Min Floor</span>
+              <span className="font-headline-sm text-sm sm:text-base text-primary font-bold mt-0.5">₹1,500 (3.0%)</span>
+              <span className="font-mono text-[10px] text-primary font-bold">-₹1,000 vs Min Floor</span>
             </div>
             <div className="flex flex-col">
               <span className="font-mono text-[10px] text-outline">Market Spot Benchmark</span>
@@ -178,7 +178,10 @@ export const ActionQueueSection: React.FC = () => {
             <div>
               <strong className="font-semibold text-on-surface">AI Dispatch Synthesis: </strong>
               Ghatge Patil quoted ₹48,500 citing diesel surge in Kolhapur-Pune stretch. Historical negotiation engine indicates an{" "}
-              <span className="font-semibold text-secondary">81% acceptance probability</span> for counter-bid at ₹46,000 on this specific lane within 12 minutes.
+              <span className="font-bold text-secondary bg-secondary-container/60 px-1 py-0.5 rounded">
+                81% acceptance probability
+              </span>{" "}
+              for counter-bid at ₹46,000 on this specific lane within 12 minutes.
             </div>
           </div>
 
@@ -188,7 +191,7 @@ export const ActionQueueSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setCounterOpen(!counterOpen)}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-primary text-on-primary font-headline-sm text-xs font-semibold hover:opacity-90 shadow-xs transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-primary hover:bg-[#e03a22] text-on-primary font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
               >
                 <span className="material-symbols-outlined text-base">forum</span>
                 <span>Counter Transporter @ {counterAmount}</span>
@@ -198,7 +201,7 @@ export const ActionQueueSection: React.FC = () => {
                 type="button"
                 className="flex items-center justify-center gap-1 px-3 sm:px-3.5 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface hover:bg-surface-container-high font-sans text-xs transition-all w-full sm:w-auto"
               >
-                <span className="material-symbols-outlined text-base text-tertiary">request_quote</span>
+                <span className="material-symbols-outlined text-base text-outline">request_quote</span>
                 <span>Request Shipper Rate Hike (+₹2,000)</span>
               </button>
 
@@ -212,7 +215,7 @@ export const ActionQueueSection: React.FC = () => {
 
             <button
               type="button"
-              className="flex items-center gap-1 text-primary hover:underline font-mono text-xs ml-auto sm:ml-0"
+              className="flex items-center gap-1 text-primary hover:underline font-mono text-xs ml-auto sm:ml-0 font-semibold"
             >
               <span>View 4 Quotes</span>
               <span className="material-symbols-outlined text-sm">open_in_new</span>
@@ -221,8 +224,8 @@ export const ActionQueueSection: React.FC = () => {
 
           {/* Interactive Counter Offer Drawer */}
           {counterOpen && (
-            <div className="mt-2 p-3 bg-surface-container-high rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
-              <span className="font-mono text-xs text-on-surface font-semibold">
+            <div className="mt-2 p-3 bg-neutral-900 text-white rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
+              <span className="font-mono text-xs text-neutral-300 font-semibold">
                 Set WhatsApp Counter Rate:
               </span>
               <div className="flex items-center gap-2">
@@ -230,7 +233,7 @@ export const ActionQueueSection: React.FC = () => {
                   type="text"
                   value={counterAmount}
                   onChange={(e) => setCounterAmount(e.target.value)}
-                  className="bg-white border border-surface-container-highest px-3 py-1.5 rounded text-on-surface font-mono text-xs font-bold w-28 focus:outline-none focus:border-primary"
+                  className="bg-neutral-800 border border-neutral-700 px-3 py-1.5 rounded text-white font-mono text-xs font-bold w-28 focus:outline-none focus:border-primary"
                 />
                 <button
                   type="button"
@@ -238,7 +241,7 @@ export const ActionQueueSection: React.FC = () => {
                     alert(`Counter offer of ${counterAmount} dispatched to Ghatge Patil via WhatsApp!`);
                     setCounterOpen(false);
                   }}
-                  className="px-3.5 py-1.5 bg-primary text-on-primary font-mono text-xs font-bold rounded hover:opacity-90"
+                  className="px-3.5 py-1.5 bg-primary text-on-primary font-mono text-xs font-bold rounded hover:bg-[#e03a22]"
                 >
                   Send RFQ Counter
                 </button>
@@ -251,7 +254,7 @@ export const ActionQueueSection: React.FC = () => {
       {/* HITL CARD 2: Fast-Track 1-Click Booking */}
       {(activeFilter === "all" || activeFilter === "instant") && (
         <article className="relative overflow-hidden bg-surface-container border border-secondary/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-secondary-container/20 via-surface-container to-surface-container transition-all">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-secondary/10 pb-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-secondary/15 pb-2.5">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
                 <span className="material-symbols-outlined text-xs">verified</span>
@@ -262,7 +265,7 @@ export const ActionQueueSection: React.FC = () => {
                 Vahan + FASTag Checked
               </span>
             </div>
-            <span className="text-secondary font-mono text-[11px] font-medium">Optimal Margin (+15.5%)</span>
+            <span className="text-secondary font-mono text-[11px] font-semibold">Optimal Margin (+15.5%)</span>
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
@@ -368,16 +371,16 @@ export const ActionQueueSection: React.FC = () => {
 
       {/* HITL CARD 3: Amber Incomplete Inquiry */}
       {(activeFilter === "all" || activeFilter === "incomplete") && (
-        <article className="relative overflow-hidden bg-surface-container border border-tertiary/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-tertiary-container/20 via-surface-container to-surface-container transition-all">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-tertiary/10 pb-2.5">
+        <article className="relative overflow-hidden bg-surface-container border border-surface-container-high rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container transition-all">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high pb-2.5">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary-container text-on-tertiary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary-container text-on-primary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
                 <span className="material-symbols-outlined text-xs">help_outline</span>
                 Incomplete Load Inquiry
               </span>
               <span className="font-mono text-xs text-on-surface font-semibold">Shipper: Micro Labs Ltd</span>
             </div>
-            <span className="font-mono text-[11px] text-tertiary font-medium">
+            <span className="font-mono text-[11px] text-outline font-medium">
               Source: WhatsApp Group &quot;Bangalore Pharma Freight&quot;
             </span>
           </div>
@@ -419,9 +422,9 @@ export const ActionQueueSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => alert("Clarification WhatsApp draft dispatched to Micro Labs Ltd!")}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-tertiary text-on-tertiary font-headline-sm text-xs font-semibold hover:opacity-90 shadow-xs transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <span className="material-symbols-outlined text-base">send</span>
+                <span className="material-symbols-outlined text-base text-primary">send</span>
                 <span>Send WhatsApp Clarification Draft</span>
               </button>
 
@@ -435,7 +438,7 @@ export const ActionQueueSection: React.FC = () => {
 
             <button
               type="button"
-              className="text-outline hover:text-error font-mono text-xs transition-colors ml-auto sm:ml-0"
+              className="text-outline hover:text-primary font-mono text-xs transition-colors ml-auto sm:ml-0"
             >
               Dismiss Inquiry
             </button>

@@ -8,30 +8,39 @@
   --color-outline-variant: #cbd5e1;
 
   --color-surface-container: #ffffff;
-  --color-surface-container-low: #f1f5f9;
-  --color-surface-container-high: #e2e8f0;
-  --color-surface-container-highest: #cbd5e1;
+  --color-surface-container-low: #f7f6f4;
+  --color-surface-container-high: #eae7e1;
+  --color-surface-container-highest: #dad5cc;
   --color-surface-container-lowest: #ffffff;
 
-  --color-primary: #4f46e5;
+  /* HappyFreight Brand Colors: Primary = Freight Rust */
+  --color-primary: #ff462d;
   --color-on-primary: #ffffff;
-  --color-primary-container: #e0e7ff;
-  --color-on-primary-container: #312e81;
+  --color-primary-container: #fff0ed;
+  --color-on-primary-container: #c42008;
 
+  /* Brand Stone & Obsidian */
+  --color-hr-rust: #ff462d;
+  --color-hr-stone: #dfdbd5;
+  --color-hr-obsidian: #070707;
+
+  /* Secondary: Operational Success Emerald */
   --color-secondary: #059669;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #dcfce7;
   --color-on-secondary-container: #065f46;
 
+  /* Tertiary: Dispatch Warning Amber */
   --color-tertiary: #c26d00;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #ffeedb;
   --color-on-tertiary-container: #7c3a00;
 
-  --color-error: #dc2626;
+  /* Error: Margin Floor Alert */
+  --color-error: #ff462d;
   --color-on-error: #ffffff;
-  --color-error-container: #fee2e2;
-  --color-on-error-container: #991b1b;
+  --color-error-container: #feebe8;
+  --color-on-error-container: #b81c06;
 }
 
 @import "./happyrobot.css";
