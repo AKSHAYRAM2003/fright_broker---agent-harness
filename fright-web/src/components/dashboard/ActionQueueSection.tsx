@@ -1,61 +1,46 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  AlertCircle,
-  CheckCircle2,
-  HelpCircle,
-  Timer,
-  Truck,
-  ArrowRight,
-  Send,
-  ExternalLink,
-  Brain,
-  SlidersHorizontal,
-  PauseCircle,
-  FileText,
-  ShieldCheck,
-} from "lucide-react";
 
 export const ActionQueueSection: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<"all" | "margin" | "instant" | "incomplete">("all");
   const [approvedCards, setApprovedCards] = useState<Record<string, boolean>>({});
   const [counterOpen, setCounterOpen] = useState(false);
-  const [customCounterRate, setCustomCounterRate] = useState("₹46,000");
+  const [counterAmount, setCounterAmount] = useState("₹46,000");
 
-  const handleApprove = (cardId: string) => {
-    setApprovedCards((prev) => ({ ...prev, [cardId]: true }));
+  const handleApprove = (id: string) => {
+    setApprovedCards((prev) => ({ ...prev, [id]: true }));
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-3.5 sm:gap-4">
       {/* Queue Header Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-neutral-200/90 px-4 py-3 rounded-xl shadow-xs">
-        <div className="flex items-center gap-3">
-          <div className="h-2.5 w-2.5 rounded-full bg-[#ff462d] animate-ping"></div>
-          <h2 className="font-sans text-base font-bold text-neutral-900 tracking-tight">
+      <div className="flex flex-wrap items-center justify-between gap-2.5 bg-surface-container-low border border-surface-container-high px-3.5 sm:px-4 py-2.5 rounded-xl">
+        <div className="flex items-center gap-2.5">
+          <div className="h-2 w-2 rounded-full bg-primary animate-ping"></div>
+          <h2 className="font-headline-md text-base sm:text-lg text-on-surface font-semibold tracking-tight">
             AI Action Queue
           </h2>
-          <span className="px-2 py-0.5 rounded-full bg-neutral-900 text-white font-mono text-[10px] font-bold">
+          <span className="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-mono text-[11px] font-bold">
             3 Decisions Required
           </span>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-neutral-100 rounded-md text-neutral-600 font-mono text-[11px]">
-            <PauseCircle className="w-3.5 h-3.5 text-amber-600" />
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded text-on-surface-variant font-mono text-[11px]">
+            <span className="material-symbols-outlined text-sm text-tertiary">pause_circle</span>
             <span>Auto-pilot: Paused for HITL</span>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-1 bg-neutral-100 p-1 rounded-lg font-mono text-[11px]">
+          <div className="flex items-center gap-0.5 bg-surface-container-high p-0.5 rounded-lg font-mono text-[11px] overflow-x-auto">
             <button
               onClick={() => setActiveFilter("all")}
               type="button"
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "all"
-                  ? "bg-white text-neutral-900 font-bold shadow-xs"
-                  : "text-neutral-500 hover:text-neutral-800"
+                  ? "bg-surface text-on-surface font-semibold shadow-xs"
+                  : "text-outline hover:text-on-surface"
               }`}
             >
               All (3)
@@ -63,10 +48,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("margin")}
               type="button"
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2 py-1 rounded transition-colors ${
                 activeFilter === "margin"
-                  ? "bg-white text-neutral-900 font-bold shadow-xs"
-                  : "text-neutral-500 hover:text-neutral-800"
+                  ? "bg-surface text-on-surface font-semibold shadow-xs"
+                  : "text-outline hover:text-on-surface"
               }`}
             >
               Margin (1)
@@ -74,10 +59,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("instant")}
               type="button"
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2 py-1 rounded transition-colors ${
                 activeFilter === "instant"
-                  ? "bg-white text-neutral-900 font-bold shadow-xs"
-                  : "text-neutral-500 hover:text-neutral-800"
+                  ? "bg-surface text-on-surface font-semibold shadow-xs"
+                  : "text-outline hover:text-on-surface"
               }`}
             >
               Instant Book (1)
@@ -85,10 +70,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("incomplete")}
               type="button"
-              className={`px-2.5 py-1 rounded-md transition-all ${
+              className={`px-2 py-1 rounded transition-colors ${
                 activeFilter === "incomplete"
-                  ? "bg-white text-neutral-900 font-bold shadow-xs"
-                  : "text-neutral-500 hover:text-neutral-800"
+                  ? "bg-surface text-on-surface font-semibold shadow-xs"
+                  : "text-outline hover:text-on-surface"
               }`}
             >
               Incomplete (1)
@@ -99,156 +84,161 @@ export const ActionQueueSection: React.FC = () => {
 
       {/* HITL CARD 1: URGENT Margin Floor Alert */}
       {(activeFilter === "all" || activeFilter === "margin") && (
-        <article className="relative overflow-hidden bg-white border border-[#ff462d]/40 rounded-xl p-5 shadow-xs flex flex-col gap-4 bg-gradient-to-r from-red-50/20 via-white to-white transition-all">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-red-100 pb-3">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-red-100 text-[#ff462d] border border-red-200 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#ff462d] animate-ping"></span>
+        <article className="relative overflow-hidden bg-surface-container border border-error/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-error/5 via-surface-container to-surface-container transition-all">
+          {/* Card Top Row */}
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-error/10 pb-2.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span className="h-1.5 w-1.5 rounded-full bg-error animate-ping"></span>
                 Critical Margin Floor Alert
               </span>
-              <span className="font-mono text-xs text-neutral-900 font-bold">
-                #BLR-BHW-1042
-              </span>
-              <span className="px-2 py-0.5 rounded bg-neutral-100 text-neutral-600 font-mono text-[10px]">
+              <span className="font-mono text-xs text-on-surface font-bold">#BLR-BHW-1042</span>
+              <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-mono text-[10px]">
                 GST Verified Indent
               </span>
             </div>
-
-            <div className="flex items-center gap-1.5 text-[#ff462d] font-mono text-[11px] font-bold">
-              <Timer className="w-3.5 h-3.5 animate-pulse" />
+            <div className="flex items-center gap-1 text-error font-mono text-[11px] font-semibold">
+              <span className="material-symbols-outlined text-sm animate-pulse">timer</span>
               <span>SLA: 07:44 remaining</span>
             </div>
           </div>
 
-          {/* Route & Vehicle Meta */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-neutral-50/80 p-3.5 rounded-xl border border-neutral-200/70">
-            <div className="flex items-center gap-4">
+          {/* Corridor Route Block */}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-neutral-400 uppercase">Origin Hub</span>
-                <span className="font-sans text-sm text-neutral-900 font-bold">Bengaluru (Peenya Ind.)</span>
-                <span className="font-mono text-[11px] text-neutral-500">KA Depot #04</span>
+                <span className="font-mono text-[10px] text-outline">Origin Hub</span>
+                <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
+                  Bengaluru (Peenya Ind.)
+                </span>
+                <span className="font-mono text-[11px] text-on-surface-variant">KA Depot #04</span>
               </div>
-              <div className="flex flex-col items-center px-2">
-                <span className="font-mono text-[11px] text-[#ff462d] font-semibold">980 km</span>
-                <div className="flex items-center gap-1 text-[#ff462d]">
-                  <span className="h-0.5 w-5 bg-[#ff462d]/40"></span>
-                  <Truck className="w-3.5 h-3.5" />
-                  <span className="h-0.5 w-5 bg-[#ff462d]/40"></span>
+
+              <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
+                <span className="font-mono text-[11px] text-primary font-medium tracking-tight">980 km</span>
+                <div className="flex items-center gap-0.5 text-primary">
+                  <span className="h-0.5 w-4 sm:w-6 bg-primary/40"></span>
+                  <span className="material-symbols-outlined text-sm">local_shipping</span>
+                  <span className="h-0.5 w-4 sm:w-6 bg-primary/40"></span>
                 </div>
-                <span className="font-mono text-[10px] text-neutral-400">NH 48 Corridor</span>
+                <span className="font-mono text-[10px] text-outline">NH 48 Corridor</span>
               </div>
+
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-neutral-400 uppercase">Destination Hub</span>
-                <span className="font-sans text-sm text-neutral-900 font-bold">Bhiwandi (Mumbai Hub)</span>
-                <span className="font-mono text-[11px] text-neutral-500">MH Bhiwandi Logistics Park</span>
+                <span className="font-mono text-[10px] text-outline">Destination Hub</span>
+                <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
+                  Bhiwandi (Mumbai Hub)
+                </span>
+                <span className="font-mono text-[11px] text-on-surface-variant">MH Bhiwandi Logistics Park</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px]">
-              <span className="px-2 py-1 rounded bg-white border border-neutral-200 text-neutral-800 font-medium">
+            <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] sm:text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                 21 MT Coils
               </span>
-              <span className="px-2 py-1 rounded bg-white border border-neutral-200 text-neutral-800 font-medium">
+              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                 Multi-Axle Trailer (40ft)
               </span>
-              <span className="px-2 py-1 rounded bg-emerald-50 border border-emerald-200 text-emerald-800 font-medium">
+              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                 FASTag Linked
               </span>
             </div>
           </div>
 
-          {/* Financial Breakdown Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-neutral-50/80 p-3.5 rounded-xl border border-neutral-200/70">
+          {/* 4 Financial Metric Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Shipper Target Rate</span>
-              <span className="font-mono text-base font-bold text-neutral-900 mt-0.5">₹50,000</span>
-              <span className="font-mono text-[10px] text-neutral-400">₹2,380 / MT</span>
+              <span className="font-mono text-[10px] text-outline">Shipper Target Rate</span>
+              <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">₹50,000</span>
+              <span className="font-mono text-[10px] text-outline">₹2,380 / MT</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Best Transporter Quote</span>
-              <span className="font-mono text-base font-bold text-amber-700 mt-0.5">₹48,500</span>
-              <span className="font-sans text-[11px] text-neutral-600 truncate font-medium">Ghatge Patil Transports</span>
+              <span className="font-mono text-[10px] text-outline">Best Transporter Quote</span>
+              <span className="font-headline-sm text-sm sm:text-base text-tertiary font-semibold mt-0.5">₹48,500</span>
+              <span className="font-mono text-[11px] text-on-surface-variant truncate">Ghatge Patil Transports</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Projected Net Margin</span>
-              <span className="font-mono text-base font-bold text-[#ff462d] mt-0.5">₹1,500 (3.0%)</span>
-              <span className="font-mono text-[10px] text-[#ff462d] font-bold">-₹1,000 vs Min Floor</span>
+              <span className="font-mono text-[10px] text-outline">Projected Net Margin</span>
+              <span className="font-headline-sm text-sm sm:text-base text-error font-semibold mt-0.5">₹1,500 (3.0%)</span>
+              <span className="font-mono text-[10px] text-error font-medium">-₹1,000 vs Min Floor</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Market Spot Benchmark</span>
-              <span className="font-mono text-base font-bold text-emerald-700 mt-0.5">₹47,200</span>
-              <span className="font-mono text-[10px] text-emerald-700 font-medium">94% AI Confidence</span>
+              <span className="font-mono text-[10px] text-outline">Market Spot Benchmark</span>
+              <span className="font-headline-sm text-sm sm:text-base text-secondary font-semibold mt-0.5">₹47,200</span>
+              <span className="font-mono text-[10px] text-secondary font-medium">94% AI Confidence</span>
             </div>
           </div>
 
           {/* AI Dispatch Synthesis */}
-          <div className="flex items-start gap-2.5 p-3 bg-amber-50/70 border border-amber-200/80 rounded-xl text-neutral-800 text-xs leading-relaxed">
-            <Brain className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" />
+          <div className="flex items-start gap-2.5 p-3 bg-primary-container/40 rounded-lg text-on-primary-container font-sans text-xs border border-primary/20 leading-relaxed">
+            <span className="material-symbols-outlined text-base flex-shrink-0 mt-0.5 text-primary">
+              psychology
+            </span>
             <div>
-              <strong className="font-bold text-neutral-900 font-sans">AI Dispatch Synthesis: </strong>
+              <strong className="font-semibold text-on-surface">AI Dispatch Synthesis: </strong>
               Ghatge Patil quoted ₹48,500 citing diesel surge in Kolhapur-Pune stretch. Historical negotiation engine indicates an{" "}
-              <span className="font-bold text-emerald-800 bg-emerald-100/60 px-1 py-0.5 rounded">
-                81% acceptance probability
-              </span>{" "}
-              for counter-bid at ₹46,000 on this specific lane within 12 minutes.
+              <span className="font-semibold text-secondary">81% acceptance probability</span> for counter-bid at ₹46,000 on this specific lane within 12 minutes.
             </div>
           </div>
 
           {/* Action Button Row */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => setCounterOpen(!counterOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#ff462d] hover:bg-[#e03a22] text-white font-mono text-xs font-bold transition-all active:scale-95 shadow-xs"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-primary text-on-primary font-headline-sm text-xs font-semibold hover:opacity-90 shadow-xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <Send className="w-3.5 h-3.5" />
-                <span>Counter Transporter @ {customCounterRate}</span>
+                <span className="material-symbols-outlined text-base">forum</span>
+                <span>Counter Transporter @ {counterAmount}</span>
               </button>
 
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-300/80 text-neutral-800 font-mono text-xs font-semibold transition-all"
+                className="flex items-center justify-center gap-1 px-3 sm:px-3.5 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface hover:bg-surface-container-high font-sans text-xs transition-all w-full sm:w-auto"
               >
-                <FileText className="w-3.5 h-3.5 text-neutral-500" />
+                <span className="material-symbols-outlined text-base text-tertiary">request_quote</span>
                 <span>Request Shipper Rate Hike (+₹2,000)</span>
               </button>
 
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 font-mono text-xs transition-all"
+                className="flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low font-sans text-xs transition-all w-full sm:w-auto"
               >
-                <span>Manual Override & Accept</span>
+                <span>Manual Override &amp; Accept</span>
               </button>
             </div>
 
             <button
               type="button"
-              className="flex items-center gap-1 text-[#ff462d] hover:underline font-mono text-xs font-semibold"
+              className="flex items-center gap-1 text-primary hover:underline font-mono text-xs ml-auto sm:ml-0"
             >
               <span>View 4 Quotes</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span className="material-symbols-outlined text-sm">open_in_new</span>
             </button>
           </div>
 
-          {/* Inline Counter Drawer */}
+          {/* Interactive Counter Offer Drawer */}
           {counterOpen && (
-            <div className="mt-2 p-3 bg-neutral-900 text-white rounded-xl flex items-center justify-between gap-3 animate-fadeIn">
-              <span className="font-mono text-xs text-neutral-300">Set WhatsApp Counter Rate:</span>
+            <div className="mt-2 p-3 bg-surface-container-high rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
+              <span className="font-mono text-xs text-on-surface font-semibold">
+                Set WhatsApp Counter Rate:
+              </span>
               <div className="flex items-center gap-2">
                 <input
                   type="text"
-                  value={customCounterRate}
-                  onChange={(e) => setCustomCounterRate(e.target.value)}
-                  className="bg-neutral-800 border border-neutral-700 px-3 py-1 rounded text-white font-mono text-xs font-bold w-28"
+                  value={counterAmount}
+                  onChange={(e) => setCounterAmount(e.target.value)}
+                  className="bg-white border border-surface-container-highest px-3 py-1.5 rounded text-on-surface font-mono text-xs font-bold w-28 focus:outline-none focus:border-primary"
                 />
                 <button
                   type="button"
                   onClick={() => {
-                    alert(`Counter offer of ${customCounterRate} dispatched to Ghatge Patil via WhatsApp!`);
+                    alert(`Counter offer of ${counterAmount} dispatched to Ghatge Patil via WhatsApp!`);
                     setCounterOpen(false);
                   }}
-                  className="px-3 py-1 bg-[#ff462d] text-white font-mono text-xs font-bold rounded hover:bg-[#e03a22]"
+                  className="px-3.5 py-1.5 bg-primary text-on-primary font-mono text-xs font-bold rounded hover:opacity-90"
                 >
                   Send RFQ Counter
                 </button>
@@ -260,122 +250,116 @@ export const ActionQueueSection: React.FC = () => {
 
       {/* HITL CARD 2: Fast-Track 1-Click Booking */}
       {(activeFilter === "all" || activeFilter === "instant") && (
-        <article className="relative overflow-hidden bg-white border border-emerald-300 rounded-xl p-5 shadow-xs flex flex-col gap-4 bg-gradient-to-r from-emerald-50/20 via-white to-white transition-all">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-100 pb-3">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-emerald-100 text-emerald-800 border border-emerald-200 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+        <article className="relative overflow-hidden bg-surface-container border border-secondary/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-secondary-container/20 via-surface-container to-surface-container transition-all">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-secondary/10 pb-2.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span className="material-symbols-outlined text-xs">verified</span>
                 1-Click Fast-Track Ready
               </span>
-              <span className="font-mono text-xs text-neutral-900 font-bold">
-                #BLR-HYD-1039
-              </span>
-              <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 font-mono text-[10px] font-semibold border border-emerald-200">
-                VAHAN + FASTag Checked
+              <span className="font-mono text-xs text-on-surface font-bold">#BLR-HYD-1039</span>
+              <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-secondary font-mono text-[10px]">
+                Vahan + FASTag Checked
               </span>
             </div>
-
-            <span className="text-emerald-700 font-mono text-[11px] font-bold">
-              Optimal Margin (+15.5%)
-            </span>
+            <span className="text-secondary font-mono text-[11px] font-medium">Optimal Margin (+15.5%)</span>
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-neutral-50/80 p-3.5 rounded-xl border border-neutral-200/70">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-neutral-400 uppercase">Loading Origin</span>
-                <span className="font-sans text-sm text-neutral-900 font-bold">Peenya (BLR)</span>
-                <span className="font-mono text-[11px] text-neutral-500">Pharma Cold Hub</span>
+                <span className="font-mono text-[10px] text-outline">Loading Origin</span>
+                <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">Peenya (BLR)</span>
+                <span className="font-mono text-[11px] text-on-surface-variant">Pharma Cold Hub</span>
               </div>
-              <div className="flex flex-col items-center px-2">
-                <span className="font-mono text-[11px] text-emerald-700 font-semibold">575 km</span>
-                <div className="flex items-center gap-1 text-emerald-600">
-                  <span className="h-0.5 w-5 bg-emerald-300"></span>
-                  <Truck className="w-3.5 h-3.5" />
-                  <span className="h-0.5 w-5 bg-emerald-300"></span>
+              <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
+                <span className="font-mono text-[11px] text-secondary font-medium tracking-tight">575 km</span>
+                <div className="flex items-center gap-0.5 text-secondary">
+                  <span className="h-0.5 w-4 sm:w-6 bg-secondary/40"></span>
+                  <span className="material-symbols-outlined text-sm">alt_route</span>
+                  <span className="h-0.5 w-4 sm:w-6 bg-secondary/40"></span>
                 </div>
-                <span className="font-mono text-[10px] text-neutral-400">NH 44 Express</span>
+                <span className="font-mono text-[10px] text-outline">NH 44 Express</span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-neutral-400 uppercase">Unloading Destination</span>
-                <span className="font-sans text-sm text-neutral-900 font-bold">Cherlapally (Hyderabad)</span>
-                <span className="font-mono text-[11px] text-neutral-500">Pharma Special SEZ</span>
+                <span className="font-mono text-[10px] text-outline">Unloading Destination</span>
+                <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
+                  Cherlapally (Hyderabad)
+                </span>
+                <span className="font-mono text-[11px] text-on-surface-variant">Pharma Special SEZ</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-1.5 font-mono text-[11px]">
-              <span className="px-2 py-1 rounded bg-white border border-neutral-200 text-neutral-800 font-medium">
+            <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] sm:text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface">
                 14 MT Formulation
               </span>
-              <span className="px-2 py-1 rounded bg-white border border-neutral-200 text-neutral-800 font-medium">
-                32ft MXL Container
+              <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface">
+                32ft MXL Closed Container
               </span>
-              <span className="px-2 py-1 rounded bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold">
+              <span className="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-medium">
                 KA-04-E-8821 (12 km away)
               </span>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-neutral-50/80 p-3.5 rounded-xl border border-neutral-200/70">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Transporter Quote</span>
-              <span className="font-mono text-base font-bold text-neutral-900 mt-0.5">₹38,000</span>
-              <span className="font-sans text-[11px] text-emerald-700 font-bold truncate">Sri Balaji Roadlines</span>
+              <span className="font-mono text-[10px] text-outline">Transporter Quote</span>
+              <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">₹38,000</span>
+              <span className="font-mono text-[11px] text-secondary truncate font-medium">Sri Balaji Roadlines</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Shipper Contract</span>
-              <span className="font-mono text-base font-bold text-neutral-900 mt-0.5">₹45,000</span>
-              <span className="font-mono text-[10px] text-neutral-500">Pre-approved PO</span>
+              <span className="font-mono text-[10px] text-outline">Shipper Contract</span>
+              <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">₹45,000</span>
+              <span className="font-mono text-[10px] text-outline">Pre-approved PO</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Gross Margin</span>
-              <span className="font-mono text-base font-bold text-emerald-700 mt-0.5">₹7,000 (15.5%)</span>
-              <span className="font-mono text-[10px] text-emerald-700 font-bold">+₹2,000 over Target</span>
+              <span className="font-mono text-[10px] text-outline">Gross Margin</span>
+              <span className="font-headline-sm text-sm sm:text-base text-secondary font-semibold mt-0.5">₹7,000 (15.5%)</span>
+              <span className="font-mono text-[10px] text-secondary font-medium">+₹2,000 over Target</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-mono text-[10px] text-neutral-400 uppercase">Transporter Rating</span>
-              <span className="font-mono text-base font-bold text-neutral-900 mt-0.5">4.9 / 5.0</span>
-              <span className="font-mono text-[10px] text-neutral-500">98% On-Time (42 Trips)</span>
+              <span className="font-mono text-[10px] text-outline">Transporter Rating</span>
+              <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">4.9 / 5.0</span>
+              <span className="font-mono text-[10px] text-outline">98% On-Time (42 Trips)</span>
             </div>
           </div>
 
-          {/* Action Row */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => handleApprove("BLR-HYD-1039")}
                 disabled={approvedCards["BLR-HYD-1039"]}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-mono text-xs font-bold transition-all shadow-xs ${
+                className={`flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg font-headline-sm text-xs font-semibold shadow-xs transition-all w-full sm:w-auto ${
                   approvedCards["BLR-HYD-1039"]
-                    ? "bg-emerald-600 text-white cursor-default"
-                    : "bg-emerald-700 hover:bg-emerald-800 text-white active:scale-95"
+                    ? "bg-secondary/70 text-on-secondary cursor-default"
+                    : "bg-secondary text-on-secondary hover:opacity-90 active:scale-95"
                 }`}
               >
-                <ShieldCheck className="w-4 h-4" />
+                <span className="material-symbols-outlined text-base">task_alt</span>
                 <span>
-                  {approvedCards["BLR-HYD-1039"]
-                    ? "Trip Booked & Rate Locked!"
-                    : "Approve & Book Now (1-Click)"}
+                  {approvedCards["BLR-HYD-1039"] ? "Trip Booked (FSM: Locked)" : "Approve & Book Now (1-Click)"}
                 </span>
               </button>
 
               <button
                 type="button"
-                className="flex items-center gap-1 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-300/80 text-neutral-800 font-mono text-xs font-medium transition-all"
+                className="flex items-center justify-center gap-1 px-3 sm:px-3.5 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface hover:bg-surface-container-high font-sans text-xs transition-all w-full sm:w-auto"
               >
                 <span>View All 3 Bids</span>
               </button>
 
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 rounded-lg text-neutral-500 hover:text-neutral-900 font-mono text-xs transition-all"
+                className="flex items-center justify-center gap-1 px-3 py-2 rounded-lg text-outline hover:text-on-surface font-sans text-xs transition-all w-full sm:w-auto"
               >
                 <span>Hold 15m</span>
               </button>
             </div>
 
-            <span className="font-mono text-[11px] text-neutral-500">
+            <span className="font-mono text-[11px] text-outline ml-auto sm:ml-0">
               Driver Contact: Suresh Y. (+91 97412 XXXXX)
             </span>
           </div>
@@ -384,71 +368,66 @@ export const ActionQueueSection: React.FC = () => {
 
       {/* HITL CARD 3: Amber Incomplete Inquiry */}
       {(activeFilter === "all" || activeFilter === "incomplete") && (
-        <article className="relative overflow-hidden bg-white border border-amber-300 rounded-xl p-5 shadow-xs flex flex-col gap-4 bg-gradient-to-r from-amber-50/20 via-white to-white transition-all">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-100 pb-3">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-amber-100 text-amber-900 border border-amber-200 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
-                <HelpCircle className="w-3 h-3 text-amber-600" />
+        <article className="relative overflow-hidden bg-surface-container border border-tertiary/30 rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-3.5 sm:gap-4 bg-gradient-to-r from-tertiary-container/20 via-surface-container to-surface-container transition-all">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-tertiary/10 pb-2.5">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-tertiary-container text-on-tertiary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                <span className="material-symbols-outlined text-xs">help_outline</span>
                 Incomplete Load Inquiry
               </span>
-              <span className="font-mono text-xs text-neutral-900 font-bold">
-                Shipper: Micro Labs Ltd
-              </span>
+              <span className="font-mono text-xs text-on-surface font-semibold">Shipper: Micro Labs Ltd</span>
             </div>
-
-            <span className="font-mono text-[11px] text-amber-800 font-medium">
+            <span className="font-mono text-[11px] text-tertiary font-medium">
               Source: WhatsApp Group &quot;Bangalore Pharma Freight&quot;
             </span>
           </div>
 
-          <div className="bg-neutral-50/80 p-3.5 rounded-xl flex flex-col gap-2 border border-neutral-200/70">
-            <div className="flex flex-wrap items-center gap-3 text-neutral-900 text-xs font-sans">
+          <div className="bg-surface-container-low p-3 sm:p-3.5 rounded-lg flex flex-col gap-1.5 border border-surface-container-high">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-on-surface font-sans text-xs">
               <span><strong>Origin:</strong> Bommasandra Industrial</span>
-              <span className="text-neutral-300">•</span>
+              <span className="text-outline">•</span>
               <span><strong>Destination:</strong> Changodar, Ahmedabad</span>
-              <span className="text-neutral-300">•</span>
+              <span className="text-outline">•</span>
               <span><strong>Placement:</strong> Tomorrow 06:00 AM IST</span>
             </div>
-            <div className="flex flex-wrap items-center gap-2 mt-0.5">
-              <span className="px-2 py-0.5 rounded bg-red-50 border border-red-200 text-[#ff462d] font-mono text-[10px] font-bold">
+            <div className="flex flex-wrap items-center gap-1.5 mt-0.5 font-mono text-[10px]">
+              <span className="px-2 py-0.5 rounded bg-error-container text-on-error-container font-medium">
                 ⚠️ Missing: Total Weight (MT)
               </span>
-              <span className="px-2 py-0.5 rounded bg-red-50 border border-red-200 text-[#ff462d] font-mono text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded bg-error-container text-on-error-container font-medium">
                 ⚠️ Missing: Truck Category (Closed / Tarpaulin)
               </span>
             </div>
           </div>
 
-          {/* AI Pre-generated Clarification */}
-          <div className="p-3 bg-amber-50/60 rounded-xl border border-amber-200/80 flex flex-col gap-1.5 text-xs">
+          <div className="p-3 sm:p-3.5 bg-surface-container-low rounded-lg font-sans text-xs flex flex-col gap-1.5 border border-surface-container-high">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] text-amber-900 font-bold uppercase tracking-wider">
-                AI Pre-Generated Clarification (Ready to Dispatch)
+              <span className="font-mono text-[10px] text-outline font-semibold">
+                AI PRE-GENERATED CLARIFICATION (READY TO DISPATCH)
               </span>
-              <span className="font-mono text-[10px] text-emerald-700 font-bold">
+              <span className="font-mono text-[10px] text-secondary font-medium">
                 Hinglish / English Dual Parse
               </span>
             </div>
-            <p className="text-neutral-800 italic bg-white p-2.5 rounded-lg border border-amber-200/60 font-sans leading-relaxed">
+            <p className="text-on-surface-variant italic bg-surface p-2.5 rounded border border-surface-container-high leading-relaxed">
               &quot;Namaste Micro Labs logistics team, please confirm the total MT weight and whether container closed body is mandatory for tomorrow&apos;s Ahmedabad indent? Fast indents waiting.&quot;
             </p>
           </div>
 
-          {/* Actions */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-            <div className="flex flex-wrap items-center gap-2.5">
+          <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
               <button
                 type="button"
-                onClick={() => alert("Clarification WhatsApp message dispatched to Micro Labs Ltd!")}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-mono text-xs font-bold transition-all active:scale-95 shadow-xs"
+                onClick={() => alert("Clarification WhatsApp draft dispatched to Micro Labs Ltd!")}
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-tertiary text-on-tertiary font-headline-sm text-xs font-semibold hover:opacity-90 shadow-xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <Send className="w-3.5 h-3.5" />
+                <span className="material-symbols-outlined text-base">send</span>
                 <span>Send WhatsApp Clarification Draft</span>
               </button>
 
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-300/80 text-neutral-800 font-mono text-xs font-medium transition-all"
+                className="flex items-center justify-center gap-1 px-3 sm:px-3.5 py-2 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface hover:bg-surface-container-high font-sans text-xs transition-all w-full sm:w-auto"
               >
                 <span>Edit Message Manually</span>
               </button>
@@ -456,7 +435,7 @@ export const ActionQueueSection: React.FC = () => {
 
             <button
               type="button"
-              className="text-neutral-400 hover:text-red-600 font-mono text-xs transition-colors"
+              className="text-outline hover:text-error font-mono text-xs transition-colors ml-auto sm:ml-0"
             >
               Dismiss Inquiry
             </button>
@@ -466,4 +445,3 @@ export const ActionQueueSection: React.FC = () => {
     </div>
   );
 };
-
