@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AuthShowcase } from "@/components/auth/AuthShowcase";
 import { HappyRobotLogo } from "@/components/HappyRobotLogo";
 import {
@@ -17,6 +18,7 @@ import {
 } from "lucide-react";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [authMethod, setAuthMethod] = useState<"whatsapp" | "email">("whatsapp");
   const [phone, setPhone] = useState("");
   const [otp, setOtp] = useState("");
@@ -71,6 +73,9 @@ export default function LoginPage() {
         type: "success",
         text: "Credentials verified! Directing to Operations Console...",
       });
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 500);
     }, 1000);
   };
 

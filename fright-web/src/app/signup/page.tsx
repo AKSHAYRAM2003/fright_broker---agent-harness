@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AuthShowcase } from "@/components/auth/AuthShowcase";
 import { HappyRobotLogo } from "@/components/HappyRobotLogo";
 import {
@@ -19,6 +20,7 @@ import {
 } from "lucide-react";
 
 export default function SignUpPage() {
+  const router = useRouter();
   const [companyName, setCompanyName] = useState("");
   const [fullName, setFullName] = useState("");
   const [contactMethod, setContactMethod] = useState<"whatsapp" | "email">("whatsapp");
@@ -59,6 +61,9 @@ export default function SignUpPage() {
         type: "success",
         text: `Harness initialized for ${companyName || "your brokerage"}! Directing to corridor setup...`,
       });
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 500);
     }, 1200);
   };
 
