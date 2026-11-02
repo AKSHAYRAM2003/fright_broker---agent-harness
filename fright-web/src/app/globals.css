@@ -100,6 +100,17 @@ html {
   visibility: visible !important;
 }
 
+/* Subtle Brand Color Text Selection Highlight */
+::selection {
+  background-color: #ffd8d1 !important;
+  color: #901300 !important;
+}
+
+::-moz-selection {
+  background-color: #ffd8d1 !important;
+  color: #901300 !important;
+}
+
 body {
   opacity: 1 !important;
   visibility: visible !important;

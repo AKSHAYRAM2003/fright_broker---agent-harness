@@ -7351,8 +7351,8 @@ html[data-theme="light"] {
   }
 }
 .hr-landing ::selection {
-  background: var(--hr-rust);
-  color: var(--hr-canvas);
+  background: #ffd8d1;
+  color: #901300;
 }
 .hr-landing button,
 .hr-landing [role="button"],

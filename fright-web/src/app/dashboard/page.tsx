@@ -29,7 +29,7 @@ export default function DashboardPage() {
   return (
     <div
       data-view="dashboard"
-      className="min-h-screen bg-surface font-sans text-on-surface antialiased selection:bg-primary selection:text-white"
+      className="min-h-screen bg-surface font-sans text-on-surface antialiased selection:bg-[#ffd8d1] selection:text-[#901300]"
     >
       {/* 1. TOP HEADER BAR */}
       <DashboardHeader

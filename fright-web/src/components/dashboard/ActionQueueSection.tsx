@@ -33,14 +33,14 @@ export const ActionQueueSection: React.FC = () => {
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-0.5 bg-surface-container-high p-0.5 rounded-lg font-mono text-[11px] overflow-x-auto">
+          <div className="flex items-center gap-1 bg-[#eae7e1]/60 p-1 rounded-lg font-mono text-[11px] overflow-x-auto">
             <button
               onClick={() => setActiveFilter("all")}
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "all"
-                  ? "bg-surface text-on-surface font-semibold shadow-xs"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               All (3)
@@ -48,10 +48,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("margin")}
               type="button"
-              className={`px-2 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "margin"
-                  ? "bg-surface text-on-surface font-semibold shadow-xs"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               Margin (1)
@@ -59,10 +59,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("instant")}
               type="button"
-              className={`px-2 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "instant"
-                  ? "bg-surface text-on-surface font-semibold shadow-xs"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               Instant Book (1)
@@ -70,10 +70,10 @@ export const ActionQueueSection: React.FC = () => {
             <button
               onClick={() => setActiveFilter("incomplete")}
               type="button"
-              className={`px-2 py-1 rounded transition-colors ${
+              className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "incomplete"
-                  ? "bg-surface text-on-surface font-semibold shadow-xs"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               Incomplete (1)
@@ -224,8 +224,8 @@ export const ActionQueueSection: React.FC = () => {
 
           {/* Interactive Counter Offer Drawer */}
           {counterOpen && (
-            <div className="mt-2 p-3 bg-neutral-900 text-white rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
-              <span className="font-mono text-xs text-neutral-300 font-semibold">
+            <div className="mt-2 p-3 bg-[#fff0ed] border border-[#ff462d]/25 text-[#070707] rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
+              <span className="font-mono text-xs text-[#78716c] font-semibold">
                 Set WhatsApp Counter Rate:
               </span>
               <div className="flex items-center gap-2">
@@ -233,7 +233,7 @@ export const ActionQueueSection: React.FC = () => {
                   type="text"
                   value={counterAmount}
                   onChange={(e) => setCounterAmount(e.target.value)}
-                  className="bg-neutral-800 border border-neutral-700 px-3 py-1.5 rounded text-white font-mono text-xs font-bold w-28 focus:outline-none focus:border-primary"
+                  className="bg-white border border-[#eae7e1] px-3 py-1.5 rounded text-[#070707] font-mono text-xs font-bold w-28 focus:outline-none focus:border-[#ff462d]"
                 />
                 <button
                   type="button"
@@ -241,7 +241,7 @@ export const ActionQueueSection: React.FC = () => {
                     alert(`Counter offer of ${counterAmount} dispatched to Ghatge Patil via WhatsApp!`);
                     setCounterOpen(false);
                   }}
-                  className="px-3.5 py-1.5 bg-primary text-on-primary font-mono text-xs font-bold rounded hover:bg-[#e03a22]"
+                  className="px-3.5 py-1.5 bg-[#ff462d] text-white font-mono text-xs font-bold rounded hover:bg-[#e03a22]"
                 >
                   Send RFQ Counter
                 </button>
@@ -422,9 +422,9 @@ export const ActionQueueSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => alert("Clarification WhatsApp draft dispatched to Micro Labs Ltd!")}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-white font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-[#ff462d] hover:bg-[#e03a22] text-white font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <span className="material-symbols-outlined text-base text-primary">send</span>
+                <span className="material-symbols-outlined text-base text-white">send</span>
                 <span>Send WhatsApp Clarification Draft</span>
               </button>
 

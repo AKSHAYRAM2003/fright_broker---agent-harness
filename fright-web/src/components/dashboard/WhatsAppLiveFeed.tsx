@@ -46,10 +46,10 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
             <button
               onClick={() => setLangFilter("all")}
               type="button"
-              className={`px-2 py-0.5 rounded transition-colors ${
+              className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "all"
-                  ? "bg-surface-container-high text-on-surface font-semibold"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               All
@@ -57,10 +57,10 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
             <button
               onClick={() => setLangFilter("kannada")}
               type="button"
-              className={`px-2 py-0.5 rounded transition-colors ${
+              className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "kannada"
-                  ? "bg-surface-container-high text-on-surface font-semibold"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               ಕನ್ನಡ (KA)
@@ -68,10 +68,10 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
             <button
               onClick={() => setLangFilter("hinglish")}
               type="button"
-              className={`px-2 py-0.5 rounded transition-colors ${
+              className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "hinglish"
-                  ? "bg-surface-container-high text-on-surface font-semibold"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               Hinglish
@@ -79,10 +79,10 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
             <button
               onClick={() => setLangFilter("english")}
               type="button"
-              className={`px-2 py-0.5 rounded transition-colors ${
+              className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "english"
-                  ? "bg-surface-container-high text-on-surface font-semibold"
-                  : "text-outline hover:text-on-surface"
+                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
               English
