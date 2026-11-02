@@ -48,7 +48,7 @@ export default function DashboardPage() {
 
       {/* 3. MAIN WORKSPACE */}
       <div className="md:pl-64">
-        <main className="w-full pt-14 px-3.5 sm:px-5 lg:px-6 pb-8 bg-surface min-h-screen">
+        <main className="w-full pt-18 sm:pt-20 px-3.5 sm:px-5 lg:px-6 pb-8 bg-surface min-h-screen">
           <div className="flex flex-col w-full gap-3.5 sm:gap-4 max-w-[1540px] mx-auto">
             {/* Top Operational Metrics Bar */}
             <TopStatsBar />
