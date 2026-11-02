@@ -34,7 +34,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       id: "transporters",
       label: "Transporters",
       icon: "rv_hookup",
-      badge: null,
+      badge: "148",
+      badgeColor: "bg-surface-container-high text-on-surface-variant font-mono text-[9px]",
     },
     {
       id: "crm",

@@ -7,6 +7,7 @@ import { TopStatsBar } from "@/components/dashboard/TopStatsBar";
 import { ActionQueueSection } from "@/components/dashboard/ActionQueueSection";
 import { WhatsAppLiveFeed } from "@/components/dashboard/WhatsAppLiveFeed";
 import { WhatsAppSimulatorModal } from "@/components/dashboard/WhatsAppSimulatorModal";
+import { TransportersView } from "@/components/dashboard/TransportersView";
 import { Truck, Users, Filter, ArrowUpDown } from "lucide-react";
 
 export default function DashboardPage() {
@@ -51,7 +52,7 @@ export default function DashboardPage() {
         <main className="w-full pt-[72px] sm:pt-[80px] px-3.5 sm:px-5 lg:px-6 pb-8 bg-surface min-h-screen">
           <div className="flex flex-col w-full gap-3.5 sm:gap-4 max-w-[1540px] mx-auto">
             {/* Top Operational Metrics Bar (Single Row Guaranteed) */}
-            <TopStatsBar />
+            {activeView !== "transporters" && <TopStatsBar />}
 
             {/* MAIN 2-COLUMN OPERATIONS MATRIX (66% Left, 34% Right on Desktop, stacked on Mobile/Tablet) */}
             {activeView === "queue" && (
@@ -147,40 +148,8 @@ export default function DashboardPage() {
               </div>
             )}
 
-            {/* Carrier Network View */}
-            {activeView === "transporters" && (
-              <div className="bg-surface-container border border-surface-container-high rounded-xl p-5 shadow-xs flex flex-col gap-4 animate-fadeIn">
-                <div className="flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary" />
-                  <h3 className="font-headline-sm text-base text-on-surface font-semibold">
-                    Sharma Logistics Private Transporter Directory
-                  </h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-                  <div className="p-4 bg-surface-container-low border border-surface-container-high rounded-xl flex flex-col gap-1.5">
-                    <span className="font-sans text-sm font-bold text-on-surface">Sharma Road Carriers</span>
-                    <span className="font-mono text-xs text-outline">Contact: Ramesh Sharma (+91 98450 11111)</span>
-                    <span className="font-mono text-[11px] text-secondary font-bold">
-                      Corridors: BLR-BHW, BLR-PUN • Rating: 4.8★
-                    </span>
-                  </div>
-                  <div className="p-4 bg-surface-container-low border border-surface-container-high rounded-xl flex flex-col gap-1.5">
-                    <span className="font-sans text-sm font-bold text-on-surface">Karnataka-Maharashtra Freight</span>
-                    <span className="font-mono text-xs text-outline">Contact: Anand Patil (+91 98450 33333)</span>
-                    <span className="font-mono text-[11px] text-secondary font-bold">
-                      Corridors: BLR-BHW, BLR-HYD • Rating: 4.9★
-                    </span>
-                  </div>
-                  <div className="p-4 bg-surface-container-low border border-surface-container-high rounded-xl flex flex-col gap-1.5">
-                    <span className="font-sans text-sm font-bold text-on-surface">Sri Balaji Roadlines</span>
-                    <span className="font-mono text-xs text-outline">Contact: Balaji S. (+91 98450 44444)</span>
-                    <span className="font-mono text-[11px] text-secondary font-bold">
-                      Corridors: BLR-HYD, BLR-MAS • Rating: 4.7★
-                    </span>
-                  </div>
-                </div>
-              </div>
-            )}
+            {/* Carrier Network View (Dedicated Transporter Management) */}
+            {activeView === "transporters" && <TransportersView />}
           </div>
         </main>
       </div>
