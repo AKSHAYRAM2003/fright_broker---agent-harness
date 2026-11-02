@@ -277,3 +277,4 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
     </div>
   );
 };
+

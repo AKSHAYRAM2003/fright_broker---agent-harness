@@ -148,3 +148,4 @@ export const TopStatsBar: React.FC = () => {
     </section>
   );
 };
+

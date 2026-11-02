@@ -102,3 +102,4 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpenSimulato
     </header>
   );
 };
+

@@ -26,7 +26,7 @@ export default function DashboardPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-neutral-900 font-sans antialiased selection:bg-[#ff462d] selection:text-white">
+    <div data-view="dashboard" className="min-h-screen bg-[#f8fafc] text-neutral-900 font-sans antialiased selection:bg-[#ff462d] selection:text-white">
       {/* 1. TOP HEADER BAR */}
       <DashboardHeader onOpenSimulator={() => setSimulatorOpen(true)} />
 
@@ -198,3 +198,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+
