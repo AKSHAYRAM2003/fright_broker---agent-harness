@@ -499,20 +499,20 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               type="button"
               disabled={dispatchedSuccess}
               onClick={handleDispatch}
-              className={`h-9 px-5 rounded-lg font-mono text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95 ${
+              className={`h-9 px-5 rounded-lg font-mono text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95 ${
                 dispatchedSuccess
-                  ? "bg-[#047857] text-white"
-                  : "bg-[#09090b] hover:bg-[#27272a] text-white border border-black/10 shadow-[0_1px_2px_rgba(0,0,0,0.12)]"
+                  ? "bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0]"
+                  : "bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b]"
               }`}
             >
               {dispatchedSuccess ? (
                 <>
-                  <CheckCircle2 className="w-4 h-4" />
+                  <CheckCircle2 className="w-4 h-4 text-[#047857]" />
                   <span>RFQs Dispatched to {parsedResult.matchedCarriers.length} Carriers!</span>
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4" />
+                  <Send className="w-4 h-4 text-[#be3420]" />
                   <span>Broadcast WhatsApp RFQs ({parsedResult.matchedCarriers.length} Carriers)</span>
                 </>
               )}
@@ -521,9 +521,9 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
             <button
               type="button"
               onClick={handleDispatch}
-              className="h-9 px-5 bg-[#d97706] hover:bg-[#b45309] text-white rounded-lg font-mono text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95"
+              className="h-9 px-5 bg-white hover:bg-[#fffbeb] text-[#b45309] border border-[#fde68a] hover:border-[#b45309] rounded-lg font-mono text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 text-[#b45309]" />
               <span>Send WhatsApp Clarification Draft</span>
             </button>
           )}

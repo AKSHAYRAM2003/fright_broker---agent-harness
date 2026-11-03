@@ -42,13 +42,13 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
           </span>
 
           {/* Language Switcher */}
-          <div className="flex items-center gap-1 mt-1.5 font-mono text-[10px] overflow-x-auto pb-0.5">
+          <div className="flex items-center gap-1 mt-1.5 font-mono text-[10px] overflow-x-auto pb-0.5 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5]">
             <button
               onClick={() => setLangFilter("all")}
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "all"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -59,7 +59,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "kannada"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -70,7 +70,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "hinglish"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -81,7 +81,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "english"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >

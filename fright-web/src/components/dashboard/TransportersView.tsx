@@ -386,9 +386,9 @@ export const TransportersView: React.FC = () => {
             <button
               type="button"
               onClick={() => setDrawerOpen(true)}
-              className="h-9 px-3.5 bg-[#09090b] hover:bg-[#27272a] text-white border border-black/10 text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.12)] transition-all active:scale-95"
+              className="h-9 px-3.5 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#a8a29e] text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
             >
-              <PlusCircle className="w-4 h-4" />
+              <PlusCircle className="w-4 h-4 text-[#be3420]" />
               <span>+ Onboard New Transporter</span>
             </button>
           </div>
@@ -490,8 +490,8 @@ export const TransportersView: React.FC = () => {
                 onClick={() => setSelectedCorridor(corridor.id)}
                 className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all ${
                   isActive
-                    ? "bg-[#09090b] text-white font-semibold shadow-xs"
-                    : "bg-white hover:bg-[#f7f6f4] text-[#57534e] border border-[#eae7e1]"
+                    ? "bg-white text-[#18181b] font-bold shadow-xs border border-black/[0.15]"
+                    : "bg-white/60 hover:bg-white text-[#57534e] border border-[#eae7e1]"
                 }`}
               >
                 {corridor.label}
@@ -772,7 +772,7 @@ export const TransportersView: React.FC = () => {
               </button>
               <button
                 type="button"
-                className="h-6 px-2 rounded bg-[#09090b] text-white font-bold"
+                className="h-6 px-2 rounded bg-white text-[#18181b] border border-[#d6d3cd] font-bold shadow-2xs"
               >
                 1
               </button>
@@ -999,9 +999,9 @@ export const TransportersView: React.FC = () => {
           <button
             type="button"
             onClick={() => setDrawerOpen(true)}
-            className="mt-3.5 w-full py-2 bg-[#09090b] text-white hover:bg-[#27272a] rounded-lg font-mono text-xs font-semibold flex items-center justify-center gap-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.12)] transition-all active:scale-95"
+            className="mt-3.5 w-full py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] rounded-lg font-mono text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95"
           >
-            <PlusCircle className="w-3.5 h-3.5" />
+            <PlusCircle className="w-3.5 h-3.5 text-[#be3420]" />
             <span>Initiate Transporter Onboarding</span>
           </button>
         </div>
@@ -1393,9 +1393,9 @@ export const TransportersView: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="h-9 px-4 bg-[#09090b] hover:bg-[#27272a] text-white text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.12)] transition-all active:scale-95"
+                  className="h-9 px-4 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] text-xs font-semibold rounded-lg flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
                 >
-                  <ShieldCheck className="w-4 h-4" />
+                  <ShieldCheck className="w-4 h-4 text-[#047857]" />
                   <span>Save &amp; Authenticate Transporter</span>
                 </button>
               </div>

@@ -74,11 +74,11 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
 
       {/* Right Controls */}
       <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
-        {/* Inbound Shipper Load Ingestion Button (Impeccable Obsidian CTA) */}
+        {/* Inbound Shipper Load Ingestion Button (Harmonious Warm Stone CTA) */}
         <button
           onClick={onOpenIngest}
           type="button"
-          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#09090b] hover:bg-[#27272a] text-white font-mono text-xs font-medium transition-all shadow-[0_1px_2px_rgba(0,0,0,0.15)] active:scale-[0.98] border border-black"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white hover:bg-[#f7f6f4] text-[#18181b] font-mono text-xs font-semibold transition-all shadow-2xs hover:shadow-xs active:scale-[0.98] active:bg-[#f0ede6] border border-[#d6d3cd] hover:border-[#a8a29e]"
         >
           <span className="material-symbols-outlined text-base text-[#be3420]">add_box</span>
           <span className="hidden sm:inline">+ Ingest Load</span>

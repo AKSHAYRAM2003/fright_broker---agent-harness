@@ -31,9 +31,9 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
           <button
             onClick={onOpenIngest}
             type="button"
-            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary hover:bg-[#e03a22] text-white font-mono text-[11px] font-bold shadow-xs transition-all active:scale-95 ml-1"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#a8a29e] font-mono text-[11px] font-semibold shadow-2xs transition-all active:scale-95 ml-1"
           >
-            <span className="material-symbols-outlined text-sm">add_box</span>
+            <span className="material-symbols-outlined text-sm text-[#be3420]">add_box</span>
             <span>+ Ingest Indent</span>
           </button>
         </div>
@@ -45,13 +45,13 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-1 bg-[#eae7e1]/60 p-1 rounded-lg font-mono text-[11px] overflow-x-auto">
+          <div className="flex items-center gap-1 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5] font-mono text-[11px] overflow-x-auto">
             <button
               onClick={() => setActiveFilter("all")}
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "all"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -62,7 +62,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "margin"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -73,7 +73,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "instant"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -84,7 +84,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "incomplete"
-                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
+                  ? "bg-white text-[#18181b] font-semibold shadow-xs border border-black/[0.08]"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -203,9 +203,9 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               <button
                 type="button"
                 onClick={() => setCounterOpen(!counterOpen)}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-primary hover:bg-[#e03a22] text-on-primary font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-white hover:bg-[#fef2f0] text-[#be3420] border border-[#fecaca] hover:border-[#be3420]/40 font-headline-sm text-xs font-semibold shadow-2xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <span className="material-symbols-outlined text-base">forum</span>
+                <span className="material-symbols-outlined text-base text-[#be3420]">forum</span>
                 <span>Counter Transporter @ {counterAmount}</span>
               </button>
 
@@ -253,7 +253,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
                     alert(`Counter offer of ${counterAmount} dispatched to Ghatge Patil via WhatsApp!`);
                     setCounterOpen(false);
                   }}
-                  className="px-3.5 py-1.5 bg-[#09090b] text-white font-mono text-xs font-bold rounded hover:bg-[#27272a] transition-colors"
+                  className="px-3.5 py-1.5 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-mono text-xs font-semibold rounded shadow-2xs transition-all"
                 >
                   Send RFQ Counter
                 </button>
@@ -347,13 +347,13 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
                 type="button"
                 onClick={() => handleApprove("BLR-HYD-1039")}
                 disabled={approvedCards["BLR-HYD-1039"]}
-                className={`flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg font-headline-sm text-xs font-semibold shadow-xs transition-all w-full sm:w-auto ${
+                className={`flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg font-headline-sm text-xs font-semibold shadow-2xs transition-all w-full sm:w-auto ${
                   approvedCards["BLR-HYD-1039"]
-                    ? "bg-secondary/70 text-on-secondary cursor-default"
-                    : "bg-secondary text-on-secondary hover:opacity-90 active:scale-95"
+                    ? "bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] cursor-default"
+                    : "bg-white hover:bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] hover:border-[#047857]/40 active:scale-95"
                 }`}
               >
-                <span className="material-symbols-outlined text-base">task_alt</span>
+                <span className="material-symbols-outlined text-base text-[#047857]">task_alt</span>
                 <span>
                   {approvedCards["BLR-HYD-1039"] ? "Trip Booked (FSM: Locked)" : "Approve & Book Now (1-Click)"}
                 </span>
@@ -434,9 +434,9 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               <button
                 type="button"
                 onClick={() => alert("Clarification WhatsApp draft dispatched to Micro Labs Ltd!")}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-[#09090b] hover:bg-[#27272a] text-white border border-black/10 font-headline-sm text-xs font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.12)] transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-headline-sm text-xs font-semibold shadow-2xs transition-all active:scale-95 w-full sm:w-auto"
               >
-                <span className="material-symbols-outlined text-base text-white">send</span>
+                <span className="material-symbols-outlined text-base text-[#be3420]">send</span>
                 <span>Send WhatsApp Clarification Draft</span>
               </button>
 

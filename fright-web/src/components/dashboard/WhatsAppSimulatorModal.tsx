@@ -135,7 +135,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
               onClick={handleSimulate}
               disabled={isProcessing}
               type="button"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-mono text-xs font-bold transition-all active:scale-95 shadow-md"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-mono text-xs font-semibold transition-all active:scale-95 shadow-2xs"
             >
               {isProcessing ? (
                 <>
