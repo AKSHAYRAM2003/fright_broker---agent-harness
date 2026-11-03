@@ -120,14 +120,14 @@ export const DesktopNav: React.FC = () => {
 
         {/* Operations Dashboard Link */}
         <a
-          className="group inline-flex items-center px-3.5 uppercase no-underline transition-colors text-[#ff462d] font-bold"
+          className="group inline-flex items-center px-3.5 uppercase no-underline transition-colors text-[#be3420] font-bold"
           href="/dashboard"
         >
           <span className="relative">
             Console
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-[#ff462d] transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
+              className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-right scale-x-0 bg-[#be3420] transition-transform duration-300 ease-[cubic-bezier(0.33,0,0.15,1)] group-hover:origin-left group-hover:scale-x-100"
             />
           </span>
         </a>

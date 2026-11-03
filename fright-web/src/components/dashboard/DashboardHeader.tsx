@@ -73,56 +73,56 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-        {/* Inbound Shipper Load Ingestion Button */}
+      <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+        {/* Inbound Shipper Load Ingestion Button (Impeccable Obsidian CTA) */}
         <button
           onClick={onOpenIngest}
           type="button"
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-[#e03a22] text-white font-mono text-xs font-semibold transition-all shadow-xs active:scale-95"
+          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#09090b] hover:bg-[#27272a] text-white font-mono text-xs font-medium transition-all shadow-[0_1px_2px_rgba(0,0,0,0.15)] active:scale-[0.98] border border-black"
         >
-          <span className="material-symbols-outlined text-base">add_box</span>
+          <span className="material-symbols-outlined text-base text-[#be3420]">add_box</span>
           <span className="hidden sm:inline">+ Ingest Load</span>
         </button>
 
-        {/* Simulator Launcher Button (Shortcut) */}
+        {/* Simulator Launcher Button */}
         <button
           onClick={onOpenSimulator}
           type="button"
-          className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high hover:bg-surface-container-high text-primary font-mono text-xs font-semibold transition-colors shadow-xs"
+          className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#e7e5e4] hover:bg-[#f5f4f0] text-[#18181b] font-mono text-xs font-medium transition-colors shadow-2xs"
         >
-          <span className="material-symbols-outlined text-base">terminal</span>
+          <span className="material-symbols-outlined text-base text-[#71717a]">terminal</span>
           <span className="hidden lg:inline">Simulator</span>
         </button>
 
         {/* Tenant Selector Dropdown */}
         <button
           type="button"
-          className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant transition-colors"
+          className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-white border border-[#e7e5e4] hover:bg-[#f5f4f0] text-[#18181b] transition-colors shadow-2xs"
         >
-          <span className="material-symbols-outlined text-base text-primary">domain</span>
-          <span className="font-sans text-xs text-on-surface font-medium max-w-[120px] sm:max-w-none truncate">
+          <span className="material-symbols-outlined text-base text-[#71717a]">domain</span>
+          <span className="font-sans text-xs text-[#18181b] font-medium max-w-[120px] sm:max-w-none truncate">
             Sharma Logistics - Bengaluru
           </span>
-          <span className="material-symbols-outlined text-sm text-outline">expand_more</span>
+          <span className="material-symbols-outlined text-sm text-[#a1a1aa]">expand_more</span>
         </button>
 
         {/* Notifications Icon with Badge */}
         <button
           type="button"
           aria-label="Notifications"
-          className="relative p-1.5 sm:p-2 rounded-lg bg-surface-container-low border border-surface-container-high hover:bg-surface-container-high text-on-surface-variant transition-colors"
+          className="relative p-1.5 sm:p-2 rounded-lg bg-white border border-[#e7e5e4] hover:bg-[#f5f4f0] text-[#52525b] transition-colors shadow-2xs"
         >
           <span className="material-symbols-outlined text-base">notifications</span>
-          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-mono text-[10px] font-bold">
+          <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-[#be3420] text-white font-mono text-[9px] font-bold">
             3
           </span>
         </button>
 
         {/* User Profile Avatar */}
         <div className="relative flex items-center pl-1">
-          <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-surface-container-high border border-surface-container-high font-mono text-xs font-bold text-on-surface">
+          <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-[#f5f4f0] border border-[#e7e5e4] font-mono text-xs font-bold text-[#18181b]">
             AR
-            <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-secondary border-2 border-surface"></span>
+            <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-[#047857] border-2 border-white"></span>
           </div>
         </div>
       </div>

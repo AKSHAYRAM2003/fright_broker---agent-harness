@@ -218,7 +218,7 @@ export const MobileDrawer: React.FC = () => {
             <span style={{ color: "#ffffff", fontWeight: "600", letterSpacing: "0.12em" }}>
               Login
             </span>
-            <span style={{ color: "#ff462d", fontSize: "14px", transform: "translateY(-0.5px)" }} aria-hidden="true">
+            <span style={{ color: "#be3420", fontSize: "14px", transform: "translateY(-0.5px)" }} aria-hidden="true">
               →
             </span>
           </a>

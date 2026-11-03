@@ -282,7 +282,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
         {/* Modal Header */}
         <div className="flex items-center justify-between px-5 sm:px-6 py-3.5 border-b border-[#eae7e1] bg-[#f7f6f4]">
           <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-[#fff0ed] text-[#ff462d] rounded-lg border border-[#ff462d]/25">
+            <div className="p-2 bg-[#fef2f0] text-[#be3420] rounded-lg border border-[#be3420]/25">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
@@ -290,7 +290,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                 <h3 className="font-sans text-base font-bold text-[#070707]">
                   Inbound Shipper Load Ingestion
                 </h3>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-[#ff462d] border border-[#ff462d]/25 font-bold uppercase">
+                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-[#be3420] border border-[#be3420]/25 font-bold uppercase">
                   AI Auto-Match Engine
                 </span>
               </div>
@@ -321,9 +321,9 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                   key={p.id}
                   type="button"
                   onClick={() => handleSelectPreset(p.text)}
-                  className="p-2.5 text-left rounded-xl border border-[#eae7e1] bg-white hover:border-[#ff462d]/40 hover:bg-[#fff0ed]/20 transition-all flex flex-col justify-between group shadow-2xs"
+                  className="p-2.5 text-left rounded-xl border border-[#eae7e1] bg-white hover:border-[#be3420]/40 hover:bg-[#fef2f0]/20 transition-all flex flex-col justify-between group shadow-2xs"
                 >
-                  <span className="font-sans text-xs font-bold text-[#070707] group-hover:text-[#ff462d] truncate">
+                  <span className="font-sans text-xs font-bold text-[#070707] group-hover:text-[#be3420] truncate">
                     {p.label}
                   </span>
                   <span className="font-mono text-[10px] text-[#78716c] mt-1 bg-[#f7f6f4] px-1.5 py-0.5 rounded border border-[#dfdbd5] inline-block w-fit">
@@ -343,7 +343,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               <button
                 type="button"
                 onClick={() => handleParse(inputText)}
-                className="text-[#ff462d] font-mono text-[11px] font-bold flex items-center gap-1 hover:underline"
+                className="text-[#be3420] font-mono text-[11px] font-bold flex items-center gap-1 hover:underline"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Re-parse with AI</span>
@@ -354,14 +354,14 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               placeholder="Paste raw WhatsApp load message here..."
-              className="w-full p-3 rounded-xl border border-[#dfdbd5] bg-[#f7f6f4] text-[#070707] font-sans text-xs leading-relaxed focus:outline-none focus:border-[#ff462d] focus:bg-white transition-all shadow-inner"
+              className="w-full p-3 rounded-xl border border-[#dfdbd5] bg-[#f7f6f4] text-[#070707] font-sans text-xs leading-relaxed focus:outline-none focus:border-[#be3420] focus:bg-white transition-all shadow-inner"
             />
           </div>
 
           {/* AI Parsing & Fleet Sourcing Results */}
           {isParsing ? (
             <div className="py-12 flex flex-col items-center justify-center gap-2.5">
-              <div className="w-7 h-7 border-2 border-[#ff462d] border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-7 h-7 border-2 border-[#be3420] border-t-transparent rounded-full animate-spin"></div>
               <span className="font-mono text-xs text-[#78716c]">
                 Analyzing freight terminology, extracting entities &amp; querying Transporter Directory...
               </span>
@@ -452,7 +452,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                     {parsedResult.matchedCarriers.map((c) => (
                       <div
                         key={c.id}
-                        className="p-3 bg-white rounded-xl border border-[#eae7e1] hover:border-[#ff462d]/40 transition-all flex flex-col justify-between shadow-2xs"
+                        className="p-3 bg-white rounded-xl border border-[#eae7e1] hover:border-[#be3420]/40 transition-all flex flex-col justify-between shadow-2xs"
                       >
                         <div>
                           <div className="flex items-center justify-between">
@@ -462,7 +462,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                           <div className="flex items-center gap-2 mt-1 font-mono text-[10px] text-[#78716c]">
                             <span>{c.phone}</span>
                             <span>•</span>
-                            <span className="text-[#ff462d] font-semibold">{c.fleetCount}</span>
+                            <span className="text-[#be3420] font-semibold">{c.fleetCount}</span>
                           </div>
                           <div className="mt-2 p-2 bg-[#f7f6f4] rounded-lg border border-[#eae7e1] font-mono text-[10px] text-[#57534e] line-clamp-3 leading-relaxed">
                             {c.previewRfq}
@@ -501,8 +501,8 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               onClick={handleDispatch}
               className={`h-9 px-5 rounded-lg font-mono text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all active:scale-95 ${
                 dispatchedSuccess
-                  ? "bg-[#059669] text-white"
-                  : "bg-[#ff462d] hover:bg-[#e03a22] text-white"
+                  ? "bg-[#047857] text-white"
+                  : "bg-[#09090b] hover:bg-[#27272a] text-white border border-black/10 shadow-[0_1px_2px_rgba(0,0,0,0.12)]"
               }`}
             >
               {dispatchedSuccess ? (
@@ -532,3 +532,4 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
     </div>
   );
 };
+

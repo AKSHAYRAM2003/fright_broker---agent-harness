@@ -51,7 +51,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "all"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -62,7 +62,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "margin"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -73,7 +73,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "instant"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -84,7 +84,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               type="button"
               className={`px-2.5 py-1 rounded transition-colors ${
                 activeFilter === "incomplete"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -236,7 +236,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
 
           {/* Interactive Counter Offer Drawer */}
           {counterOpen && (
-            <div className="mt-2 p-3 bg-[#fff0ed] border border-[#ff462d]/25 text-[#070707] rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
+            <div className="mt-2 p-3 bg-[#fef2f0] border border-[#be3420]/25 text-[#070707] rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
               <span className="font-mono text-xs text-[#78716c] font-semibold">
                 Set WhatsApp Counter Rate:
               </span>
@@ -245,7 +245,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
                   type="text"
                   value={counterAmount}
                   onChange={(e) => setCounterAmount(e.target.value)}
-                  className="bg-white border border-[#eae7e1] px-3 py-1.5 rounded text-[#070707] font-mono text-xs font-bold w-28 focus:outline-none focus:border-[#ff462d]"
+                  className="bg-white border border-[#eae7e1] px-3 py-1.5 rounded text-[#070707] font-mono text-xs font-bold w-28 focus:outline-none focus:border-[#be3420]"
                 />
                 <button
                   type="button"
@@ -253,7 +253,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
                     alert(`Counter offer of ${counterAmount} dispatched to Ghatge Patil via WhatsApp!`);
                     setCounterOpen(false);
                   }}
-                  className="px-3.5 py-1.5 bg-[#ff462d] text-white font-mono text-xs font-bold rounded hover:bg-[#e03a22]"
+                  className="px-3.5 py-1.5 bg-[#09090b] text-white font-mono text-xs font-bold rounded hover:bg-[#27272a] transition-colors"
                 >
                   Send RFQ Counter
                 </button>
@@ -434,7 +434,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIn
               <button
                 type="button"
                 onClick={() => alert("Clarification WhatsApp draft dispatched to Micro Labs Ltd!")}
-                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-[#ff462d] hover:bg-[#e03a22] text-white font-headline-sm text-xs font-semibold shadow-xs transition-all active:scale-95 w-full sm:w-auto"
+                className="flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-lg bg-[#09090b] hover:bg-[#27272a] text-white border border-black/10 font-headline-sm text-xs font-semibold shadow-[0_1px_2px_rgba(0,0,0,0.12)] transition-all active:scale-95 w-full sm:w-auto"
               >
                 <span className="material-symbols-outlined text-base text-white">send</span>
                 <span>Send WhatsApp Clarification Draft</span>

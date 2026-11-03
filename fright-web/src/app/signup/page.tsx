@@ -300,7 +300,7 @@ export default function SignUpPage() {
                 }}
               >
                 <span style={{ display: "flex", alignItems: "center", gap: "6px", fontWeight: "700" }}>
-                  <Sparkles style={{ width: "14px", height: "14px", color: "#ff462d" }} />
+                  <Sparkles style={{ width: "14px", height: "14px", color: "#be3420" }} />
                   Deterministic Margin Floor Rule
                 </span>
                 <span style={{ color: "#047857", fontWeight: "800" }}>₹{marginFloor} / load</span>

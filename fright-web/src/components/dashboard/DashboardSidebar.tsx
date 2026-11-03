@@ -97,14 +97,14 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 type="button"
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs transition-all text-left ${
                   isActive
-                    ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                    ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/25 shadow-xs"
                     : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-normal"
                 }`}
               >
                 <div className="flex items-center gap-3">
                   <span
                     className={`material-symbols-outlined text-lg ${
-                      isActive ? "text-[#ff462d]" : "text-[#78716c]"
+                      isActive ? "text-[#be3420]" : "text-[#78716c]"
                     }`}
                   >
                     {item.icon}
@@ -114,7 +114,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 {item.badge && (
                   <span
                     className={`px-1.5 py-0.5 rounded-full font-mono text-[10px] font-bold ${
-                      isActive ? "bg-[#ff462d] text-white" : item.badgeColor
+                      isActive ? "bg-[#be3420] text-white" : item.badgeColor
                     }`}
                   >
                     {item.badge}

@@ -70,7 +70,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 bg-neutral-50">
           <div className="flex items-center gap-2.5">
-            <div className="p-1.5 bg-[#ff462d]/10 text-[#ff462d] rounded-lg">
+            <div className="p-1.5 bg-[#be3420]/10 text-[#be3420] rounded-lg">
               <Terminal className="w-5 h-5" />
             </div>
             <div>
@@ -124,7 +124,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
               rows={3}
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
-              className="w-full p-3.5 bg-neutral-50 border border-neutral-200 rounded-xl font-sans text-sm text-neutral-900 focus:outline-none focus:border-[#ff462d] focus:bg-white transition-all shadow-inner"
+              className="w-full p-3.5 bg-neutral-50 border border-neutral-200 rounded-xl font-sans text-sm text-neutral-900 focus:outline-none focus:border-[#be3420] focus:bg-white transition-all shadow-inner"
               placeholder="Type or paste any informal WhatsApp message here in Hindi, Hinglish, Kannada, or English..."
             />
           </div>
@@ -139,12 +139,12 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
             >
               {isProcessing ? (
                 <>
-                  <Sparkles className="w-4 h-4 text-[#ff462d] animate-spin" />
+                  <Sparkles className="w-4 h-4 text-[#be3420] animate-spin" />
                   <span>Parsing Multilingual Entities...</span>
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4 text-[#ff462d]" />
+                  <Send className="w-4 h-4 text-[#be3420]" />
                   <span>Run Agent Intake Pipeline</span>
                 </>
               )}

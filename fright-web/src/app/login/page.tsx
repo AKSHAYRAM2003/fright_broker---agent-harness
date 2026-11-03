@@ -200,7 +200,7 @@ export default function LoginPage() {
                       <button
                         type="button"
                         onClick={handleSendOtp}
-                        style={{ color: "#ff462d", textDecoration: "underline", background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                        style={{ color: "#be3420", textDecoration: "underline", background: "none", border: "none", cursor: "pointer", padding: 0 }}
                       >
                         Resend Code
                       </button>
@@ -374,7 +374,7 @@ export default function LoginPage() {
               }
               className="auth-sso-btn"
             >
-              <ShieldCheck style={{ width: "16px", height: "16px", color: "#ff462d" }} />
+              <ShieldCheck style={{ width: "16px", height: "16px", color: "#be3420" }} />
               SAML / Okta
             </button>
           </div>

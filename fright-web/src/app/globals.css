@@ -1,46 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #f8fafc;
-  --color-on-surface: #1e293b;
-  --color-on-surface-variant: #475569;
-  --color-outline: #64748b;
-  --color-outline-variant: #cbd5e1;
+  --font-sans: "SuisseIntl", "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Suisse Intl Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-surface: #f9f8f6;
+  --color-on-surface: #18181b;
+  --color-on-surface-variant: #52525b;
+  --color-outline: #71717a;
+  --color-outline-variant: #e4e4e7;
 
   --color-surface-container: #ffffff;
-  --color-surface-container-low: #f7f6f4;
-  --color-surface-container-high: #eae7e1;
-  --color-surface-container-highest: #dad5cc;
+  --color-surface-container-low: #f5f4f0;
+  --color-surface-container-high: #ebe9e4;
+  --color-surface-container-highest: #dfdbd5;
   --color-surface-container-lowest: #ffffff;
 
-  /* HappyFreight Brand Colors: Primary = Freight Rust */
-  --color-primary: #ff462d;
+  /* Calibrated HappyFreight Brand Colors: Grounded Terracotta / Burnt Rust (Not neon) */
+  --color-primary: #be3420;
   --color-on-primary: #ffffff;
-  --color-primary-container: #fff0ed;
-  --color-on-primary-container: #c42008;
+  --color-primary-container: #fef2f0;
+  --color-on-primary-container: #991b1b;
 
   /* Brand Stone & Obsidian */
-  --color-hr-rust: #ff462d;
-  --color-hr-stone: #dfdbd5;
-  --color-hr-obsidian: #070707;
+  --color-hr-rust: #be3420;
+  --color-hr-stone: #e7e5e4;
+  --color-hr-obsidian: #09090b;
 
   /* Secondary: Operational Success Emerald */
-  --color-secondary: #059669;
+  --color-secondary: #047857;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #dcfce7;
+  --color-secondary-container: #ecfdf5;
   --color-on-secondary-container: #065f46;
 
   /* Tertiary: Dispatch Warning Amber */
-  --color-tertiary: #c26d00;
+  --color-tertiary: #b45309;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #ffeedb;
-  --color-on-tertiary-container: #7c3a00;
+  --color-tertiary-container: #fef3c7;
+  --color-on-tertiary-container: #78350f;
 
   /* Error: Margin Floor Alert */
-  --color-error: #ff462d;
+  --color-error: #be3420;
   --color-on-error: #ffffff;
-  --color-error-container: #feebe8;
-  --color-on-error-container: #b81c06;
+  --color-error-container: #fef2f0;
+  --color-on-error-container: #991b1b;
+}
+
+:root {
+  --hr-rust: #be3420;
 }
 
 @import "./happyrobot.css";
@@ -49,7 +56,7 @@
 @font-face {
   font-family: "SuisseIntl";
   src: url("/fonts/SuisseIntl-Book.woff2") format("woff2");
-  font-weight: 400;
+  font-weight: 300 400;
   font-style: normal;
   font-display: swap;
 }
@@ -59,7 +66,7 @@
   src:
     url("/fonts/SuisseIntl-Regular.woff2") format("woff2"),
     url("/fonts/SuisseIntl-Regular.ttf") format("truetype");
-  font-weight: 500;
+  font-weight: 500 900;
   font-style: normal;
   font-display: swap;
 }
@@ -102,13 +109,13 @@ html {
 
 /* Subtle Brand Color Text Selection Highlight */
 ::selection {
-  background-color: #ffd8d1 !important;
-  color: #901300 !important;
+  background-color: #fee2e2 !important;
+  color: #7f1d1d !important;
 }
 
 ::-moz-selection {
-  background-color: #ffd8d1 !important;
-  color: #901300 !important;
+  background-color: #fee2e2 !important;
+  color: #7f1d1d !important;
 }
 
 body {
@@ -119,14 +126,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Logistics Operations Console Font Tokens */
+/* HappyFreight Custom Brand Typography (SuisseIntl) */
+html,
+body,
 .font-sans,
 [data-view="dashboard"] {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "SuisseIntl", "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
 .font-mono {
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-family: "Suisse Intl Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-feature-settings: "tnum" 1, "zero" 1;
 }
 
 /* Material Symbols Outlined Icon Helper */
@@ -171,7 +181,7 @@ body {
 .hero-cta-btn .btn-arrow {
   position: relative !important;
   z-index: 2 !important;
-  color: var(--hr-rust, #ff462d) !important;
+  color: var(--hr-rust, #be3420) !important;
   transition: color 300ms cubic-bezier(0.33, 0, 0.15, 1), transform 300ms cubic-bezier(0.33, 0, 0.15, 1) !important;
 }
 
@@ -692,7 +702,7 @@ img[data-nimg="fill"] {
 }
 
 .auth-nav-link .auth-nav-arrow {
-  color: var(--hr-rust, #ff462d);
+  color: var(--hr-rust, #be3420);
   font-size: 14px;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-block;
@@ -932,7 +942,7 @@ img[data-nimg="fill"] {
 }
 
 .auth-submit-btn .btn-arrow {
-  color: var(--hr-rust, #ff462d) !important;
+  color: var(--hr-rust, #be3420) !important;
 }
 
 .auth-submit-btn:hover .btn-text,

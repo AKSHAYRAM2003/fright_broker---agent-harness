@@ -30,12 +30,12 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
               />
               <path
                 d="M16 40H24V27.9368C24.0337 25.7566 25.8115 24 27.9995 24H40V16H31.3137C29.192 16 27.1571 16.8429 25.6569 18.3431L18.3431 25.6569C16.8429 27.1571 16 29.192 16 31.3137V40Z"
-                fill="#ff462d"
+                fill="#be3420"
               />
             </g>
           </svg>
           <span style={{ fontSize: "18px", fontWeight: "700", letterSpacing: "-0.035em", color: "#ffffff", whiteSpace: "nowrap" }}>
-            Happy<span style={{ color: "#ff462d" }}>Freight</span>
+            Happy<span style={{ color: "#be3420" }}>Freight</span>
           </span>
         </Link>
 
@@ -112,7 +112,7 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <Activity style={{ width: "13px", height: "13px", color: "#ff462d" }} />
+              <Activity style={{ width: "13px", height: "13px", color: "#be3420" }} />
               <span>Active Dispatch Stream // 3 Corridors</span>
             </div>
             <span style={{ color: "#34d399" }}>Live Sync</span>
@@ -208,7 +208,7 @@ export const AuthShowcase: React.FC<AuthShowcaseProps> = ({ mode }) => {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
-              <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#ff462d", flexShrink: 0 }} />
+              <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#be3420", flexShrink: 0 }} />
               <span>Voice Note: &ldquo;32ft available Bhiwandi, rate 68k&rdquo;</span>
             </div>
             <span style={{ color: "#ffffff", flexShrink: 0 }}>Parsed in 0.8s</span>

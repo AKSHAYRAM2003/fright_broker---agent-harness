@@ -48,7 +48,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "all"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -59,7 +59,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "kannada"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -70,7 +70,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "hinglish"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
@@ -81,7 +81,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               type="button"
               className={`px-2.5 py-0.5 rounded transition-colors ${
                 langFilter === "english"
-                  ? "bg-[#fff0ed] text-[#ff462d] font-semibold border border-[#ff462d]/25 shadow-xs"
+                  ? "bg-[#09090b] text-white font-semibold shadow-xs"
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
