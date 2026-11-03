@@ -56,14 +56,14 @@ export default function DashboardPage() {
 
       {/* 3. MAIN WORKSPACE */}
       <div className="md:pl-64">
-        <main className="w-full pt-[72px] sm:pt-[80px] px-3.5 sm:px-5 lg:px-6 pb-8 bg-surface min-h-screen">
-          <div className="flex flex-col w-full gap-3.5 sm:gap-4 max-w-[1540px] mx-auto">
+        <main className="w-full pt-[72px] sm:pt-[80px] px-4 sm:px-6 lg:px-8 pb-10 bg-surface min-h-screen">
+          <div className="flex flex-col w-full gap-4 sm:gap-5 max-w-[1540px] mx-auto">
             {/* Top Operational Metrics Bar (Single Row Guaranteed) */}
             {activeView !== "transporters" && <TopStatsBar />}
 
             {/* MAIN 2-COLUMN OPERATIONS MATRIX (66% Left, 34% Right on Desktop, stacked on Mobile/Tablet) */}
             {activeView === "queue" && (
-              <div className="grid grid-cols-1 xl:grid-cols-12 gap-3.5 sm:gap-4 items-start">
+              <div className="grid grid-cols-1 xl:grid-cols-12 gap-4 sm:gap-5 items-start">
                 {/* LEFT COLUMN: AI Action Queue (8 cols = ~66%) */}
                 <div className="xl:col-span-8 flex flex-col gap-3.5 sm:gap-4">
                   <ActionQueueSection onOpenIngest={() => setIngestModalOpen(true)} />

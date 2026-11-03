@@ -91,106 +91,98 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
         </div>
 
         {/* Primary Incoming Item (Sri Manjunatha Transports) */}
-        <div className="bg-surface-container-low border border-surface-container-high p-3 rounded-lg flex flex-col gap-2.5 shadow-inner">
+        <div className="bg-[#faf9f7] border border-[#e7e5e4] p-3.5 rounded-xl flex flex-col gap-3 shadow-inner">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-secondary text-base">chat</span>
-              <span className="font-headline-sm text-xs text-on-surface font-semibold truncate">
+            <div className="flex items-center gap-2">
+              <span className="material-symbols-outlined text-[#047857] text-base">chat</span>
+              <span className="font-sans text-xs text-[#18181b] font-bold truncate">
                 Sri Manjunatha Transports
               </span>
             </div>
-            <span className="font-mono text-[10px] text-secondary font-mono">Just now</span>
+            <span className="font-mono text-xs text-[#047857] font-semibold">Just now</span>
           </div>
 
-          <div className="bg-surface text-on-surface p-2.5 rounded-lg border border-surface-container-high font-sans text-xs leading-relaxed italic">
+          <div className="bg-white text-[#18181b] p-3 rounded-lg border border-[#e7e5e4] font-sans text-xs leading-relaxed italic">
             &quot;Kal subah Whitefield se Pune 16T Taurus urgent FMCG load chahiye. Return rate match karenge toh abhi gadi lagata hu.&quot;
           </div>
 
-          <div className="grid grid-cols-2 gap-1.5 bg-surface p-2 rounded text-on-surface font-mono text-[10px] border border-surface-container-high">
+          <div className="grid grid-cols-2 gap-2 bg-white p-2.5 rounded-lg text-[#18181b] font-mono text-xs border border-[#e7e5e4]">
             <div className="flex flex-col">
-              <span className="text-outline">Origin:</span>
-              <span className="font-medium text-on-surface truncate">Whitefield (BLR)</span>
+              <span className="text-[#71717a] text-[11px]">Lane:</span>
+              <span className="font-semibold text-[#18181b] truncate">Whitefield ➔ Pune</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-outline">Destination:</span>
-              <span className="font-medium text-on-surface truncate">Pune (Chakan)</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-outline">Payload / Body:</span>
-              <span className="font-medium text-on-surface truncate">16 MT • 10-W Taurus</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-outline">Intent / Sentiment:</span>
-              <span className="font-semibold text-secondary truncate">High Intent (Immediate)</span>
+              <span className="text-[#71717a] text-[11px]">Vehicle:</span>
+              <span className="font-semibold text-[#18181b] truncate">16T Taurus (10W)</span>
             </div>
           </div>
 
           <div className="flex flex-col gap-1.5 pt-0.5">
-            <span className="font-mono text-[10px] text-outline">Automated Smart Counter:</span>
+            <span className="font-mono text-xs text-[#52525b] font-medium">Quick Counter Dispatch:</span>
             <div className="flex items-center gap-1.5">
               <input
                 type="text"
                 value={smartCounterText}
                 onChange={(e) => setSmartCounterText(e.target.value)}
-                className="flex-1 bg-surface border border-surface-container-high text-on-surface text-xs px-2.5 py-1.5 rounded focus:outline-none focus:border-primary transition-colors font-sans truncate"
+                className="flex-1 bg-white border border-[#d6d3cd] text-[#18181b] text-xs px-3 py-1.5 rounded-lg focus:outline-none focus:border-[#be3420] transition-colors font-mono truncate"
               />
               <button
                 type="button"
                 onClick={handleSendCounter}
-                className="px-3 py-1.5 bg-secondary text-on-secondary font-headline-sm text-xs font-semibold rounded hover:opacity-95 transition-all flex items-center justify-center shrink-0"
+                className="px-3.5 py-1.5 bg-white hover:bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] font-mono text-xs font-bold rounded-lg transition-all shadow-2xs flex items-center justify-center shrink-0"
               >
-                {sentSuccess ? "Sent!" : "Send"}
+                {sentSuccess ? "Dispatched!" : "Send"}
               </button>
             </div>
           </div>
         </div>
 
         {/* Secondary Incoming Feed Items */}
-        <div className="flex flex-col gap-2.5 divide-y divide-surface-container-high">
+        <div className="flex flex-col gap-3 divide-y divide-[#f5f4f0]">
           {/* Patel Logistics */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Patel Logistics (Vapi)</span>
-              <span className="text-outline">2m ago</span>
+          <div className="pt-2 flex flex-col gap-1">
+            <div className="flex items-center justify-between font-mono text-xs">
+              <span className="font-semibold text-[#18181b]">Patel Logistics (Vapi)</span>
+              <span className="text-[#71717a]">2m ago</span>
             </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
+            <p className="font-sans text-xs text-[#52525b] line-clamp-1 italic">
               &quot;Vapi to Chennai 25MT trailer rate update ₹72,000 all inclusive GST extra...&quot;
             </p>
-            <div className="flex items-center gap-2 font-mono text-[10px] text-outline mt-0.5">
-              <span className="text-tertiary">Parsed: 25 MT Trailer</span>
+            <div className="flex items-center gap-2 font-mono text-xs text-[#71717a] mt-0.5">
+              <span className="text-[#b45309] font-semibold">25 MT Trailer</span>
               <span>•</span>
-              <span className="text-secondary font-mono">Matched to Indent #VAP-CHE-99</span>
+              <span className="text-[#047857] font-semibold">Matched #VAP-CHE-99</span>
             </div>
           </div>
 
           {/* Anjaneya Roadways (Kannada) */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Anjaneya Roadways (Bengaluru)</span>
-              <span className="text-outline">5m ago</span>
+          <div className="pt-2 flex flex-col gap-1">
+            <div className="flex items-center justify-between font-mono text-xs">
+              <span className="font-semibold text-[#18181b]">Anjaneya Roadways (Bengaluru)</span>
+              <span className="text-[#71717a]">5m ago</span>
             </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
+            <p className="font-sans text-xs text-[#52525b] line-clamp-1 italic">
               &quot;ಬೆಂಗಳೂರು-ಕೊಯಮತ್ತೂರು 9 ಟನ್ ಲೋಡ್ ಲಭ್ಯವಿದೆ ತಕ್ಷಣ ಬೇಕು...&quot;
             </p>
-            <div className="flex items-center gap-2 font-mono text-[10px] text-outline mt-0.5">
-              <span className="text-primary">Parsed: BLR-CJB 9T Eicher</span>
+            <div className="flex items-center gap-2 font-mono text-xs text-[#71717a] mt-0.5">
+              <span className="text-[#be3420] font-semibold">BLR-CJB 9T Eicher</span>
               <span>•</span>
-              <span className="text-on-surface-variant">Auto-translated</span>
+              <span className="text-[#52525b]">Auto-translated</span>
             </div>
           </div>
 
           {/* Hindustan Highway Carriers */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Hindustan Highway Carriers</span>
-              <span className="text-outline">11m ago</span>
+          <div className="pt-2 flex flex-col gap-1">
+            <div className="flex items-center justify-between font-mono text-xs">
+              <span className="font-semibold text-[#18181b]">Hindustan Highway Carriers</span>
+              <span className="text-[#71717a]">11m ago</span>
             </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
+            <p className="font-sans text-xs text-[#52525b] line-clamp-1 italic">
               &quot;Driver assigned for Surat trip: KA-01-AG-4919 RC uploaded.&quot;
             </p>
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-secondary mt-0.5">
-              <span className="material-symbols-outlined text-xs">verified</span>
-              <span>Vahan Database Authenticated</span>
+            <div className="flex items-center gap-1.5 font-mono text-xs text-[#047857] mt-0.5">
+              <span className="material-symbols-outlined text-sm">verified</span>
+              <span className="font-semibold">Vahan Authenticated</span>
             </div>
           </div>
         </div>
@@ -216,7 +208,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
           <button
             type="button"
             onClick={onOpenSimulator}
-            className="flex-1 flex items-center justify-center gap-1.5 px-3.5 py-2 bg-primary text-on-primary font-headline-sm text-xs font-semibold rounded-lg hover:opacity-95 shadow-xs transition-all active:scale-95"
+            className="flex-1 flex items-center justify-center gap-1.5 px-3.5 py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-mono text-xs font-semibold rounded-lg shadow-2xs transition-all active:scale-95"
           >
             <span>Launch Interactive Simulator</span>
             <span className="material-symbols-outlined text-sm">open_in_new</span>
