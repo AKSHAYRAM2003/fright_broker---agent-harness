@@ -2,7 +2,11 @@
 
 import React, { useState } from "react";
 
-export const ActionQueueSection: React.FC = () => {
+interface ActionQueueSectionProps {
+  onOpenIngest?: () => void;
+}
+
+export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({ onOpenIngest }) => {
   const [activeFilter, setActiveFilter] = useState<"all" | "margin" | "instant" | "incomplete">("all");
   const [approvedCards, setApprovedCards] = useState<Record<string, boolean>>({});
   const [counterOpen, setCounterOpen] = useState(false);
@@ -24,6 +28,14 @@ export const ActionQueueSection: React.FC = () => {
           <span className="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-mono text-[11px] font-bold">
             3 Decisions Required
           </span>
+          <button
+            onClick={onOpenIngest}
+            type="button"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary hover:bg-[#e03a22] text-white font-mono text-[11px] font-bold shadow-xs transition-all active:scale-95 ml-1"
+          >
+            <span className="material-symbols-outlined text-sm">add_box</span>
+            <span>+ Ingest Indent</span>
+          </button>
         </div>
 
         <div className="flex items-center gap-3">

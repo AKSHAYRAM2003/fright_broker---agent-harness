@@ -6,12 +6,14 @@ import { HappyRobotLogo } from "../HappyRobotLogo";
 
 interface DashboardHeaderProps {
   onOpenSimulator?: () => void;
+  onOpenIngest?: () => void;
   onToggleMobileSidebar?: () => void;
   isMobileSidebarOpen?: boolean;
 }
 
 export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   onOpenSimulator,
+  onOpenIngest,
   onToggleMobileSidebar,
   isMobileSidebarOpen,
 }) => {
@@ -72,6 +74,16 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
 
       {/* Right Controls */}
       <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        {/* Inbound Shipper Load Ingestion Button */}
+        <button
+          onClick={onOpenIngest}
+          type="button"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-[#e03a22] text-white font-mono text-xs font-semibold transition-all shadow-xs active:scale-95"
+        >
+          <span className="material-symbols-outlined text-base">add_box</span>
+          <span className="hidden sm:inline">+ Ingest Load</span>
+        </button>
+
         {/* Simulator Launcher Button (Shortcut) */}
         <button
           onClick={onOpenSimulator}

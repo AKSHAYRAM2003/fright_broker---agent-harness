@@ -7,20 +7,26 @@ import { TopStatsBar } from "@/components/dashboard/TopStatsBar";
 import { ActionQueueSection } from "@/components/dashboard/ActionQueueSection";
 import { WhatsAppLiveFeed } from "@/components/dashboard/WhatsAppLiveFeed";
 import { WhatsAppSimulatorModal } from "@/components/dashboard/WhatsAppSimulatorModal";
+import { ShipperIngestionModal } from "@/components/dashboard/ShipperIngestionModal";
 import { TransportersView } from "@/components/dashboard/TransportersView";
 import { Truck, Users, Filter, ArrowUpDown } from "lucide-react";
 
 export default function DashboardPage() {
   const [activeView, setActiveView] = useState("queue");
   const [simulatorOpen, setSimulatorOpen] = useState(false);
+  const [ingestModalOpen, setIngestModalOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
-  // Keyboard shortcut Ctrl+S or Cmd+S to open WhatsApp simulator
+  // Keyboard shortcuts: Ctrl/Cmd + S for Simulator, Ctrl/Cmd + I for Ingestion
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
         e.preventDefault();
         setSimulatorOpen((prev) => !prev);
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+        setIngestModalOpen((prev) => !prev);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -35,6 +41,7 @@ export default function DashboardPage() {
       {/* 1. TOP HEADER BAR */}
       <DashboardHeader
         onOpenSimulator={() => setSimulatorOpen(true)}
+        onOpenIngest={() => setIngestModalOpen(true)}
         onToggleMobileSidebar={() => setIsMobileSidebarOpen((prev) => !prev)}
         isMobileSidebarOpen={isMobileSidebarOpen}
       />
@@ -59,7 +66,7 @@ export default function DashboardPage() {
               <div className="grid grid-cols-1 xl:grid-cols-12 gap-3.5 sm:gap-4 items-start">
                 {/* LEFT COLUMN: AI Action Queue (8 cols = ~66%) */}
                 <div className="xl:col-span-8 flex flex-col gap-3.5 sm:gap-4">
-                  <ActionQueueSection />
+                  <ActionQueueSection onOpenIngest={() => setIngestModalOpen(true)} />
                 </div>
 
                 {/* RIGHT COLUMN: Live WhatsApp Stream & Sandbox (4 cols = ~34%) */}
@@ -158,6 +165,15 @@ export default function DashboardPage() {
       <WhatsAppSimulatorModal
         isOpen={simulatorOpen}
         onClose={() => setSimulatorOpen(false)}
+      />
+
+      {/* 5. INBOUND SHIPPER LOAD INGESTION & FLEET MATCHING MODAL */}
+      <ShipperIngestionModal
+        isOpen={ingestModalOpen}
+        onClose={() => setIngestModalOpen(false)}
+        onDispatchSuccess={(load) => {
+          console.log("Load dispatched:", load);
+        }}
       />
     </div>
   );
