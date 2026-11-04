@@ -72,13 +72,13 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
           <h2 className="font-headline-md text-base sm:text-lg text-on-surface font-semibold tracking-tight">
             AI Action Queue
           </h2>
-          <span className="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-mono text-[11px] font-bold">
+          <span className="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-sans text-[11px] font-bold">
             {activeDecisionsCount} Action{activeDecisionsCount === 1 ? "" : "s"} Required
           </span>
           <button
             onClick={onOpenIngest}
             type="button"
-            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#a8a29e] font-mono text-[11px] font-semibold shadow-2xs transition-all active:scale-95 ml-1"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#a8a29e] font-sans text-[11px] font-semibold shadow-2xs transition-all active:scale-95 ml-1"
           >
             <span className="material-symbols-outlined text-sm text-[#be3420]">add_box</span>
             <span>+ Ingest Indent</span>
@@ -89,20 +89,20 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
           <button
             type="button"
             onClick={() => setWalkthroughOpen(true)}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#fef2f0] hover:bg-[#fde2de] text-[#be3420] border border-[#fecaca] font-mono text-[11px] font-semibold transition-all active:scale-95 shadow-2xs"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#fef2f0] hover:bg-[#fde2de] text-[#be3420] border border-[#fecaca] font-sans text-[11px] font-semibold transition-all active:scale-95 shadow-2xs"
             title="Watch choreographed AI Operations Walkthrough"
           >
             <span className="material-symbols-outlined text-sm text-[#be3420]">play_circle</span>
             <span>Watch AI Workflow</span>
           </button>
 
-          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded text-on-surface-variant font-mono text-[11px]">
+          <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded text-on-surface-variant font-sans text-[11px]">
             <span className="material-symbols-outlined text-sm text-primary">pause_circle</span>
             <span>Auto-pilot: Paused for HITL</span>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex items-center gap-1 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5] font-mono text-[11px] overflow-x-auto">
+          <div className="flex items-center gap-1 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5] font-sans text-[11px] overflow-x-auto">
             <button
               onClick={() => setActiveFilter("all")}
               type="button"
@@ -171,13 +171,13 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
           <h3 className="font-headline-sm text-base text-on-surface font-semibold">
             All Action Queue Items Cleared
           </h3>
-          <p className="font-mono text-xs text-outline max-w-md">
+          <p className="font-sans text-xs text-outline max-w-md">
             No loads in this filter view. Ingest a new shipper indent via WhatsApp or voice note to trigger auto-matching.
           </p>
           <button
             onClick={onOpenIngest}
             type="button"
-            className="mt-2 px-4 py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] rounded-lg font-mono text-xs font-semibold shadow-2xs transition-all"
+            className="mt-2 px-4 py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] rounded-lg font-sans text-xs font-semibold shadow-2xs transition-all"
           >
             + Ingest New Indent
           </button>
@@ -195,16 +195,16 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high pb-2.5">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary-container text-on-primary-container border border-primary/20 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary-container text-on-primary-container border border-primary/20 rounded font-sans text-[10px] font-bold uppercase tracking-wider">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary animate-ping"></span>
                     Broadcasting RFQs • Awaiting Transporter Bids
                   </span>
-                  <span className="font-mono text-xs text-on-surface font-bold">{load.id}</span>
-                  <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-mono text-[10px]">
+                  <span className="font-sans text-xs text-on-surface font-bold">{load.id}</span>
+                  <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-sans text-[10px]">
                     Shipper: {load.shipperName}
                   </span>
                 </div>
-                <div className="flex items-center gap-1 text-primary font-mono text-[11px] font-bold">
+                <div className="flex items-center gap-1 text-primary font-sans text-[11px] font-bold">
                   <span className="material-symbols-outlined text-sm animate-spin">sync</span>
                   <span>Auto-Polling WhatsApp Responses...</span>
                 </div>
@@ -214,15 +214,15 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                   <div className="flex flex-col">
-                    <span className="font-mono text-[10px] text-outline">Origin Hub</span>
+                    <span className="font-sans text-[10px] text-outline">Origin Hub</span>
                     <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                       {load.origin}
                     </span>
-                    <span className="font-mono text-[11px] text-on-surface-variant">{load.originHub}</span>
+                    <span className="font-sans text-[11px] text-on-surface-variant">{load.originHub}</span>
                   </div>
 
                   <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
-                    <span className="font-mono text-[11px] text-primary font-semibold tracking-tight">
+                    <span className="font-sans text-[11px] text-primary font-semibold tracking-tight">
                       {load.distanceKm}
                     </span>
                     <div className="flex items-center gap-0.5 text-primary">
@@ -230,19 +230,19 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                       <span className="material-symbols-outlined text-sm">local_shipping</span>
                       <span className="h-0.5 w-4 sm:w-6 bg-primary/40"></span>
                     </div>
-                    <span className="font-mono text-[10px] text-outline">{load.corridor}</span>
+                    <span className="font-sans text-[10px] text-outline">{load.corridor}</span>
                   </div>
 
                   <div className="flex flex-col">
-                    <span className="font-mono text-[10px] text-outline">Destination Hub</span>
+                    <span className="font-sans text-[10px] text-outline">Destination Hub</span>
                     <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                       {load.destination}
                     </span>
-                    <span className="font-mono text-[11px] text-on-surface-variant">{load.destinationHub}</span>
+                    <span className="font-sans text-[11px] text-on-surface-variant">{load.destinationHub}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] sm:text-[11px]">
+                <div className="flex flex-wrap items-center gap-1.5 font-sans text-[10px] sm:text-[11px]">
                   <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                     {load.weightTonnes ? `${load.weightTonnes} MT` : "Payload TBD"}
                   </span>
@@ -257,7 +257,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
               {/* Matched Carriers Broadcast Status */}
               <div className="bg-surface-container-low p-3 rounded-lg border border-surface-container-high flex flex-col gap-2">
-                <span className="font-mono text-[10px] text-outline uppercase font-semibold">
+                <span className="font-sans text-[10px] text-outline uppercase font-semibold">
                   Personalized WhatsApp RFQs Dispatched to {load.matchedCarriers.length} Verified Fleet Carriers:
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -268,9 +268,9 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                     >
                       <div className="flex flex-col min-w-0">
                         <span className="font-semibold text-on-surface truncate">{carrier.name}</span>
-                        <span className="font-mono text-[10px] text-outline">{carrier.phone}</span>
+                        <span className="font-sans text-[10px] text-outline">{carrier.phone}</span>
                       </div>
-                      <span className="font-mono text-[10px] text-[#b45309] bg-[#fef3c7] px-1.5 py-0.5 rounded border border-[#fde68a] shrink-0 font-medium">
+                      <span className="font-sans text-[10px] text-[#b45309] bg-[#fef3c7] px-1.5 py-0.5 rounded border border-[#fde68a] shrink-0 font-medium">
                         Waiting for quote
                       </span>
                     </div>
@@ -279,7 +279,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
               </div>
 
               {/* Dismiss / Cancel Button */}
-              <div className="flex items-center justify-between pt-1 font-mono text-xs text-outline">
+              <div className="flex items-center justify-between pt-1 font-sans text-xs text-outline">
                 <span>Simulating carrier response via WhatsApp stream...</span>
                 <button
                   type="button"
@@ -302,16 +302,16 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-secondary/20 pb-2.5">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-sans text-[10px] font-bold uppercase tracking-wider">
                     <span className="material-symbols-outlined text-xs">verified</span>
                     Trip Confirmed • FSM: ASSIGNED & LOCKED
                   </span>
-                  <span className="font-mono text-xs text-on-surface font-bold">{load.id}</span>
-                  <span className="px-2 py-0.5 rounded bg-white text-[#047857] border border-[#a7f3d0] font-mono text-[11px] font-bold">
+                  <span className="font-sans text-xs text-on-surface font-bold">{load.id}</span>
+                  <span className="px-2 py-0.5 rounded bg-white text-[#047857] border border-[#a7f3d0] font-sans text-[11px] font-bold">
                     LR #{load.bookedDetails.lrNumber}
                   </span>
                 </div>
-                <span className="text-[#047857] font-mono text-[11px] font-bold">
+                <span className="text-[#047857] font-sans text-[11px] font-bold">
                   Gross Margin Locked: +₹{load.bookedDetails.netMarginInr.toLocaleString("en-IN")}
                 </span>
               </div>
@@ -320,15 +320,15 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                   <div className="flex flex-col">
-                    <span className="font-mono text-[10px] text-outline">Loading Origin</span>
+                    <span className="font-sans text-[10px] text-outline">Loading Origin</span>
                     <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                       {load.origin}
                     </span>
-                    <span className="font-mono text-[11px] text-on-surface-variant">{load.originHub}</span>
+                    <span className="font-sans text-[11px] text-on-surface-variant">{load.originHub}</span>
                   </div>
 
                   <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
-                    <span className="font-mono text-[11px] text-secondary font-medium tracking-tight">
+                    <span className="font-sans text-[11px] text-secondary font-medium tracking-tight">
                       {load.distanceKm}
                     </span>
                     <div className="flex items-center gap-0.5 text-secondary">
@@ -336,19 +336,19 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                       <span className="material-symbols-outlined text-sm">local_shipping</span>
                       <span className="h-0.5 w-4 sm:w-6 bg-secondary/40"></span>
                     </div>
-                    <span className="font-mono text-[10px] text-outline">{load.corridor}</span>
+                    <span className="font-sans text-[10px] text-outline">{load.corridor}</span>
                   </div>
 
                   <div className="flex flex-col">
-                    <span className="font-mono text-[10px] text-outline">Unloading Destination</span>
+                    <span className="font-sans text-[10px] text-outline">Unloading Destination</span>
                     <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                       {load.destination}
                     </span>
-                    <span className="font-mono text-[11px] text-on-surface-variant">{load.destinationHub}</span>
+                    <span className="font-sans text-[11px] text-on-surface-variant">{load.destinationHub}</span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] sm:text-[11px]">
+                <div className="flex flex-wrap items-center gap-1.5 font-sans text-[10px] sm:text-[11px]">
                   <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface">
                     {load.weightTonnes} MT {load.materialType}
                   </span>
@@ -364,45 +364,45 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
               {/* Booking Confirmation Details */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Assigned Transporter</span>
+                  <span className="font-sans text-[10px] text-outline">Assigned Transporter</span>
                   <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5 truncate">
                     {load.bookedDetails.carrierName}
                   </span>
-                  <span className="font-mono text-[10px] text-secondary font-medium">GST &amp; FASTag Verified</span>
+                  <span className="font-sans text-[10px] text-secondary font-medium">GST &amp; FASTag Verified</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Final Trip Freight</span>
+                  <span className="font-sans text-[10px] text-outline">Final Trip Freight</span>
                   <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">
                     ₹{load.bookedDetails.rate.toLocaleString("en-IN")}
                   </span>
-                  <span className="font-mono text-[10px] text-outline">Target: ₹{load.targetRateInr?.toLocaleString("en-IN")}</span>
+                  <span className="font-sans text-[10px] text-outline">Target: ₹{load.targetRateInr?.toLocaleString("en-IN")}</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Net Brokerage Margin</span>
+                  <span className="font-sans text-[10px] text-outline">Net Brokerage Margin</span>
                   <span className="font-headline-sm text-sm sm:text-base text-secondary font-bold mt-0.5">
                     +₹{load.bookedDetails.netMarginInr.toLocaleString("en-IN")}
                   </span>
-                  <span className="font-mono text-[10px] text-secondary font-medium">100% Guaranteed</span>
+                  <span className="font-sans text-[10px] text-secondary font-medium">100% Guaranteed</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Assigned Driver &amp; Phone</span>
+                  <span className="font-sans text-[10px] text-outline">Assigned Driver &amp; Phone</span>
                   <span className="font-headline-sm text-sm text-on-surface font-semibold mt-0.5">
                     {load.bookedDetails.driverName}
                   </span>
-                  <span className="font-mono text-[10px] text-outline">{load.bookedDetails.driverPhone}</span>
+                  <span className="font-sans text-[10px] text-outline">{load.bookedDetails.driverPhone}</span>
                 </div>
               </div>
 
               {/* Status footer */}
               <div className="flex items-center justify-between pt-1">
-                <span className="font-mono text-xs text-[#047857] font-semibold flex items-center gap-1">
+                <span className="font-sans text-xs text-[#047857] font-semibold flex items-center gap-1">
                   <span className="material-symbols-outlined text-sm">mark_email_read</span>
                   WhatsApp Loading Pass &amp; Digital LR dispatched to Driver and Transporter.
                 </span>
                 <button
                   type="button"
                   onClick={() => alert(`Digital LR #${load.bookedDetails?.lrNumber} generated. Ready for print or e-Way bill upload.`)}
-                  className="px-3 py-1.5 bg-white hover:bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded-lg font-mono text-xs font-semibold shadow-2xs transition-all"
+                  className="px-3 py-1.5 bg-white hover:bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded-lg font-sans text-xs font-semibold shadow-2xs transition-all"
                 >
                   View Digital LR Slip
                 </button>
@@ -420,13 +420,13 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             >
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high pb-2.5">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary-container text-on-primary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary-container text-on-primary-container rounded font-sans text-[10px] font-bold uppercase tracking-wider">
                     <span className="material-symbols-outlined text-xs">help_outline</span>
                     Incomplete Load Inquiry
                   </span>
-                  <span className="font-mono text-xs text-on-surface font-semibold">Shipper: {load.shipperName}</span>
+                  <span className="font-sans text-xs text-on-surface font-semibold">Shipper: {load.shipperName}</span>
                 </div>
-                <span className="font-mono text-[11px] text-outline font-medium">
+                <span className="font-sans text-[11px] text-outline font-medium">
                   Source: {load.source || "Inbound WhatsApp Message"}
                 </span>
               </div>
@@ -439,7 +439,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                   <span className="text-outline">•</span>
                   <span><strong>Placement:</strong> Tomorrow 06:00 AM IST</span>
                 </div>
-                <div className="flex flex-wrap items-center gap-1.5 mt-0.5 font-mono text-[10px]">
+                <div className="flex flex-wrap items-center gap-1.5 mt-0.5 font-sans text-[10px]">
                   {(load.missingFields || ["Total Weight (MT)", "Truck Category"]).map((field, idx) => (
                     <span key={idx} className="px-2 py-0.5 rounded bg-error-container text-on-error-container font-medium">
                       ⚠️ Missing: {field}
@@ -450,10 +450,10 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
               <div className="p-3 sm:p-3.5 bg-surface-container-low rounded-lg font-sans text-xs flex flex-col gap-1.5 border border-surface-container-high">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-outline font-semibold">
+                  <span className="font-sans text-[10px] text-outline font-semibold">
                     AI PRE-GENERATED CLARIFICATION (READY TO DISPATCH)
                   </span>
-                  <span className="font-mono text-[10px] text-secondary font-medium">
+                  <span className="font-sans text-[10px] text-secondary font-medium">
                     Hinglish / English Dual Parse
                   </span>
                 </div>
@@ -485,7 +485,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                 <button
                   type="button"
                   onClick={() => onDismissLoad(load.id)}
-                  className="text-outline hover:text-primary font-mono text-xs transition-colors ml-auto sm:ml-0"
+                  className="text-outline hover:text-primary font-sans text-xs transition-colors ml-auto sm:ml-0"
                 >
                   Dismiss Inquiry
                 </button>
@@ -520,23 +520,23 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             >
               <div className="flex flex-wrap items-center gap-2">
                 {load.isMarginFloorAlert ? (
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container border border-primary/20 rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-error-container text-on-error-container border border-primary/20 rounded font-sans text-[10px] font-bold uppercase tracking-wider">
                     <span className="h-1.5 w-1.5 rounded-full bg-primary animate-ping"></span>
                     Critical Margin Floor Alert
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded font-mono text-[10px] font-bold uppercase tracking-wider">
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded font-sans text-[10px] font-bold uppercase tracking-wider">
                     <span className="material-symbols-outlined text-xs">verified</span>
                     1-Click Fast-Track Ready
                   </span>
                 )}
-                <span className="font-mono text-xs text-on-surface font-bold">{load.id}</span>
-                <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-mono text-[10px]">
+                <span className="font-sans text-xs text-on-surface font-bold">{load.id}</span>
+                <span className="px-1.5 py-0.5 rounded bg-surface-container-low text-on-surface-variant font-sans text-[10px]">
                   Shipper: {load.shipperName}
                 </span>
               </div>
               <div
-                className={`flex items-center gap-1 font-mono text-[11px] font-bold ${
+                className={`flex items-center gap-1 font-sans text-[11px] font-bold ${
                   load.isMarginFloorAlert ? "text-primary" : "text-secondary"
                 }`}
               >
@@ -549,16 +549,16 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Origin Hub</span>
+                  <span className="font-sans text-[10px] text-outline">Origin Hub</span>
                   <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                     {load.origin}
                   </span>
-                  <span className="font-mono text-[11px] text-on-surface-variant">{load.originHub}</span>
+                  <span className="font-sans text-[11px] text-on-surface-variant">{load.originHub}</span>
                 </div>
 
                 <div className="flex sm:flex-col items-center gap-1.5 sm:gap-0 px-1 sm:px-2">
                   <span
-                    className={`font-mono text-[11px] font-semibold tracking-tight ${
+                    className={`font-sans text-[11px] font-semibold tracking-tight ${
                       load.isMarginFloorAlert ? "text-primary" : "text-secondary"
                     }`}
                   >
@@ -573,19 +573,19 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                     <span className="material-symbols-outlined text-sm">local_shipping</span>
                     <span className="h-0.5 w-4 sm:w-6 bg-current/40"></span>
                   </div>
-                  <span className="font-mono text-[10px] text-outline">{load.corridor}</span>
+                  <span className="font-sans text-[10px] text-outline">{load.corridor}</span>
                 </div>
 
                 <div className="flex flex-col">
-                  <span className="font-mono text-[10px] text-outline">Destination Hub</span>
+                  <span className="font-sans text-[10px] text-outline">Destination Hub</span>
                   <span className="font-headline-sm text-xs sm:text-sm text-on-surface font-semibold">
                     {load.destination}
                   </span>
-                  <span className="font-mono text-[11px] text-on-surface-variant">{load.destinationHub}</span>
+                  <span className="font-sans text-[11px] text-on-surface-variant">{load.destinationHub}</span>
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px] sm:text-[11px]">
+              <div className="flex flex-wrap items-center gap-1.5 font-sans text-[10px] sm:text-[11px]">
                 <span className="px-2 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-medium">
                   {load.weightTonnes} MT {load.materialType}
                 </span>
@@ -601,25 +601,25 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             {/* 4 Financial Metric Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 bg-surface-container-low p-3 sm:p-3.5 rounded-lg border border-surface-container-high">
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-outline">Shipper Target Rate</span>
+                <span className="font-sans text-[10px] text-outline">Shipper Target Rate</span>
                 <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">
                   ₹{targetRate.toLocaleString("en-IN")}
                 </span>
-                <span className="font-mono text-[10px] text-outline">
+                <span className="font-sans text-[10px] text-outline">
                   {load.weightTonnes ? `₹${Math.round(targetRate / load.weightTonnes).toLocaleString("en-IN")} / MT` : "All inclusive"}
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-outline">Best Transporter Quote</span>
+                <span className="font-sans text-[10px] text-outline">Best Transporter Quote</span>
                 <span className="font-headline-sm text-sm sm:text-base text-on-surface font-semibold mt-0.5">
                   ₹{quoteRate.toLocaleString("en-IN")}
                 </span>
-                <span className="font-mono text-[11px] text-on-surface-variant truncate">
+                <span className="font-sans text-[11px] text-on-surface-variant truncate">
                   {quote?.carrierName || "Ghatge Patil Transports"}
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-outline">Projected Net Margin</span>
+                <span className="font-sans text-[10px] text-outline">Projected Net Margin</span>
                 <span
                   className={`font-headline-sm text-sm sm:text-base font-bold mt-0.5 ${
                     load.isMarginFloorAlert ? "text-primary" : "text-secondary"
@@ -627,16 +627,16 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                 >
                   <NumberRoll value={netMargin} prefix="₹" /> (<NumberRoll value={marginPct} decimals={1} suffix="%" />)
                 </span>
-                <span className="font-mono text-[10px] text-outline">
+                <span className="font-sans text-[10px] text-outline">
                   {load.isMarginFloorAlert ? "-₹1,000 vs Min Floor" : "+₹2,000 over Target"}
                 </span>
               </div>
               <div className="flex flex-col">
-                <span className="font-mono text-[10px] text-outline">Market Spot Benchmark</span>
+                <span className="font-sans text-[10px] text-outline">Market Spot Benchmark</span>
                 <span className="font-headline-sm text-sm sm:text-base text-secondary font-semibold mt-0.5">
                   ₹{(load.spotBenchmarkInr || (targetRate - 2800)).toLocaleString("en-IN")}
                 </span>
-                <span className="font-mono text-[10px] text-secondary font-medium">
+                <span className="font-sans text-[10px] text-secondary font-medium">
                   {load.aiConfidence || "94% AI Confidence"}
                 </span>
               </div>
@@ -688,7 +688,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                 </button>
               </div>
 
-              <div className="flex items-center gap-2 ml-auto sm:ml-0 font-mono text-xs">
+              <div className="flex items-center gap-2 ml-auto sm:ml-0 font-sans text-xs">
                 <span className="text-outline">
                   Driver: {quote?.driverName || "Suresh Y."} ({quote?.driverPhone || "+91 97412 XXXXX"})
                 </span>
@@ -698,7 +698,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
             {/* Interactive Counter Offer Drawer */}
             {isCounterOpen && (
               <div className="mt-2 p-3 bg-[#fef2f0] border border-[#be3420]/25 text-[#070707] rounded-lg flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 animate-fadeIn">
-                <span className="font-mono text-xs text-[#78716c] font-semibold">
+                <span className="font-sans text-xs text-[#78716c] font-semibold">
                   Set WhatsApp Counter Rate for {quote?.carrierName || "Transporter"}:
                 </span>
                 <div className="flex items-center gap-2">
@@ -711,12 +711,12 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                         [load.id]: e.target.value,
                       }))
                     }
-                    className="bg-white border border-[#eae7e1] px-3 py-1.5 rounded text-[#070707] font-mono text-xs font-bold w-28 focus:outline-none focus:border-[#be3420]"
+                    className="bg-white border border-[#eae7e1] px-3 py-1.5 rounded text-[#070707] font-sans text-xs font-bold w-28 focus:outline-none focus:border-[#be3420]"
                   />
                   <button
                     type="button"
                     onClick={() => handleSendCounterOffer(load.id)}
-                    className="px-3.5 py-1.5 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-mono text-xs font-semibold rounded shadow-2xs transition-all active:scale-95"
+                    className="px-3.5 py-1.5 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-sans text-xs font-semibold rounded shadow-2xs transition-all active:scale-95"
                   >
                     Send WhatsApp Counter
                   </button>

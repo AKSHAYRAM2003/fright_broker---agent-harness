@@ -35,7 +35,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       label: "Transporters",
       icon: "rv_hookup",
       badge: "148",
-      badgeColor: "bg-surface-container-high text-on-surface-variant font-mono text-[9px]",
+      badgeColor: "bg-surface-container-high text-on-surface-variant font-sans text-[9px]",
     },
     {
       id: "crm",
@@ -77,7 +77,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       >
         {/* Section Header */}
         <div className="px-3 py-1 mb-2">
-          <span className="font-mono text-[10px] text-outline uppercase tracking-wider font-semibold">
+          <span className="font-sans text-[10px] text-outline uppercase tracking-wider font-semibold">
             Autonomous Logistics
           </span>
         </div>
@@ -113,7 +113,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 </div>
                 {item.badge && (
                   <span
-                    className={`px-1.5 py-0.5 rounded-full font-mono text-[10px] font-bold ${
+                    className={`px-1.5 py-0.5 rounded-full font-sans text-[10px] font-bold ${
                       isActive ? "bg-[#be3420] text-white" : item.badgeColor
                     }`}
                   >
@@ -128,8 +128,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
         {/* Dispatch Engine Progress Bar Widget */}
         <div className="mt-auto p-3.5 bg-surface-container-low rounded-xl border border-surface-container-high">
           <div className="flex items-center justify-between mb-1.5">
-            <span className="font-mono text-[10px] text-outline uppercase font-semibold">Dispatch Engine</span>
-            <span className="font-mono text-[10px] text-secondary font-bold bg-secondary-container/50 px-1.5 py-0.5 rounded border border-secondary/20">
+            <span className="font-sans text-[10px] text-outline uppercase font-semibold">Dispatch Engine</span>
+            <span className="font-sans text-[10px] text-secondary font-bold bg-secondary-container/50 px-1.5 py-0.5 rounded border border-secondary/20">
               v4.8-online
             </span>
           </div>
@@ -137,8 +137,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
             <div className="bg-primary h-full rounded-full w-4/5"></div>
           </div>
           <div className="flex justify-between items-center mt-2 text-on-surface-variant">
-            <span className="font-mono text-[10px]">Throughput</span>
-            <span className="font-mono text-[10px] font-bold text-on-surface">148 MT / hr</span>
+            <span className="font-sans text-[10px]">Throughput</span>
+            <span className="font-sans text-[10px] font-bold text-on-surface">148 MT / hr</span>
           </div>
         </div>
       </aside>

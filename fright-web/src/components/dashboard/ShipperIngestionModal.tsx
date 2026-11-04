@@ -290,11 +290,11 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                 <h3 className="font-sans text-base font-bold text-[#070707]">
                   Inbound Shipper Load Ingestion
                 </h3>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-[#be3420] border border-[#be3420]/25 font-bold uppercase">
+                <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-white text-[#be3420] border border-[#be3420]/25 font-bold uppercase">
                   AI Auto-Match Engine
                 </span>
               </div>
-              <p className="font-mono text-[11px] text-[#78716c]">
+              <p className="font-sans text-[11px] text-[#78716c]">
                 Paste raw WhatsApp text / audio note ➔ Extract specs ➔ Query Transporter Fleet ➔ Broadcast RFQ
               </p>
             </div>
@@ -312,7 +312,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
         <div className="p-4 sm:p-6 overflow-y-auto flex flex-col gap-4 text-xs">
           {/* Quick Preset Buttons */}
           <div className="flex flex-col gap-1.5">
-            <span className="font-mono text-[10px] text-[#78716c] uppercase font-semibold">
+            <span className="font-sans text-[10px] text-[#78716c] uppercase font-semibold">
               Select Real-World Test Indent Presets:
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
@@ -326,7 +326,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                   <span className="font-sans text-xs font-bold text-[#070707] group-hover:text-[#be3420] truncate">
                     {p.label}
                   </span>
-                  <span className="font-mono text-[10px] text-[#78716c] mt-1 bg-[#f7f6f4] px-1.5 py-0.5 rounded border border-[#dfdbd5] inline-block w-fit">
+                  <span className="font-sans text-[10px] text-[#78716c] mt-1 bg-[#f7f6f4] px-1.5 py-0.5 rounded border border-[#dfdbd5] inline-block w-fit">
                     {p.badge}
                   </span>
                 </button>
@@ -337,13 +337,13 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
           {/* Raw Text Input Area */}
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
-              <label className="font-mono text-[10px] font-semibold uppercase text-[#070707]">
+              <label className="font-sans text-[10px] font-semibold uppercase text-[#070707]">
                 Raw Shipper Message (WhatsApp Text / Voice Note Transcription):
               </label>
               <button
                 type="button"
                 onClick={() => handleParse(inputText)}
-                className="text-[#be3420] font-mono text-[11px] font-bold flex items-center gap-1 hover:underline"
+                className="text-[#be3420] font-sans text-[11px] font-bold flex items-center gap-1 hover:underline"
               >
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Re-parse with AI</span>
@@ -362,7 +362,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
           {isParsing ? (
             <div className="py-12 flex flex-col items-center justify-center gap-2.5">
               <div className="w-7 h-7 border-2 border-[#be3420] border-t-transparent rounded-full animate-spin"></div>
-              <span className="font-mono text-xs text-[#78716c]">
+              <span className="font-sans text-xs text-[#78716c]">
                 Analyzing freight terminology, extracting entities &amp; querying Transporter Directory...
               </span>
             </div>
@@ -373,16 +373,16 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                 <div className="flex items-center justify-between border-b border-[#dfdbd5] pb-2">
                   <div className="flex items-center gap-2">
                     <span className="material-symbols-outlined text-[#059669] text-base">verified</span>
-                    <span className="font-mono text-xs font-bold text-[#070707]">
+                    <span className="font-sans text-xs font-bold text-[#070707]">
                       AI Extracted Specifications: {parsedResult.shipperName}
                     </span>
                   </div>
                   {parsedResult.isComplete ? (
-                    <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0] font-bold">
+                    <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0] font-bold">
                       READY TO BROADCAST
                     </span>
                   ) : (
-                    <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#fffbeb] text-[#d97706] border border-[#fde68a] font-bold flex items-center gap-1">
+                    <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-[#fffbeb] text-[#d97706] border border-[#fde68a] font-bold flex items-center gap-1">
                       <AlertTriangle className="w-3 h-3" />
                       MISSING SPECIFICATIONS
                     </span>
@@ -391,31 +391,31 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   <div className="p-2 bg-white rounded-lg border border-[#dfdbd5]">
-                    <span className="font-mono text-[10px] text-[#78716c] block">Origin Hub</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">Origin Hub</span>
                     <span className="font-sans text-xs font-bold text-[#070707]">{parsedResult.originHub}</span>
-                    <span className="font-mono text-[10px] text-[#78716c] block">{parsedResult.distanceKm}</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">{parsedResult.distanceKm}</span>
                   </div>
 
                   <div className="p-2 bg-white rounded-lg border border-[#dfdbd5]">
-                    <span className="font-mono text-[10px] text-[#78716c] block">Destination Hub</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">Destination Hub</span>
                     <span className="font-sans text-xs font-bold text-[#070707]">{parsedResult.destinationHub}</span>
-                    <span className="font-mono text-[10px] text-[#78716c] block">{parsedResult.destination}</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">{parsedResult.destination}</span>
                   </div>
 
                   <div className="p-2 bg-white rounded-lg border border-[#dfdbd5]">
-                    <span className="font-mono text-[10px] text-[#78716c] block">Cargo &amp; Weight</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">Cargo &amp; Weight</span>
                     <span className="font-sans text-xs font-bold text-[#070707]">
                       {parsedResult.weightTonnes ? `${parsedResult.weightTonnes} MT` : "⚠️ Unspecified"}
                     </span>
-                    <span className="font-mono text-[10px] text-[#78716c] block truncate">{parsedResult.materialType}</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block truncate">{parsedResult.materialType}</span>
                   </div>
 
                   <div className="p-2 bg-white rounded-lg border border-[#dfdbd5]">
-                    <span className="font-mono text-[10px] text-[#78716c] block">Shipper Target Budget</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">Shipper Target Budget</span>
                     <span className="font-sans text-xs font-bold text-[#059669]">
                       {parsedResult.targetRateInr ? `₹${parsedResult.targetRateInr.toLocaleString("en-IN")}` : "Spot Market"}
                     </span>
-                    <span className="font-mono text-[10px] text-[#78716c] block">{parsedResult.vehicleDisplay}</span>
+                    <span className="font-sans text-[10px] text-[#78716c] block">{parsedResult.vehicleDisplay}</span>
                   </div>
                 </div>
               </div>
@@ -423,7 +423,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               {/* Case 1: Incomplete Inquiry Clarification */}
               {!parsedResult.isComplete && (
                 <div className="p-3.5 bg-[#fffbeb] rounded-xl border border-[#fde68a] flex flex-col gap-2">
-                  <div className="flex items-center gap-1.5 text-[#d97706] font-mono text-xs font-bold">
+                  <div className="flex items-center gap-1.5 text-[#d97706] font-sans text-xs font-bold">
                     <AlertTriangle className="w-4 h-4" />
                     <span>Incomplete Load Clarification Guardrail Triggered</span>
                   </div>
@@ -440,10 +440,10 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               {parsedResult.isComplete && (
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-[11px] font-bold uppercase text-[#070707]">
+                    <span className="font-sans text-[11px] font-bold uppercase text-[#070707]">
                       Candidate Transporters Matched from Private Directory ({parsedResult.matchedCarriers.length} Carriers):
                     </span>
-                    <span className="font-mono text-[10px] text-[#059669] font-medium">
+                    <span className="font-sans text-[10px] text-[#059669] font-medium">
                       Lane Filter: {parsedResult.origin} ➔ {parsedResult.destination}
                     </span>
                   </div>
@@ -457,19 +457,19 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
                         <div>
                           <div className="flex items-center justify-between">
                             <span className="font-sans text-xs font-bold text-[#070707]">{c.name}</span>
-                            <span className="font-mono text-[10px] text-[#059669] font-bold">{c.rating}★</span>
+                            <span className="font-sans text-[10px] text-[#059669] font-bold">{c.rating}★</span>
                           </div>
-                          <div className="flex items-center gap-2 mt-1 font-mono text-[10px] text-[#78716c]">
+                          <div className="flex items-center gap-2 mt-1 font-sans text-[10px] text-[#78716c]">
                             <span>{c.phone}</span>
                             <span>•</span>
                             <span className="text-[#be3420] font-semibold">{c.fleetCount}</span>
                           </div>
-                          <div className="mt-2 p-2 bg-[#f7f6f4] rounded-lg border border-[#eae7e1] font-mono text-[10px] text-[#57534e] line-clamp-3 leading-relaxed">
+                          <div className="mt-2 p-2 bg-[#f7f6f4] rounded-lg border border-[#eae7e1] font-sans text-[10px] text-[#57534e] line-clamp-3 leading-relaxed">
                             {c.previewRfq}
                           </div>
                         </div>
 
-                        <div className="mt-2.5 pt-2 border-t border-[#eae7e1] flex items-center justify-between font-mono text-[9px] text-[#059669]">
+                        <div className="mt-2.5 pt-2 border-t border-[#eae7e1] flex items-center justify-between font-sans text-[9px] text-[#059669]">
                           <span className="flex items-center gap-1">
                             <CheckCircle2 className="w-3 h-3" /> VAHAN Verified
                           </span>
@@ -499,7 +499,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
               type="button"
               disabled={dispatchedSuccess}
               onClick={handleDispatch}
-              className={`h-9 px-5 rounded-lg font-mono text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95 ${
+              className={`h-9 px-5 rounded-lg font-sans text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95 ${
                 dispatchedSuccess
                   ? "bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0]"
                   : "bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b]"
@@ -521,7 +521,7 @@ export const ShipperIngestionModal: React.FC<ShipperIngestionModalProps> = ({
             <button
               type="button"
               onClick={handleDispatch}
-              className="h-9 px-5 bg-white hover:bg-[#fffbeb] text-[#b45309] border border-[#fde68a] hover:border-[#b45309] rounded-lg font-mono text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
+              className="h-9 px-5 bg-white hover:bg-[#fffbeb] text-[#b45309] border border-[#fde68a] hover:border-[#b45309] rounded-lg font-sans text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
             >
               <Send className="w-4 h-4 text-[#b45309]" />
               <span>Send WhatsApp Clarification Draft</span>

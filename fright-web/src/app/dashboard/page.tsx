@@ -781,17 +781,17 @@ export default function DashboardPage() {
                     </h3>
                   </div>
                   <div className="flex items-center gap-2">
-                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface-variant font-mono text-xs">
+                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface-variant font-sans text-xs">
                       <Filter className="w-3.5 h-3.5" /> Filter Corridors
                     </button>
-                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface-variant font-mono text-xs">
+                    <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface-variant font-sans text-xs">
                       <ArrowUpDown className="w-3.5 h-3.5" /> Sort by Margin
                     </button>
                   </div>
                 </div>
 
                 <div className="overflow-x-auto">
-                  <table className="w-full text-left font-mono text-xs border border-surface-container-high rounded-lg">
+                  <table className="w-full text-left font-sans text-xs border border-surface-container-high rounded-lg">
                     <thead className="bg-surface-container-low text-outline uppercase font-semibold border-b border-surface-container-high">
                       <tr>
                         <th className="p-3">Trip ID</th>
@@ -894,7 +894,7 @@ export default function DashboardPage() {
           </div>
           <div className="flex-1 min-w-0">
             <h4 className="font-sans text-xs font-bold text-[#070707]">{toast.title}</h4>
-            <p className="font-mono text-[11px] text-[#78716c] mt-0.5 leading-relaxed">{toast.message}</p>
+            <p className="font-sans text-[11px] text-[#78716c] mt-0.5 leading-relaxed">{toast.message}</p>
           </div>
           <button
             type="button"

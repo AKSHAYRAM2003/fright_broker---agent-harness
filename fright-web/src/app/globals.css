@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: "SuisseIntl", "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "Suisse Intl Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: "SuisseIntl", "Suisse Intl", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
 
   --color-surface: #f9f8f6;
   --color-on-surface: #18181b;

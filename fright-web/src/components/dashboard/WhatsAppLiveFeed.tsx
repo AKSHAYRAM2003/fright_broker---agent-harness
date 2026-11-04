@@ -127,16 +127,16 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
                 Live WhatsApp Event Feed
               </h3>
             </div>
-            <span className="font-mono text-[10px] text-secondary font-mono">
+            <span className="font-sans text-[10px] text-secondary font-sans">
               {displayEvents.length} Active Events
             </span>
           </div>
-          <span className="font-mono text-[11px] text-outline">
+          <span className="font-sans text-[11px] text-outline">
             South Inbound, Western Corridor, Spot Bidding
           </span>
 
           {/* Language Switcher */}
-          <div className="flex items-center gap-1 mt-1.5 font-mono text-[10px] overflow-x-auto pb-0.5 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5]">
+          <div className="flex items-center gap-1 mt-1.5 font-sans text-[10px] overflow-x-auto pb-0.5 bg-[#eae7e1]/80 p-0.5 rounded-lg border border-[#dfdbd5]">
             <button
               onClick={() => setLangFilter("all")}
               type="button"
@@ -214,17 +214,17 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
                       {evt.sender}
                     </span>
                     {isOutbound && (
-                      <span className="font-mono text-[9px] px-1.5 py-0.2 rounded bg-primary-container text-on-primary-container font-bold uppercase shrink-0">
+                      <span className="font-sans text-[9px] px-1.5 py-0.2 rounded bg-primary-container text-on-primary-container font-bold uppercase shrink-0">
                         Outbound RFQ
                       </span>
                     )}
                     {isBooking && (
-                      <span className="font-mono text-[9px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-bold uppercase shrink-0">
+                      <span className="font-sans text-[9px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-bold uppercase shrink-0">
                         LR Issued
                       </span>
                     )}
                   </div>
-                  <span className="font-mono text-[10px] text-secondary shrink-0 font-medium">
+                  <span className="font-sans text-[10px] text-secondary shrink-0 font-medium">
                     {evt.time}
                   </span>
                 </div>
@@ -235,7 +235,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
                     isBooking
                       ? "bg-white text-[#047857] border-[#a7f3d0] font-medium"
                       : isOutbound
-                      ? "bg-white text-on-surface border-[#eae7e1] font-mono text-[11px]"
+                      ? "bg-white text-on-surface border-[#eae7e1] font-sans text-[11px]"
                       : "bg-surface text-on-surface border-surface-container-high italic"
                   }`}
                 >
@@ -244,7 +244,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
 
                 {/* Event Meta Badges */}
                 {evt.meta && (
-                  <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px]">
+                  <div className="flex flex-wrap items-center gap-1.5 font-sans text-[10px]">
                     {evt.meta.loadId && (
                       <span className="px-1.5 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-bold">
                         {evt.meta.loadId}
@@ -279,7 +279,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
 
         {/* Quick Automated Smart Counter Box */}
         <div className="flex flex-col gap-1.5 pt-2 border-t border-surface-container-high">
-          <span className="font-mono text-[10px] text-outline">Quick Broadcast WhatsApp Reply:</span>
+          <span className="font-sans text-[10px] text-outline">Quick Broadcast WhatsApp Reply:</span>
           <div className="flex items-center gap-1.5">
             <input
               type="text"
@@ -307,7 +307,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
               WhatsApp AI Testing Simulator
             </h4>
           </div>
-          <span className="px-1.5 py-0.5 bg-surface-container-high rounded font-mono text-[10px] text-outline">
+          <span className="px-1.5 py-0.5 bg-surface-container-high rounded font-sans text-[10px] text-outline">
             Sandbox
           </span>
         </div>
@@ -323,7 +323,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
             <span>Launch Interactive Simulator</span>
             <span className="material-symbols-outlined text-sm">open_in_new</span>
           </button>
-          <kbd className="px-2 py-1.5 bg-surface-container-low border border-surface-container-high text-outline rounded font-mono text-[10px] font-medium">
+          <kbd className="px-2 py-1.5 bg-surface-container-low border border-surface-container-high text-outline rounded font-sans text-[10px] font-medium">
             Ctrl + S
           </kbd>
         </div>
@@ -332,17 +332,17 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
       {/* Dialect Engine Accuracy Widget */}
       <div className="bg-surface-container border border-surface-container-high rounded-xl p-3.5 sm:p-4 flex flex-col gap-1.5 shadow-xs">
         <div className="flex items-center justify-between">
-          <span className="font-mono text-[10px] text-outline uppercase tracking-wider">
+          <span className="font-sans text-[10px] text-outline uppercase tracking-wider">
             Dialect Engine Accuracy
           </span>
-          <span className="font-mono text-[11px] text-secondary font-mono font-semibold">
+          <span className="font-sans text-[11px] text-secondary font-sans font-semibold">
             99.1% F1
           </span>
         </div>
         <div className="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
           <div className="bg-secondary h-full rounded-full" style={{ width: "99.1%" }}></div>
         </div>
-        <div className="flex items-center justify-between text-outline font-mono text-[10px] mt-0.5">
+        <div className="flex items-center justify-between text-outline font-sans text-[10px] mt-0.5">
           <span>Hinglish (99.4%)</span>
           <span>Kannada (98.6%)</span>
           <span>Tamil (97.9%)</span>

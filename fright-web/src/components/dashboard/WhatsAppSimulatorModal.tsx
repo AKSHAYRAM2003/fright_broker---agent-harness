@@ -77,7 +77,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
               <h3 className="font-sans text-base font-bold text-neutral-900">
                 WhatsApp Inbound AI Simulator
               </h3>
-              <p className="font-mono text-[11px] text-neutral-500">
+              <p className="font-sans text-[11px] text-neutral-500">
                 Test real-time parsing, entity extraction, and RFQ generation
               </p>
             </div>
@@ -95,7 +95,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
         <div className="p-6 overflow-y-auto flex flex-col gap-5">
           {/* Preset Buttons */}
           <div className="flex flex-col gap-2">
-            <span className="font-mono text-[11px] text-neutral-500 uppercase font-semibold">
+            <span className="font-sans text-[11px] text-neutral-500 uppercase font-semibold">
               Quick Test Presets:
             </span>
             <div className="flex flex-wrap gap-2">
@@ -107,7 +107,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
                     setSimulatedResult(null);
                   }}
                   type="button"
-                  className="px-3 py-1.5 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-neutral-800 font-mono text-[11px] transition-all"
+                  className="px-3 py-1.5 rounded-lg bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-neutral-800 font-sans text-[11px] transition-all"
                 >
                   {preset.label}
                 </button>
@@ -117,7 +117,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
 
           {/* Input Box */}
           <div className="flex flex-col gap-2">
-            <label className="font-mono text-[11px] text-neutral-500 uppercase font-semibold">
+            <label className="font-sans text-[11px] text-neutral-500 uppercase font-semibold">
               Simulated WhatsApp Message / Voice Transcript:
             </label>
             <textarea
@@ -135,7 +135,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
               onClick={handleSimulate}
               disabled={isProcessing}
               type="button"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-mono text-xs font-semibold transition-all active:scale-95 shadow-2xs"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] font-sans text-xs font-semibold transition-all active:scale-95 shadow-2xs"
             >
               {isProcessing ? (
                 <>
@@ -155,16 +155,16 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
           {simulatedResult && (
             <div className="p-4 bg-emerald-50/50 border border-emerald-200 rounded-xl flex flex-col gap-3 animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-emerald-800 flex items-center gap-1.5">
+                <span className="font-sans text-xs font-bold text-emerald-800 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   Harness Engine Parsed Successfully
                 </span>
-                <span className="font-mono text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">
+                <span className="font-sans text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold">
                   State: {simulatedResult.status}
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 bg-white p-3 rounded-lg border border-emerald-200/80 font-mono text-[11px]">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 bg-white p-3 rounded-lg border border-emerald-200/80 font-sans text-[11px]">
                 <div>
                   <span className="text-neutral-400 block">Origin:</span>
                   <span className="font-bold text-neutral-900">{simulatedResult.origin}</span>
@@ -192,7 +192,7 @@ export const WhatsAppSimulatorModal: React.FC<WhatsAppSimulatorModalProps> = ({
               </div>
 
               <div className="bg-white p-3 rounded-lg border border-emerald-200/80">
-                <span className="font-mono text-[10px] text-neutral-400 uppercase font-semibold block mb-1">
+                <span className="font-sans text-[10px] text-neutral-400 uppercase font-semibold block mb-1">
                   Dispatched WhatsApp RFQ Broadcast Draft:
                 </span>
                 <p className="font-sans text-xs text-neutral-800 italic leading-relaxed">

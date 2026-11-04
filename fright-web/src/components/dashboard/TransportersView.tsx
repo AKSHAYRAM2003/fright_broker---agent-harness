@@ -348,7 +348,7 @@ export const TransportersView: React.FC = () => {
               <h1 className="font-headline-lg text-lg sm:text-xl font-bold text-[#070707] tracking-tight">
                 Transporter Fleet Directory
               </h1>
-              <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#f7f6f4] text-[#57534e] border border-[#dfdbd5] font-semibold uppercase tracking-wider">
+              <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-[#f7f6f4] text-[#57534e] border border-[#dfdbd5] font-semibold uppercase tracking-wider">
                 Pan-India VAHAN Pool
               </span>
             </div>
@@ -369,7 +369,7 @@ export const TransportersView: React.FC = () => {
                 placeholder="Search by Carrier, Manager, Mobile, GSTIN, Hub..."
                 className="w-full h-9 pl-8 pr-12 text-xs bg-white rounded-lg border border-[#dfdbd5] text-[#070707] placeholder:text-[#a8a29e] focus:outline-none focus:border-[#be3420] transition-colors"
               />
-              <kbd className="absolute right-2 top-2 font-mono text-[9px] bg-[#f7f6f4] border border-[#dfdbd5] px-1.5 py-0.5 rounded text-[#78716c]">
+              <kbd className="absolute right-2 top-2 font-sans text-[9px] bg-[#f7f6f4] border border-[#dfdbd5] px-1.5 py-0.5 rounded text-[#78716c]">
                 ⌘K
               </kbd>
             </div>
@@ -400,7 +400,7 @@ export const TransportersView: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
-                <span className="font-mono text-[10px] uppercase text-[#78716c] font-semibold">
+                <span className="font-sans text-[10px] uppercase text-[#78716c] font-semibold">
                   Verified Carriers
                 </span>
               </div>
@@ -408,7 +408,7 @@ export const TransportersView: React.FC = () => {
                 <span className="font-sans text-lg sm:text-xl font-bold text-[#070707]">
                   {transporters.length} Active
                 </span>
-                <span className="font-mono text-[9px] text-[#059669] bg-[#ecfdf5] border border-[#a7f3d0] px-1 py-0.2 rounded font-bold">
+                <span className="font-sans text-[9px] text-[#059669] bg-[#ecfdf5] border border-[#a7f3d0] px-1 py-0.2 rounded font-bold">
                   +6 mo
                 </span>
               </div>
@@ -420,13 +420,13 @@ export const TransportersView: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#be3420]"></span>
-                <span className="font-mono text-[10px] uppercase text-[#78716c] font-semibold">
+                <span className="font-sans text-[10px] uppercase text-[#78716c] font-semibold">
                   Fleet Strength
                 </span>
               </div>
               <div className="flex items-baseline gap-1.5 mt-0.5">
                 <span className="font-sans text-lg sm:text-xl font-bold text-[#070707]">820+ Trucks</span>
-                <span className="font-mono text-[9px] text-[#78716c] bg-[#f7f6f4] px-1 py-0.2 rounded">
+                <span className="font-sans text-[9px] text-[#78716c] bg-[#f7f6f4] px-1 py-0.2 rounded">
                   40ft / 32ft / 10W
                 </span>
               </div>
@@ -438,13 +438,13 @@ export const TransportersView: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]"></span>
-                <span className="font-mono text-[10px] uppercase text-[#78716c] font-semibold">
+                <span className="font-sans text-[10px] uppercase text-[#78716c] font-semibold">
                   Active Corridors
                 </span>
               </div>
               <div className="flex items-baseline gap-1.5 mt-0.5">
                 <span className="font-sans text-lg sm:text-xl font-bold text-[#070707]">34 Lanes</span>
-                <span className="font-mono text-[9px] text-[#d97706] bg-[#fffbeb] border border-[#fde68a] px-1 py-0.2 rounded font-bold">
+                <span className="font-sans text-[9px] text-[#d97706] bg-[#fffbeb] border border-[#fde68a] px-1 py-0.2 rounded font-bold">
                   South &amp; West
                 </span>
               </div>
@@ -456,13 +456,13 @@ export const TransportersView: React.FC = () => {
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
-                <span className="font-mono text-[10px] uppercase text-[#78716c] font-semibold">
+                <span className="font-sans text-[10px] uppercase text-[#78716c] font-semibold">
                   WhatsApp SLA Speed
                 </span>
               </div>
               <div className="flex items-baseline gap-1.5 mt-0.5">
                 <span className="font-sans text-lg sm:text-xl font-bold text-[#070707]">92.4%</span>
-                <span className="font-mono text-[9px] text-[#059669] font-bold">&lt; 8.0 mins</span>
+                <span className="font-sans text-[9px] text-[#059669] font-bold">&lt; 8.0 mins</span>
               </div>
             </div>
             <span className="material-symbols-outlined text-[#059669] text-2xl">bolt</span>
@@ -474,7 +474,7 @@ export const TransportersView: React.FC = () => {
       <div className="flex flex-col gap-2.5">
         {/* Horizontal Corridor Pills */}
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 text-nowrap">
-          <span className="font-mono text-[10px] text-[#78716c] uppercase font-semibold mr-1">Corridors:</span>
+          <span className="font-sans text-[10px] text-[#78716c] uppercase font-semibold mr-1">Corridors:</span>
           {[
             { id: "all", label: `All Corridors (${transporters.length})` },
             { id: "BLR-BHW", label: "BLR ➔ BHW / Mumbai (42)" },
@@ -488,7 +488,7 @@ export const TransportersView: React.FC = () => {
               <button
                 key={corridor.id}
                 onClick={() => setSelectedCorridor(corridor.id)}
-                className={`px-2.5 py-1 rounded-lg text-xs font-mono transition-all ${
+                className={`px-2.5 py-1 rounded-lg text-xs font-sans transition-all ${
                   isActive
                     ? "bg-white text-[#18181b] font-bold shadow-xs border border-black/[0.15]"
                     : "bg-white/60 hover:bg-white text-[#57534e] border border-[#eae7e1]"
@@ -505,7 +505,7 @@ export const TransportersView: React.FC = () => {
           <div className="flex items-center gap-2 flex-wrap">
             {/* Vehicle Type Filter */}
             <div className="flex items-center bg-white rounded-lg border border-[#dfdbd5] px-2 h-8 text-xs">
-              <span className="font-mono text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Truck:</span>
+              <span className="font-sans text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Truck:</span>
               <select
                 value={selectedVehicle}
                 onChange={(e) => setSelectedVehicle(e.target.value)}
@@ -521,7 +521,7 @@ export const TransportersView: React.FC = () => {
 
             {/* Compliance Filter */}
             <div className="flex items-center bg-white rounded-lg border border-[#dfdbd5] px-2 h-8 text-xs">
-              <span className="font-mono text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Status:</span>
+              <span className="font-sans text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Status:</span>
               <select
                 value={selectedCompliance}
                 onChange={(e) => setSelectedCompliance(e.target.value)}
@@ -535,7 +535,7 @@ export const TransportersView: React.FC = () => {
 
             {/* Sort Select */}
             <div className="flex items-center bg-white rounded-lg border border-[#dfdbd5] px-2 h-8 text-xs">
-              <span className="font-mono text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Sort:</span>
+              <span className="font-sans text-[10px] text-[#78716c] mr-1.5 uppercase font-medium">Sort:</span>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
@@ -582,7 +582,7 @@ export const TransportersView: React.FC = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#f7f6f4] border-b border-[#dfdbd5] text-[#57534e] font-mono text-[10px] uppercase tracking-wider select-none">
+                <tr className="bg-[#f7f6f4] border-b border-[#dfdbd5] text-[#57534e] font-sans text-[10px] uppercase tracking-wider select-none">
                   <th className="py-2.5 px-3 font-semibold">Transporter &amp; Base Yard</th>
                   <th className="py-2.5 px-3 font-semibold">Dispatch Contact / WhatsApp</th>
                   <th className="py-2.5 px-3 font-semibold">Corridor Affinity</th>
@@ -595,7 +595,7 @@ export const TransportersView: React.FC = () => {
               <tbody className="divide-y divide-[#eae7e1] text-xs">
                 {filteredTransporters.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="py-8 text-center text-[#78716c] font-mono text-xs">
+                    <td colSpan={7} className="py-8 text-center text-[#78716c] font-sans text-xs">
                       No transporters matching the active filters.
                     </td>
                   </tr>
@@ -608,7 +608,7 @@ export const TransportersView: React.FC = () => {
                       {/* Carrier & Yard */}
                       <td className="py-2.5 px-3 align-top">
                         <div className="flex items-start gap-2.5">
-                          <div className="w-7 h-7 rounded-md bg-[#fef2f0] text-[#be3420] font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 border border-[#be3420]/25">
+                          <div className="w-7 h-7 rounded-md bg-[#fef2f0] text-[#be3420] font-sans text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 border border-[#be3420]/25">
                             {carrier.code}
                           </div>
                           <div>
@@ -617,12 +617,12 @@ export const TransportersView: React.FC = () => {
                                 {carrier.name}
                               </span>
                               {carrier.status === "VERIFIED" ? (
-                                <span className="px-1.5 py-0.2 rounded font-mono text-[9px] bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0] font-bold flex items-center gap-0.5">
+                                <span className="px-1.5 py-0.2 rounded font-sans text-[9px] bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0] font-bold flex items-center gap-0.5">
                                   <CheckCircle2 className="w-2.5 h-2.5" />
                                   VAHAN
                                 </span>
                               ) : (
-                                <span className="px-1.5 py-0.2 rounded font-mono text-[9px] bg-[#fffbeb] text-[#d97706] border border-[#fde68a] font-bold flex items-center gap-0.5">
+                                <span className="px-1.5 py-0.2 rounded font-sans text-[9px] bg-[#fffbeb] text-[#d97706] border border-[#fde68a] font-bold flex items-center gap-0.5">
                                   <AlertTriangle className="w-2.5 h-2.5" />
                                   KYC PENDING
                                 </span>
@@ -631,7 +631,7 @@ export const TransportersView: React.FC = () => {
                             <div className="font-sans text-[11px] text-[#78716c] flex items-center gap-2 mt-0.5">
                               <span>{carrier.hub}</span>
                               <span className="text-[#dfdbd5]">•</span>
-                              <span className="font-mono text-[10px] text-[#78716c]">
+                              <span className="font-sans text-[10px] text-[#78716c]">
                                 GST: {carrier.gstin}
                               </span>
                             </div>
@@ -645,7 +645,7 @@ export const TransportersView: React.FC = () => {
                           {carrier.contact}
                         </div>
                         <div className="flex items-center gap-1.5 mt-0.5">
-                          <span className="font-mono text-[11px] text-[#78716c]">{carrier.phone}</span>
+                          <span className="font-sans text-[11px] text-[#78716c]">{carrier.phone}</span>
                           <button
                             type="button"
                             onClick={() => handlePing(carrier.name, carrier.phone)}
@@ -663,20 +663,20 @@ export const TransportersView: React.FC = () => {
                           {carrier.corridors.map((c) => (
                             <span
                               key={c}
-                              className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#f7f6f4] text-[#070707] font-semibold border border-[#eae7e1]"
+                              className="font-sans text-[10px] px-1.5 py-0.5 rounded bg-[#f7f6f4] text-[#070707] font-semibold border border-[#eae7e1]"
                             >
                               {c.replace("-", " ➔ ")}
                             </span>
                           ))}
                         </div>
-                        <span className="font-mono text-[9px] text-[#059669] font-medium mt-1 inline-block">
+                        <span className="font-sans text-[9px] text-[#059669] font-medium mt-1 inline-block">
                           {carrier.corridorBadge}
                         </span>
                       </td>
 
                       {/* Fleet */}
                       <td className="py-2.5 px-3 align-top">
-                        <div className="font-mono text-[11px] text-[#070707] space-y-0.5">
+                        <div className="font-sans text-[11px] text-[#070707] space-y-0.5">
                           <div>
                             <span className="font-bold text-[#be3420]">{carrier.fleetMain}</span>{" "}
                             {carrier.fleetMainType}
@@ -691,27 +691,27 @@ export const TransportersView: React.FC = () => {
                           <span className="font-sans text-xs font-bold text-[#070707]">
                             {carrier.rating}★
                           </span>
-                          <span className="font-mono text-[10px] text-[#78716c]">
+                          <span className="font-sans text-[10px] text-[#78716c]">
                             ({carrier.trips} trips)
                           </span>
                         </div>
-                        <div className="font-mono text-[10px] text-[#059669] font-medium mt-0.5">
+                        <div className="font-sans text-[10px] text-[#059669] font-medium mt-0.5">
                           {carrier.onTime} On-Time
                         </div>
-                        <div className="font-mono text-[10px] text-[#78716c]">
+                        <div className="font-sans text-[10px] text-[#78716c]">
                           Avg resp: {carrier.respTime}
                         </div>
                       </td>
 
                       {/* Commercial Terms */}
                       <td className="py-2.5 px-3 align-top">
-                        <div className="font-mono text-[11px] font-bold text-[#070707]">
+                        <div className="font-sans text-[11px] font-bold text-[#070707]">
                           {carrier.terms}
                         </div>
-                        <div className="font-mono text-[10px] text-[#78716c] mt-0.5">
+                        <div className="font-sans text-[10px] text-[#78716c] mt-0.5">
                           POD window: {carrier.podWindow}
                         </div>
-                        <span className="inline-block mt-0.5 font-mono text-[9px] text-[#059669] bg-[#ecfdf5] border border-[#a7f3d0] px-1 rounded">
+                        <span className="inline-block mt-0.5 font-sans text-[9px] text-[#059669] bg-[#ecfdf5] border border-[#a7f3d0] px-1 rounded">
                           {carrier.badgeExtra}
                         </span>
                       </td>
@@ -722,7 +722,7 @@ export const TransportersView: React.FC = () => {
                           <button
                             type="button"
                             onClick={() => handlePing(carrier.name, carrier.phone)}
-                            className="h-7 px-2.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-mono text-[10px] font-semibold flex items-center gap-1 shadow-2xs transition-all active:scale-95"
+                            className="h-7 px-2.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-sans text-[10px] font-semibold flex items-center gap-1 shadow-2xs transition-all active:scale-95"
                           >
                             <Send className="w-3 h-3" />
                             <span>WhatsApp RFQ</span>
@@ -732,7 +732,7 @@ export const TransportersView: React.FC = () => {
                             onClick={() =>
                               showToast(`${carrier.name} Rate Contract: ₹1,24,000 ${carrier.corridors[0]} (Avg)`)
                             }
-                            className="h-7 px-2 rounded-lg bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#070707] font-mono text-[10px] border border-[#dfdbd5] transition-colors"
+                            className="h-7 px-2 rounded-lg bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#070707] font-sans text-[10px] border border-[#dfdbd5] transition-colors"
                           >
                             Rates
                           </button>
@@ -753,7 +753,7 @@ export const TransportersView: React.FC = () => {
           </div>
 
           {/* Table Pagination & Count Sub-bar */}
-          <div className="h-10 px-3.5 bg-[#f7f6f4] flex items-center justify-between border-t border-[#dfdbd5] font-mono text-[11px] text-[#78716c]">
+          <div className="h-10 px-3.5 bg-[#f7f6f4] flex items-center justify-between border-t border-[#dfdbd5] font-sans text-[11px] text-[#78716c]">
             <div className="flex items-center gap-2">
               <span>
                 Showing <strong className="text-[#070707]">{filteredTransporters.length} of 148</strong>{" "}
@@ -810,7 +810,7 @@ export const TransportersView: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between">
                   <span
-                    className={`font-mono text-[9px] px-2 py-0.5 rounded font-bold uppercase ${
+                    className={`font-sans text-[9px] px-2 py-0.5 rounded font-bold uppercase ${
                       carrier.status === "VERIFIED"
                         ? "bg-[#ecfdf5] text-[#059669] border border-[#a7f3d0]"
                         : "bg-[#fffbeb] text-[#d97706] border border-[#fde68a]"
@@ -818,7 +818,7 @@ export const TransportersView: React.FC = () => {
                   >
                     {carrier.status === "VERIFIED" ? "VAHAN VERIFIED" : "KYC PENDING"}
                   </span>
-                  <span className="font-mono text-[11px] text-[#78716c]">
+                  <span className="font-sans text-[11px] text-[#78716c]">
                     {carrier.rating} ★ ({carrier.trips})
                   </span>
                 </div>
@@ -830,7 +830,7 @@ export const TransportersView: React.FC = () => {
 
                 <div className="mt-3 py-2 bg-[#f7f6f4] rounded-lg px-2.5 flex items-center justify-between text-xs">
                   <span className="text-[#78716c]">Fleet Strength:</span>
-                  <span className="font-mono text-xs font-bold text-[#070707]">
+                  <span className="font-sans text-xs font-bold text-[#070707]">
                     {carrier.fleetMain} {carrier.fleetMainType}
                   </span>
                 </div>
@@ -839,7 +839,7 @@ export const TransportersView: React.FC = () => {
                   {carrier.corridors.map((c) => (
                     <span
                       key={c}
-                      className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-[#f7f6f4] text-[#070707] border border-[#eae7e1]"
+                      className="font-sans text-[10px] px-1.5 py-0.5 rounded bg-[#f7f6f4] text-[#070707] border border-[#eae7e1]"
                     >
                       {c}
                     </span>
@@ -848,13 +848,13 @@ export const TransportersView: React.FC = () => {
               </div>
 
               <div className="mt-4 pt-3 border-t border-[#eae7e1] flex items-center justify-between">
-                <span className="font-mono text-xs text-[#78716c] truncate max-w-[160px]">
+                <span className="font-sans text-xs text-[#78716c] truncate max-w-[160px]">
                   {carrier.contact}
                 </span>
                 <button
                   type="button"
                   onClick={() => handlePing(carrier.name, carrier.phone)}
-                  className="h-7 px-3 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-mono text-[10px] font-semibold flex items-center gap-1 shadow-2xs"
+                  className="h-7 px-3 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-sans text-[10px] font-semibold flex items-center gap-1 shadow-2xs"
                 >
                   <MessageSquare className="w-3 h-3" />
                   <span>RFQ</span>
@@ -873,7 +873,7 @@ export const TransportersView: React.FC = () => {
             <div className="flex items-center justify-between border-b border-[#eae7e1] pb-2 mb-2.5">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#059669] text-base">mark_chat_unread</span>
-                <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                   Live WhatsApp RFQ Engine
                 </span>
               </div>
@@ -882,7 +882,7 @@ export const TransportersView: React.FC = () => {
 
             <div className="space-y-2 text-xs">
               <div className="p-2.5 bg-[#f7f6f4] rounded-lg border border-[#eae7e1]">
-                <div className="flex items-center justify-between text-[10px] font-mono text-[#78716c]">
+                <div className="flex items-center justify-between text-[10px] font-sans text-[#78716c]">
                   <span>LR #HF-99201 ➔ BLR to BHW</span>
                   <span className="text-[#059669] font-bold">2.4m ago</span>
                 </div>
@@ -892,7 +892,7 @@ export const TransportersView: React.FC = () => {
               </div>
 
               <div className="p-2.5 bg-[#f7f6f4] rounded-lg border border-[#eae7e1]">
-                <div className="flex items-center justify-between text-[10px] font-mono text-[#78716c]">
+                <div className="flex items-center justify-between text-[10px] font-sans text-[#78716c]">
                   <span>RATE LOCK ➔ Ghatge Patil</span>
                   <span className="text-[#78716c]">8m ago</span>
                 </div>
@@ -906,7 +906,7 @@ export const TransportersView: React.FC = () => {
           <button
             type="button"
             onClick={() => handlePing("Fleet Broadcast Pool", "42 Transporters")}
-            className="mt-3.5 w-full py-2 bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#070707] rounded-lg font-mono text-xs font-semibold flex items-center justify-center gap-1.5 border border-[#dfdbd5] transition-colors"
+            className="mt-3.5 w-full py-2 bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#070707] rounded-lg font-sans text-xs font-semibold flex items-center justify-center gap-1.5 border border-[#dfdbd5] transition-colors"
           >
             <span>Broadcast Spot Load to 42 Transporters</span>
           </button>
@@ -918,16 +918,16 @@ export const TransportersView: React.FC = () => {
             <div className="flex items-center justify-between border-b border-[#eae7e1] pb-2 mb-2.5">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#be3420] text-base">hub</span>
-                <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                   Corridor Load Capacity
                 </span>
               </div>
-              <span className="font-mono text-[10px] text-[#78716c]">TODAY 14:00 IST</span>
+              <span className="font-sans text-[10px] text-[#78716c]">TODAY 14:00 IST</span>
             </div>
 
             <div className="space-y-2.5 text-xs">
               <div>
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between font-sans text-[11px] mb-1">
                   <span className="font-semibold text-[#070707]">Bengaluru ➔ Bhiwandi (NH48)</span>
                   <span className="font-bold text-[#be3420]">84% Capacity</span>
                 </div>
@@ -937,7 +937,7 @@ export const TransportersView: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between font-sans text-[11px] mb-1">
                   <span className="font-semibold text-[#070707]">Bengaluru ➔ Hyderabad (NH44)</span>
                   <span className="font-bold text-[#059669]">62% Capacity</span>
                 </div>
@@ -947,7 +947,7 @@ export const TransportersView: React.FC = () => {
               </div>
 
               <div>
-                <div className="flex justify-between font-mono text-[11px] mb-1">
+                <div className="flex justify-between font-sans text-[11px] mb-1">
                   <span className="font-semibold text-[#070707]">Bengaluru ➔ Chennai (NH48)</span>
                   <span className="font-bold text-[#059669]">48% Capacity</span>
                 </div>
@@ -958,7 +958,7 @@ export const TransportersView: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-3.5 flex items-center justify-between font-mono text-[11px] text-[#78716c] bg-[#f7f6f4] p-2 rounded-lg border border-[#eae7e1]">
+          <div className="mt-3.5 flex items-center justify-between font-sans text-[11px] text-[#78716c] bg-[#f7f6f4] p-2 rounded-lg border border-[#eae7e1]">
             <span>
               Active Trailer Indents: <strong className="text-[#070707]">28 Loads</strong>
             </span>
@@ -972,11 +972,11 @@ export const TransportersView: React.FC = () => {
             <div className="flex items-center justify-between border-b border-[#eae7e1] pb-2 mb-2.5">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-[#be3420] text-base">verified_user</span>
-                <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                   VAHAN Automated KYC
                 </span>
               </div>
-              <span className="font-mono text-[10px] text-[#059669] font-bold">API v2.4 OK</span>
+              <span className="font-sans text-[10px] text-[#059669] font-bold">API v2.4 OK</span>
             </div>
 
             <p className="font-sans text-xs text-[#78716c] leading-relaxed">
@@ -987,11 +987,11 @@ export const TransportersView: React.FC = () => {
             <div className="mt-3.5 grid grid-cols-2 gap-2 text-center">
               <div className="p-2 bg-[#f7f6f4] rounded-lg border border-[#eae7e1]">
                 <div className="font-sans text-lg font-bold text-[#070707]">1.8 min</div>
-                <div className="font-mono text-[9px] text-[#78716c] uppercase">Avg Onboard Time</div>
+                <div className="font-sans text-[9px] text-[#78716c] uppercase">Avg Onboard Time</div>
               </div>
               <div className="p-2 bg-[#f7f6f4] rounded-lg border border-[#eae7e1]">
                 <div className="font-sans text-lg font-bold text-[#059669]">0.0%</div>
-                <div className="font-mono text-[9px] text-[#78716c] uppercase">Compliance Breaches</div>
+                <div className="font-sans text-[9px] text-[#78716c] uppercase">Compliance Breaches</div>
               </div>
             </div>
           </div>
@@ -999,7 +999,7 @@ export const TransportersView: React.FC = () => {
           <button
             type="button"
             onClick={() => setDrawerOpen(true)}
-            className="mt-3.5 w-full py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] rounded-lg font-mono text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95"
+            className="mt-3.5 w-full py-2 bg-white hover:bg-[#f7f6f4] text-[#18181b] border border-[#d6d3cd] hover:border-[#18181b] rounded-lg font-sans text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all active:scale-95"
           >
             <PlusCircle className="w-3.5 h-3.5 text-[#be3420]" />
             <span>Initiate Transporter Onboarding</span>
@@ -1046,17 +1046,17 @@ export const TransportersView: React.FC = () => {
               {/* Step 1: Basic Profile */}
               <div className="bg-[#f7f6f4] p-3.5 rounded-xl border border-[#eae7e1]">
                 <div className="flex items-center gap-2 mb-2.5 pb-1.5 border-b border-[#dfdbd5]">
-                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-mono text-[10px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-sans text-[10px] font-bold flex items-center justify-center">
                     1
                   </span>
-                  <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                  <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                     Carrier Profile &amp; Dispatch Point
                   </span>
                 </div>
 
                 <div className="space-y-2.5">
                   <div>
-                    <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                    <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                       Registered Transporter Business Name *
                     </label>
                     <input
@@ -1071,7 +1071,7 @@ export const TransportersView: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         Dispatch Manager Name *
                       </label>
                       <input
@@ -1084,7 +1084,7 @@ export const TransportersView: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         WhatsApp Mobile (+91) *
                       </label>
                       <input
@@ -1093,14 +1093,14 @@ export const TransportersView: React.FC = () => {
                         value={newPhone}
                         onChange={(e) => setNewPhone(e.target.value)}
                         placeholder="98450 12345"
-                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] focus:outline-none focus:border-[#be3420]"
+                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] focus:outline-none focus:border-[#be3420]"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2">
                     <div className="col-span-2">
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         Base Yard / Logistics Park Address
                       </label>
                       <input
@@ -1112,7 +1112,7 @@ export const TransportersView: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         PIN Code
                       </label>
                       <input
@@ -1120,7 +1120,7 @@ export const TransportersView: React.FC = () => {
                         value={newPin}
                         onChange={(e) => setNewPin(e.target.value)}
                         placeholder="560058"
-                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] focus:outline-none focus:border-[#be3420]"
+                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] focus:outline-none focus:border-[#be3420]"
                       />
                     </div>
                   </div>
@@ -1130,15 +1130,15 @@ export const TransportersView: React.FC = () => {
               {/* Step 2: Route & Lane Affinity */}
               <div className="bg-[#f7f6f4] p-3.5 rounded-xl border border-[#eae7e1]">
                 <div className="flex items-center gap-2 mb-2.5 pb-1.5 border-b border-[#dfdbd5]">
-                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-mono text-[10px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-sans text-[10px] font-bold flex items-center justify-center">
                     2
                   </span>
-                  <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                  <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                     Route &amp; Corridor Affinity
                   </span>
                 </div>
 
-                <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1.5">
+                <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1.5">
                   Select Primary Operating Corridors
                 </label>
                 <div className="flex flex-wrap gap-1.5">
@@ -1153,7 +1153,7 @@ export const TransportersView: React.FC = () => {
                             isChecked ? prev.filter((l) => l !== lane) : [...prev, lane]
                           );
                         }}
-                        className={`px-2.5 py-1 rounded-lg font-mono text-[11px] transition-all border ${
+                        className={`px-2.5 py-1 rounded-lg font-sans text-[11px] transition-all border ${
                           isChecked
                             ? "bg-[#fef2f0] text-[#be3420] border-[#be3420]/40 font-bold"
                             : "bg-white text-[#78716c] border-[#dfdbd5]"
@@ -1185,17 +1185,17 @@ export const TransportersView: React.FC = () => {
               {/* Step 3: Fleet Breakdown */}
               <div className="bg-[#f7f6f4] p-3.5 rounded-xl border border-[#eae7e1]">
                 <div className="flex items-center gap-2 mb-2.5 pb-1.5 border-b border-[#dfdbd5]">
-                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-mono text-[10px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-sans text-[10px] font-bold flex items-center justify-center">
                     3
                   </span>
-                  <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                  <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                     Fleet Breakdown &amp; Dedicated Inventory
                   </span>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   <div>
-                    <label className="block font-mono text-[10px] text-[#78716c] uppercase mb-1">
+                    <label className="block font-sans text-[10px] text-[#78716c] uppercase mb-1">
                       40ft Trailer
                     </label>
                     <input
@@ -1203,11 +1203,11 @@ export const TransportersView: React.FC = () => {
                       min="0"
                       value={fTrailer}
                       onChange={(e) => setFTrailer(e.target.value)}
-                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] text-center focus:outline-none"
+                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] text-center focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block font-mono text-[10px] text-[#78716c] uppercase mb-1">
+                    <label className="block font-sans text-[10px] text-[#78716c] uppercase mb-1">
                       32ft MXL
                     </label>
                     <input
@@ -1215,11 +1215,11 @@ export const TransportersView: React.FC = () => {
                       min="0"
                       value={fMxl}
                       onChange={(e) => setFMxl(e.target.value)}
-                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] text-center focus:outline-none"
+                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] text-center focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block font-mono text-[10px] text-[#78716c] uppercase mb-1">
+                    <label className="block font-sans text-[10px] text-[#78716c] uppercase mb-1">
                       10W Taurus
                     </label>
                     <input
@@ -1227,11 +1227,11 @@ export const TransportersView: React.FC = () => {
                       min="0"
                       value={fTaurus}
                       onChange={(e) => setFTaurus(e.target.value)}
-                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] text-center focus:outline-none"
+                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] text-center focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block font-mono text-[10px] text-[#78716c] uppercase mb-1">
+                    <label className="block font-sans text-[10px] text-[#78716c] uppercase mb-1">
                       6W / LCV
                     </label>
                     <input
@@ -1239,7 +1239,7 @@ export const TransportersView: React.FC = () => {
                       min="0"
                       value={fLcv}
                       onChange={(e) => setFLcv(e.target.value)}
-                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] text-center focus:outline-none"
+                      className="w-full h-8 px-2 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] text-center focus:outline-none"
                     />
                   </div>
                 </div>
@@ -1248,17 +1248,17 @@ export const TransportersView: React.FC = () => {
               {/* Step 4: Statutory Compliance & Banking */}
               <div className="bg-[#f7f6f4] p-3.5 rounded-xl border border-[#eae7e1]">
                 <div className="flex items-center gap-2 mb-2.5 pb-1.5 border-b border-[#dfdbd5]">
-                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-mono text-[10px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-sans text-[10px] font-bold flex items-center justify-center">
                     4
                   </span>
-                  <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                  <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                     Statutory Compliance &amp; Banking
                   </span>
                 </div>
 
                 <div className="space-y-2.5">
                   <div>
-                    <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                    <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                       GSTIN (15 Alpha-Numeric)
                     </label>
                     <div className="flex gap-2">
@@ -1267,12 +1267,12 @@ export const TransportersView: React.FC = () => {
                         value={newGstin}
                         onChange={(e) => setNewGstin(e.target.value)}
                         placeholder="29AAAAA0000A1Z5"
-                        className="flex-1 h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono uppercase text-xs text-[#070707] focus:outline-none"
+                        className="flex-1 h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans uppercase text-xs text-[#070707] focus:outline-none"
                       />
                       <button
                         type="button"
                         onClick={() => alert("GSTIN Verified against Govt E-Way Database: ACTIVE")}
-                        className="h-8 px-3 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-mono text-xs font-bold transition-colors"
+                        className="h-8 px-3 rounded-lg bg-[#059669] hover:bg-[#047857] text-white font-sans text-xs font-bold transition-colors"
                       >
                         Verify GST
                       </button>
@@ -1281,7 +1281,7 @@ export const TransportersView: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         PAN Number
                       </label>
                       <input
@@ -1289,11 +1289,11 @@ export const TransportersView: React.FC = () => {
                         value={newPan}
                         onChange={(e) => setNewPan(e.target.value)}
                         placeholder="AAAAA0000A"
-                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono uppercase text-xs text-[#070707] focus:outline-none"
+                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans uppercase text-xs text-[#070707] focus:outline-none"
                       />
                     </div>
                     <div>
-                      <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                      <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                         IFSC Code
                       </label>
                       <input
@@ -1301,13 +1301,13 @@ export const TransportersView: React.FC = () => {
                         value={newIfsc}
                         onChange={(e) => setNewIfsc(e.target.value)}
                         placeholder="HDFC0001234"
-                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono uppercase text-xs text-[#070707] focus:outline-none"
+                        className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans uppercase text-xs text-[#070707] focus:outline-none"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block font-mono text-[10px] font-medium text-[#78716c] mb-1">
+                    <label className="block font-sans text-[10px] font-medium text-[#78716c] mb-1">
                       Bank Account Number (for Instant IMPS Advance)
                     </label>
                     <input
@@ -1315,7 +1315,7 @@ export const TransportersView: React.FC = () => {
                       value={newBankAcc}
                       onChange={(e) => setNewBankAcc(e.target.value)}
                       placeholder="50200028192812"
-                      className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-mono text-xs text-[#070707] focus:outline-none"
+                      className="w-full h-8 px-2.5 bg-white border border-[#dfdbd5] rounded-lg font-sans text-xs text-[#070707] focus:outline-none"
                     />
                   </div>
 
@@ -1340,17 +1340,17 @@ export const TransportersView: React.FC = () => {
               {/* Step 5: Commercial Agreement */}
               <div className="bg-[#f7f6f4] p-3.5 rounded-xl border border-[#eae7e1]">
                 <div className="flex items-center gap-2 mb-2.5 pb-1.5 border-b border-[#dfdbd5]">
-                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-mono text-[10px] font-bold flex items-center justify-center">
+                  <span className="w-5 h-5 rounded-full bg-[#be3420] text-white font-sans text-[10px] font-bold flex items-center justify-center">
                     5
                   </span>
-                  <span className="font-mono text-[10px] font-bold uppercase text-[#070707]">
+                  <span className="font-sans text-[10px] font-bold uppercase text-[#070707]">
                     Standard Commercial Agreement
                   </span>
                 </div>
 
                 <div className="space-y-2.5">
                   <div>
-                    <div className="flex justify-between font-mono text-[11px] mb-1">
+                    <div className="flex justify-between font-sans text-[11px] mb-1">
                       <span className="text-[#78716c]">Advance Freight on Loading:</span>
                       <span className="font-bold text-[#070707]">{advPercent}% Advance</span>
                     </div>
@@ -1367,13 +1367,13 @@ export const TransportersView: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="p-2.5 bg-white rounded-lg border border-[#dfdbd5]">
-                      <span className="text-[#78716c] block text-[10px] uppercase font-mono">
+                      <span className="text-[#78716c] block text-[10px] uppercase font-sans">
                         Balance POD Window
                       </span>
                       <span className="font-bold text-[#070707]">48 Hours</span>
                     </div>
                     <div className="p-2.5 bg-white rounded-lg border border-[#dfdbd5]">
-                      <span className="text-[#78716c] block text-[10px] uppercase font-mono">
+                      <span className="text-[#78716c] block text-[10px] uppercase font-sans">
                         Standard Detention
                       </span>
                       <span className="font-bold text-[#070707]">₹1,500 / Day</span>

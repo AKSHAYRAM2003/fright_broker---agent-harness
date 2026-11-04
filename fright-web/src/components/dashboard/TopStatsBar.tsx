@@ -40,10 +40,10 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
         <div className="relative overflow-hidden bg-white border border-[#dfdbd5] hover:border-[#a8a29e] rounded-xl p-3.5 sm:p-4 shadow-2xs transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-start justify-between gap-1.5">
-              <span className="font-mono text-[10px] text-[#78716c] uppercase tracking-wider font-semibold">
+              <span className="font-sans text-[11px] text-[#78716c] uppercase tracking-wider font-semibold">
                 Active Shipments
               </span>
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-mono text-[10px] font-bold shrink-0">
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-sans text-[11px] font-semibold shrink-0">
                 <TrendingUp className="w-3 h-3" />
                 +4 today
               </span>
@@ -54,13 +54,13 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
               <span className="font-sans text-2xl sm:text-[28px] font-bold tracking-tight text-[#070707] leading-none">
                 <NumberRoll value={activeShipments} />
               </span>
-              <span className="font-mono text-xs text-[#78716c] font-medium">loads on corridor</span>
+              <span className="font-sans text-xs text-[#78716c] font-medium">loads on corridor</span>
             </div>
           </div>
 
           {/* Segmented Pipeline Track */}
           <div className="mt-3 pt-2.5 border-t border-[#f5f4f0] flex flex-col gap-1.5">
-            <div className="flex items-center justify-between text-[#78716c] font-mono text-[10px]">
+            <div className="flex items-center justify-between text-[#78716c] font-sans text-[11px]">
               <span className="flex items-center gap-1 text-[#047857] font-semibold truncate">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#047857] shrink-0" />
                 {inTransit} in-transit
@@ -101,7 +101,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
           <div>
             <div className="flex items-start justify-between gap-1.5">
               <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] text-[#78716c] uppercase tracking-wider font-semibold">
+                <span className="font-sans text-[11px] text-[#78716c] uppercase tracking-wider font-semibold">
                   Quotes Under Review
                 </span>
                 <span className="relative flex h-2 w-2">
@@ -109,7 +109,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#b45309]" />
                 </span>
               </div>
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#fef3c7] text-[#b45309] border border-[#fde68a] rounded font-mono text-[10px] font-bold shrink-0">
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#fef3c7] text-[#b45309] border border-[#fde68a] rounded font-sans text-[11px] font-semibold shrink-0">
                 <Zap className="w-3 h-3 text-[#b45309]" />
                 {avgResponseTime} resp
               </span>
@@ -120,7 +120,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
               <span className="font-sans text-2xl sm:text-[28px] font-bold tracking-tight text-[#070707] leading-none">
                 <NumberRoll value={quotesUnderReview} />
               </span>
-              <span className="font-mono text-xs text-[#78716c] font-medium">live biddings</span>
+              <span className="font-sans text-xs text-[#78716c] font-medium">live biddings</span>
             </div>
           </div>
 
@@ -141,7 +141,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
           <div>
             <div className="flex items-start justify-between gap-1.5">
               <div className="flex items-center gap-1.5">
-                <span className="font-mono text-[10px] text-[#be3420] uppercase tracking-wider font-bold">
+                <span className="font-sans text-[11px] text-[#be3420] uppercase tracking-wider font-bold">
                   Action Items (HITL)
                 </span>
                 <span className="relative flex h-2 w-2">
@@ -149,7 +149,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#be3420]" />
                 </span>
               </div>
-              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#fef2f0] text-[#be3420] border border-[#fecaca] rounded font-mono text-[10px] font-bold shrink-0">
+              <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#fef2f0] text-[#be3420] border border-[#fecaca] rounded font-sans text-[11px] font-bold shrink-0">
                 <AlertTriangle className="w-3 h-3 text-[#be3420]" />
                 Action needed
               </span>
@@ -160,21 +160,21 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
               <span className="font-sans text-2xl sm:text-[28px] font-bold tracking-tight text-[#be3420] leading-none">
                 <NumberRoll value={actionItemsHitl} />
               </span>
-              <span className="font-mono text-xs text-[#78716c] font-medium">interventions required</span>
+              <span className="font-sans text-xs text-[#78716c] font-medium">interventions required</span>
             </div>
           </div>
 
           {/* Tri-Pill Sub-Metrics */}
-          <div className="mt-3 pt-2.5 border-t border-[#fecaca]/40 flex items-center justify-between font-mono text-[10px]">
-            <span className="text-[#be3420] font-bold flex items-center gap-0.5">
+          <div className="mt-3 pt-2.5 border-t border-[#fecaca]/40 flex items-center justify-between font-sans text-[11px]">
+            <span className="text-[#be3420] font-semibold flex items-center gap-0.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#be3420]" />
               {marginBreaches} Margin
             </span>
-            <span className="text-[#047857] font-bold flex items-center gap-0.5">
+            <span className="text-[#047857] font-semibold flex items-center gap-0.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#047857]" />
               {readyToLock} Ready
             </span>
-            <span className="text-[#b45309] font-bold flex items-center gap-0.5">
+            <span className="text-[#b45309] font-semibold flex items-center gap-0.5">
               <span className="h-1.5 w-1.5 rounded-full bg-[#b45309]" />
               {payloadDeficits} Deficit
             </span>
@@ -185,10 +185,10 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
         <div className="relative overflow-hidden bg-white border border-[#dfdbd5] hover:border-[#a8a29e] rounded-xl p-3.5 sm:p-4 shadow-2xs transition-all duration-300 flex flex-col justify-between group">
           <div>
             <div className="flex items-start justify-between gap-1.5">
-              <span className="font-mono text-[10px] text-[#78716c] uppercase tracking-wider font-semibold">
+              <span className="font-sans text-[11px] text-[#78716c] uppercase tracking-wider font-semibold">
                 Gross Margin Locked
               </span>
-              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-mono text-[10px] font-bold shrink-0">
+              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] rounded font-sans text-[11px] font-semibold shrink-0">
                 <ShieldCheck className="w-3 h-3 text-[#047857]" />
                 +12.4%
               </span>
@@ -203,7 +203,7 @@ export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
           </div>
 
           {/* Efficiency Benchmark */}
-          <div className="mt-3 pt-2.5 border-t border-[#f5f4f0] flex items-center justify-between font-mono text-[10px]">
+          <div className="mt-3 pt-2.5 border-t border-[#f5f4f0] flex items-center justify-between font-sans text-[11px]">
             <span className="text-[#78716c]">Avg / Dispatch:</span>
             <span className="text-[#070707] font-bold tracking-tight">
               <NumberRoll value={avgMarginPerDispatch} prefix="₹" />{" "}

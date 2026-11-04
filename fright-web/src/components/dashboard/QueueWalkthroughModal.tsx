@@ -155,11 +155,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
                 <h3 className="font-sans text-sm font-bold text-[#070707]">
                   Stageshow: AI Action Queue Walkthrough
                 </h3>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-[#be3420] border border-[#be3420]/25 font-bold uppercase">
+                <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-white text-[#be3420] border border-[#be3420]/25 font-bold uppercase">
                   Choreographed Simulation
                 </span>
               </div>
-              <p className="font-mono text-[11px] text-[#78716c]">
+              <p className="font-sans text-[11px] text-[#78716c]">
                 End-to-End Life of a Load: Ingestion ➔ Auto-Matching ➔ Quote ➔ WhatsApp Counter ➔ 1-Click LR
               </p>
             </div>
@@ -175,7 +175,7 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
         </div>
 
         {/* 6-Beat Step Progress Indicator */}
-        <div className="grid grid-cols-6 border-b border-[#eae7e1] bg-[#fcfbf9] text-[10px] font-mono">
+        <div className="grid grid-cols-6 border-b border-[#eae7e1] bg-[#fcfbf9] text-[10px] font-sans">
           {[
             { num: 1, label: "1. Intake" },
             { num: 2, label: "2. Entity Parse" },
@@ -229,11 +229,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 1 && (
             <div className="flex flex-col gap-3 max-w-xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#78716c] font-semibold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#78716c] font-semibold uppercase flex items-center gap-1.5">
                   <MessageSquare className="w-4 h-4 text-[#047857]" />
                   Shipper Inbound (WhatsApp Direct)
                 </span>
-                <span className="font-mono text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
+                <span className="font-sans text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
                   Just now
                 </span>
               </div>
@@ -259,39 +259,39 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 2 && (
             <div className="flex flex-col gap-3.5 max-w-2xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#be3420] font-bold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#be3420] font-bold uppercase flex items-center gap-1.5">
                   <Sparkles className="w-4 h-4 text-[#be3420]" />
                   AI Entity Extraction &amp; Validation
                 </span>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-white text-[#047857] border border-[#a7f3d0] font-bold">
+                <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-white text-[#047857] border border-[#a7f3d0] font-bold">
                   100% Complete (0 Missing)
                 </span>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 <div className="p-3 bg-white rounded-xl border border-[#dfdbd5] shadow-2xs">
-                  <span className="font-mono text-[10px] text-[#78716c]">Origin Hub</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Origin Hub</span>
                   <p className="font-bold text-xs text-[#070707] mt-0.5">Peenya, BLR</p>
-                  <span className="font-mono text-[10px] text-[#047857]">KA Depot #04</span>
+                  <span className="font-sans text-[10px] text-[#047857]">KA Depot #04</span>
                 </div>
                 <div className="p-3 bg-white rounded-xl border border-[#dfdbd5] shadow-2xs">
-                  <span className="font-mono text-[10px] text-[#78716c]">Destination</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Destination</span>
                   <p className="font-bold text-xs text-[#070707] mt-0.5">Bhiwandi, MH</p>
-                  <span className="font-mono text-[10px] text-[#be3420]">980 km (NH 48)</span>
+                  <span className="font-sans text-[10px] text-[#be3420]">980 km (NH 48)</span>
                 </div>
                 <div className="p-3 bg-white rounded-xl border border-[#dfdbd5] shadow-2xs">
-                  <span className="font-mono text-[10px] text-[#78716c]">Payload &amp; Body</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Payload &amp; Body</span>
                   <p className="font-bold text-xs text-[#070707] mt-0.5">21 MT Coils</p>
-                  <span className="font-mono text-[10px] text-[#78716c]">40ft Trailer</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">40ft Trailer</span>
                 </div>
                 <div className="p-3 bg-white rounded-xl border border-[#dfdbd5] shadow-2xs">
-                  <span className="font-mono text-[10px] text-[#78716c]">Target Rate</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Target Rate</span>
                   <p className="font-bold text-sm text-[#047857] mt-0.5">₹50,000</p>
-                  <span className="font-mono text-[10px] text-[#78716c]">₹2,380 / MT</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">₹2,380 / MT</span>
                 </div>
               </div>
 
-              <div className="p-3 bg-[#fef2f0] border border-[#fecaca] rounded-xl flex items-center justify-between text-xs font-mono">
+              <div className="p-3 bg-[#fef2f0] border border-[#fecaca] rounded-xl flex items-center justify-between text-xs font-sans">
                 <span className="text-[#be3420] font-semibold">Matched Corridors: Bengaluru ➔ Mumbai (NH 48)</span>
                 <span className="text-[#070707]">Querying 15 Carrier Fleets...</span>
               </div>
@@ -302,11 +302,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 3 && (
             <div className="flex flex-col gap-3 max-w-2xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#070707] font-bold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#070707] font-bold uppercase flex items-center gap-1.5">
                   <Truck className="w-4 h-4 text-[#be3420]" />
                   Transporter Fleet Auto-Match (Top 3 Carriers)
                 </span>
-                <span className="font-mono text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
+                <span className="font-sans text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
                   All VAHAN &amp; FASTag Verified
                 </span>
               </div>
@@ -323,9 +323,9 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
                   >
                     <div className="flex flex-col">
                       <span className="font-bold text-[#070707]">{c.name}</span>
-                      <span className="font-mono text-[10px] text-[#78716c]">{c.phone} • {c.fleet}</span>
+                      <span className="font-sans text-[10px] text-[#78716c]">{c.phone} • {c.fleet}</span>
                     </div>
-                    <span className="font-mono text-[10px] text-[#047857] font-semibold bg-[#ecfdf5] px-2 py-0.5 rounded">
+                    <span className="font-sans text-[10px] text-[#047857] font-semibold bg-[#ecfdf5] px-2 py-0.5 rounded">
                       {c.rating} Affinity Match
                     </span>
                   </div>
@@ -336,7 +336,7 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
                 <button
                   type="button"
                   id="target-broadcast"
-                  className={`px-5 py-2.5 rounded-lg font-mono text-xs font-semibold shadow-2xs flex items-center gap-2 transition-all ${
+                  className={`px-5 py-2.5 rounded-lg font-sans text-xs font-semibold shadow-2xs flex items-center gap-2 transition-all ${
                     cursor.isClicking
                       ? "bg-[#047857] text-white scale-95"
                       : "bg-[#be3420] text-white"
@@ -353,11 +353,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 4 && (
             <div className="flex flex-col gap-3 max-w-2xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#be3420] font-bold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#be3420] font-bold uppercase flex items-center gap-1.5">
                   <TrendingUp className="w-4 h-4 text-[#be3420]" />
                   Inbound Quote Received: Ghatge Patil Transports
                 </span>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#fef3c7] text-[#b45309] border border-[#fde68a] font-bold">
+                <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-[#fef3c7] text-[#b45309] border border-[#fde68a] font-bold">
                   SLA: 07:44 remaining
                 </span>
               </div>
@@ -365,26 +365,26 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
               {/* 4 Financial Blocks with Rolling Numbers */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 bg-white p-3.5 rounded-xl border border-[#dfdbd5] shadow-2xs">
                 <div>
-                  <span className="font-mono text-[10px] text-[#78716c]">Shipper Target</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Shipper Target</span>
                   <p className="font-headline-sm text-sm text-[#070707] font-bold mt-0.5">₹50,000</p>
-                  <span className="font-mono text-[10px] text-[#78716c]">₹2,380 / MT</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">₹2,380 / MT</span>
                 </div>
                 <div>
-                  <span className="font-mono text-[10px] text-[#78716c]">Transporter Quote</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Transporter Quote</span>
                   <p className="font-headline-sm text-sm text-[#070707] font-bold mt-0.5">₹48,500</p>
-                  <span className="font-mono text-[10px] text-[#78716c]">Ghatge Patil</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Ghatge Patil</span>
                 </div>
                 <div>
-                  <span className="font-mono text-[10px] text-[#be3420] font-semibold">Net Margin</span>
+                  <span className="font-sans text-[10px] text-[#be3420] font-semibold">Net Margin</span>
                   <p className="font-headline-sm text-sm text-[#be3420] font-bold mt-0.5">
                     <NumberRoll value={1500} prefix="₹" /> (3.0%)
                   </p>
-                  <span className="font-mono text-[10px] text-[#be3420] font-bold">-₹1,000 vs Floor</span>
+                  <span className="font-sans text-[10px] text-[#be3420] font-bold">-₹1,000 vs Floor</span>
                 </div>
                 <div>
-                  <span className="font-mono text-[10px] text-[#78716c]">Market Benchmark</span>
+                  <span className="font-sans text-[10px] text-[#78716c]">Market Benchmark</span>
                   <p className="font-headline-sm text-sm text-[#047857] font-bold mt-0.5">₹47,200</p>
-                  <span className="font-mono text-[10px] text-[#047857]">94% Confidence</span>
+                  <span className="font-sans text-[10px] text-[#047857]">94% Confidence</span>
                 </div>
               </div>
 
@@ -404,18 +404,18 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 5 && (
             <div className="flex flex-col gap-3 max-w-2xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#047857] font-bold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#047857] font-bold uppercase flex items-center gap-1.5">
                   <MessageSquare className="w-4 h-4 text-[#047857]" />
                   WhatsApp Counter Negotiation Stream
                 </span>
-                <span className="font-mono text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
+                <span className="font-sans text-[10px] text-[#047857] bg-[#ecfdf5] px-2 py-0.5 rounded border border-[#a7f3d0] font-bold">
                   Counter Accepted
                 </span>
               </div>
 
               <div className="flex flex-col gap-2">
                 {/* Outbound counter */}
-                <div className="self-end max-w-md bg-white border border-[#eae7e1] p-3 rounded-xl rounded-tr-none text-xs text-[#070707] shadow-2xs font-mono">
+                <div className="self-end max-w-md bg-white border border-[#eae7e1] p-3 rounded-xl rounded-tr-none text-xs text-[#070707] shadow-2xs font-sans">
                   <span className="text-[10px] text-[#be3420] font-bold block mb-0.5">Broker Desk ➔ Ghatge Patil:</span>
                   &quot;Target rate approved for this trip is ₹46,000 all inclusive. Confirm if vehicle KA-04-MF-5678 can place at 6 AM.&quot;
                 </div>
@@ -429,11 +429,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
 
               {/* Recalculated Margin Roller */}
               <div className="p-3 bg-white rounded-xl border border-[#a7f3d0] flex items-center justify-between text-xs shadow-2xs">
-                <span className="font-mono text-[#78716c]">Negotiated Margin Gain:</span>
+                <span className="font-sans text-[#78716c]">Negotiated Margin Gain:</span>
                 <div className="flex items-center gap-2">
-                  <span className="line-through text-[#78716c] font-mono">₹1,500 (3.0%)</span>
+                  <span className="line-through text-[#78716c] font-sans">₹1,500 (3.0%)</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#047857]" />
-                  <span className="font-bold text-[#047857] font-mono text-sm">
+                  <span className="font-bold text-[#047857] font-sans text-sm">
                     <NumberRoll value={3500} prefix="₹" /> (7.0%)
                   </span>
                 </div>
@@ -445,11 +445,11 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           {currentBeat === 6 && (
             <div className="flex flex-col gap-3.5 max-w-2xl mx-auto w-full animate-fadeIn">
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-[#047857] font-bold uppercase flex items-center gap-1.5">
+                <span className="font-sans text-xs text-[#047857] font-bold uppercase flex items-center gap-1.5">
                   <FileCheck className="w-4 h-4 text-[#047857]" />
                   Trip Confirmed • Digital Lorry Receipt Generated
                 </span>
-                <span className="font-mono text-[10px] px-2 py-0.5 rounded bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] font-bold">
+                <span className="font-sans text-[10px] px-2 py-0.5 rounded bg-[#ecfdf5] text-[#047857] border border-[#a7f3d0] font-bold">
                   FSM: ASSIGNED &amp; LOCKED
                 </span>
               </div>
@@ -458,16 +458,16 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
               <div className="bg-white border-2 border-[#a7f3d0] rounded-xl p-4 shadow-sm flex flex-col gap-3">
                 <div className="flex items-center justify-between border-b border-[#eae7e1] pb-2.5">
                   <div>
-                    <span className="font-mono text-[10px] text-[#78716c]">Official Lorry Receipt</span>
-                    <h4 className="font-mono text-sm font-bold text-[#047857]">LR-2026-BLR-8924</h4>
+                    <span className="font-sans text-[10px] text-[#78716c]">Official Lorry Receipt</span>
+                    <h4 className="font-sans text-sm font-bold text-[#047857]">LR-2026-BLR-8924</h4>
                   </div>
                   <div className="text-right">
-                    <span className="font-mono text-[10px] text-[#78716c]">Locked Gross Margin</span>
-                    <p className="font-mono text-sm font-bold text-[#047857]">+₹3,500 (7.0%)</p>
+                    <span className="font-sans text-[10px] text-[#78716c]">Locked Gross Margin</span>
+                    <p className="font-sans text-sm font-bold text-[#047857]">+₹3,500 (7.0%)</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-sans">
                   <div>
                     <span className="text-[#78716c] text-[10px]">Route:</span>
                     <p className="font-bold text-[#070707]">Peenya ➔ Bhiwandi</p>
@@ -487,7 +487,7 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
                 </div>
               </div>
 
-              <div className="p-3 bg-[#ecfdf5] rounded-lg border border-[#a7f3d0] flex items-center justify-between text-xs font-mono text-[#047857]">
+              <div className="p-3 bg-[#ecfdf5] rounded-lg border border-[#a7f3d0] flex items-center justify-between text-xs font-sans text-[#047857]">
                 <span className="flex items-center gap-1.5 font-bold">
                   <ShieldCheck className="w-4 h-4" />
                   Trip synced to Active Dispatch Board &amp; WhatsApp gate pass issued.
@@ -505,7 +505,7 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
             <button
               type="button"
               onClick={() => setIsPlaying(!isPlaying)}
-              className="px-3 py-1.5 bg-white hover:bg-[#eae7e1] text-[#070707] font-mono text-xs font-semibold rounded-lg border border-[#dfdbd5] flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
+              className="px-3 py-1.5 bg-white hover:bg-[#eae7e1] text-[#070707] font-sans text-xs font-semibold rounded-lg border border-[#dfdbd5] flex items-center gap-1.5 shadow-2xs transition-all active:scale-95"
             >
               {isPlaying ? (
                 <>
@@ -549,7 +549,7 @@ export const QueueWalkthroughModal: React.FC<QueueWalkthroughModalProps> = ({
           </div>
 
           {/* Speed Toggle */}
-          <div className="flex items-center gap-1 font-mono text-[11px] bg-white border border-[#dfdbd5] rounded-lg p-0.5">
+          <div className="flex items-center gap-1 font-sans text-[11px] bg-white border border-[#dfdbd5] rounded-lg p-0.5">
             {[1, 1.5, 2].map((s) => (
               <button
                 key={s}

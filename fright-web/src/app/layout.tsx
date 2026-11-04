@@ -56,7 +56,7 @@ export default function RootLayout({
       data-theme="light"
       data-mode="light"
       suppressHydrationWarning
-      className="geistsans_d5a4f12f-module__AHuHVa__variable geistmono_157ca88a-module__k0_9hG__variable scroll-smooth antialiased"
+      className="scroll-smooth antialiased"
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
