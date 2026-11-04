@@ -51,3 +51,4 @@ export const StageshowCursor: React.FC<CursorPosition> = ({
     </div>
   );
 };
+
