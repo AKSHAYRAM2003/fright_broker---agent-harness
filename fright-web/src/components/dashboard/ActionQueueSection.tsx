@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { LoadItem, CarrierQuote } from "@/types/load";
+import { QueueWalkthroughModal } from "@/components/dashboard/QueueWalkthroughModal";
+import { NumberRoll } from "@/components/stageshow/NumberRoll";
 
 interface ActionQueueSectionProps {
   loads: LoadItem[];
@@ -25,6 +27,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
   >("all");
   const [counterOpenId, setCounterOpenId] = useState<string | null>(null);
   const [counterAmounts, setCounterAmounts] = useState<Record<string, string>>({});
+  const [walkthroughOpen, setWalkthroughOpen] = useState(false);
 
   const activeDecisionsCount = loads.filter(
     (l) => l.status === "DECISION_REQUIRED" || l.status === "INCOMPLETE" || l.status === "DISPATCHING_RFQS"
@@ -82,7 +85,17 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
           </button>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => setWalkthroughOpen(true)}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#fef2f0] hover:bg-[#fde2de] text-[#be3420] border border-[#fecaca] font-mono text-[11px] font-semibold transition-all active:scale-95 shadow-2xs"
+            title="Watch choreographed AI Operations Walkthrough"
+          >
+            <span className="material-symbols-outlined text-sm text-[#be3420]">play_circle</span>
+            <span>Watch AI Workflow</span>
+          </button>
+
           <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-high rounded text-on-surface-variant font-mono text-[11px]">
             <span className="material-symbols-outlined text-sm text-primary">pause_circle</span>
             <span>Auto-pilot: Paused for HITL</span>
@@ -612,7 +625,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                     load.isMarginFloorAlert ? "text-primary" : "text-secondary"
                   }`}
                 >
-                  ₹{netMargin.toLocaleString("en-IN")} ({marginPct.toFixed(1)}%)
+                  <NumberRoll value={netMargin} prefix="₹" /> (<NumberRoll value={marginPct} decimals={1} suffix="%" />)
                 </span>
                 <span className="font-mono text-[10px] text-outline">
                   {load.isMarginFloorAlert ? "-₹1,000 vs Min Floor" : "+₹2,000 over Target"}
@@ -713,6 +726,12 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
           </article>
         );
       })}
+
+      {/* Guided Stageshow AI Action Queue Walkthrough Modal */}
+      <QueueWalkthroughModal
+        isOpen={walkthroughOpen}
+        onClose={() => setWalkthroughOpen(false)}
+      />
     </div>
   );
 };
