@@ -1,21 +1,115 @@
 "use client";
 
 import React, { useState } from "react";
+import { WhatsAppFeedEvent } from "@/types/load";
 
 interface WhatsAppLiveFeedProps {
   onOpenSimulator?: () => void;
+  events?: WhatsAppFeedEvent[];
+  onSendManualCounter?: (text: string) => void;
 }
 
-export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimulator }) => {
+const DEFAULT_EVENTS: WhatsAppFeedEvent[] = [
+  {
+    id: "evt_manjunatha",
+    type: "INBOUND_QUOTE",
+    sender: "Sri Manjunatha Transports",
+    phone: "+91 94480 33812",
+    time: "Just now",
+    text: "Kal subah Whitefield se Pune 16T Taurus urgent FMCG load chahiye. Return rate match karenge toh abhi gadi lagata hu.",
+    meta: {
+      route: "Whitefield (BLR) ➔ Pune (Chakan)",
+      truck: "16 MT • 10-W Taurus",
+      badge: "High Intent (Immediate)",
+      badgeType: "success",
+    },
+    language: "hinglish",
+  },
+  {
+    id: "evt_patel",
+    type: "INBOUND_QUOTE",
+    sender: "Patel Logistics (Vapi)",
+    phone: "+91 98201 44520",
+    time: "2m ago",
+    text: "Vapi to Chennai 25MT trailer rate update ₹72,000 all inclusive GST extra. Vehicle GJ-15-X-8802 ready.",
+    meta: {
+      loadId: "#VAP-CHE-99",
+      truck: "25 MT Trailer",
+      badge: "Matched to Indent #VAP-CHE-99",
+      badgeType: "info",
+    },
+    language: "english",
+  },
+  {
+    id: "evt_anjaneya",
+    type: "INBOUND_INQUIRY",
+    sender: "Anjaneya Roadways (Bengaluru)",
+    phone: "+91 97412 88201",
+    time: "5m ago",
+    text: "ಬೆಂಗಳೂರು-ಕೊಯಮತ್ತೂರು 9 ಟನ್ ಲೋಡ್ ಲಭ್ಯವಿದೆ ತಕ್ಷಣ ಬೇಕು. ಬಾಡಿಗೆ ರೇಟ್ ಕನ್ಫರ್ಮ್ ಮಾಡಿ.",
+    meta: {
+      route: "BLR-CJB 9T Eicher",
+      badge: "Auto-translated (Kannada)",
+      badgeType: "primary",
+    },
+    language: "kannada",
+  },
+  {
+    id: "evt_hindustan",
+    type: "BOOKING_CONFIRMATION",
+    sender: "Hindustan Highway Carriers",
+    phone: "+91 98450 11923",
+    time: "11m ago",
+    text: "Driver assigned for Surat trip: KA-01-AG-4919 RC uploaded and verified.",
+    meta: {
+      badge: "Vahan Database Authenticated",
+      badgeType: "success",
+    },
+    language: "english",
+  },
+];
+
+export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({
+  onOpenSimulator,
+  events,
+  onSendManualCounter,
+}) => {
   const [langFilter, setLangFilter] = useState<"all" | "kannada" | "hinglish" | "english">("all");
   const [smartCounterText, setSmartCounterText] = useState(
     "₹54,000 confirmed for 16T Taurus tomorrow 7 AM. Send driver details."
   );
   const [sentSuccess, setSentSuccess] = useState(false);
 
+  const displayEvents = events && events.length > 0 ? events : DEFAULT_EVENTS;
+
+  const filteredEvents = displayEvents.filter((evt) => {
+    if (langFilter === "all") return true;
+    if (langFilter === "kannada") return evt.language === "kannada" || evt.text.includes("ಬೆಂಗಳೂರು") || evt.text.includes("ಪೀಣ್ಯ");
+    if (langFilter === "hinglish") return evt.language === "hinglish" || evt.text.includes("Kal subah") || evt.text.includes("gadi");
+    if (langFilter === "english") return evt.language === "english";
+    return true;
+  });
+
   const handleSendCounter = () => {
+    if (onSendManualCounter) {
+      onSendManualCounter(smartCounterText);
+    }
     setSentSuccess(true);
     setTimeout(() => setSentSuccess(false), 2500);
+  };
+
+  const getBadgeClass = (type?: string) => {
+    switch (type) {
+      case "success":
+        return "bg-secondary-container text-on-secondary-container";
+      case "error":
+        return "bg-error-container text-on-error-container";
+      case "primary":
+        return "bg-primary-container text-on-primary-container";
+      case "info":
+      default:
+        return "bg-surface-container-high text-on-surface-variant";
+    }
   };
 
   return (
@@ -34,7 +128,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
               </h3>
             </div>
             <span className="font-mono text-[10px] text-secondary font-mono">
-              3 Active Channels
+              {displayEvents.length} Active Events
             </span>
           </div>
           <span className="font-mono text-[11px] text-outline">
@@ -52,7 +146,7 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
                   : "text-[#78716c] hover:text-[#070707] border border-transparent"
               }`}
             >
-              All
+              All ({displayEvents.length})
             </button>
             <button
               onClick={() => setLangFilter("kannada")}
@@ -90,108 +184,116 @@ export const WhatsAppLiveFeed: React.FC<WhatsAppLiveFeedProps> = ({ onOpenSimula
           </div>
         </div>
 
-        {/* Primary Incoming Item (Sri Manjunatha Transports) */}
-        <div className="bg-surface-container-low border border-surface-container-high p-3 rounded-lg flex flex-col gap-2.5 shadow-inner">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-1.5">
-              <span className="material-symbols-outlined text-secondary text-base">chat</span>
-              <span className="font-headline-sm text-xs text-on-surface font-semibold truncate">
-                Sri Manjunatha Transports
-              </span>
-            </div>
-            <span className="font-mono text-[10px] text-secondary font-mono">Just now</span>
-          </div>
+        {/* Dynamic Feed Item List */}
+        <div className="flex flex-col gap-3 max-h-[560px] overflow-y-auto pr-0.5">
+          {filteredEvents.map((evt, idx) => {
+            const isLatest = idx === 0;
+            const isOutbound = evt.type === "OUTBOUND_RFQ" || evt.type === "OUTBOUND_CLARIFICATION" || evt.type === "COUNTER_OFFER";
+            const isBooking = evt.type === "BOOKING_CONFIRMATION";
 
-          <div className="bg-surface text-on-surface p-2.5 rounded-lg border border-surface-container-high font-sans text-xs leading-relaxed italic">
-            &quot;Kal subah Whitefield se Pune 16T Taurus urgent FMCG load chahiye. Return rate match karenge toh abhi gadi lagata hu.&quot;
-          </div>
-
-          <div className="grid grid-cols-2 gap-1.5 bg-surface p-2 rounded text-on-surface font-mono text-[10px] border border-surface-container-high">
-            <div className="flex flex-col">
-              <span className="text-outline">Origin:</span>
-              <span className="font-medium text-on-surface truncate">Whitefield (BLR)</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-outline">Destination:</span>
-              <span className="font-medium text-on-surface truncate">Pune (Chakan)</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-outline">Payload / Body:</span>
-              <span className="font-medium text-on-surface truncate">16 MT • 10-W Taurus</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-outline">Intent / Sentiment:</span>
-              <span className="font-semibold text-secondary truncate">High Intent (Immediate)</span>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-1.5 pt-0.5">
-            <span className="font-mono text-[10px] text-outline">Automated Smart Counter:</span>
-            <div className="flex items-center gap-1.5">
-              <input
-                type="text"
-                value={smartCounterText}
-                onChange={(e) => setSmartCounterText(e.target.value)}
-                className="flex-1 bg-surface border border-surface-container-high text-on-surface text-xs px-2.5 py-1.5 rounded focus:outline-none focus:border-primary transition-colors font-sans truncate"
-              />
-              <button
-                type="button"
-                onClick={handleSendCounter}
-                className="px-3 py-1.5 bg-secondary text-on-secondary font-headline-sm text-xs font-semibold rounded hover:opacity-95 transition-all flex items-center justify-center shrink-0"
+            return (
+              <div
+                key={evt.id}
+                className={`rounded-lg p-3 flex flex-col gap-2 transition-all duration-300 ${
+                  isBooking
+                    ? "bg-[#ecfdf5] border border-[#a7f3d0] shadow-2xs"
+                    : isOutbound
+                    ? "bg-surface-container-low border border-[#be3420]/25 shadow-2xs"
+                    : isLatest
+                    ? "bg-surface-container-low border border-surface-container-high shadow-xs"
+                    : "bg-surface-container-low/70 border border-surface-container-high/60"
+                }`}
               >
-                {sentSuccess ? "Sent!" : "Send"}
-              </button>
-            </div>
-          </div>
+                {/* Event Header */}
+                <div className="flex items-center justify-between gap-1">
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="material-symbols-outlined text-base shrink-0 text-secondary">
+                      {isBooking ? "check_circle" : isOutbound ? "forward_to_inbox" : "chat"}
+                    </span>
+                    <span className="font-headline-sm text-xs text-on-surface font-semibold truncate">
+                      {evt.sender}
+                    </span>
+                    {isOutbound && (
+                      <span className="font-mono text-[9px] px-1.5 py-0.2 rounded bg-primary-container text-on-primary-container font-bold uppercase shrink-0">
+                        Outbound RFQ
+                      </span>
+                    )}
+                    {isBooking && (
+                      <span className="font-mono text-[9px] px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-bold uppercase shrink-0">
+                        LR Issued
+                      </span>
+                    )}
+                  </div>
+                  <span className="font-mono text-[10px] text-secondary shrink-0 font-medium">
+                    {evt.time}
+                  </span>
+                </div>
+
+                {/* Event Message Text */}
+                <div
+                  className={`p-2.5 rounded-lg border font-sans text-xs leading-relaxed ${
+                    isBooking
+                      ? "bg-white text-[#047857] border-[#a7f3d0] font-medium"
+                      : isOutbound
+                      ? "bg-white text-on-surface border-[#eae7e1] font-mono text-[11px]"
+                      : "bg-surface text-on-surface border-surface-container-high italic"
+                  }`}
+                >
+                  &quot;{evt.text}&quot;
+                </div>
+
+                {/* Event Meta Badges */}
+                {evt.meta && (
+                  <div className="flex flex-wrap items-center gap-1.5 font-mono text-[10px]">
+                    {evt.meta.loadId && (
+                      <span className="px-1.5 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface font-bold">
+                        {evt.meta.loadId}
+                      </span>
+                    )}
+                    {evt.meta.route && (
+                      <span className="px-1.5 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface truncate">
+                        {evt.meta.route}
+                      </span>
+                    )}
+                    {evt.meta.truck && (
+                      <span className="px-1.5 py-0.5 rounded bg-surface border border-surface-container-high text-on-surface truncate">
+                        {evt.meta.truck}
+                      </span>
+                    )}
+                    {evt.meta.rate && (
+                      <span className="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-bold">
+                        {evt.meta.rate}
+                      </span>
+                    )}
+                    {evt.meta.badge && (
+                      <span className={`px-1.5 py-0.5 rounded font-medium ${getBadgeClass(evt.meta.badgeType)}`}>
+                        {evt.meta.badge}
+                      </span>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Secondary Incoming Feed Items */}
-        <div className="flex flex-col gap-2.5 divide-y divide-surface-container-high">
-          {/* Patel Logistics */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Patel Logistics (Vapi)</span>
-              <span className="text-outline">2m ago</span>
-            </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
-              &quot;Vapi to Chennai 25MT trailer rate update ₹72,000 all inclusive GST extra...&quot;
-            </p>
-            <div className="flex items-center gap-2 font-mono text-[10px] text-outline mt-0.5">
-              <span className="text-tertiary">Parsed: 25 MT Trailer</span>
-              <span>•</span>
-              <span className="text-secondary font-mono">Matched to Indent #VAP-CHE-99</span>
-            </div>
-          </div>
-
-          {/* Anjaneya Roadways (Kannada) */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Anjaneya Roadways (Bengaluru)</span>
-              <span className="text-outline">5m ago</span>
-            </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
-              &quot;ಬೆಂಗಳೂರು-ಕೊಯಮತ್ತೂರು 9 ಟನ್ ಲೋಡ್ ಲಭ್ಯವಿದೆ ತಕ್ಷಣ ಬೇಕು...&quot;
-            </p>
-            <div className="flex items-center gap-2 font-mono text-[10px] text-outline mt-0.5">
-              <span className="text-primary">Parsed: BLR-CJB 9T Eicher</span>
-              <span>•</span>
-              <span className="text-on-surface-variant">Auto-translated</span>
-            </div>
-          </div>
-
-          {/* Hindustan Highway Carriers */}
-          <div className="pt-2 flex flex-col gap-0.5">
-            <div className="flex items-center justify-between font-mono text-[11px]">
-              <span className="font-medium text-on-surface">Hindustan Highway Carriers</span>
-              <span className="text-outline">11m ago</span>
-            </div>
-            <p className="font-sans text-xs text-on-surface-variant line-clamp-1 italic">
-              &quot;Driver assigned for Surat trip: KA-01-AG-4919 RC uploaded.&quot;
-            </p>
-            <div className="flex items-center gap-1.5 font-mono text-[10px] text-secondary mt-0.5">
-              <span className="material-symbols-outlined text-xs">verified</span>
-              <span>Vahan Database Authenticated</span>
-            </div>
+        {/* Quick Automated Smart Counter Box */}
+        <div className="flex flex-col gap-1.5 pt-2 border-t border-surface-container-high">
+          <span className="font-mono text-[10px] text-outline">Quick Broadcast WhatsApp Reply:</span>
+          <div className="flex items-center gap-1.5">
+            <input
+              type="text"
+              value={smartCounterText}
+              onChange={(e) => setSmartCounterText(e.target.value)}
+              className="flex-1 bg-surface border border-surface-container-high text-on-surface text-xs px-2.5 py-1.5 rounded focus:outline-none focus:border-primary transition-colors font-sans truncate"
+            />
+            <button
+              type="button"
+              onClick={handleSendCounter}
+              className="px-3 py-1.5 bg-secondary text-on-secondary font-headline-sm text-xs font-semibold rounded hover:opacity-95 transition-all flex items-center justify-center shrink-0 active:scale-95"
+            >
+              {sentSuccess ? "Dispatched!" : "Send"}
+            </button>
           </div>
         </div>
       </div>

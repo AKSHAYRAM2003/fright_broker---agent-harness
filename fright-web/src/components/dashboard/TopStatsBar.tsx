@@ -1,8 +1,33 @@
 "use client";
 
 import React from "react";
+import { DashboardStats } from "@/types/load";
 
-export const TopStatsBar: React.FC = () => {
+interface TopStatsBarProps {
+  stats?: Partial<DashboardStats>;
+}
+
+export const TopStatsBar: React.FC<TopStatsBarProps> = ({ stats }) => {
+  const activeShipments = stats?.activeShipments ?? 28;
+  const inTransit = stats?.inTransit ?? 18;
+  const loading = stats?.loading ?? 6;
+  const unassigned = stats?.unassigned ?? 4;
+  const quotesUnderReview = stats?.quotesUnderReview ?? 5;
+  const avgResponseTime = stats?.avgResponseTime ?? "4.2m";
+  const actionItemsHitl = stats?.actionItemsHitl ?? 3;
+  const marginBreaches = stats?.marginBreaches ?? 1;
+  const readyToLock = stats?.readyToLock ?? 1;
+  const payloadDeficits = stats?.payloadDeficits ?? 1;
+  const grossMarginLocked = stats?.grossMarginLocked ?? 184500;
+  const avgMarginPerDispatch = stats?.avgMarginPerDispatch ?? 6589;
+  const avgMarginPct = stats?.avgMarginPct ?? 11.2;
+
+  // Percentage calculations for progress bar
+  const totalLoads = activeShipments || 1;
+  const inTransitPct = Math.min(100, Math.round((inTransit / totalLoads) * 100));
+  const loadingPct = Math.min(100 - inTransitPct, Math.round((loading / totalLoads) * 100));
+  const unassignedPct = Math.max(0, 100 - inTransitPct - loadingPct);
+
   return (
     <div className="w-full overflow-x-auto no-scrollbar pb-0.5">
       <section
@@ -18,7 +43,7 @@ export const TopStatsBar: React.FC = () => {
               </span>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#18181b]">
-                  28
+                  {activeShipments}
                 </span>
                 <span className="font-mono text-[11px] text-[#71717a] font-medium">loads</span>
               </div>
@@ -32,19 +57,19 @@ export const TopStatsBar: React.FC = () => {
           <div className="mt-2.5 sm:mt-3">
             <div className="flex items-center justify-between text-[#71717a] font-mono text-[9px] sm:text-[10px] mb-1">
               <span className="flex items-center gap-1 text-[#047857] font-medium truncate">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#047857] shrink-0"></span>18 in-transit
+                <span className="h-1.5 w-1.5 rounded-full bg-[#047857] shrink-0"></span>{inTransit} in-transit
               </span>
               <span className="flex items-center gap-1 text-[#be3420] font-medium truncate">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#be3420] shrink-0"></span>6 loading
+                <span className="h-1.5 w-1.5 rounded-full bg-[#be3420] shrink-0"></span>{loading} loading
               </span>
               <span className="flex items-center gap-1 text-[#a1a1aa] truncate">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#e7e5e4] shrink-0"></span>4 unassigned
+                <span className="h-1.5 w-1.5 rounded-full bg-[#e7e5e4] shrink-0"></span>{unassigned} unassigned
               </span>
             </div>
             <div className="w-full h-1.5 bg-[#f5f4f0] rounded-full overflow-hidden flex">
-              <div className="bg-[#047857] h-full" style={{ width: "64.2%" }} title="18 In-Transit (64%)"></div>
-              <div className="bg-[#be3420] h-full" style={{ width: "21.4%" }} title="6 Loading (21%)"></div>
-              <div className="bg-[#e7e5e4] h-full" style={{ width: "14.4%" }} title="4 Unassigned (15%)"></div>
+              <div className="bg-[#047857] h-full transition-all duration-500" style={{ width: `${inTransitPct}%` }} title={`${inTransit} In-Transit (${inTransitPct}%)`}></div>
+              <div className="bg-[#be3420] h-full transition-all duration-500" style={{ width: `${loadingPct}%` }} title={`${loading} Loading (${loadingPct}%)`}></div>
+              <div className="bg-[#e7e5e4] h-full transition-all duration-500" style={{ width: `${unassignedPct}%` }} title={`${unassigned} Unassigned (${unassignedPct}%)`}></div>
             </div>
           </div>
         </div>
@@ -64,14 +89,14 @@ export const TopStatsBar: React.FC = () => {
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#18181b]">
-                  5
+                  {quotesUnderReview}
                 </span>
                 <span className="font-mono text-[11px] text-[#71717a] font-medium">live biddings</span>
               </div>
             </div>
             <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 bg-[#fef3c7] text-[#b45309] border border-[#fde68a] rounded font-mono text-[9px] sm:text-[10px] font-bold shrink-0">
               <span className="material-symbols-outlined text-[11px]">speed</span>
-              Avg resp: 4.2m
+              Avg resp: {avgResponseTime}
             </span>
           </div>
 
@@ -102,7 +127,7 @@ export const TopStatsBar: React.FC = () => {
               </div>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-[#be3420]">
-                  3
+                  {actionItemsHitl}
                 </span>
                 <span className="font-mono text-[11px] text-[#71717a] font-medium">critical interventions</span>
               </div>
@@ -114,9 +139,9 @@ export const TopStatsBar: React.FC = () => {
           </div>
 
           <div className="mt-2.5 sm:mt-3 flex items-center justify-between font-mono text-[9px] sm:text-[10px] pt-1 border-t border-[#f5f4f0]">
-            <span className="text-[#be3420] font-bold">1 Margin Breach</span>
-            <span className="text-[#047857] font-bold">1 Ready to Lock</span>
-            <span className="text-[#b45309] font-bold">1 Payload Deficit</span>
+            <span className="text-[#be3420] font-bold">{marginBreaches} Margin Breach</span>
+            <span className="text-[#047857] font-bold">{readyToLock} Ready to Lock</span>
+            <span className="text-[#b45309] font-bold">{payloadDeficits} Payload Deficit</span>
           </div>
         </div>
 
@@ -129,7 +154,7 @@ export const TopStatsBar: React.FC = () => {
               </span>
               <div className="flex items-baseline gap-1 mt-0.5">
                 <span className="font-sans text-lg sm:text-2xl font-bold tracking-tight text-[#18181b]">
-                  ₹1,84,500
+                  ₹{grossMarginLocked.toLocaleString("en-IN")}
                 </span>
               </div>
             </div>
@@ -142,7 +167,7 @@ export const TopStatsBar: React.FC = () => {
           <div className="mt-2.5 sm:mt-3 flex items-center justify-between font-mono text-[9px] sm:text-[10px] pt-1 border-t border-[#f5f4f0]">
             <span className="text-[#71717a]">Avg / Dispatch:</span>
             <span className="text-[#18181b] font-bold tracking-tight">
-              ₹6,589 <span className="text-[#047857] font-medium">| 11.2%</span>
+              ₹{avgMarginPerDispatch.toLocaleString("en-IN")} <span className="text-[#047857] font-medium">| {avgMarginPct}%</span>
             </span>
           </div>
         </div>
