@@ -28,3 +28,7 @@ dist/
 *.swo
 .vscode/
 .idea/
+
+# Agent Skills & Cache
+.agents/
+skills-lock.json
