@@ -14,11 +14,36 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   isSidebarCollapsed = false,
 }) => {
   return (
-    <header
-      className={`fixed top-0 right-0 h-14 bg-white z-30 flex items-center justify-between px-4 sm:px-6 border-b border-[#e7e5e4] shadow-[0_1px_2px_rgba(0,0,0,0.02)] dashboard-top-navbar ${
-        isSidebarCollapsed ? "sidebar-collapsed" : "sidebar-expanded"
-      }`}
-    >
+    <>
+      <style>{`
+        .hf-top-navbar {
+          position: fixed !important;
+          top: 0px !important;
+          right: 0px !important;
+          height: 56px !important;
+          background-color: #ffffff !important;
+          border-bottom: 1px solid #e7e5e4 !important;
+          z-index: 30 !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          left: 0px !important;
+          transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @media (min-width: 768px) {
+          .hf-top-navbar.is-expanded {
+            left: 256px !important;
+          }
+          .hf-top-navbar.is-collapsed {
+            left: 76px !important;
+          }
+        }
+      `}</style>
+      <header
+        className={`hf-top-navbar px-4 sm:px-6 shadow-[0_1px_2px_rgba(0,0,0,0.02)] ${
+          isSidebarCollapsed ? "is-collapsed" : "is-expanded"
+        }`}
+      >
       {/* Global Search Bar attached directly from sidebar boundary */}
       <div className="flex-1 max-w-md sm:max-w-lg">
         <div className="relative flex items-center">
@@ -91,5 +116,6 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
         </div>
       </div>
     </header>
+    </>
   );
 };

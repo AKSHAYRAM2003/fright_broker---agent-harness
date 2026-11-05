@@ -1127,18 +1127,29 @@ img[data-nimg="fill"] {
 }
 
 /* ========================================================= */
-/* DASHBOARD TOP NAVBAR ALIGNMENT WITH FULL-HEIGHT SIDEBAR   */
+/* DASHBOARD TOP NAVBAR ATTACHMENT TO FULL-HEIGHT SIDEBAR    */
+/* Strictly flush against the sidebar at 256px / 76px        */
 /* ========================================================= */
-.dashboard-top-navbar {
-  left: 0;
-  transition: left 0.3s ease-in-out;
+.hf-top-navbar {
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  height: 56px !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e7e5e4 !important;
+  z-index: 30 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  left: 0px !important;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
-  .dashboard-top-navbar.sidebar-expanded {
+  .hf-top-navbar.is-expanded {
     left: 256px !important;
   }
-  .dashboard-top-navbar.sidebar-collapsed {
+  .hf-top-navbar.is-collapsed {
     left: 76px !important;
   }
 }
@@ -1226,18 +1237,29 @@ img[data-nimg="fill"] {
 }
 
 /* ========================================================= */
-/* DASHBOARD TOP NAVBAR ALIGNMENT WITH FULL-HEIGHT SIDEBAR   */
+/* DASHBOARD TOP NAVBAR ATTACHMENT TO FULL-HEIGHT SIDEBAR    */
+/* Strictly flush against the sidebar at 256px / 76px        */
 /* ========================================================= */
-.dashboard-top-navbar {
-  left: 0;
-  transition: left 0.3s ease-in-out;
+.hf-top-navbar {
+  position: fixed !important;
+  top: 0px !important;
+  right: 0px !important;
+  height: 56px !important;
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e7e5e4 !important;
+  z-index: 30 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  left: 0px !important;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 768px) {
-  .dashboard-top-navbar.sidebar-expanded {
+  .hf-top-navbar.is-expanded {
     left: 256px !important;
   }
-  .dashboard-top-navbar.sidebar-collapsed {
+  .hf-top-navbar.is-collapsed {
     left: 76px !important;
   }
 }
