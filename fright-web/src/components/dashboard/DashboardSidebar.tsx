@@ -29,7 +29,9 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       icon: "inbox",
       badge: "3",
       badgeColor: "bg-[#be3420] text-white",
-      iconColor: "text-[#be3420]",
+      iconBg: "bg-[#fff1ef] text-[#be3420] border-[#fecaca]/70",
+      activeIconBg: "bg-[#be3420] text-white border-transparent",
+      activeCard: "bg-[#fef2f0] text-[#be3420] border-[#be3420]/30 shadow-2xs font-semibold",
     },
     {
       id: "dispatch",
@@ -37,8 +39,10 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       shortLabel: "Dispatch",
       icon: "local_shipping",
       badge: "18",
-      badgeColor: "bg-[#e0e7ff] text-[#3730a3]",
-      iconColor: "text-[#2563eb]",
+      badgeColor: "bg-[#eff6ff] text-[#2563eb]",
+      iconBg: "bg-[#eff6ff] text-[#2563eb] border-[#bfdbfe]/70",
+      activeIconBg: "bg-[#2563eb] text-white border-transparent",
+      activeCard: "bg-[#eff6ff] text-[#1d4ed8] border-[#3b82f6]/35 shadow-2xs font-semibold",
     },
     {
       id: "transporters",
@@ -46,8 +50,10 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       shortLabel: "Fleet",
       icon: "rv_hookup",
       badge: "148",
-      badgeColor: "bg-[#fef3c7] text-[#92400e]",
-      iconColor: "text-[#d97706]",
+      badgeColor: "bg-[#fffbeb] text-[#b45309]",
+      iconBg: "bg-[#fffbeb] text-[#d97706] border-[#fde68a]/70",
+      activeIconBg: "bg-[#d97706] text-white border-transparent",
+      activeCard: "bg-[#fffbeb] text-[#b45309] border-[#f59e0b]/35 shadow-2xs font-semibold",
     },
     {
       id: "crm",
@@ -56,7 +62,9 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       icon: "corporate_fare",
       badge: null,
       badgeColor: "",
-      iconColor: "text-[#9333ea]",
+      iconBg: "bg-[#faf5ff] text-[#7c3aed] border-[#e9d5ff]/70",
+      activeIconBg: "bg-[#7c3aed] text-white border-transparent",
+      activeCard: "bg-[#faf5ff] text-[#6d28d9] border-[#8b5cf6]/35 shadow-2xs font-semibold",
     },
     {
       id: "margins",
@@ -65,7 +73,9 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       icon: "trending_up",
       badge: null,
       badgeColor: "",
-      iconColor: "text-[#16a34a]",
+      iconBg: "bg-[#f0fdf4] text-[#16a34a] border-[#bbf7d0]/70",
+      activeIconBg: "bg-[#16a34a] text-white border-transparent",
+      activeCard: "bg-[#f0fdf4] text-[#15803d] border-[#22c55e]/35 shadow-2xs font-semibold",
     },
     {
       id: "whatsapp",
@@ -73,8 +83,10 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
       shortLabel: "WhatsApp",
       icon: "chat",
       badge: "Live",
-      badgeColor: "bg-[#dcfce7] text-[#166534]",
-      iconColor: "text-[#059669]",
+      badgeColor: "bg-[#ecfdf5] text-[#047857]",
+      iconBg: "bg-[#ecfdf5] text-[#059669] border-[#a7f3d0]/70",
+      activeIconBg: "bg-[#059669] text-white border-transparent",
+      activeCard: "bg-[#ecfdf5] text-[#047857] border-[#10b981]/35 shadow-2xs font-semibold",
     },
   ];
 
@@ -108,7 +120,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
             <div className="h-14 flex items-center justify-center border-b border-[#e7e5e4] flex-shrink-0">
               <Link
                 href="/"
-                className="flex items-center justify-center p-1.5 rounded-xl hover:bg-[#f7f6f2] transition-colors group"
+                className="flex items-center justify-center p-1.5 rounded-xl hover:bg-[#f7f6f2] transition-colors"
                 title="HappyFreight Home"
                 aria-label="HappyFreight Home"
               >
@@ -116,8 +128,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               </Link>
             </div>
 
-            {/* Navigation items in stacked vertical rail */}
-            <nav className="flex-1 flex flex-col gap-1.5 py-3 px-2 overflow-y-auto">
+            {/* Navigation items in stacked vertical rail with distinct icon colours & borders */}
+            <nav className="flex-1 flex flex-col gap-2 py-3 px-2 overflow-y-auto">
               {navItems.map((item) => {
                 const isActive = activeView === item.id;
 
@@ -130,26 +142,26 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                     }}
                     type="button"
                     title={item.label}
-                    className={`w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl transition-all relative ${
+                    className={`w-full flex flex-col items-center justify-center py-2 px-1 rounded-xl transition-all relative border ${
                       isActive
-                        ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/30 shadow-2xs"
-                        : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-medium"
+                        ? item.activeCard
+                        : "bg-transparent hover:bg-[#f7f6f4] text-[#44403c] hover:text-[#18181b] border-transparent font-medium"
                     }`}
                   >
                     <div className="relative flex items-center justify-center">
-                      <span
-                        className={`material-symbols-outlined text-[23px] transition-transform ${
-                          isActive ? "text-[#be3420] scale-105" : item.iconColor
+                      <div
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all ${
+                          isActive ? item.activeIconBg : item.iconBg
                         }`}
                       >
-                        {item.icon}
-                      </span>
+                        <span className="material-symbols-outlined text-[20px]">
+                          {item.icon}
+                        </span>
+                      </div>
                       {item.badge && (
                         <span
-                          className={`absolute -top-1 -right-2.5 px-1 py-0.2 min-w-[15px] h-[15px] flex items-center justify-center rounded-full font-sans text-[8.5px] font-bold leading-none shadow-2xs ${
-                            isActive
-                              ? "bg-[#be3420] text-white"
-                              : item.badgeColor
+                          className={`absolute -top-1 -right-2 px-1 py-0.2 min-w-[15px] h-[15px] flex items-center justify-center rounded-full font-sans text-[8.5px] font-bold leading-none shadow-2xs ${
+                            isActive ? "bg-[#be3420] text-white" : item.badgeColor
                           }`}
                         >
                           {item.badge}
@@ -159,7 +171,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                     <span
                       className={`font-sans text-[10px] mt-1 text-center tracking-tight truncate w-full ${
                         isActive
-                          ? "font-bold text-[#be3420]"
+                          ? "font-bold text-[#18181b]"
                           : "font-medium text-[#57534e]"
                       }`}
                     >
@@ -170,55 +182,50 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               })}
             </nav>
 
-            {/* Bottom Expand Toggle Button [≡→] in Light Mode */}
+            {/* Bottom Expand Toggle Button - Sleek Modern Dual-Pane Panel Icon */}
             <div className="mt-auto p-3 border-t border-[#f0eee9] flex flex-col items-center flex-shrink-0">
               <button
                 type="button"
                 onClick={onToggleCollapse}
                 title="Expand sidebar (⌘B)"
                 aria-label="Expand sidebar"
-                className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#f7f6f2] hover:bg-[#eeebe3] text-[#44403c] hover:text-[#be3420] border border-[#dfdbd5] transition-all shadow-2xs hover:shadow-xs active:scale-95 group"
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-white hover:bg-[#f7f6f2] text-[#44403c] hover:text-[#18181b] border border-[#e7e5e4] hover:border-[#d6d3cd] transition-all shadow-2xs hover:shadow-xs active:scale-95 group"
               >
+                {/* Sleek Dual-Pane Panel Left Open Icon */}
                 <svg
-                  width="20"
-                  height="20"
+                  width="19"
+                  height="19"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2.2"
+                  strokeWidth="1.9"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-[#44403c] group-hover:text-[#be3420] transition-colors"
+                  className="text-[#57534e] group-hover:text-[#be3420] transition-colors"
                 >
-                  <line x1="3" y1="6" x2="14" y2="6" />
-                  <line x1="3" y1="12" x2="10" y2="12" />
-                  <line x1="3" y1="18" x2="14" y2="18" />
-                  <polyline points="14 8 18 12 14 16" />
+                  <rect width="18" height="18" x="3" y="3" rx="3.5" />
+                  <path d="M9 3v18" />
+                  <path d="m14 9 3 3-3 3" />
                 </svg>
               </button>
             </div>
           </div>
         ) : (
           /* =========================================================================
-             EXPANDED STATE: Full height to top with brand logo & restored headings
+             EXPANDED STATE: Full height to top with brand logo & distinct icon colors
              ========================================================================= */
           <div className="flex-1 flex flex-col h-full">
-            {/* Top Brand Header: Exactly h-14 to align with navbar */}
+            {/* Top Brand Header: Exactly h-14, bolder HappyFreight text, no hover color jitter */}
             <div className="h-14 flex items-center justify-between px-4 border-b border-[#e7e5e4] flex-shrink-0">
               <Link
                 href="/"
-                className="flex items-center gap-2.5 group"
+                className="flex items-center gap-2.5 select-none"
                 aria-label="HappyFreight Home"
               >
-                <HappyRobotLogo iconOnly className="h-7 w-7" />
-                <div className="flex flex-col">
-                  <span className="font-sans text-[13.5px] font-bold text-[#18181b] tracking-tight leading-none group-hover:text-[#be3420] transition-colors">
-                    HappyFreight
-                  </span>
-                  <span className="font-sans text-[9px] text-[#78716c] uppercase tracking-wider font-semibold leading-tight mt-0.5">
-                    Autonomous Harness
-                  </span>
-                </div>
+                <HappyRobotLogo iconOnly className="h-7 w-7 flex-shrink-0" />
+                <span className="font-sans text-[15.5px] font-extrabold text-[#18181b] tracking-tight leading-none">
+                  HappyFreight
+                </span>
               </Link>
 
               {/* Mobile Close Button (when drawer is open) */}
@@ -234,17 +241,10 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               )}
             </div>
 
-            {/* Scrollable Middle Area: Section header, nav items, dispatch widget */}
+            {/* Scrollable Middle Area: Nav items with distinct icon colors & borders */}
             <div className="flex-1 flex flex-col px-3 py-3 overflow-y-auto">
-              {/* Section Header */}
-              <div className="px-2.5 py-1 mb-2">
-                <span className="font-sans text-[10.5px] text-[#78716c] uppercase tracking-wider font-bold">
-                  Autonomous Logistics
-                </span>
-              </div>
-
-              {/* Navigation items with full labels & badges */}
-              <nav className="flex flex-col gap-1">
+              {/* Navigation items (autonomous logistics text removed per instruction) */}
+              <nav className="flex flex-col gap-1.5">
                 {navItems.map((item) => {
                   const isActive = activeView === item.id;
 
@@ -257,27 +257,33 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                       }}
                       type="button"
                       title={item.label}
-                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs transition-all text-left ${
+                      className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all text-left border ${
                         isActive
-                          ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/30 shadow-xs"
-                          : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-medium"
+                          ? item.activeCard
+                          : "bg-transparent hover:bg-[#f7f6f4] text-[#44403c] hover:text-[#18181b] border-transparent font-medium"
                       }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <span
-                          className={`material-symbols-outlined text-[20px] ${
-                            isActive ? "text-[#be3420]" : item.iconColor
+                      <div className="flex items-center gap-2.5">
+                        <div
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center border transition-all flex-shrink-0 ${
+                            isActive ? item.activeIconBg : item.iconBg
                           }`}
                         >
-                          {item.icon}
-                        </span>
-                        <span className="font-sans text-xs font-semibold text-[#1c1917]">
+                          <span className="material-symbols-outlined text-[17px]">
+                            {item.icon}
+                          </span>
+                        </div>
+                        <span
+                          className={`font-sans text-xs ${
+                            isActive ? "font-bold text-[#18181b]" : "font-medium text-[#27272a]"
+                          }`}
+                        >
                           {item.label}
                         </span>
                       </div>
                       {item.badge && (
                         <span
-                          className={`px-2 py-0.5 rounded-full font-sans text-[10.5px] font-bold ${
+                          className={`px-2 py-0.5 rounded-full font-sans text-[10px] font-bold ${
                             isActive ? "bg-[#be3420] text-white" : item.badgeColor
                           }`}
                         >
@@ -311,14 +317,14 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               </div>
             </div>
 
-            {/* Bottom Collapse Toggle Button [←≡] */}
+            {/* Bottom Collapse Toggle Button - Sleek Modern Dual-Pane Panel Icon */}
             <div className="p-3 border-t border-[#f0eee9] flex-shrink-0">
               <button
                 type="button"
                 onClick={onToggleCollapse}
                 title="Collapse sidebar (⌘B)"
                 aria-label="Collapse sidebar"
-                className="w-full flex items-center justify-between px-3 py-2 rounded-xl bg-[#f7f6f2] hover:bg-[#eeebe3] text-[#44403c] border border-[#dfdbd5] transition-all shadow-2xs hover:shadow-xs active:scale-[0.99] group"
+                className="w-full flex items-center justify-between px-3 py-2 rounded-xl bg-white hover:bg-[#f7f6f2] text-[#44403c] hover:text-[#18181b] border border-[#e7e5e4] hover:border-[#d6d3cd] transition-all shadow-2xs hover:shadow-xs active:scale-[0.99] group"
               >
                 <div className="flex items-center gap-2">
                   <svg
@@ -327,21 +333,20 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="2.2"
+                    strokeWidth="1.9"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-[#44403c] group-hover:text-[#be3420] transition-colors"
+                    className="text-[#57534e] group-hover:text-[#be3420] transition-colors"
                   >
-                    <polyline points="9 8 5 12 9 16" />
-                    <line x1="9" y1="6" x2="21" y2="6" />
-                    <line x1="13" y1="12" x2="21" y2="12" />
-                    <line x1="9" y1="18" x2="21" y2="18" />
+                    <rect width="18" height="18" x="3" y="3" rx="3.5" />
+                    <path d="M9 3v18" />
+                    <path d="m16 15-3-3 3-3" />
                   </svg>
                   <span className="font-sans text-xs font-semibold text-[#44403c] group-hover:text-[#18181b]">
                     Collapse Sidebar
                   </span>
                 </div>
-                <kbd className="font-sans text-[10px] font-semibold text-[#78716c] bg-white px-1.5 py-0.5 rounded border border-[#dfdbd5]">
+                <kbd className="font-sans text-[10px] font-semibold text-[#78716c] bg-[#f7f6f2] px-1.5 py-0.5 rounded border border-[#dfdbd5]">
                   ⌘B
                 </kbd>
               </button>
