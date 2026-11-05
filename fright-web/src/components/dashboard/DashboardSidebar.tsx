@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { HappyRobotLogo } from "../HappyRobotLogo";
 
 interface DashboardSidebarProps {
   activeView?: string;
@@ -87,30 +89,35 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
         />
       )}
 
-      {/* Sidebar Container */}
+      {/* Sidebar Container: Full-height from top-0 to bottom-0 */}
       <aside
-        className={`fixed top-14 bottom-0 z-40 flex flex-col border-r border-[#e7e5e4] transition-all duration-300 ease-in-out select-none bg-white ${
+        className={`fixed top-0 bottom-0 left-0 z-50 flex flex-col border-r border-[#e7e5e4] transition-all duration-300 ease-in-out select-none bg-white ${
           isMobileOpen
-            ? "translate-x-0 w-64 px-3 py-3.5 shadow-2xl"
+            ? "translate-x-0 w-64 shadow-2xl"
             : `-translate-x-full md:translate-x-0 ${
-                isCollapsed ? "md:w-[76px] px-2 py-3" : "md:w-64 px-3 py-3.5"
+                isCollapsed ? "md:w-[76px]" : "md:w-64"
               }`
         }`}
       >
         {/* =========================================================================
-            COLLAPSED STATE: Light mode icon rail with stacked labels (matching user reference)
+            COLLAPSED STATE: Extended till top with centered brand logo & icon rail
             ========================================================================= */}
         {isCollapsed && !isMobileOpen ? (
           <div className="flex-1 flex flex-col h-full">
-            {/* Top Minimalist Brand Pill / Section Hint */}
-            <div className="flex items-center justify-center py-1 mb-2">
-              <span className="font-sans text-[9px] uppercase tracking-wider font-bold text-[#a8a29e]">
-                Ops
-              </span>
+            {/* Top Brand Logo: Exactly h-14 to align with navbar */}
+            <div className="h-14 flex items-center justify-center border-b border-[#e7e5e4] flex-shrink-0">
+              <Link
+                href="/"
+                className="flex items-center justify-center p-1.5 rounded-xl hover:bg-[#f7f6f2] transition-colors group"
+                title="HappyFreight Home"
+                aria-label="HappyFreight Home"
+              >
+                <HappyRobotLogo iconOnly className="h-7 w-7" />
+              </Link>
             </div>
 
             {/* Navigation items in stacked vertical rail */}
-            <nav className="flex-1 flex flex-col gap-1.5 overflow-y-auto">
+            <nav className="flex-1 flex flex-col gap-1.5 py-3 px-2 overflow-y-auto">
               {navItems.map((item) => {
                 const isActive = activeView === item.id;
 
@@ -163,8 +170,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
               })}
             </nav>
 
-            {/* Bottom Expand Toggle Button [≡→] in Light Mode (Matching User Image) */}
-            <div className="mt-auto pt-2 border-t border-[#f0eee9] flex flex-col items-center">
+            {/* Bottom Expand Toggle Button [≡→] in Light Mode */}
+            <div className="mt-auto p-3 border-t border-[#f0eee9] flex flex-col items-center flex-shrink-0">
               <button
                 type="button"
                 onClick={onToggleCollapse}
@@ -172,7 +179,6 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                 aria-label="Expand sidebar"
                 className="w-11 h-11 flex items-center justify-center rounded-xl bg-[#f7f6f2] hover:bg-[#eeebe3] text-[#44403c] hover:text-[#be3420] border border-[#dfdbd5] transition-all shadow-2xs hover:shadow-xs active:scale-95 group"
               >
-                {/* User reference [≡→] icon */}
                 <svg
                   width="20"
                   height="20"
@@ -194,85 +200,119 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
           </div>
         ) : (
           /* =========================================================================
-             EXPANDED STATE: Full width with restored headings & labels in light mode
+             EXPANDED STATE: Full height to top with brand logo & restored headings
              ========================================================================= */
           <div className="flex-1 flex flex-col h-full">
-            {/* Section Header - Always visible when expanded */}
-            <div className="px-2.5 py-1 mb-2">
-              <span className="font-sans text-[10.5px] text-[#78716c] uppercase tracking-wider font-bold">
-                Autonomous Logistics
-              </span>
+            {/* Top Brand Header: Exactly h-14 to align with navbar */}
+            <div className="h-14 flex items-center justify-between px-4 border-b border-[#e7e5e4] flex-shrink-0">
+              <Link
+                href="/"
+                className="flex items-center gap-2.5 group"
+                aria-label="HappyFreight Home"
+              >
+                <HappyRobotLogo iconOnly className="h-7 w-7" />
+                <div className="flex flex-col">
+                  <span className="font-sans text-[13.5px] font-bold text-[#18181b] tracking-tight leading-none group-hover:text-[#be3420] transition-colors">
+                    HappyFreight
+                  </span>
+                  <span className="font-sans text-[9px] text-[#78716c] uppercase tracking-wider font-semibold leading-tight mt-0.5">
+                    Autonomous Harness
+                  </span>
+                </div>
+              </Link>
+
+              {/* Mobile Close Button (when drawer is open) */}
+              {isMobileOpen && (
+                <button
+                  onClick={onCloseMobile}
+                  type="button"
+                  aria-label="Close Sidebar"
+                  className="md:hidden p-1.5 rounded-lg text-[#78716c] hover:text-[#18181b] hover:bg-[#f5f4ef] transition-colors"
+                >
+                  <span className="material-symbols-outlined text-lg">close</span>
+                </button>
+              )}
             </div>
 
-            {/* Navigation items with full labels & badges */}
-            <nav className="flex-1 flex flex-col gap-1 overflow-y-auto">
-              {navItems.map((item) => {
-                const isActive = activeView === item.id;
-
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => {
-                      onSelectView?.(item.id);
-                      onCloseMobile?.();
-                    }}
-                    type="button"
-                    title={item.label}
-                    className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs transition-all text-left ${
-                      isActive
-                        ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/30 shadow-xs"
-                        : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-medium"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span
-                        className={`material-symbols-outlined text-[20px] ${
-                          isActive ? "text-[#be3420]" : item.iconColor
-                        }`}
-                      >
-                        {item.icon}
-                      </span>
-                      <span className="font-sans text-xs font-semibold text-[#1c1917]">
-                        {item.label}
-                      </span>
-                    </div>
-                    {item.badge && (
-                      <span
-                        className={`px-2 py-0.5 rounded-full font-sans text-[10.5px] font-bold ${
-                          isActive ? "bg-[#be3420] text-white" : item.badgeColor
-                        }`}
-                      >
-                        {item.badge}
-                      </span>
-                    )}
-                  </button>
-                );
-              })}
-            </nav>
-
-            {/* Dispatch Engine Progress Bar Widget */}
-            <div className="p-3 bg-[#f7f6f2] rounded-xl border border-[#dfdbd5] mb-2.5 mt-2">
-              <div className="flex items-center justify-between mb-1.5">
-                <span className="font-sans text-[10px] text-[#78716c] uppercase font-bold tracking-wider">
-                  Dispatch Engine
-                </span>
-                <span className="font-sans text-[10px] text-[#059669] font-bold bg-[#ecfdf5] px-1.5 py-0.5 rounded border border-[#059669]/20">
-                  v4.8-online
+            {/* Scrollable Middle Area: Section header, nav items, dispatch widget */}
+            <div className="flex-1 flex flex-col px-3 py-3 overflow-y-auto">
+              {/* Section Header */}
+              <div className="px-2.5 py-1 mb-2">
+                <span className="font-sans text-[10.5px] text-[#78716c] uppercase tracking-wider font-bold">
+                  Autonomous Logistics
                 </span>
               </div>
-              <div className="w-full bg-[#e7e5e4] h-1.5 rounded-full overflow-hidden">
-                <div className="bg-[#be3420] h-full rounded-full w-4/5"></div>
-              </div>
-              <div className="flex justify-between items-center mt-2 text-[#57534e]">
-                <span className="font-sans text-[10.5px]">Throughput</span>
-                <span className="font-sans text-[10.5px] font-bold text-[#1c1917]">
-                  148 MT / hr
-                </span>
+
+              {/* Navigation items with full labels & badges */}
+              <nav className="flex flex-col gap-1">
+                {navItems.map((item) => {
+                  const isActive = activeView === item.id;
+
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        onSelectView?.(item.id);
+                        onCloseMobile?.();
+                      }}
+                      type="button"
+                      title={item.label}
+                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs transition-all text-left ${
+                        isActive
+                          ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/30 shadow-xs"
+                          : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-medium"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span
+                          className={`material-symbols-outlined text-[20px] ${
+                            isActive ? "text-[#be3420]" : item.iconColor
+                          }`}
+                        >
+                          {item.icon}
+                        </span>
+                        <span className="font-sans text-xs font-semibold text-[#1c1917]">
+                          {item.label}
+                        </span>
+                      </div>
+                      {item.badge && (
+                        <span
+                          className={`px-2 py-0.5 rounded-full font-sans text-[10.5px] font-bold ${
+                            isActive ? "bg-[#be3420] text-white" : item.badgeColor
+                          }`}
+                        >
+                          {item.badge}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Dispatch Engine Progress Bar Widget */}
+              <div className="p-3 bg-[#f7f6f2] rounded-xl border border-[#dfdbd5] mb-2 mt-auto">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="font-sans text-[10px] text-[#78716c] uppercase font-bold tracking-wider">
+                    Dispatch Engine
+                  </span>
+                  <span className="font-sans text-[10px] text-[#059669] font-bold bg-[#ecfdf5] px-1.5 py-0.5 rounded border border-[#059669]/20">
+                    v4.8-online
+                  </span>
+                </div>
+                <div className="w-full bg-[#e7e5e4] h-1.5 rounded-full overflow-hidden">
+                  <div className="bg-[#be3420] h-full rounded-full w-4/5"></div>
+                </div>
+                <div className="flex justify-between items-center mt-2 text-[#57534e]">
+                  <span className="font-sans text-[10.5px]">Throughput</span>
+                  <span className="font-sans text-[10.5px] font-bold text-[#1c1917]">
+                    148 MT / hr
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Bottom Collapse Toggle Button [←≡] */}
-            <div className="pt-2 border-t border-[#f0eee9]">
+            <div className="p-3 border-t border-[#f0eee9] flex-shrink-0">
               <button
                 type="button"
                 onClick={onToggleCollapse}

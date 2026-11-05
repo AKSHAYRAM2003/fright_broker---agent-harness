@@ -1,72 +1,32 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { HappyRobotLogo } from "../HappyRobotLogo";
 
 interface DashboardHeaderProps {
   onOpenSimulator?: () => void;
   onOpenIngest?: () => void;
-  onToggleMobileSidebar?: () => void;
-  isMobileSidebarOpen?: boolean;
   isSidebarCollapsed?: boolean;
-  onToggleSidebarCollapse?: () => void;
 }
 
 export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   onOpenSimulator,
   onOpenIngest,
-  onToggleMobileSidebar,
-  isMobileSidebarOpen,
-  isSidebarCollapsed,
-  onToggleSidebarCollapse,
+  isSidebarCollapsed = false,
 }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 h-14 bg-surface/90 backdrop-blur-xl z-50 flex items-center justify-between px-4 sm:px-6 border-b border-surface-container-high shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
-      {/* Brand & Mobile Hamburger */}
-      <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-        {/* Mobile menu button */}
-        <button
-          onClick={onToggleMobileSidebar}
-          type="button"
-          aria-label="Toggle Navigation"
-          className="md:hidden p-1.5 rounded-lg bg-surface-container-low border border-surface-container-high text-on-surface-variant hover:text-on-surface"
-        >
-          <span className="material-symbols-outlined text-xl">
-            {isMobileSidebarOpen ? "close" : "menu"}
-          </span>
-        </button>
-
-        {/* Desktop sidebar toggle button */}
-        <button
-          onClick={onToggleSidebarCollapse}
-          type="button"
-          title={isSidebarCollapsed ? "Expand sidebar (⌘B)" : "Collapse sidebar (⌘B)"}
-          aria-label="Toggle Sidebar Collapse"
-          className="hidden md:flex items-center justify-center p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container border border-surface-container-high text-[#57534e] hover:text-[#070707] transition-colors"
-        >
-          <span className="material-symbols-outlined text-xl">
-            {isSidebarCollapsed ? "menu_open" : "menu"}
-          </span>
-        </button>
-
-        {/* HappyFreight Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 group" aria-label="HappyFreight">
-          <HappyRobotLogo className="h-6 sm:h-7 w-auto" />
-          <div className="hidden sm:flex flex-col border-l border-surface-container-high pl-2.5">
-            <span className="font-sans text-[10px] text-outline uppercase tracking-wider font-semibold">
-              Freight Operations Harness
-            </span>
-          </div>
-        </Link>
-
-        {/* AI Agent Active Pill */}
-        <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-0.5 bg-secondary-container/50 rounded-full border border-secondary/20">
+    <header
+      className={`fixed top-0 right-0 h-14 bg-white/95 backdrop-blur-md z-30 flex items-center justify-between px-4 sm:px-6 border-b border-[#e7e5e4] shadow-[0_1px_3px_rgba(0,0,0,0.03)] dashboard-top-navbar ${
+        isSidebarCollapsed ? "sidebar-collapsed" : "sidebar-expanded"
+      }`}
+    >
+      {/* Left side: AI Agent Active Pill (Logo and hamburger removed per instruction) */}
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-secondary-container/50 rounded-full border border-secondary/20">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
           </span>
-          <span className="font-sans text-[11px] text-secondary font-semibold tracking-tight">
+          <span className="font-sans text-[10.5px] sm:text-[11px] text-secondary font-semibold tracking-tight">
             AI Agent: Active (Listening to WhatsApp)
           </span>
         </div>

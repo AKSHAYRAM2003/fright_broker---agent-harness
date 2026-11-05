@@ -967,10 +967,7 @@ export default function DashboardPage() {
       <DashboardHeader
         onOpenSimulator={() => setSimulatorOpen(true)}
         onOpenIngest={() => setIngestModalOpen(true)}
-        onToggleMobileSidebar={() => setIsMobileSidebarOpen((prev) => !prev)}
-        isMobileSidebarOpen={isMobileSidebarOpen}
         isSidebarCollapsed={isSidebarCollapsed}
-        onToggleSidebarCollapse={() => setIsSidebarCollapsed((prev) => !prev)}
       />
 
       {/* 2. SIDEBAR (Fixed on desktop, slide-out drawer on mobile) */}

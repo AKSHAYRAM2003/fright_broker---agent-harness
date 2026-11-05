@@ -1127,6 +1127,23 @@ img[data-nimg="fill"] {
 }
 
 /* ========================================================= */
+/* DASHBOARD TOP NAVBAR ALIGNMENT WITH FULL-HEIGHT SIDEBAR   */
+/* ========================================================= */
+.dashboard-top-navbar {
+  left: 0;
+  transition: left 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .dashboard-top-navbar.sidebar-expanded {
+    left: 256px !important;
+  }
+  .dashboard-top-navbar.sidebar-collapsed {
+    left: 76px !important;
+  }
+}
+
+/* ========================================================= */
 /* BULLETPROOF OPERATIONS QUEUE MASTER-DETAIL SPLIT PANE     */
 /* Strictly side-by-side from md (768px) and tablet to xxl  */
 /* ========================================================= */
@@ -1205,5 +1222,22 @@ img[data-nimg="fill"] {
   .queue-mobile-show-when-detail-open {
     display: flex !important;
     width: 100% !important;
+  }
+}
+
+/* ========================================================= */
+/* DASHBOARD TOP NAVBAR ALIGNMENT WITH FULL-HEIGHT SIDEBAR   */
+/* ========================================================= */
+.dashboard-top-navbar {
+  left: 0;
+  transition: left 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .dashboard-top-navbar.sidebar-expanded {
+    left: 256px !important;
+  }
+  .dashboard-top-navbar.sidebar-collapsed {
+    left: 76px !important;
   }
 }
