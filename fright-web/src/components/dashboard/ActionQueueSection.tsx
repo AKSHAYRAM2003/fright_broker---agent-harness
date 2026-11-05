@@ -10,6 +10,8 @@ import {
   Clock,
   Truck,
   ArrowRight,
+  ArrowLeft,
+  X,
   Send,
   MessageSquare,
   ShieldCheck,
@@ -46,6 +48,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
   >("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLoadId, setSelectedLoadId] = useState<string | null>(null);
+  const [mobileDetailOpen, setMobileDetailOpen] = useState(false);
   const [counterOpen, setCounterOpen] = useState(false);
   const [counterAmount, setCounterAmount] = useState<string>("₹46,000");
   const [walkthroughOpen, setWalkthroughOpen] = useState(false);
@@ -156,12 +159,18 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
         </div>
       </div>
 
-      {/* MASTER-DETAIL WORKSPACE CONTAINER */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3.5 sm:gap-4 items-start">
+      {/* MASTER-DETAIL WORKSPACE CONTAINER: STRICTLY SIDE-BY-SIDE FROM MD TO 2XL */}
+      <div className="flex flex-col md:flex-row items-start gap-3.5 sm:gap-4 w-full">
         {/* ========================================================= */}
-        {/* LEFT COLUMN: Master List of Small Scannable Cards (4 cols) */}
+        {/* LEFT COLUMN: Master List of Small Scannable Cards         */}
+        {/* Fixed compact width on md/tablet through 2xl              */}
+        {/* On mobile (<md), full width when !mobileDetailOpen        */}
         {/* ========================================================= */}
-        <div className="lg:col-span-5 xl:col-span-4 flex flex-col gap-2.5">
+        <div
+          className={`${
+            mobileDetailOpen ? "hidden md:flex" : "flex"
+          } w-full md:w-[310px] lg:w-[350px] xl:w-[390px] 2xl:w-[420px] md:shrink-0 flex-col gap-2.5 transition-all`}
+        >
           {/* Filter Pills */}
           <div className="flex items-center gap-1 bg-[#eae7e1]/80 p-1 rounded-xl border border-[#dfdbd5] font-sans text-xs overflow-x-auto no-scrollbar">
             <button
@@ -278,10 +287,18 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                 const isIncomplete = load.status === "INCOMPLETE";
                 const isDispatching = load.status === "DISPATCHING_RFQS";
 
+                const isNegativeMargin = (load.netMarginInr ?? 0) < 0;
+                const marginDeltaStr = isNegativeMargin
+                  ? `-₹${Math.abs(load.netMarginInr || 0).toLocaleString("en-IN")}`
+                  : `+₹${(load.netMarginInr || 0).toLocaleString("en-IN")}`;
+
                 return (
                   <article
                     key={load.id}
-                    onClick={() => setSelectedLoadId(load.id)}
+                    onClick={() => {
+                      setSelectedLoadId(load.id);
+                      setMobileDetailOpen(true);
+                    }}
                     className={`relative rounded-xl p-3 cursor-pointer transition-all border text-left flex flex-col gap-2 ${
                       isSelected
                         ? isMarginAlert
@@ -356,7 +373,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                       {/* Right highlight */}
                       {isMarginAlert && (
                         <span className="text-[#be3420] font-bold shrink-0">
-                          ₹{load.bestQuote?.quoteInr.toLocaleString("en-IN")} (+₹{load.netMarginInr?.toLocaleString("en-IN")})
+                          ₹{load.bestQuote?.quoteInr.toLocaleString("en-IN")} ({marginDeltaStr})
                         </span>
                       )}
                       {isInstantReady && (
@@ -388,11 +405,44 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
         </div>
 
         {/* ========================================================= */}
-        {/* RIGHT COLUMN: Full Detail & Decision Surface (7-8 cols)  */}
+        {/* RIGHT COLUMN: Full Detail & Decision Surface              */}
+        {/* Strictly side-by-side from md to 2xl, fills remaining     */}
+        {/* On mobile (<md), transitions smoothly from right to left  */}
         {/* ========================================================= */}
-        <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-3">
+        <div
+          className={`${
+            mobileDetailOpen ? "flex animate-slideInRight" : "hidden md:flex"
+          } flex-1 min-w-0 w-full flex-col gap-3 transition-all`}
+        >
+          {/* Mobile-Only Top Navigation Bar (Close / Back to Queue) */}
+          <div className="md:hidden flex items-center justify-between bg-white border border-[#dfdbd5] px-3.5 py-2.5 rounded-xl shadow-xs sticky top-[68px] z-20 backdrop-blur">
+            <button
+              type="button"
+              onClick={() => setMobileDetailOpen(false)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#18181b] border border-[#dfdbd5] text-xs font-bold active:scale-95 transition-all shadow-2xs"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 text-primary" />
+              <span>← Back to Queue</span>
+            </button>
+
+            <span className="font-sans text-xs font-bold text-[#070707] truncate max-w-[130px]">
+              {activeSelectedLoad?.id}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => setMobileDetailOpen(false)}
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#78716c] hover:text-[#070707] border border-[#dfdbd5] text-xs font-semibold"
+              title="Close Details"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>Close</span>
+            </button>
+          </div>
+
           {activeSelectedLoad ? (
-            <div className="bg-white border border-[#dfdbd5] rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-4 animate-fadeIn">
+            <>
+              <div className="bg-white border border-[#dfdbd5] rounded-xl p-4 sm:p-5 shadow-xs flex flex-col gap-4 animate-fadeIn">
               {/* 1. Detail Card Top Bar */}
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#eae7e1] pb-3">
                 <div className="flex flex-wrap items-center gap-2">
@@ -515,7 +565,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
               {/* 3. Financial Metrics (4 Blocks with NumberRoll) */}
               {activeSelectedLoad.status !== "INCOMPLETE" && (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 bg-[#f7f6f4] p-3.5 rounded-xl border border-[#dfdbd5]">
+                <div className="grid grid-cols-2 xl:grid-cols-4 gap-2.5 bg-[#f7f6f4] p-3.5 rounded-xl border border-[#dfdbd5]">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-[#78716c] uppercase font-semibold">Shipper Target</span>
                     <span className="text-base font-bold text-[#070707] mt-0.5">
@@ -783,7 +833,10 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
                     <button
                       type="button"
-                      onClick={() => onDismissLoad(activeSelectedLoad.id)}
+                      onClick={() => {
+                        onDismissLoad(activeSelectedLoad.id);
+                        setMobileDetailOpen(false);
+                      }}
                       className="h-11 px-4 rounded-xl text-[#78716c] hover:text-[#be3420] font-sans text-xs font-medium hover:bg-[#fef2f0] transition-colors"
                     >
                       <span>Dismiss Inquiry</span>
@@ -801,7 +854,10 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
                     <button
                       type="button"
-                      onClick={() => onDismissLoad(activeSelectedLoad.id)}
+                      onClick={() => {
+                        onDismissLoad(activeSelectedLoad.id);
+                        setMobileDetailOpen(false);
+                      }}
                       className="px-3 py-1.5 text-xs text-[#78716c] hover:text-[#070707] font-medium underline"
                     >
                       Cancel Broadcast
@@ -828,6 +884,16 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
                 )}
               </div>
             </div>
+
+            {/* Mobile-Only Bottom Return to Queue Button */}
+            <button
+              type="button"
+              onClick={() => setMobileDetailOpen(false)}
+              className="md:hidden w-full py-3 rounded-xl bg-[#f7f6f4] hover:bg-[#eae7e1] text-[#18181b] border border-[#dfdbd5] font-sans text-xs font-bold text-center transition-all shadow-2xs"
+            >
+              ← Back to All Loads Queue
+            </button>
+          </>
           ) : (
             <div className="bg-white border border-[#dfdbd5] rounded-xl p-12 text-center flex flex-col items-center justify-center gap-3">
               <span className="material-symbols-outlined text-3xl text-[#a8a29e]">touch_app</span>

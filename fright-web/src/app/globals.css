@@ -1012,3 +1012,34 @@ img[data-nimg="fill"] {
   letter-spacing: 0.12em;
   color: #57534e !important;
 }
+
+/* Master-Detail Operations Queue Animations */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInFromRight 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInSmooth {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeInSmooth 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

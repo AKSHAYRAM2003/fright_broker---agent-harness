@@ -69,14 +69,16 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
         />
       )}
 
-      {/* Sidebar Container */}
+      {/* Sidebar Container: Compact rail on tablet (md), full sidebar on desktop (lg) */}
       <aside
-        className={`fixed top-14 bottom-0 w-64 bg-surface-container-lowest z-40 flex flex-col py-3.5 px-3 border-r border-surface-container-high transition-transform duration-300 ease-in-out select-none ${
-          isMobileOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full md:translate-x-0"
+        className={`fixed top-14 bottom-0 z-40 flex flex-col py-3.5 border-r border-surface-container-high transition-transform duration-300 ease-in-out select-none bg-surface-container-lowest ${
+          isMobileOpen
+            ? "translate-x-0 w-64 px-3 shadow-2xl"
+            : "-translate-x-full md:translate-x-0 md:w-16 md:px-2 lg:w-64 lg:px-3"
         }`}
       >
         {/* Section Header */}
-        <div className="px-3 py-1 mb-2">
+        <div className="px-3 py-1 mb-2 hidden lg:block">
           <span className="font-sans text-[10px] text-outline uppercase tracking-wider font-semibold">
             Autonomous Logistics
           </span>
@@ -95,7 +97,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                   onCloseMobile?.();
                 }}
                 type="button"
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs transition-all text-left ${
+                title={item.label}
+                className={`w-full flex items-center justify-center lg:justify-between px-2.5 lg:px-3 py-2.5 rounded-lg text-xs transition-all text-left ${
                   isActive
                     ? "bg-[#fef2f0] text-[#be3420] font-semibold border border-[#be3420]/25 shadow-xs"
                     : "text-[#57534e] hover:bg-[#f7f6f4] hover:text-[#070707] border border-transparent font-normal"
@@ -109,11 +112,11 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
                   >
                     {item.icon}
                   </span>
-                  <span>{item.label}</span>
+                  <span className="hidden lg:inline">{item.label}</span>
                 </div>
                 {item.badge && (
                   <span
-                    className={`px-1.5 py-0.5 rounded-full font-sans text-[10px] font-bold ${
+                    className={`hidden lg:inline-flex px-1.5 py-0.5 rounded-full font-sans text-[10px] font-bold ${
                       isActive ? "bg-[#be3420] text-white" : item.badgeColor
                     }`}
                   >
@@ -126,7 +129,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({
         </nav>
 
         {/* Dispatch Engine Progress Bar Widget */}
-        <div className="mt-auto p-3.5 bg-surface-container-low rounded-xl border border-surface-container-high">
+        <div className="mt-auto p-3.5 bg-surface-container-low rounded-xl border border-surface-container-high hidden lg:block">
           <div className="flex items-center justify-between mb-1.5">
             <span className="font-sans text-[10px] text-outline uppercase font-semibold">Dispatch Engine</span>
             <span className="font-sans text-[10px] text-secondary font-bold bg-secondary-container/50 px-1.5 py-0.5 rounded border border-secondary/20">

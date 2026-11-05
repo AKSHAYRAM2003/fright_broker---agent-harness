@@ -50,16 +50,19 @@ export const NumberRoll: React.FC<NumberRollProps> = ({
     return () => cancelAnimationFrame(frameId);
   }, [value, durationMs]);
 
+  const isNegative = displayValue < 0;
+  const absValue = Math.abs(displayValue);
   const formatted =
     decimals > 0
-      ? displayValue.toLocaleString("en-IN", {
+      ? absValue.toLocaleString("en-IN", {
           minimumFractionDigits: decimals,
           maximumFractionDigits: decimals,
         })
-      : Math.round(displayValue).toLocaleString("en-IN");
+      : Math.round(absValue).toLocaleString("en-IN");
 
   return (
     <span className={`inline-block transition-transform duration-300 ${className}`}>
+      {isNegative ? "-" : ""}
       {prefix}
       {formatted}
       {suffix}
