@@ -159,18 +159,14 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
         </div>
       </div>
 
-      {/* MASTER-DETAIL WORKSPACE CONTAINER: STRICTLY SIDE-BY-SIDE FROM MD TO 2XL */}
-      <div className="flex flex-col md:flex-row items-start gap-3.5 sm:gap-4 w-full">
+      {/* MASTER-DETAIL WORKSPACE CONTAINER: STRICTLY SIDE-BY-SIDE FROM MD (768PX) TO 2XL */}
+      <div className="queue-master-detail-row">
         {/* ========================================================= */}
         {/* LEFT COLUMN: Master List of Small Scannable Cards         */}
         {/* Fixed compact width on md/tablet through 2xl              */}
         {/* On mobile (<md), full width when !mobileDetailOpen        */}
         {/* ========================================================= */}
-        <div
-          className={`${
-            mobileDetailOpen ? "hidden md:flex" : "flex"
-          } w-full md:w-[310px] lg:w-[350px] xl:w-[390px] 2xl:w-[420px] md:shrink-0 flex-col gap-2.5 transition-all`}
-        >
+        <div className={`queue-left-list-col ${mobileDetailOpen ? "queue-mobile-hide-when-detail-open" : ""}`}>
           {/* Filter Pills */}
           <div className="flex items-center gap-1 bg-[#eae7e1]/80 p-1 rounded-xl border border-[#dfdbd5] font-sans text-xs overflow-x-auto no-scrollbar">
             <button
@@ -406,15 +402,17 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
 
         {/* ========================================================= */}
         {/* RIGHT COLUMN: Full Detail & Decision Surface              */}
-        {/* Strictly side-by-side from md to 2xl, fills remaining     */}
-        {/* On mobile (<md), transitions smoothly from right to left  */}
+        {/* Strictly side-by-side on all screens >= md (768px)        */}
+        {/* On mobile (<md), transitions in when a card is tapped     */}
         {/* ========================================================= */}
         <div
-          className={`${
-            mobileDetailOpen ? "flex animate-slideInRight" : "hidden md:flex"
-          } flex-1 min-w-0 w-full flex-col gap-3 transition-all`}
+          className={`queue-right-detail-col ${
+            mobileDetailOpen
+              ? "queue-mobile-show-when-detail-open animate-slideInRight"
+              : "queue-mobile-hidden-default"
+          }`}
         >
-          {/* Mobile-Only Top Navigation Bar (Close / Back to Queue) */}
+          {/* Mobile-Only (<md) Top Navigation Bar (Close / Back to Queue) */}
           <div className="md:hidden flex items-center justify-between bg-white border border-[#dfdbd5] px-3.5 py-2.5 rounded-xl shadow-xs sticky top-[68px] z-20 backdrop-blur">
             <button
               type="button"
@@ -885,7 +883,7 @@ export const ActionQueueSection: React.FC<ActionQueueSectionProps> = ({
               </div>
             </div>
 
-            {/* Mobile-Only Bottom Return to Queue Button */}
+            {/* Mobile-Only (<md) Bottom Return to Queue Button */}
             <button
               type="button"
               onClick={() => setMobileDetailOpen(false)}
