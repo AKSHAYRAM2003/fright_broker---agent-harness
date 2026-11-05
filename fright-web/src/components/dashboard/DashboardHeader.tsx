@@ -9,6 +9,8 @@ interface DashboardHeaderProps {
   onOpenIngest?: () => void;
   onToggleMobileSidebar?: () => void;
   isMobileSidebarOpen?: boolean;
+  isSidebarCollapsed?: boolean;
+  onToggleSidebarCollapse?: () => void;
 }
 
 export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
@@ -16,6 +18,8 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   onOpenIngest,
   onToggleMobileSidebar,
   isMobileSidebarOpen,
+  isSidebarCollapsed,
+  onToggleSidebarCollapse,
 }) => {
   return (
     <header className="fixed top-0 left-0 right-0 h-14 bg-surface/90 backdrop-blur-xl z-50 flex items-center justify-between px-4 sm:px-6 border-b border-surface-container-high shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
@@ -30,6 +34,19 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
         >
           <span className="material-symbols-outlined text-xl">
             {isMobileSidebarOpen ? "close" : "menu"}
+          </span>
+        </button>
+
+        {/* Desktop sidebar toggle button */}
+        <button
+          onClick={onToggleSidebarCollapse}
+          type="button"
+          title={isSidebarCollapsed ? "Expand sidebar (⌘B)" : "Collapse sidebar (⌘B)"}
+          aria-label="Toggle Sidebar Collapse"
+          className="hidden md:flex items-center justify-center p-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container border border-surface-container-high text-[#57534e] hover:text-[#070707] transition-colors"
+        >
+          <span className="material-symbols-outlined text-xl">
+            {isSidebarCollapsed ? "menu_open" : "menu"}
           </span>
         </button>
 

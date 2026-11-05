@@ -458,6 +458,7 @@ export default function DashboardPage() {
   const [simulatorOpen, setSimulatorOpen] = useState(false);
   const [ingestModalOpen, setIngestModalOpen] = useState(false);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   // Core state for Step 1 Feature
   const [loads, setLoads] = useState<LoadItem[]>(INITIAL_LOADS);
@@ -479,8 +480,15 @@ export default function DashboardPage() {
   });
   const [toast, setToast] = useState<ToastState | null>(null);
 
-  // Keyboard shortcuts: Ctrl/Cmd + S for Simulator, Ctrl/Cmd + I for Ingestion
+  // Keyboard shortcuts: Ctrl/Cmd + S for Simulator, Ctrl/Cmd + I for Ingestion, Ctrl/Cmd + B for Sidebar Toggle
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("collapsed") === "true") {
+        setIsSidebarCollapsed(true);
+      }
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
         e.preventDefault();
@@ -489,6 +497,10 @@ export default function DashboardPage() {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "i") {
         e.preventDefault();
         setIngestModalOpen((prev) => !prev);
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "b") {
+        e.preventDefault();
+        setIsSidebarCollapsed((prev) => !prev);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -957,6 +969,8 @@ export default function DashboardPage() {
         onOpenIngest={() => setIngestModalOpen(true)}
         onToggleMobileSidebar={() => setIsMobileSidebarOpen((prev) => !prev)}
         isMobileSidebarOpen={isMobileSidebarOpen}
+        isSidebarCollapsed={isSidebarCollapsed}
+        onToggleSidebarCollapse={() => setIsSidebarCollapsed((prev) => !prev)}
       />
 
       {/* 2. SIDEBAR (Fixed on desktop, slide-out drawer on mobile) */}
@@ -965,10 +979,12 @@ export default function DashboardPage() {
         onSelectView={setActiveView}
         isMobileOpen={isMobileSidebarOpen}
         onCloseMobile={() => setIsMobileSidebarOpen(false)}
+        isCollapsed={isSidebarCollapsed}
+        onToggleCollapse={() => setIsSidebarCollapsed((prev) => !prev)}
       />
 
-      {/* 3. MAIN WORKSPACE */}
-      <div className="md:pl-16 lg:pl-64">
+      {/* 3. MAIN WORKSPACE (Adapts smoothly when sidebar expands / collapses) */}
+      <div className={`transition-all duration-300 ease-in-out ${isSidebarCollapsed ? "md:pl-[76px]" : "md:pl-64"}`}>
         <main className="w-full pt-[72px] sm:pt-[80px] px-3.5 sm:px-5 lg:px-6 pb-8 bg-surface min-h-screen">
           <div className="flex flex-col w-full gap-3.5 sm:gap-4 max-w-[1540px] mx-auto">
             {/* Top Operational Metrics Bar */}
