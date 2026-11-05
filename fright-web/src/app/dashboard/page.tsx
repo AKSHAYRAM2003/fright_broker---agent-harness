@@ -729,44 +729,43 @@ export default function DashboardPage() {
             {/* Top Operational Metrics Bar */}
             {activeView !== "transporters" && <TopStatsBar stats={stats} />}
 
-            {/* MAIN 2-COLUMN OPERATIONS MATRIX */}
+            {/* MAIN MASTER-DETAIL OPERATIONS QUEUE WORKSPACE */}
             {activeView === "queue" && (
-              <div className="grid grid-cols-1 xl:grid-cols-12 gap-3.5 sm:gap-4 items-start">
-                {/* LEFT COLUMN: AI Action Queue */}
-                <div className="xl:col-span-8 flex flex-col gap-3.5 sm:gap-4">
-                  <ActionQueueSection
-                    loads={loads}
-                    onApproveLoad={handleApproveLoad}
-                    onCounterLoad={handleCounterLoad}
-                    onSendClarification={handleSendClarification}
-                    onDismissLoad={handleDismissLoad}
-                    onOpenIngest={() => setIngestModalOpen(true)}
-                  />
-                </div>
+              <div className="w-full">
+                <ActionQueueSection
+                  loads={loads}
+                  onApproveLoad={handleApproveLoad}
+                  onCounterLoad={handleCounterLoad}
+                  onSendClarification={handleSendClarification}
+                  onDismissLoad={handleDismissLoad}
+                  onOpenIngest={() => setIngestModalOpen(true)}
+                />
+              </div>
+            )}
 
-                {/* RIGHT COLUMN: Live WhatsApp Stream & Sandbox */}
-                <div className="xl:col-span-4 flex flex-col gap-3.5 sm:gap-4">
-                  <WhatsAppLiveFeed
-                    events={feedEvents}
-                    onOpenSimulator={() => setSimulatorOpen(true)}
-                    onSendManualCounter={(text) => {
-                      const manualEvt: WhatsAppFeedEvent = {
-                        id: `manual_${Date.now()}`,
-                        type: "COUNTER_OFFER",
-                        sender: "Broker Desk (Manual)",
-                        time: "Just now",
-                        text,
-                        meta: {
-                          badge: "Manual Reply",
-                          badgeType: "primary",
-                        },
-                        language: "english",
-                      };
-                      setFeedEvents((prev) => [manualEvt, ...prev]);
-                      showToast("info", "WhatsApp Message Sent", text);
-                    }}
-                  />
-                </div>
+            {/* Dedicated WhatsApp Stream View */}
+            {activeView === "whatsapp" && (
+              <div className="max-w-4xl mx-auto w-full animate-fadeIn">
+                <WhatsAppLiveFeed
+                  events={feedEvents}
+                  onOpenSimulator={() => setSimulatorOpen(true)}
+                  onSendManualCounter={(text) => {
+                    const manualEvt: WhatsAppFeedEvent = {
+                      id: `manual_${Date.now()}`,
+                      type: "COUNTER_OFFER",
+                      sender: "Broker Desk (Manual)",
+                      time: "Just now",
+                      text,
+                      meta: {
+                        badge: "Manual Reply",
+                        badgeType: "primary",
+                      },
+                      language: "english",
+                    };
+                    setFeedEvents((prev) => [manualEvt, ...prev]);
+                    showToast("info", "WhatsApp Message Sent", text);
+                  }}
+                />
               </div>
             )}
 
